@@ -409,18 +409,67 @@ Minimalny standard:
 
 ## 9. Styl pracy
 
-### 9.1. Wzorzec stylistyczny
+### 9.1. Wzorzec stylistyczny i wzorzec składu dokumentu
 
-Styl ma być zbliżony do dostarczonych przez autora przykładowych prac licencjackich, przede wszystkim pod względem:
+W repozytorium znajdują się dwie przykładowe prace licencjackie, które pełnią różne role i należy je traktować jako dwa odrębne źródła odniesienia.
 
-- sposobu prowadzenia narracji,
-- stopniowego wprowadzania problemu,
-- przechodzenia od intuicji do definicji matematycznej,
-- objaśniania równań po ich wprowadzeniu,
-- łączenia tekstu z rysunkami,
-- unikania przesadnie „podręcznikowego” tonu.
+#### Praca Michała Ojczenasza
 
-Przykładowe prace służą **jako wzór językowy i kompozycyjny, nie jako źródło merytoryczne** dla obecnej analizy.
+Plik z pracą Michała Ojczenasza należy traktować przede wszystkim jako **wzorzec wyglądu i organizacji dokumentu**.
+
+Agent powinien zwracać uwagę w szczególności na:
+
+- ogólny układ pracy licencjackiej;
+- strukturę rozdziałów i podrozdziałów;
+- sposób rozmieszczania tekstu, równań, tabel i rysunków;
+- sposób numerowania równań, rysunków i rozdziałów;
+- wygląd podpisów pod rysunkami;
+- sposób odwoływania się do równań i rysunków w tekście;
+- proporcje pomiędzy tekstem, matematyką i ilustracjami;
+- ogólny charakter typograficzny pracy.
+
+Praca ta jest szczególnie istotna również dlatego, że dotyczy zbliżonego obszaru fizycznego: analizy wielokrotnej jonizacji i reprezentacji wielowymiarowych rozkładów pędów elektronów. Może więc służyć jako punkt odniesienia przy organizowaniu materiału, jednak **nie wolno automatycznie przejmować z niej interpretacji fizycznych, definicji ani wyników**.
+
+#### Praca Matsveya
+
+Plik z pracą Matsveya należy traktować przede wszystkim jako **wzorzec sposobu pisania tekstu naukowego**.
+
+Agent powinien możliwie dokładnie odtworzyć charakter prowadzonej tam narracji, w szczególności:
+
+- sposób płynnego przechodzenia od problemu fizycznego do metody;
+- stopniowe wprowadzanie nowych pojęć i oznaczeń;
+- objaśnianie wzorów bezpośrednio po ich podaniu;
+- sposób uzasadniania kolejnych kroków analizy;
+- naturalne łączenie części matematycznej z interpretacją fizyczną;
+- sposób prowadzenia czytelnika przez tok analizy bez nadmiernego dzielenia tekstu na sztuczne podsekcje;
+- długość i budowę akapitów;
+- formalny, ale naturalny język;
+- unikanie stylu przypominającego podręcznik, dokumentację techniczną albo odpowiedź wygenerowaną przez model językowy.
+
+Tekst nie powinien być zbiorem krótkich zdań typu:
+
+> „Następnie obliczono PCA. Wyniki przedstawiono na rysunku. Następnie zdefiniowano nowe współrzędne.”
+
+Zamiast tego kolejne etapy powinny wynikać z siebie logicznie. Czytelnik powinien rozumieć nie tylko **co** zostało wykonane, ale również **dlaczego właśnie taki krok został wykonany i jak prowadzi on do kolejnego etapu analizy**.
+
+W szczególności po wprowadzeniu nowej wielkości matematycznej należy, jeśli jest to istotne:
+
+1. podać jej definicję;
+2. wyjaśnić, dlaczego została wprowadzona;
+3. opisać jej interpretację fizyczną lub geometryczną;
+4. wskazać, jakie informacje pozwala wydobyć z danych;
+5. dopiero następnie przejść do omówienia odpowiadających jej wyników.
+
+#### Zasada nadrzędna
+
+Obie prace są materiałami referencyjnymi, ale pełnią różne funkcje:
+
+- **praca Ojczenasza → wzorzec składu, organizacji i wyglądu dokumentu;**
+- **praca Matsveya → wzorzec języka, narracji i sposobu prowadzenia wywodu naukowego.**
+
+Nie należy kopiować z nich zdań ani fragmentów tekstu. Agent powinien odtworzyć **cechy stylu i logikę prezentacji**, a nie konkretne sformułowania.
+
+W przypadku sprzeczności pomiędzy stylem przykładowej pracy a aktualnymi wymaganiami UJ, WFAIS, promotora lub niniejszego repozytorium, pierwszeństwo mają aktualne wymagania formalne i instrukcje zapisane w projekcie.
 
 ### 9.2. Język
 
