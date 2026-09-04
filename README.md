@@ -413,7 +413,7 @@ Minimalny standard:
 
 W repozytorium znajdują się dwie przykładowe prace licencjackie, które pełnią różne role i należy je traktować jako dwa odrębne źródła odniesienia.
 
-#### Praca Michała Ojczenasza
+#### Praca Michała Ojczenasza (nazwa: Praca_licencjacka_296213 (watermarked).pdf)
 
 Plik z pracą Michała Ojczenasza należy traktować przede wszystkim jako **wzorzec wyglądu i organizacji dokumentu**.
 
@@ -430,7 +430,7 @@ Agent powinien zwracać uwagę w szczególności na:
 
 Praca ta jest szczególnie istotna również dlatego, że dotyczy zbliżonego obszaru fizycznego: analizy wielokrotnej jonizacji i reprezentacji wielowymiarowych rozkładów pędów elektronów. Może więc służyć jako punkt odniesienia przy organizowaniu materiału, jednak **nie wolno automatycznie przejmować z niej interpretacji fizycznych, definicji ani wyników**.
 
-#### Praca Matsveya
+#### Praca Matsveya (nazwa: praca_licencjacka_maciej.pdf)
 
 Plik z pracą Matsveya należy traktować przede wszystkim jako **wzorzec sposobu pisania tekstu naukowego**.
 
