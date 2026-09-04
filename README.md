@@ -426,7 +426,7 @@ Przykładowe prace służą **jako wzór językowy i kompozycyjny, nie jako źr�
 
 Zgodnie z wcześniejszym ustaleniem:
 
-- **docelowy tekst pracy: po angielsku**;
+- **docelowy tekst pracy: po polski**;
 - komunikacja z autorem, komentarze robocze i notatki mogą być po polsku;
 - polskie wersje robocze nie oznaczają automatycznie zmiany języka finalnej pracy.
 
@@ -463,8 +463,7 @@ W tekście pracy nie używać:
 - metakomentarzy typu „na poniższym wykresie możemy zobaczyć, że...” powtarzanych co akapit;
 - zdań bez jasnego podmiotu i odniesienia;
 - przesadnie długich zdań wielokrotnie złożonych;
-- list punktowanych tam, gdzie normalny wywód naukowy jest czytelniejszy;
-- niespójnego mieszania terminologii polskiej i angielskiej.
+- list punktowanych tam, gdzie normalny wywód naukowy jest czytelniejszy.
 
 ---
 
