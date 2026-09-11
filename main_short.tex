@@ -1,0 +1,267 @@
+\documentclass[12pt,letterpaper,oneside]{report}
+
+% Kompilator w Overleaf: pdfLaTeX
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage[letterpaper,left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{microtype}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=normalfont,justification=justified,singlelinecheck=false}
+\usepackage{float}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}{\chaptername\ \thechapter}{0.85em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{2.2em}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{0.9em}{}
+\titlespacing*{\section}{0pt}{1.7em}{0.65em}
+\renewcommand{\thesection}{\arabic{section}}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+\usepackage{tocloft}
+\renewcommand{\contentsname}{Spis treści}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0.5cm}
+\setlength{\cftaftertoctitleskip}{1.0cm}
+
+\newcommand{\UniversityName}{Uniwersytet Jagielloński w Krakowie}
+\newcommand{\FacultyName}{Wydział Fizyki, Astronomii i Informatyki Stosowanej}
+\newcommand{\AuthorName}{Karina Nepravskaya}
+\newcommand{\AlbumNumber}{1209730}
+\newcommand{\SupervisorName}{tytuł, imię i nazwisko promotora}
+\newcommand{\DepartmentName}{nazwa zakładu lub instytutu}
+\newcommand{\YearOfSubmission}{2026}
+\newcommand{\Pe}{\ensuremath{P_e}}
+\newcommand{\Neff}{\ensuremath{N_{\mathrm{eff}}}}
+\newcommand{\xmax}{\ensuremath{x_{\max}}}
+\newcommand{\direct}{\textit{direct}}
+\newcommand{\delayed}{\textit{delayed}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,
+  pdftitle={Analiza korelacji pędów elektronów w potrójnej jonizacji neonu},
+  pdfauthor={\AuthorName}}
+
+\pagestyle{plain}
+\setcounter{secnumdepth}{1}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\noindent{\bfseries \UniversityName}\par
+\noindent\FacultyName
+
+\vspace{2.7cm}
+\begin{center}
+\Large \AuthorName
+
+\vspace{0.35cm}
+{\large Nr albumu: \AlbumNumber}
+\end{center}
+
+\vspace{2.0cm}
+\begin{center}
+{\LARGE\bfseries Analiza korelacji pędów elektronów\\[0.2em]
+w potrójnej jonizacji neonu\\[0.2em]
+w silnym polu laserowym\par}
+\end{center}
+
+\vfill
+\begin{flushright}
+\begin{minipage}{0.48\textwidth}
+\raggedleft
+Praca wykonana pod kierunkiem\\
+\SupervisorName\\
+\DepartmentName
+\end{minipage}
+\end{flushright}
+
+\vfill
+\begin{center}Kraków \YearOfSubmission\end{center}
+\end{titlepage}
+
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\tableofcontents
+\clearpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Streszczenie}
+\begin{center}\textbf{Streszczenie}\end{center}
+\vspace{1.2em}
+
+Praca dotyczy korelacji końcowych pędów trzech elektronów emitowanych w
+potrójnej jonizacji neonu w silnym, liniowo spolaryzowanym polu laserowym.
+Punktem wyjścia jest analiza głównych składowych pełnego wektora pędów.
+Wskazuje ona jeden podłużny kierunek ruchu wspólnego oraz dwa kierunki
+opisujące różnice pomiędzy elektronami. Ponieważ osie PCA zależą od
+konkretnej próbki, do właściwej analizy wprowadzono stałą, ortonormalną
+transformację Jacobiego--Helmerta. Rozdziela ona całkowity pęd elektronów
+od ich względnej nierównowagi, nie tracąc informacji zawartej w trzech
+składowych podłużnych.
+
+W tej reprezentacji porównano kanały \direct{} i \delayed{} dla natężenia
+\(1{,}7\,\mathrm{PW/cm^2}\). Kanał \direct{} cechuje się silniejszymi
+dodatnimi korelacjami pędów, mniejszą nierównowagą względną i bardziej
+równomiernym podziałem wartości bezwzględnych pędu. Wynik ten jest zgodny
+z bardziej kolektywnym charakterem tego kanału, jednak same pędy końcowe
+nie stanowią samodzielnego dowodu przebiegu czasowego jonizacji.
+
+\chapter{Wstęp}
+
+W potrójnej jonizacji nie wystarcza pytanie o to, jaki pęd osiąga
+pojedynczy elektron. Równie istotne jest, jak w obrębie jednego zdarzenia
+dzieli się pęd pomiędzy trzy elektrony. Taka informacja jest rozproszona
+w trzech składowych i łatwo ją zgubić, gdy każdą z nich analizuje się
+osobno. Celem pracy jest zatem skonstruowanie opisu, który rozdziela ruch
+wspólny całego układu elektronowego od różnic pomiędzy jego częściami, a
+następnie wykorzystanie tego opisu do porównania dwóch kanałów jonizacji.
+
+Pole laserowe jest spolaryzowane wzdłuż osi \(z\), dlatego właśnie
+podłużne składowe pędu zawierają zasadniczą informację o ruchu dryfowym.
+W dalszym tekście zapisano je skrótowo jako
+\begin{equation}
+p_2\equiv p_{2z},\qquad p_3\equiv p_{3z},\qquad p_4\equiv p_{4z}.
+\label{eq:longitudinal-momenta}
+\end{equation}
+W obliczeniach trajektoryjnych elektrony 2 i 3 są oznaczone jako
+początkowo związane, a elektron 4 jako tunelujący. Są to jednak etykiety
+historii obliczenia, nie zaś fizycznie rozróżnialne własności elektronów.
+Z tego powodu wielkości zależne od numeracji są używane tylko jako opis
+trajektorii, a główne wnioski opierają się również na miarach symetrycznych
+względem permutacji elektronów.
+
+Wcześniejsza reprezentacja simpleksowa opisuje względne udziały
+\begin{equation}
+x_i=\frac{|p_i|}{|p_2|+|p_3|+|p_4|},\qquad x_2+x_3+x_4=1.
+\label{eq:shares}
+\end{equation}
+Dla trzech elektronów każdy zestaw udziałów można przedstawić jako punkt
+w trójkącie. Jest to użyteczne, ale wykres nie zawiera znaków pędów ani
+ich skali. Ponadto dla większej liczby elektronów trójkąt zastępuje
+simpleks wyższego wymiaru, który nie daje już równie czytelnej
+wizualizacji. Potrzebny jest więc opis, w którym różne aspekty korelacji
+nie są sztucznie upychane w jednym obrazie.
+
+\chapter{Opis korelacji pędowych}
+
+Analizę rozpoczęto od PCA dziewięciu końcowych składowych pędu trzech
+elektronów. W danych wyróżnia się kierunek z podobnymi współczynnikami
+przy \(p_{2z}\), \(p_{3z}\) i \(p_{4z}\), odpowiadający ich wspólnemu
+ruchowi wzdłuż osi polaryzacji. Dwa pozostałe niezależne kierunki
+podłużne opisują różnice pomiędzy pędami elektronów. To rozpoznanie jest
+ważne, ale PCA nie może być końcową definicją osi: wektory własne zależą
+od kowariancji konkretnego zbioru, a dwa kierunki w tej samej podprzestrzeni
+mogą zmienić orientację przy zmianie kanału lub próbki.
+
+Z tego powodu dla każdego zdarzenia zastosowano stałą bazę
+Jacobiego--Helmerta:
+\begin{equation}
+Q=\frac{p_2+p_3+p_4}{\sqrt{3}},\qquad
+\xi_1=\frac{p_2-p_3}{\sqrt{2}},\qquad
+\xi_2=\frac{p_2+p_3-2p_4}{\sqrt{6}}.
+\label{eq:helmert}
+\end{equation}
+Współrzędna \(Q\) opisuje ruch kolektywny. Współrzędne \(\xi_1\) i
+\(\xi_2\) tworzą płaszczyznę ruchu względnego: pierwsza porównuje
+elektrony 2 i 3, druga porównuje tę parę z elektronem 4. Transformacja
+nie redukuje wymiaru, lecz jedynie zmienia bazę, o czym świadczy równość
+\begin{equation}
+p_2^2+p_3^2+p_4^2=Q^2+\xi_1^2+\xi_2^2.
+\label{eq:norm}
+\end{equation}
+Można więc porównywać kanały w tym samym układzie współrzędnych, zachowując
+pełną informację o podłużnych pędach.
+
+Wielkość
+\begin{equation}
+K=\sqrt{\xi_1^2+\xi_2^2}
+\label{eq:imbalance}
+\end{equation}
+jest miarą względnej nierównowagi. Jest równa zeru tylko wtedy, gdy trzy
+pędy są jednakowe, a jej wartość nie zależy od numeracji elektronów. Samo
+\(K\) nie określa jednak kierunku nierównowagi; tę informację zachowuje
+para \((\xi_1,\xi_2)\). Do opisu podziału wartości bezwzględnych
+wykorzystano ponadto efektywną liczbę uczestniczących elektronów
+\begin{equation}
+\Neff=\frac{1}{x_2^2+x_3^2+x_4^2}
+\label{eq:neff}
+\end{equation}
+oraz największy udział \(\xmax=\max(x_2,x_3,x_4)\). Duże \(\Neff\) i
+małe \(\xmax\) oznaczają równomierniejszy podział. Znaki pędów są
+analizowane osobno w ośmiu sektorach, na przykład \texttt{+++} lub
+\texttt{++-}; dzięki temu nie ginie informacja o kierunku emisji.
+
+\chapter{Porównanie kanałów jonizacji}
+
+Porównanie wykonano dla tej samej intensywności pola,
+\(I=1{,}7\,\mathrm{PW/cm^2}\), co pozwala przypisać różnice przede
+wszystkim klasyfikacji trajektorii, a nie zmianie warunków zewnętrznych.
+W tabeli~\ref{tab:comparison} zestawiono miary, które opisują odmienne
+aspekty zdarzenia: szerokość ruchu kolektywnego, nierównowagę względną,
+podział wartości bezwzględnych oraz korelację pary elektronów 2 i 3.
+
+\begin{table}[htbp]
+\centering
+\caption{Porównanie kanałów dla \(I=1{,}7\,\mathrm{PW/cm^2}\).}
+\label{tab:comparison}
+\begin{tabular}{lrrrrrr}
+\toprule
+kanał & \(n\) & \(\sigma(\Pe)\) & \(\langle K\rangle\) &
+\(\langle\Neff\rangle\) & \(\langle\xmax\rangle\) & \(r_{23}\)\\
+\midrule
+\direct  & 1695 & 7,543 & 1,398 & 2,628 & 0,473 & 0,868\\
+\delayed & 1601 & 5,384 & 2,383 & 2,374 & 0,533 & 0,214\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Kanał \direct{} ma mniejszą średnią wartość \(K\), większe
+\(\Neff\) i mniejsze \(\xmax\). Te trzy obserwable opisują ten sam
+trend z różnych stron: w kanale \direct{} pęd jest dzielony bardziej
+równomiernie, a trzy elektrony pozostają bliżej wspólnego kierunku ruchu.
+Silna dodatnia korelacja \(r_{23}\) wzmacnia tę interpretację. Dla kanału
+\delayed{} rozkład w przestrzeni względnej jest szerszy, korelacja pary
+jest słabsza, a pojedynczy elektron częściej przejmuje większą część
+bezwzględnego pędu.
+
+Ten sam kontrast pojawia się w sektorach znakowych. W kanale \direct{}
+sektor \texttt{+++} obejmuje \(47{,}4\%\) zdarzeń, podczas gdy w kanale
+\delayed{} jego udział wynosi \(23{,}0\%\). Przewaga emisji o zgodnych
+znakach jest więc spójna z bardziej kolektywnym ruchem pierwszego kanału.
+Nie należy jednak utożsamiać tej zgodności z bezpośrednim dowodem
+mechanizmu czasowego: końcowy pęd jest wynikiem całej trajektorii i sam
+nie zastępuje analizy chwil jonizacji.
+
+\chapter{Podsumowanie}
+
+PCA ujawniła w danych strukturę złożoną z jednego kierunku kolektywnego
+i dwóch kierunków względnych. Jej rolą było rozpoznanie tej struktury,
+a nie wyznaczenie ostatecznych osi analizy. Stała transformacja
+Jacobiego--Helmerta pozwala zapisać tę samą informację w układzie, który
+ma prostą interpretację i pozostaje wspólny dla porównywanych zbiorów.
+
+Wyniki dla \(1{,}7\,\mathrm{PW/cm^2}\) konsekwentnie odróżniają kanały
+\direct{} i \delayed{}. Pierwszy z nich ma bardziej kolektywną strukturę
+pędów i równomierniejszy ich podział, drugi zaś większe wewnętrzne
+zróżnicowanie. Zaproponowany opis nie zastępuje pełnego rozkładu
+wielociałowego, lecz porządkuje go w zestaw niewielkiej liczby
+uzupełniających się obserwabli. Dzięki temu stanowi wygodny punkt wyjścia
+do dalszego badania zależności od intensywności pola oraz do rozszerzenia
+analizy na większą liczbę elektronów.
+
+\end{document}
