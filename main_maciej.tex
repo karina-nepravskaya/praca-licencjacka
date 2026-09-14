@@ -197,16 +197,22 @@ klasa zdarzeń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
 \end{tabular}
 \end{table}
 
-W obu klasach PC1 ma ten sam jakościowy charakter: wszystkie trzy współczynniki podłużne mają ten sam znak i podobne wartości. Natomiast osie PC8 i PC9 mają inną orientację dla \direct{} i \delayed{}. Pokazuje to, że PCA wskazuje tę samą ideę rozdzielenia ruchu kolektywnego od względnego, ale nie dostarcza jednej stałej pary osi względnych, którą można bezpośrednio porównywać między zbiorami. Z tego powodu w dalszej analizie wprowadzamy własną, niezmienną bazę tej przestrzeni.
+W obu klasach PC1 ma ten sam jakościowy charakter: wszystkie trzy współczynniki podłużne mają ten sam znak i podobne wartości. Natomiast osie PC8 i PC9 mają inną orientację dla \direct{} i \delayed{}. Pokazuje to, że PCA wskazuje tę samą ideę rozdzielenia ruchu kolektywnego od względnego, ale nie dostarcza bespośrednio jednej stałej pary osi względnych dla obu analizowanych zbiorów. Z tego powodu w dalszej analizie musimy samodzielnie wprowadzić tą stałą bazę, korzystając z uzyskanych metodą PCA współczynników ortogonalnych do siebie kierunków.
 
 \section{Współrzędne kolektywne i względne}
 
-Na podstawie wyniku PCA można stwierdzić, że przestrzeń trzech pędów
-podłużnych można rozdzielić na jeden kierunek kolektywny oraz
-dwuwymiarową podprzestrzeń ruchu względnego. W dalszej analizie nie
-wykorzystujemy jednak bezpośrednio wartości współczynników PC1, PC8 i PC9, ponieważ zależą one nieco od konkretnego zbioru danych na której przeprowadzamy analizę. W tym ujęciu PCA stanowi jedynie punkt wyjścia, wskazując ogólną strukturę nowej bazy, a nie definiując bezpośrednio jej osi.
+Początkowo przedstawiamy pojedyncze zdarzenie jako wektor trzech podłużnych składowych pędu elektronów
+\begin{equation}
+\mathbf{p}_z=
+\bigl(p_2,p_3,p_4\bigr)^{\mathsf T}.
+\label{eq:5}
+\end{equation}
 
-Kierunek kolektywny powinien traktować trzy elektrony jednakowo, dlatego przyjmujemy kierunek $(1,1,1)$, zgodny z postacią PC1 otrzymaną numerycznie. Wektory opisujące wyłącznie ruch względny muszą być do niego prostopadłe. Dla wektora $\mathbf v=(v_2,v_3,v_4)$ oznacza to warunek
+W obu klasach zdarzeń PC1 ma współczynniki przy $p_{2z}$, $p_{3z}$ i
+$p_{4z}$ o tym samym znaku i zbliżonych wartościach. Kierunek
+kolektywny przyjmujemy zatem jako $(1,1,1)$.
+
+Wektory opisujące wyłącznie ruch względny muszą być prostopadłe do zdefiniowanego kierunku kolektywnego. Dla wektora $\mathbf v=(v_2,v_3,v_4)$ oznacza to warunek
 \begin{equation}
 v_2+v_3+v_4=0.
 \label{eq:relative-plane}
