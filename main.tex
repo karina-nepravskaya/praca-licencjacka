@@ -1,12 +1,11 @@
-\documentclass[12pt,letterpaper,oneside]{report}
+\documentclass[12pt,a4paper,oneside]{report}
 
 % Kompilator w Overleaf: pdfLaTeX
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[polish]{babel}
-\usepackage{polski}
 
-\usepackage[letterpaper,left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage[a4paper,left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{microtype}
 \setlength{\parindent}{1.25em}
 \setlength{\parskip}{0pt}
@@ -130,8 +129,6 @@ w potrójnej jonizacji neonu\\[0.2em]
 w silnym polu laserowym\par}
 
 \vspace{1.2cm}
-
-{\normalsize Notatka metodologiczna}
 \end{center}
 
 \vfill
@@ -192,14 +189,6 @@ kolektywnej, niemal jednoczesnej emisji w kanale direct oraz bardziej
 rozdzielonej czasowo dynamiki w kanale delayed, przy czym same pędy
 końcowe nie stanowią samodzielnego dowodu mechanizmu czasowego.
 
-\begin{importantbox}{Najważniejsza idea metody}
-PCA służy tutaj jako narzędzie rozpoznania struktury danych, a nie jako
-ostateczny układ współrzędnych. Ostateczna baza jest ustalona przez
-kinematykę układu wielu cząstek. Dzięki temu osie nie obracają się przy
-zmianie kanału jonizacji, natężenia pola ani liczebności próbki.
-\end{importantbox}
-
-
 \clearpage
 \thispagestyle{empty}
 \null
@@ -219,10 +208,7 @@ nierównowaga może wystąpić również przy małej sumie pędów.
 Oś polaryzacji lasera jest utożsamiona z osią z. To właśnie wzdłuż tej
 osi pole elektryczne nadaje elektronom największy pęd dryfu, dlatego
 zasadnicza część analizy została przeprowadzona dla trzech wielkości
-\ensuremath{p_{2z}}, \ensuremath{p_{3z}} i \ensuremath{p_{4z}}. Składowe poprzeczne pozostają istotne dla pełnego opisu
-dynamiki, jednak w omawianym etapie pełnią przede wszystkim rolę tła,
-względem którego PCA pozwala rozpoznać wyraźnie wydzielony podobszar
-podłużny.
+\ensuremath{p_{2z}}, \ensuremath{p_{3z}} i \ensuremath{p_{4z}}. Składowe poprzeczne pozostają istotne dla pełnego opisu dynamiki i zostały uwzględnione na etapie PCA. Dalszą analizę ograniczono jednak do składowych podłużnych, ponieważ to one tworzą wyróżniony w danych podobszar związany z kierunkiem polaryzacji pola.
 
 Przyjęty schemat ma dwa cele. Po pierwsze, ma odtworzyć w sposób
 czytelny informacje dostępne w reprezentacji simpleksowej dla trzech
@@ -237,7 +223,7 @@ składowych pędu elektronów:
 
 \begin{equation}
 \mathbf{p}=\bigl(p_{2x},p_{2y},p_{2z},p_{3x},p_{3y},p_{3z},p_{4x},p_{4y},p_{4z}\bigr)^{\mathsf T}
-\label{eq:1}
+\label{eq:wektor-pedow}
 \end{equation}
 
 W plikach analizowanych w notebooku 07\_analiza\_3D.ipynb występują
@@ -261,7 +247,7 @@ niezmiennicze na permutacje, takie jak suma pędów, moduł nierównowagi K,
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.3333}}@{}}
-\caption{Konwencja etykiet stosowana w plikach danych i notebookach.}\label{tab:1}\\
+\caption{Konwencja etykiet stosowana w plikach danych i notebookach.}\label{tab:konwencja-etykiet}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Obiekt}
@@ -288,12 +274,12 @@ zdefiniować jako
 
 \begin{equation}
 x_i=\frac{|p_i|}{|p_2|+|p_3|+|p_4|},\qquad i\in\{2,3,4\}
-\label{eq:2}
+\label{eq:udzialy-pedu}
 \end{equation}
 
 \begin{equation}
 x_2+x_3+x_4=1,\qquad x_i\ge 0
-\label{eq:3}
+\label{eq:normalizacja-udzialow}
 \end{equation}
 
 Warunek normalizacji sprawia, że każde zdarzenie odpowiada punktowi w
@@ -422,7 +408,7 @@ zbioru direct otrzymano w przybliżeniu
 
 \begin{equation}
 \mathrm{PC1}\approx 0{,}580\,p_{2z}+0{,}577\,p_{3z}+0{,}572\,p_{4z}
-\label{eq:4}
+\label{eq:pc1-przyblizenie}
 \end{equation}
 
 Jest to numeryczny odpowiednik kierunku (1,1,1), czyli sumy pędów
@@ -438,7 +424,7 @@ przypadkach rozpinają one tę samą płaszczyznę względną.
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\caption{Współczynniki składowych z w trzech kierunkach PCA zdominowanych przez ruch podłużny. Znak wektora własnego PCA jest umowny.}\label{tab:2}\\
+\caption{Współczynniki składowych z w trzech kierunkach PCA zdominowanych przez ruch podłużny. Znak wektora własnego PCA jest umowny.}\label{tab:wspolczynniki-pca}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Kanał}
@@ -497,7 +483,7 @@ pędu
 
 \begin{equation}
 \mathbf{p}_z=\bigl(p_2,p_3,p_4\bigr)^{\mathsf T}
-\label{eq:5}
+\label{eq:wektor-podluzny}
 \end{equation}
 
 Wprowadzamy ortonormalną bazę Helmerta, równoważną standardowym
@@ -505,24 +491,24 @@ współrzędnym Jacobiego dla trzech cząstek o jednakowych masach:
 
 \begin{equation}
 \mathbf e_0=\frac{(1,1,1)^{\mathsf T}}{\sqrt3},\qquad \mathbf e_1=\frac{(1,-1,0)^{\mathsf T}}{\sqrt2},\qquad \mathbf e_2=\frac{(1,1,-2)^{\mathsf T}}{\sqrt6}
-\label{eq:6}
+\label{eq:baza-helmerta}
 \end{equation}
 
 Rzuty wektora \ensuremath{\mathbf p_z} na tę bazę definiują trzy nowe współrzędne:
 
 \begin{equation}
 Q=\frac{p_2+p_3+p_4}{\sqrt3}
-\label{eq:7}
+\label{eq:wspolrzedna-q}
 \end{equation}
 
 \begin{equation}
 \xi_1=\frac{p_2-p_3}{\sqrt2}
-\label{eq:8}
+\label{eq:wspolrzedna-xi1}
 \end{equation}
 
 \begin{equation}
 \xi_2=\frac{p_2+p_3-2p_4}{\sqrt6}
-\label{eq:9}
+\label{eq:wspolrzedna-xi2}
 \end{equation}
 
 \begin{longtable}[]{@{}
@@ -531,7 +517,7 @@ Q=\frac{p_2+p_3+p_4}{\sqrt3}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
-\caption{Macierz ortonormalnej transformacji Jacobiego--Helmerta.}\label{tab:3}\\
+\caption{Macierz ortonormalnej transformacji Jacobiego--Helmerta.}\label{tab:macierz-helmerta}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Współrzędna}
@@ -574,7 +560,7 @@ nierównowagi:
 
 \begin{equation}
 K=\sqrt{\xi_1^2+\xi_2^2}
-\label{eq:10}
+\label{eq:wektor-pedow0}
 \end{equation}
 
 Wielkość K ma wymiar pędu. Przyjmuje wartość zero wtedy i tylko wtedy,
@@ -582,15 +568,15 @@ gdy \ensuremath{p_2}=\ensuremath{p_3}=\ensuremath{p_4}. Można ją zapisać w dw
 
 \begin{equation}
 K^2=\sum_{i=2}^{4}(p_i-\bar p)^2=\frac{(p_2-p_3)^2+(p_2-p_4)^2+(p_3-p_4)^2}{3}
-\label{eq:11}
+\label{eq:wektor-pedow1}
 \end{equation}
 
 \begin{equation}
 \bar p=\frac{p_2+p_3+p_4}{3}
-\label{eq:12}
+\label{eq:wektor-pedow2}
 \end{equation}
 
-Z równania~\eqref{eq:11} wynika, że K jest niezmiennicze na dowolną permutację
+Z równania~\eqref{eq:wektor-pedow1} wynika, że K jest niezmiennicze na dowolną permutację
 elektronów. Jest to ważne w kontekście nierozróżnialności elektronów:
 chociaż same osie \ensuremath{\xi_1} i \ensuremath{\xi_2} zależą od przyjętej etykiety, odległość od
 początku układu względnego nie zależy od numeracji.
@@ -609,7 +595,7 @@ normę euklidesową:
 
 \begin{equation}
 p_2^2+p_3^2+p_4^2=Q^2+\xi_1^2+\xi_2^2
-\label{eq:13}
+\label{eq:wektor-pedow3}
 \end{equation}
 
 Nie jest to redukcja wymiaru, lecz zmiana bazy. Trzy pierwotne składowe
@@ -617,17 +603,17 @@ można dokładnie odtworzyć ze współrzędnych nowych:
 
 \begin{equation}
 p_2=\frac{Q}{\sqrt3}+\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6}
-\label{eq:14}
+\label{eq:wektor-pedow4}
 \end{equation}
 
 \begin{equation}
 p_3=\frac{Q}{\sqrt3}-\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6}
-\label{eq:15}
+\label{eq:wektor-pedow5}
 \end{equation}
 
 \begin{equation}
 p_4=\frac{Q}{\sqrt3}-\frac{2\xi_2}{\sqrt6}
-\label{eq:16}
+\label{eq:wektor-pedow6}
 \end{equation}
 
 \section{Obserwable uzupełniające}
@@ -648,10 +634,10 @@ normę \ensuremath{L^1}
 
 \begin{equation}
 A=|p_2|+|p_3|+|p_4|
-\label{eq:17}
+\label{eq:wektor-pedow7}
 \end{equation}
 
-oraz udziały \ensuremath{x_2}, \ensuremath{x_3} i \ensuremath{x_4} zgodnie z równaniem~\eqref{eq:2}. Na ich podstawie
+oraz udziały \ensuremath{x_2}, \ensuremath{x_3} i \ensuremath{x_4} zgodnie z równaniem~\eqref{eq:udzialy-pedu}. Na ich podstawie
 obliczono trzy skalarne miary:
 
 \begin{itemize}
@@ -696,12 +682,12 @@ transformację isometric log-ratio:
 
 \begin{equation}
 y_1=\frac{1}{\sqrt2}\ln\!\left(\frac{x_2}{x_3}\right)
-\label{eq:18}
+\label{eq:wektor-pedow8}
 \end{equation}
 
 \begin{equation}
 y_2=\frac{1}{\sqrt6}\ln\!\left(\frac{x_2x_3}{x_4^2}\right)
-\label{eq:19}
+\label{eq:wektor-pedow9}
 \end{equation}
 
 Punkt (0,0) odpowiada równym udziałom \ensuremath{x_2}=\ensuremath{x_3}=\ensuremath{x_4}=1/3. Oddalanie się od
@@ -724,7 +710,7 @@ trzeciego rzędu
 
 \begin{equation}
 \kappa_{234}=\left\langle (p_2-\langle p_2\rangle)(p_3-\langle p_3\rangle)(p_4-\langle p_4\rangle)\right\rangle
-\label{eq:20}
+\label{eq:udzialy-pedu0}
 \end{equation}
 
 Dla trzech różnych zmiennych jest on równy mieszanemu kumulantowi
@@ -786,7 +772,7 @@ około \ensuremath{2{,}1\times 10^{-14}}. Maksymalna wartość \textbar \ensurem
 rzędu \ensuremath{1{,}8\times 10^{-15}}. Są to wartości odpowiadające precyzji obliczeń
 zmiennoprzecinkowych.
 
-Dodatkowo wykonano rekonstrukcję pędów na podstawie równań~\eqref{eq:14}--\eqref{eq:16}.
+Dodatkowo wykonano rekonstrukcję pędów na podstawie równań~\eqref{eq:wektor-pedow4}--\eqref{eq:wektor-pedow6}.
 Maksymalne błędy bezwzględne wyniosły \ensuremath{1{,}78\times 10^{-15}} dla \ensuremath{p_2}, \ensuremath{1{,}55\times 10^{-15}} dla
 \ensuremath{p_3} oraz \ensuremath{1{,}78\times 10^{-15}} dla \ensuremath{p_4}. Oznacza to, że współrzędne Q, \ensuremath{\xi_1} i \ensuremath{\xi_2}
 zachowują pełną informację o trzech podłużnych składowych pędu. Utrata
@@ -797,7 +783,7 @@ sektorów znaków i bez skali A.
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\caption{Numeryczne testy ortogonalności i odwracalności transformacji.}\label{tab:4}\\
+\caption{Numeryczne testy ortogonalności i odwracalności transformacji.}\label{tab:test-transformacji}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Test}
@@ -830,7 +816,7 @@ bardziej zwartą chmurę skupioną bliżej początku, co zapowiada mniejszą
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/relative_plane.png}
-\caption{Gęstość zdarzeń na płaszczyźnie względnej (\ensuremath{\xi_1},\ensuremath{\xi_2}): kanał delayed po lewej i direct po prawej. Osie są wspólne fizycznie, a nie wyznaczane osobno przez PCA.}
+\caption{Gęstość zdarzeń na płaszczyźnie względnej $(\xi_1,\xi_2)$ dla natężenia $I=1{,}7\,\mathrm{PW/cm^2}$: kanał \delayed{} po lewej i \direct{} po prawej. W obu panelach zastosowano tę samą bazę Jacobiego--Helmerta.}
 \label{fig:relative-plane}
 \end{figure}
 
@@ -847,7 +833,7 @@ wspólny pęd i duża nierównowaga nie są tą samą cechą zdarzenia.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/P_vs_K.png}
-\caption{Zależność pomiędzy całkowitym podłużnym pędem elektronów \Pe{} a modułem nierównowagi względnej K.}
+\caption{Zależność pomiędzy całkowitym podłużnym pędem elektronów $P_e$ a modułem nierównowagi względnej $K$ dla kanałów \direct{} i \delayed{} przy $I=1{,}7\,\mathrm{PW/cm^2}$.}
 \label{fig:p-vs-k}
 \end{figure}
 
@@ -864,14 +850,14 @@ wierzchołków.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/Neff.png}
-\caption{Histogram efektywnej liczby elektronów uczestniczących w podziale bezwzględnego pędu.}
+\caption{Rozkład efektywnej liczby elektronów uczestniczących w podziale bezwzględnego pędu dla kanałów \direct{} i \delayed{} przy $I=1{,}7\,\mathrm{PW/cm^2}$.}
 \label{fig:neff}
 \end{figure}
 
 \subsection{Sektory znaków}
 
 Kanał direct jest zdominowany przez sektory \ensuremath{+++} i \ensuremath{---}, a sektory
-mieszane mają niewielką liczebność. Oznacza to, że w większości zdarzeń
+mieszane mają niewielką liczebność. Wskazuje to na znaczny udział zdarzeń, w których
 wszystkie trzy elektrony uzyskują końcowy pęd w tym samym kierunku
 wzdłuż osi polaryzacji. W kanale delayed sektory zgodne nadal należą do
 najliczniejszych, lecz zdarzenia o mieszanych znakach stanowią istotną
@@ -881,7 +867,7 @@ różnicy.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/sign_sectors.png}
-\caption{Liczebności ośmiu sektorów znaków (\ensuremath{p_{2z}},\ensuremath{p_{3z}},\ensuremath{p_{4z}}).}
+\caption{Liczebności ośmiu sektorów znakowych $(p_{2z},p_{3z},p_{4z})$ dla kanałów \direct{} i \delayed{} przy $I=1{,}7\,\mathrm{PW/cm^2}$.}
 \label{fig:sign-sectors}
 \end{figure}
 
@@ -898,7 +884,7 @@ asymetrii udziałów.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/ilr.png}
-\caption{Gęstość w przestrzeni ilr znormalizowanych udziałów \textbar \ensuremath{p_i}\textbar.}
+\caption{Gęstość w przestrzeni ilr znormalizowanych udziałów $|p_i|$ dla kanałów \direct{} i \delayed{} przy $I=1{,}7\,\mathrm{PW/cm^2}$.}
 \label{fig:ilr}
 \end{figure}
 
@@ -915,7 +901,7 @@ względnego i częstszą emisją do mieszanych sektorów znaków.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.96\textwidth]{figures/correlations.png}
-\caption{Macierze korelacji Pearsona pomiędzy podłużnymi pędami elektronów.}
+\caption{Macierze korelacji Pearsona pomiędzy podłużnymi pędami elektronów dla kanałów \direct{} i \delayed{} przy $I=1{,}7\,\mathrm{PW/cm^2}$.}
 \label{fig:correlations}
 \end{figure}
 
@@ -923,7 +909,7 @@ względnego i częstszą emisją do mieszanych sektorów znaków.
 \section{Porównanie kanałów direct i delayed dla $I=1{,}7\,\mathrm{PW/cm^2}$}
 
 Aktualne uruchomienie notebooka obejmuje 1695 zdarzeń direct i 1601
-zdarzeń delayed. Tabele 5 i 6 zestawiają główne wartości liczbowe.
+zdarzeń delayed. Tabele~\ref{tab:porownanie-pedy} i~\ref{tab:porownanie-udzialy} zestawiają główne wartości liczbowe.
 Histogramy używają surowych liczebności, dlatego przy porównaniach
 kształtu warto pamiętać o niewielkiej różnicy liczby zdarzeń; wartości
 średnie i współczynniki korelacji nie są obciążone tym efektem w taki
@@ -939,7 +925,7 @@ sam sposób.
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1111}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1111}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 16\tabcolsep) * \real{0.1111}}@{}}
-\caption{Wielkości kolektywne, względne i korelacje parami.}\label{tab:5}\\
+\caption{Wielkości kolektywne, względne i korelacje parami.}\label{tab:porownanie-pedy}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Kanał}
@@ -978,7 +964,7 @@ delayed & 1601 & 0,147 & 5,384 & 2,383 & 1,139 & 0,214 & 0,456 &
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
-\caption{Miary równomierności podziału i dominujące sektory znaków.}\label{tab:6}\\
+\caption{Miary równomierności podziału i dominujące sektory znaków.}\label{tab:porownanie-udzialy}\\
 \toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 \textbf{Kanał}
@@ -1091,10 +1077,10 @@ strukturę korelacji.
 
 \begin{itemize}
 \item
-  Dla N\textgreater3 pełna przestrzeń względna ma wymiar \ensuremath{N-1}. Sam skalar
+  Dla $N>3$ pełna przestrzeń względna ma wymiar $N-1$. Sam skalar
   K jest wtedy tylko promieniem i nie zachowuje informacji o kierunku
   nierównowagi. Skalowalność dotyczy konstrukcji współrzędnych i zestawu
-  projekcji, a nie magicznej redukcji całej fizyki do dwóch osi.
+  projekcji, a nie redukcji pełnego opisu do dwóch osi.
 \item
   Wyniki PCA zależą od centrowania i standaryzacji. Współczynniki z
   różnych procedur przygotowania danych nie muszą być bezpośrednio
@@ -1125,8 +1111,8 @@ strukturę korelacji.
 
 \chapter{Wnioski}
 
-Analiza głównych składowych ujawniła, że podłużna dynamika trzech
-elektronów ma naturalną strukturę składającą się z jednego trybu
+Wyniki analizy głównych składowych wskazały, że podłużną dynamikę trzech
+elektronów można opisać za pomocą jednego trybu
 kolektywnego i dwóch trybów względnych. Najważniejszym krokiem
 metodologicznym było odejście od bezpośredniego używania osi PCA na
 rzecz stałej, ortonormalnej bazy Jacobiego--Helmerta. Dzięki temu
@@ -1158,22 +1144,5 @@ interpretację na kilka przejrzystych wykresów. Dla większej liczby
 elektronów dostarcza systematycznej bazy wielu ciał i zestawu skalarnych
 podsumowań, przy czym pełna analiza nadal wymaga odpowiedniej liczby
 współrzędnych względnych lub świadomie dobranych projekcji.
-
-\chapter*{Materiały robocze}
-\addcontentsline{toc}{chapter}{Materiały robocze}
-
-\begin{itemize}
-\item
-  05\_PCA.ipynb --- analiza głównych składowych, współczynniki kierunków
-  i pierwsza konstrukcja trzech kombinacji podłużnych pędów.
-\item
-  07\_analiza\_3D.ipynb --- implementacja współrzędnych
-  Jacobiego--Helmerta, obserwabli simpleksowych, testów rekonstrukcji
-  oraz porównania direct--delayed.
-\item
-  praca\_licencjacka\_maciej.pdf --- materiał wykorzystany wyłącznie
-  jako odniesienie do stylu redakcyjnego i sposobu prowadzenia narracji
-  naukowej.
-\end{itemize}
 
 \end{document}
