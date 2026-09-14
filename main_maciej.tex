@@ -142,7 +142,7 @@ Kraków \YearOfSubmission
 W badaniach wielokrotnej jonizacji istotna jest nie tylko energia końcowa emitowanych elektronów, lecz również sposób, w jaki elektrony dzielą pomiędzy siebie pęd. W przypadku potrójnej jonizacji, po półklasycznym przygotowaniu warunków
 początkowych i dalszej klasycznej propagacji układu~\cite{Emmanouilidou2023}, otrzymujemy dla
 każdego zdarzenia końcowe pędy wszystkich czterech cząstek (jonu oraz
-trzech elektronów). W wyniku obliczeń klasycznych, znamy dodatkowo ich wszystkie składowe. W dalszej analizie będziemy przyglądać się jedynie elektronom, więc pełny punkt danych zapisujemy jako
+trzech elektronów). W wyniku obliczeń klasycznych znamy dodatkowo ich wszystkie składowe. W dalszej analizie będziemy przyglądać się jedynie elektronom, więc pełny punkt danych zapisujemy jako
 \begin{equation}
 \mathbf p=
 \bigl(p_{2x},p_{2y},p_{2z},p_{3x},p_{3y},p_{3z},p_{4x},p_{4y},p_{4z}\bigr)^{\mathsf T}.
@@ -177,26 +177,63 @@ kierunek ten wyjaśnia około \(29{,}7\%\) całkowitej wariancji danych. Współ
 \end{equation}
 Pozostałe współczynniki PC1 są zaniedbywalnie małe. Oznacza to, że ten kierunek jest zbliżony do wektora $(1,1,1)$ w przestrzeni $(p_2,p_3,p_4)$, a więc opisuje wspólne przesunięcie wszystkich trzech pędów.
 
-Spośród pozostałych składowych PCA również PC8 i PC9 są zdominowane przez składowe wzdłuż osi $z$. W przeciwieństwie do PC1 ich współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ mają różne znaki, dlatego kierunki te opisują przede wszystkim zmiany względne pomiędzy pędami elektronów. Analogiczną strukturę otrzymuje się dla klasy zdarzeń \delayed{}.
+Spośród pozostałych składowych PCA również PC8 i PC9 są zdominowane przez składowe wzdłuż osi $z$. W przeciwieństwie do PC1 ich współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ mają różne znaki, dlatego kierunki te opisują przede wszystkim zmiany względne pomiędzy pędami elektronów. Dla danych przy \(I=1{,}7\,\mathrm{PW/cm^2}\) współczynniki tych trzech składowych zestawiono w tabeli~\ref{tab:pca-z}.
 
-Orientacja osi PC8 i PC9 zależy od analizowanego zbioru danych. Przy zmianie klasy zdarzeń lub natężenia pola mogą one zmienić orientację w obrębie podprzestrzeni ruchu względnego. Z tego powodu w dalszej analizie nie wykorzystujemy bezpośrednio PC8 i PC9 jako współrzędnych, lecz definiujemy stałą bazę tej podprzestrzeni.
+\begin{table}[htbp]
+\centering
+\caption{Współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ dla składowych PCA zdominowanych przez ruch wzdłuż osi polaryzacji przy $I=1{,}7\,\mathrm{PW/cm^2}$. Znak wektora własnego PCA jest umowny.}
+\label{tab:pca-z}
+\begin{tabular}{llrrr}
+\toprule
+klasa zdarzeń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
+\midrule
+\direct  & PC1 &  0,580 &  0,580 &  0,568\\
+\direct  & PC8 & -0,402 & -0,402 &  0,822\\
+\direct  & PC9 & -0,707 &  0,707 & -0,001\\
+\delayed & PC1 &  0,545 &  0,533 &  0,645\\
+\delayed & PC8 & -0,644 &  0,695 & -0,031\\
+\delayed & PC9 & -0,480 & -0,429 &  0,761\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+W obu klasach PC1 ma ten sam jakościowy charakter: wszystkie trzy współczynniki podłużne mają ten sam znak i podobne wartości. Natomiast osie PC8 i PC9 mają inną orientację dla \direct{} i \delayed{}. Pokazuje to, że PCA wskazuje tę samą ideę rozdzielenia ruchu kolektywnego od względnego, ale nie dostarcza jednej stałej pary osi względnych, którą można bezpośrednio porównywać między zbiorami. Z tego powodu w dalszej analizie wprowadzamy własną, niezmienną bazę tej przestrzeni.
 
 \section{Współrzędne kolektywne i względne}
 
-W przestrzeni podłużnych pędów $(p_2,p_3,p_4)$ kierunek kolektywny wskazany przez PC1 odpowiada w przybliżeniu wektorowi $(1,1,1)$. Zgodnie z interpretacją PC8 i PC9 jako dwóch niezależnych kierunków względnych pozostałe dwie osie wybieramy w płaszczyźnie prostopadłej do tego kierunku. Dla wektora $\mathbf v=(v_2,v_3,v_4)$ płaszczyzna ta jest określona warunkiem
+Na podstawie wyniku PCA można stwierdzić, że przestrzeń trzech pędów
+podłużnych można rozdzielić na jeden kierunek kolektywny oraz
+dwuwymiarową podprzestrzeń ruchu względnego. W dalszej analizie nie
+wykorzystujemy jednak bezpośrednio wartości współczynników PC1, PC8 i PC9, ponieważ zależą one nieco od konkretnego zbioru danych na której przeprowadzamy analizę. W tym ujęciu PCA stanowi jedynie punkt wyjścia, wskazując ogólną strukturę nowej bazy, a nie definiując bezpośrednio jej osi.
+
+Kierunek kolektywny powinien traktować trzy elektrony jednakowo, dlatego przyjmujemy kierunek $(1,1,1)$, zgodny z postacią PC1 otrzymaną numerycznie. Wektory opisujące wyłącznie ruch względny muszą być do niego prostopadłe. Dla wektora $\mathbf v=(v_2,v_3,v_4)$ oznacza to warunek
 \begin{equation}
 v_2+v_3+v_4=0.
 \label{eq:relative-plane}
 \end{equation}
+Warunek ten definiuje dwuwymiarową płaszczyznę, więc potrzebujemy w niej dwóch niezależnych osi.
 
-Jako pierwszy kierunek w tej płaszczyźnie przyjmujemy różnicę pomiędzy pędami elektronów 2 i 3, której odpowiada wektor $(1,-1,0)$. Drugi kierunek wyznaczamy z warunku ortogonalności zarówno względem $(1,1,1)$, jak i $(1,-1,0)$. Otrzymujemy wówczas wektor proporcjonalny do $(1,1,-2)$. Po normalizacji trzy kierunki mają postać
+Pierwszą oś wybieramy jako różnicę pędów elektronów 2 i 3, czemu
+odpowiada kierunek $(1,-1,0)$. Taki charakter ma przede wszystkim PC9
+dla klasy zdarzeń \direct{} oraz PC8 dla klasy \delayed{}, dla których
+współczynniki przy $p_{2z}$ i $p_{3z}$ mają przeciwne znaki, a udział
+$p_{4z}$ jest niewielki.
+
+Drugą oś wybieramy w kierunku opisującym wspólną zmianę $p_{2z}$ i
+$p_{3z}$ względem $p_{4z}$. Strukturę tę wskazuje przede wszystkim PC8
+dla klasy \direct{} oraz PC9 dla klasy \delayed{}. Po ustaleniu pierwszej
+osi drugi kierunek jest wyznaczony, z dokładnością do znaku, przez
+warunek ortogonalności zarówno do kierunku kolektywnego $(1,1,1)$,
+jak i do $(1,-1,0)$. Otrzymujemy wówczas kierunek $(1,1,-2)$.
+
+Po normalizacji trzy wektory mają postać
 \begin{equation}
 \mathbf e_0=\frac{1}{\sqrt3}(1,1,1),\qquad
 \mathbf e_1=\frac{1}{\sqrt2}(1,-1,0),\qquad
 \mathbf e_2=\frac{1}{\sqrt6}(1,1,-2).
 \label{eq:helmert-basis}
 \end{equation}
-Wektor $\mathbf e_0$ stanowi stałą, znormalizowaną reprezentację kierunku kolektywnego wskazanego przez PC1. Wektory $\mathbf e_1$ i $\mathbf e_2$ tworzą ortonormalną bazę płaszczyzny ruchu względnego wskazanej przez PC8 i PC9. Wektor $\mathbf e_1$ opisuje różnicę pędów elektronów 2 i 3, natomiast $\mathbf e_2$ porównuje ich wspólny ruch z ruchem elektronu 4.
+Wybór $\mathbf e_1$ ustala orientację osi wewnątrz płaszczyzny względnej w prosty do interpretacji sposób: $\mathbf e_1$ porównuje elektrony 2 i 3, natomiast $\mathbf e_2$ porównuje ich wspólny ruch z ruchem elektronu 4. Inna para ortonormalnych osi mogłaby rozpiąć tę samą płaszczyznę, ale powyższa baza jest stała dla wszystkich analizowanych zbiorów.
 
 Rzutując wektor $(p_2,p_3,p_4)$ na tę bazę, otrzymujemy
 \begin{equation}
