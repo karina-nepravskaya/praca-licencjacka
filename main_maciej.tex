@@ -1,0 +1,392 @@
+\documentclass[12pt,letterpaper,oneside]{report}
+
+% Kompilator w Overleaf: pdfLaTeX
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+
+\usepackage[letterpaper,left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm]{geometry}
+\usepackage{microtype}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{booktabs,array}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=normalfont,justification=justified,singlelinecheck=false}
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0.35em,itemsep=0.15em,leftmargin=1.6em}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}
+  {\chaptername\ \thechapter}
+  {0.85em}
+  {}
+\titlespacing*{\chapter}{0pt}{0pt}{2.2em}
+\titleformat{\section}
+  {\normalfont\large\bfseries}
+  {\thesection}
+  {0.9em}
+  {}
+\titlespacing*{\section}{0pt}{1.7em}{0.65em}
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries}
+  {\thesubsection}
+  {0.8em}
+  {}
+\titlespacing*{\subsection}{0pt}{1.3em}{0.45em}
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+\usepackage{tocloft}
+\renewcommand{\contentsname}{Spis treści}
+\renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{0.5cm}
+\setlength{\cftaftertoctitleskip}{1.0cm}
+\setlength{\cftbeforechapskip}{0.25em}
+\setlength{\cftbeforesecskip}{0pt}
+
+\newcommand{\UniversityName}{Uniwersytet Jagielloński w Krakowie}
+\newcommand{\FacultyName}{Wydział Fizyki, Astronomii i Informatyki Stosowanej}
+\newcommand{\AuthorName}{Karina Nepravskaya}
+\newcommand{\AlbumNumber}{1209730}
+\newcommand{\SupervisorName}{tytuł, imię i nazwisko promotora}
+\newcommand{\DepartmentName}{nazwa zakładu lub instytutu}
+\newcommand{\YearOfSubmission}{2026}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue,
+  pdftitle={Analiza korelacji pędów elektronów w potrójnej jonizacji neonu},
+  pdfauthor={\AuthorName}
+}
+
+\newcommand{\Pe}{\ensuremath{P_e}}
+\newcommand{\Neff}{\ensuremath{N_{\mathrm{eff}}}}
+\newcommand{\xmax}{\ensuremath{x_{\max}}}
+\newcommand{\direct}{\textit{direct}}
+\newcommand{\delayed}{\textit{delayed}}
+
+\pagestyle{plain}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+
+\noindent
+{\bfseries \UniversityName}\par
+\noindent
+\FacultyName
+
+\vspace{2.7cm}
+
+\begin{center}
+\LARGE \AuthorName
+
+\vspace{0.35cm}
+{\large Nr albumu: \AlbumNumber}
+\end{center}
+
+\vspace{2.0cm}
+
+\begin{center}
+{\LARGE\bfseries
+Analiza korelacji pędów elektronów\\[0.2em]
+w potrójnej jonizacji neonu\\[0.2em]
+w silnym polu laserowym\par}
+
+\vspace{1.2cm}
+
+{\normalsize Praca licencjacka}
+\end{center}
+
+\vfill
+
+\begin{flushright}
+\begin{minipage}{0.48\textwidth}
+\raggedleft
+Praca wykonana pod kierunkiem\\
+\SupervisorName\\
+\DepartmentName
+\end{minipage}
+\end{flushright}
+
+\vfill
+
+\begin{center}
+Kraków \YearOfSubmission
+\end{center}
+\end{titlepage}
+
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\tableofcontents
+\clearpage
+
+\chapter{Wstęp}
+
+W badaniach wielokrotnej jonizacji istotna jest nie tylko energia końcowa emitowanych elektronów, lecz również sposób, w jaki elektrony dzielą pomiędzy siebie pęd. W przypadku potrójnej jonizacji, po półklasycznym przygotowaniu warunków
+początkowych i dalszej klasycznej propagacji układu~\cite{Emmanouilidou2023}, otrzymujemy dla
+każdego zdarzenia końcowe pędy wszystkich czterech cząstek (jonu oraz
+trzech elektronów). W wyniku obliczeń klasycznych, znamy dodatkowo ich wszystkie składowe. W dalszej analizie będziemy przyglądać się jedynie elektronom, więc pełny punkt danych zapisujemy jako
+\begin{equation}
+\mathbf p=
+\bigl(p_{2x},p_{2y},p_{2z},p_{3x},p_{3y},p_{3z},p_{4x},p_{4y},p_{4z}\bigr)^{\mathsf T}.
+\label{eq:data-vector}
+\end{equation}
+W analizowanych obliczeniach elektron 4 jest początkowo elektronem tunelującym, natomiast elektrony 2 i 3 są początkowo związane. Oznaczenia te opisują historię trajektorii w modelu klasycznym. Nie należy traktować ich jako fundamentalnego rozróżnienia elektronów, które jako cząstki identyczne są kwantowo nierozróżnialne.
+
+Analizowane dane zostały otrzymane dla czterech natężeń pola laserowego:
+\(1{,}0\), \(1{,}3\), \(1{,}6\) oraz \(1{,}7\,\mathrm{PW/cm^2}\).
+Dla każdego natężenia wszystkie zdarzenia potrójnej jonizacji są
+dzielone na dwie klasy: zdarzenia bezpośrednie i opóźnione, dalej
+oznaczane odpowiednio jako \direct{} i \delayed{}. Dostępny jest również
+zbiór obejmujący wszystkie zdarzenia (\textit{all events}).
+
+Laser jest spolaryzowany liniowo wzdłuż osi $z$. Z tego powodu szczególnie interesujące są końcowe składowe $p_{2z}$, $p_{3z}$ i $p_{4z}$, dalej dla skrócenia oznaczane jako $p_2$, $p_3$ i $p_4$. Chcemy opisać jednocześnie dwa rodzaje informacji. Pierwszy mówi o wspólnym ruchu trzech elektronów, czyli o tym, czy cały podukład elektronowy otrzymał duży pęd wzdłuż pola. Drugi mówi o ruchu względnym, czyli o tym, czy pęd został podzielony między elektrony podobnie, czy też jeden z nich wyraźnie różni się od pozostałych.
+
+Dla dokładnie trzech elektronów wygodnym sposobem przedstawiania podziału wartości bezwzględnych pędu jest reprezentacja simpleksowa. Po normalizacji trzy udziały sumują się do jedności i mogą zostać pokazane na wykresie trójkątnym. Problem pojawia się wtedy, gdy chcemy tę samą ideę zastosować do większej liczby elektronów. Dla czterech elektronów otrzymujemy tetraedr, a dla $N$ elektronów simpleks o wymiarze $N-1$. W praktyce już kolorowanie rozkładu wewnątrz bryły trójwymiarowej jest znacznie mniej czytelne niż mapa na płaszczyźnie. Dlatego w tej pracy szukamy opisu, który zachowuje najważniejsze informacje o korelacjach pędowych, ale nie wymaga jednej coraz bardziej złożonej reprezentacji geometrycznej.
+
+Punktem wyjścia była Analiza Głównych Składowych (z ang. Principal Component Analysis), dalej PCA. Została ona wykonana w pełnej dziewięciowymiarowej przestrzeni z równania~\eqref{eq:data-vector}. PCA pokazała, że wśród dziewięciu kierunków wyróżnia się trójwymiarowy podobszar związany prawie wyłącznie ze składowymi wzdłuż $z$. Jeden z tych kierunków odpowiada wspólnemu ruchowi wszystkich elektronów, a dwa pozostałe opisują ich wzajemne różnice. To spostrzeżenie doprowadziło do wprowadzenia stałej bazy kolektywnej i względnej, niezależnej od konkretnego zbioru danych.
+
+\section{Analiza Głównych Składowych}
+
+Przed wykonaniem analizy każda z dziewięciu kolumn została wystandaryzowana, tak aby miała zerową średnią i jednostkowe odchylenie standardowe. Dzięki temu wynik nie jest zdominowany przez samą różnicę skali poszczególnych składowych pędu. 
+
+Analiza PCA wyznacza nowe, wzajemnie ortogonalne kierunki w przestrzeni dziewięciu składowych pędu elektronów. Pierwszy z tych kierunków, oznaczany jako PC1, odpowiada największej części zmienności danych. Dla zbioru danych odpowiadającego natężeniu pola
+\(I=1{,}7\,\mathrm{PW/cm^2}\) i klasie zdarzeń \direct{}
+kierunek ten wyjaśnia około \(29{,}7\%\) całkowitej wariancji danych. Współczynniki przy składowych przyosiowych $p_{2z}$, $p_{3z}$ i $p_{4z}$ dla tego kierunku są niemal jednakowe,
+\begin{equation}
+\mathrm{PC1}\approx
+0{,}580\,p_{2z}+0{,}580\,p_{3z}+0{,}568\,p_{4z}.
+\label{eq:pc1}
+\end{equation}
+Pozostałe lecz współczynniki PC1 są zaniedbywalnie małe. Oznacza to, że ten kierunek jest zbliżony do wektora $(1,1,1)$ w przestrzeni $(p_2,p_3,p_4)$, a więc opisuje wspólne przesunięcie wszystkich trzech pędów.
+
+Dwa inne kierunki, PC8 i PC9, również są zdominowane przez składowe $z$, ale ich współczynniki mają przeciwne znaki. Dla zderzeń klasy \direct{} otrzymano wartości przedstawione w tabeli~\ref{tab:pca-z}. Dla \delayed{} również pojawia się jeden kierunek bliski $(1,1,1)$. Z kolei dwa pozostałe kierunki o niezerowych współczynnikach jedynie przy osi polaryzacji różnią się od tych otrzymanych podczas \direct{}, chociaż dalej one opisują różnice pomiędzy
+pędami elektronów.
+
+\begin{table}[htbp]
+\centering
+\caption{Współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ dla trzech składowych PCA zdominowanych przez ruch wzdłuż osi polaryzacji. Znak wektora własnego PCA jest umowny.}
+\label{tab:pca-z}
+\begin{tabular}{llrrr}
+\toprule
+klasa zderzenń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
+\midrule
+\direct  & PC1 &  0,580 &  0,577 &  0,572\\
+\direct  & PC8 & -0,283 & -0,517 &  0,808\\
+\direct  & PC9 &  0,763 & -0,631 & -0,136\\
+\delayed & PC1 &  0,563 &  0,535 &  0,619\\
+\delayed & PC8 & -0,610 &  0,764 & -0,105\\
+\delayed & PC9 & -0,532 & -0,330 &  0,767\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+PCA wyznacza więc dla obu klas zdarzeń tę samą dwuwymiarową przestrzeń ruchu względnego, jednak jej osie zależą od analizowanego zbioru danych. Dla innej klasy zdarzeń (\direct{} lub \delayed{}) lub innego natężenia pola współczynniki przy \(p_2\), \(p_3\) i \(p_4\) mogą się zmienić, przez co PC8 i PC9 nie muszą mieć tego samego znaczenia w kolejnych analizach. Z tego powodu zamiast używać bezpośrednio osi PCA, wygodniej jest wprowadzić jedną, stałą bazę, wspólną dla wszystkich porównywanych zbiorów.
+
+\section{Współrzędne kolektywne i względne}
+
+Wybierzmy trzy ortonormalne wektory
+\begin{equation}
+\mathbf e_0=\frac{1}{\sqrt3}(1,1,1),\qquad
+\mathbf e_1=\frac{1}{\sqrt2}(1,-1,0),\qquad
+\mathbf e_2=\frac{1}{\sqrt6}(1,1,-2).
+\label{eq:helmert-basis}
+\end{equation}
+Pierwszy z nich jest dokładnie kierunkiem ruchu wspólnego wskazanego przez PC1. Dwa pozostałe są do niego prostopadłe i rozpinają płaszczyznę wszystkich możliwych różnic pomiędzy trzema pędami. Rzutując wektor $(p_2,p_3,p_4)$ na tę bazę, otrzymujemy
+\begin{equation}
+Q=\frac{p_2+p_3+p_4}{\sqrt3},
+\label{eq:Q}
+\end{equation}
+\begin{equation}
+\xi_1=\frac{p_2-p_3}{\sqrt2},\qquad
+\xi_2=\frac{p_2+p_3-2p_4}{\sqrt6}.
+\label{eq:xi}
+\end{equation}
+Współrzędna $Q$ opisuje kolektywny ruch trzech elektronów. Jest ona proporcjonalna do całkowitego podłużnego pędu elektronów
+\begin{equation}
+P_e=p_2+p_3+p_4=\sqrt3\,Q.
+\label{eq:Pe}
+\end{equation}
+Natomiast $\xi_1$ porównuje pędy elektronów 2 i 3, a $\xi_2$ porównuje średni ruch tej pary z elektronem 4. W ten sposób para $(\xi_1,\xi_2)$ zawiera całą informację o ruchu względnym wzdłuż osi $z$.
+
+Transformacja z równań~\eqref{eq:Q}--\eqref{eq:xi} nie redukuje wymiaru danych. Jest to jedynie obrót układu współrzędnych. Dlatego zachodzi
+\begin{equation}
+p_2^2+p_3^2+p_4^2=Q^2+\xi_1^2+\xi_2^2.
+\label{eq:norm}
+\end{equation}
+W implementacji numerycznej sprawdzono również transformację odwrotną. Maksymalny błąd rekonstrukcji poszczególnych pędów był rzędu $10^{-15}$, czyli na poziomie dokładności obliczeń zmiennoprzecinkowych.
+
+Mając dwie współrzędne względne, możemy dodatkowo zdefiniować ich promień
+\begin{equation}
+K=\sqrt{\xi_1^2+\xi_2^2}.
+\label{eq:K}
+\end{equation}
+Dla $K=0$ wszystkie trzy pędy są równe. Im większe jest $K$, tym większa jest nierównowaga pomiędzy elektronami. Łatwo również sprawdzić, że
+\begin{equation}
+K^2=\sum_{i=2}^{4}(p_i-\bar p)^2,
+\qquad
+\bar p=\frac{p_2+p_3+p_4}{3},
+\label{eq:Kvariance}
+\end{equation}
+więc $K$ nie zależy od tego, w jakiej kolejności oznaczymy elektrony. Para $(P_e,K)$ daje zatem prosty sposób zestawienia ruchu kolektywnego z wielkością ruchu względnego.
+
+\section{Podział wartości bezwzględnych pędu}
+
+Współrzędne $Q$, $\xi_1$ i $\xi_2$ zachowują znaki oraz bezwzględną skalę pędów. Nie odpowiadają jednak bezpośrednio na pytanie, jaka część całkowitej wartości bezwzględnej pędu przypada na każdy elektron. Do tego wróćmy do idei reprezentacji simpleksowej. Dla pojedynczego zdarzenia definiujemy
+\begin{equation}
+A=|p_2|+|p_3|+|p_4|,
+\qquad
+x_i=\frac{|p_i|}{A},
+\label{eq:shares}
+\end{equation}
+więc $x_2+x_3+x_4=1$. Dla trzech elektronów punkt $(x_2,x_3,x_4)$ można narysować w trójkącie. Zamiast jednak opierać całą analizę na położeniu tego punktu, wyciągamy z niego kilka wielkości skalarnych.
+
+Pierwszą jest efektywna liczba elektronów uczestniczących w podziale pędu,
+\begin{equation}
+N_{\mathrm{eff}}=\frac{1}{x_2^2+x_3^2+x_4^2}.
+\label{eq:Neff}
+\end{equation}
+Dla trzech elektronów $1\le N_{\mathrm{eff}}\le3$. Gdy jeden elektron przenosi prawie całą wartość bezwzględną pędu, $N_{\mathrm{eff}}$ zbliża się do 1. Jeżeli wszystkie trzy udziały są równe, $N_{\mathrm{eff}}=3$.
+
+Drugą prostą wielkością jest największy udział
+\begin{equation}
+x_{\max}=\max(x_2,x_3,x_4).
+\label{eq:xmax}
+\end{equation}
+W przypadku idealnie równego podziału $x_{\max}=1/3$, natomiast gdy dominuje jeden elektron, wartość zbliża się do 1. Dodatkowo w obliczeniach stosowana jest znormalizowana entropia udziałów
+\begin{equation}
+H=-\frac{\sum_i x_i\ln x_i}{\ln3},
+\label{eq:entropy}
+\end{equation}
+która zmienia się od wartości bliskiej 0 dla silnie nierównego podziału do 1 dla udziałów równych.
+
+Wartości bezwzględne usuwają informację o kierunku ruchu. Dlatego dla każdego zdarzenia zapisujemy również znaki trójki $(p_2,p_3,p_4)$. Otrzymujemy osiem sektorów, na przykład $+++$, $++-$ lub $---$. Udziały $x_i$ mówią wtedy, jak pęd jest podzielony, a sektor znaków mówi, czy elektrony lecą w tę samą, czy w przeciwną stronę wzdłuż osi polaryzacji.
+
+Strategia analizy po wprowadzeniu tych wielkości jest zatem następująca:
+\begin{itemize}
+    \item najpierw wykorzystujemy PCA do rozpoznania struktury przestrzeni pędów;
+    \item następnie przechodzimy do stałej bazy $(Q,\xi_1,\xi_2)$;
+    \item za pomocą $P_e$ opisujemy ruch kolektywny, a za pomocą $K$ wielkość ruchu względnego;
+    \item z udziałów $x_i$ obliczamy $N_{\mathrm{eff}}$, $x_{\max}$ i $H$;
+    \item znaki pędów przechowujemy oddzielnie w sektorach znakowych;
+    \item na końcu porównujemy te same wielkości dla kanałów \direct{} i \delayed{} przy tym samym natężeniu pola.
+\end{itemize}
+
+\chapter{Analiza danych}
+
+Dalsze wyniki dotyczą danych dla natężenia pola $I=1{,}7\,\mathrm{PW/cm^2}$. W aktualnie analizowanym zbiorze znajduje się 1695 zdarzeń sklasyfikowanych jako \direct{} i 1601 zdarzeń \delayed{}. Wszystkie wielkości omawiane niżej zostały obliczone z końcowych składowych $p_{2z}$, $p_{3z}$ i $p_{4z}$ w tym samym układzie współrzędnych.
+
+\section{Ruch kolektywny i względny}
+
+Zacznijmy od porównania $P_e$ i $K$. Średnia wartość $P_e$ jest niewielka w obu kanałach, co jest zgodne z występowaniem zdarzeń o obu zwrotach pędu wzdłuż osi polaryzacji. Bardziej użyteczna jest szerokość rozkładu. Odchylenie standardowe $P_e$ wynosi około $7{,}54$ dla kanału \direct{} oraz $5{,}38$ dla \delayed{}. Jednocześnie średnie $K$ wynosi odpowiednio $1{,}40$ i $2{,}38$.
+
+\begin{table}[htbp]
+\centering
+\caption{Podstawowe wielkości opisujące ruch kolektywny i podział wartości bezwzględnych pędu dla $I=1{,}7\,\mathrm{PW/cm^2}$.}
+\label{tab:summary}
+\begin{tabular}{lrrrrrr}
+\toprule
+kanał & $n$ & $\sigma(P_e)$ & $\langle K\rangle$ & $\langle N_{\mathrm{eff}}\rangle$ & $\langle x_{\max}\rangle$ & $\langle H\rangle$\\
+\midrule
+\direct  & 1695 & 7,543 & 1,398 & 2,628 & 0,473 & 0,919\\
+\delayed & 1601 & 5,384 & 2,383 & 2,374 & 0,533 & 0,846\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Mniejsze $K$ dla \direct{} oznacza, że trzy pędy częściej leżą blisko kierunku kolektywnego $(1,1,1)$. Jednocześnie większa szerokość rozkładu $P_e$ pokazuje, że zgodny ruch wszystkich elektronów może osiągać większe wartości bez konieczności dużego rozrzutu pomiędzy nimi. W kanale \delayed{} sytuacja jest odwrotna: całkowity pęd ma węższy rozkład, ale różnice wewnątrz trójki są większe.
+
+\section{Równomierność podziału pędu}
+
+Ten sam wniosek można sprawdzić niezależnie za pomocą udziałów $x_i$. Dla \direct{} otrzymujemy $\langle N_{\mathrm{eff}}\rangle=2{,}628$, podczas gdy dla \delayed{} średnia spada do $2{,}374$. Jednocześnie średni największy udział rośnie z $0{,}473$ do $0{,}533$, a średnia entropia maleje z $0{,}919$ do $0{,}846$. Wszystkie trzy miary zmieniają się więc w tym samym kierunku. W kanale \direct{} wartość bezwzględna pędu jest przeciętnie dzielona bardziej równomiernie pomiędzy trzy elektrony, natomiast w \delayed{} częściej pojawia się elektron o wyraźnie większym udziale.
+
+Warto zwrócić uwagę, że $K$ i $N_{\mathrm{eff}}$ nie są tym samym. Wielkość $K$ ma wymiar pędu i mówi o bezwzględnej skali różnic. $N_{\mathrm{eff}}$ zależy od udziałów znormalizowanych przez $A$, a więc opisuje kształt podziału niezależnie od jego ogólnej skali. Zgodna zmiana obu wielkości jest dlatego mocniejszą informacją niż obserwacja tylko jednego histogramu.
+
+\section{Znaki pędów i korelacje parami}
+
+Dopełnieniem analizy wartości bezwzględnych są sektory znakowe. W obu kanałach najczęstszy jest sektor $+++$, jednak jego udział wyraźnie się różni. Dla \direct{} wynosi około $47{,}4\%$, a dla \delayed{} około $23{,}0\%$. Oznacza to, że w kanale bezpośrednim znacznie częściej wszystkie trzy elektrony mają końcowy pęd skierowany w tę samą stronę osi $z$. Sama reprezentacja oparta na $|p_i|$ tej informacji nie zawiera.
+
+Podobną różnicę widać we współczynnikach korelacji Pearsona. Zebrano je w tabeli~\ref{tab:corr}. W kanale \direct{} wszystkie trzy korelacje są silnie dodatnie. W \delayed{} korelacja pomiędzy elektronami 2 i 3 jest znacznie słabsza, a pozostałe dwie mają wartości umiarkowane.
+
+\begin{table}[htbp]
+\centering
+\caption{Korelacje Pearsona pomiędzy końcowymi podłużnymi pędami elektronów dla $I=1{,}7\,\mathrm{PW/cm^2}$.}
+\label{tab:corr}
+\begin{tabular}{lrrr}
+\toprule
+kanał & $r(p_2,p_3)$ & $r(p_2,p_4)$ & $r(p_3,p_4)$\\
+\midrule
+\direct  & 0,868 & 0,813 & 0,814\\
+\delayed & 0,214 & 0,456 & 0,437\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Współczynnik Pearsona jest tutaj tylko wielkością pomocniczą. Nie opisuje pełnej trójelektronowej struktury rozkładu i może pominąć zależności nieliniowe. Jest jednak użyteczny jako prosta kontrola wniosku otrzymanego z $K$, udziałów simpleksowych i sektorów znaków.
+
+\chapter{Parę komentarzy o wynikach}
+
+\section{Rola PCA}
+
+PCA była potrzebna przede wszystkim po to, aby nie wybierać nowych współrzędnych całkowicie arbitralnie. Wynik analizy dziewięciowymiarowej pokazał, że jeden z dominujących kierunków jest prawie czystą sumą trzech składowych $z$, natomiast dwa słabsze kierunki domykają płaszczyznę różnic podłużnych. Z tego punktu widzenia baza Jacobiego--Helmerta nie jest przypadkowym przekształceniem. Jest prostą, ustaloną wersją struktury, którą PCA wskazała numerycznie.
+
+Jednocześnie samo PCA nie nadaje się najlepiej do bezpośredniego porównywania kilku zbiorów. Jeżeli dwie względne wartości własne są bliskie, odpowiadające im osie mogą zmienić orientację w swojej płaszczyźnie. Dlatego dla dwóch osobno wykonanych PCA liczby opisujące PC8 i PC9 nie muszą odnosić się do dokładnie tych samych kierunków. Po przejściu do równań~\eqref{eq:Q}--\eqref{eq:xi} ten problem znika, ponieważ definicje współrzędnych są takie same dla każdego kanału i natężenia.
+
+\section{Kanał direct}
+
+Dla kanału \direct{} obserwujemy jednocześnie małe $K$, duże $N_{\mathrm{eff}}$, małe $x_{\max}$ oraz silne dodatnie korelacje wszystkich par pędów. Dodatkowo prawie połowa zdarzeń znajduje się w sektorze $+++$. Taki zestaw cech jest zgodny z obrazem bardziej kolektywnej emisji: trzy elektrony częściej otrzymują podobne pędy i częściej kończą ruch z tym samym znakiem składowej podłużnej.
+
+Nie oznacza to, że każdy przypadek \direct{} musi leżeć blisko punktu idealnego podziału. W danych pozostaje wyraźny rozrzut, a sektory mieszane nie znikają. Wynik jest statystyczną cechą całego kanału, a nie regułą dla pojedynczej trajektorii.
+
+\section{Kanał delayed}
+
+W kanale \delayed{} średnia wartość $K$ jest większa prawie o jednostkę niż w \direct{}, $N_{\mathrm{eff}}$ jest mniejsze, a $x_{\max}$ większe. Udział sektora $+++$ spada ponad dwukrotnie. Wskazuje to na większe zróżnicowanie pędów wewnątrz jednego zdarzenia. Jest to zgodne z sytuacją, w której emisja elektronów jest bardziej rozdzielona w czasie i poszczególne elektrony mogą zostać przyspieszone przez pole w różnych fazach.
+
+Trzeba jednak zachować ostrożność w ostatnim kroku interpretacji. Z końcowych pędów nie da się samodzielnie odtworzyć całej historii czasowej trajektorii. Dlatego rozkłady pędów nie są osobnym dowodem na mechanizm \direct{} lub \delayed{}. Pokazują natomiast, że klasyfikacja trajektorii według czasów jonizacji ma wyraźne i spójne odzwierciedlenie w końcowych korelacjach pędowych.
+
+\chapter{Wnioski i podsumowanie}
+
+Punktem wyjścia pracy była próba znalezienia opisu korelacji pędów, który zachowuje intuicję reprezentacji simpleksowej dla trzech elektronów, ale nie jest od niej geometrycznie uzależniony. PCA wykonana w dziewięciowymiarowej przestrzeni końcowych pędów wskazała jeden kierunek kolektywny związany z sumą składowych $z$ oraz dwa niezależne kierunki względne. Na tej podstawie wprowadzono stałą ortonormalną bazę Jacobiego--Helmerta.
+
+Nowe współrzędne rozdzielają całkowity ruch podłużny od wewnętrznego rozrzutu pędów. Wielkość $P_e$ opisuje ruch kolektywny, a $K$ wielkość nierównowagi. Informację o względnym podziale wartości bezwzględnych uzupełniają $N_{\mathrm{eff}}$, $x_{\max}$ i entropia, natomiast sektory znaków zachowują informację o zwrocie ruchu. W ten sposób nie próbujemy umieścić całej informacji na jednym wykresie, tylko rozdzielamy ją na kilka wielkości odpowiadających na różne pytania.
+
+Dla $I=1{,}7\,\mathrm{PW/cm^2}$ kanały \direct{} i \delayed{} różnią się konsekwentnie we wszystkich głównych obserwablach. Kanał \direct{} ma mniejsze $K$, większe $N_{\mathrm{eff}}$, mniejsze $x_{\max}$ i silniejsze dodatnie korelacje pomiędzy pędami elektronów. Kanał \delayed{} charakteryzuje się większą nierównowagą i częstszymi konfiguracjami o różnych znakach pędów. Wyniki są więc zgodne z bardziej kolektywnym charakterem kanału \direct{} i bardziej rozdzieloną dynamiką kanału \delayed{}.
+
+Zaletą przyjętego podejścia jest to, że podstawowe idee można przenieść na większą liczbę elektronów. Dla $N$ cząstek nadal można wydzielić jeden znormalizowany kierunek kolektywny oraz $N-1$ ortogonalnych kierunków względnych, a równomierność podziału opisywać wielkościami symetrycznymi na permutacje. Wraz ze wzrostem liczby elektronów nie znika problem wielowymiarowości, ale nie ma już potrzeby przedstawiania całej informacji przez jedną kolorowaną bryłę. To jest główna praktyczna korzyść z zastosowanego opisu.
+
+\appendix
+\chapter{Transformacja odwrotna}
+
+Z ortonormalności bazy~\eqref{eq:helmert-basis} wynika bezpośrednio transformacja odwrotna
+\begin{equation}
+p_2=\frac{Q}{\sqrt3}+\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6},
+\end{equation}
+\begin{equation}
+p_3=\frac{Q}{\sqrt3}-\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6},
+\end{equation}
+\begin{equation}
+p_4=\frac{Q}{\sqrt3}-\frac{2\xi_2}{\sqrt6}.
+\end{equation}
+Równania te były użyte jako kontrola implementacji. Dla analizowanego zbioru maksymalne błędy rekonstrukcji $p_2$, $p_3$ i $p_4$ wynosiły odpowiednio około $1{,}8\cdot10^{-15}$, $1{,}6\cdot10^{-15}$ i $1{,}8\cdot10^{-15}$.
+
+\bibliographystyle{unsrt}
+\bibliography{bibliography}
+
+\end{document}
