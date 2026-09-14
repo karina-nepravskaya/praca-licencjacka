@@ -321,13 +321,90 @@ wszystkie naraz w geometrii wielowymiarowej bryły.
 
 \section{Przygotowanie danych do PCA}
 
-W notebooku 05\_PCA.ipynb PCA została przeprowadzona w przestrzeni
-dziewięciu składowych pędu elektronów. Dane zostały zestawione w
-macierzy o kolumnach \ensuremath{p_{2x}}, \ensuremath{p_{2y}}, \ensuremath{p_{2z}}, \ensuremath{p_{3x}}, \ensuremath{p_{3y}}, \ensuremath{p_{3z}}, \ensuremath{p_{4x}}, \ensuremath{p_{4y}} i \ensuremath{p_{4z}}, a
-następnie wystandaryzowane za pomocą transformacji StandardScaler.
-Standaryzacja usuwa różnice skali pomiędzy kolumnami i powoduje, że PCA
-jest wykonywana na strukturze korelacyjnej, a nie wyłącznie na
-bezwzględnych wariancjach poszczególnych składowych.
+W notebooku 05\_PCA\_clean.ipynb PCA została przeprowadzona w przestrzeni
+dziewięciu składowych pędu elektronów. Dla zbioru zawierającego $N$
+zdarzeń dane zapisujemy w postaci macierzy
+\begin{equation}
+\mathbf X=
+\begin{pmatrix}
+(\mathbf x^{(1)})^{\mathsf T}\\
+(\mathbf x^{(2)})^{\mathsf T}\\
+\vdots\\
+(\mathbf x^{(N)})^{\mathsf T}
+\end{pmatrix}
+\in \mathbb{R}^{N\times 9},
+\label{eq:pca-data-matrix}
+\end{equation}
+gdzie $\mathbf x^{(i)}$ jest dziewięciowymiarowym wektorem składowych
+pędu elektronów dla $i$-tego zdarzenia.
+
+Przed wykonaniem PCA każda kolumna została wystandaryzowana. Dla
+$j$-tej zmiennej stosujemy transformację
+\begin{equation}
+z_{ij}=\frac{x_{ij}-\overline{x}_j}{s_j},
+\label{eq:pca-standardization}
+\end{equation}
+gdzie
+\begin{equation}
+\overline{x}_j=\frac{1}{N}\sum_{i=1}^{N}x_{ij},
+\qquad
+s_j^2=\frac{1}{N}\sum_{i=1}^{N}
+\left(x_{ij}-\overline{x}_j\right)^2.
+\label{eq:pca-mean-std}
+\end{equation}
+W wyniku otrzymujemy macierz $\mathbf Z$ o kolumnach mających średnią
+równą zero i jednostkową skalę. W implementacji transformację tę
+wykonuje klasa \texttt{StandardScaler}. Dzięki standaryzacji wynik PCA
+nie jest zdominowany wyłącznie przez zmienne o największej bezwzględnej
+wariancji.
+
+PCA opiera się na diagonalizacji macierzy kowariancji danych
+wystandaryzowanych
+\begin{equation}
+\mathbf C=\frac{1}{N-1}\mathbf Z^{\mathsf T}\mathbf Z.
+\label{eq:pca-covariance}
+\end{equation}
+Ponieważ wejściowe zmienne zostały wystandaryzowane, macierz
+$\mathbf C$ opisuje w tym przypadku przede wszystkim ich strukturę
+korelacyjną. Kierunki głównych składowych są wektorami własnymi tej
+macierzy i spełniają równanie
+\begin{equation}
+\mathbf C\mathbf v_k=\lambda_k\mathbf v_k,
+\qquad
+\lambda_1\geq\lambda_2\geq\ldots\geq\lambda_9,
+\label{eq:pca-eigenproblem}
+\end{equation}
+przy czym wektory $\mathbf v_k$ są ortonormalne,
+$\mathbf v_k^{\mathsf T}\mathbf v_l=\delta_{kl}$. Współczynniki
+wektora $\mathbf v_k$ określają udział poszczególnych zmiennych w osi
+$\mathrm{PC}k$. Wartości tych współczynników odnoszą się do przestrzeni
+zmiennych wystandaryzowanych.
+
+Dla pojedynczego zdarzenia współrzędna wzdłuż $k$-tej głównej składowej
+jest rzutem wystandaryzowanego wektora na odpowiedni wektor własny,
+\begin{equation}
+t_{ik}=(\mathbf z^{(i)})^{\mathsf T}\mathbf v_k
+      =\sum_{j=1}^{9}z_{ij}v_{jk}.
+\label{eq:pca-score}
+\end{equation}
+Wartość własna $\lambda_k$ jest wariancją danych wzdłuż tej osi.
+Udział wariancji wyjaśnianej przez daną składową definiujemy jako
+\begin{equation}
+r_k=\frac{\lambda_k}{\sum_{j=1}^{9}\lambda_j},
+\label{eq:pca-explained-variance}
+\end{equation}
+a skumulowany udział pierwszych $m$ składowych jako
+\begin{equation}
+R_m=\sum_{k=1}^{m}r_k.
+\label{eq:pca-cumulative-variance}
+\end{equation}
+
+Wynikiem PCA są zatem dwa rodzaje informacji wykorzystywane w dalszej
+analizie: orientacja osi, określona przez współczynniki wektorów
+$\mathbf v_k$, oraz odpowiadający każdej osi udział wyjaśnianej
+wariancji $r_k$. W analizowanym problemie szczególne znaczenie mają te
+osie, których współczynniki są skupione na składowych podłużnych
+$p_{2z}$, $p_{3z}$ i $p_{4z}$.
 
 PCA zwraca dziewięć ortogonalnych kierunków. W analizowanym zbiorze
 direct pierwsza składowa wyjaśniała około 30,0\% całkowitej wariancji.
@@ -1058,7 +1135,7 @@ oraz możliwość porównywania niezależnych zbiorów w identycznym układzie
 współrzędnych.
 
 Współrzędne Q, \ensuremath{\xi_1} i \ensuremath{\xi_2} rozdzielają sumę pędów od ich wzajemnych różnic.
-Moduł K stanowi prostą, permutacyjnie niezmienniczą miarę nierównowagi.
+Moduł K stanowi prostą, permutacyjnie niezmienniczną miarę nierównowagi.
 Obserwable simpleksowe \Neff{}, \xmax{} i H opisują równomierność
 znormalizowanego podziału, sektory znaków zachowują kierunek emisji, a
 transformacja ilr umożliwia czytelną dwuwymiarową prezentację udziałów
