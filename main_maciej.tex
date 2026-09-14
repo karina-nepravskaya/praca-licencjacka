@@ -165,7 +165,7 @@ Punktem wyjścia była Analiza Głównych Składowych (z ang. Principal Componen
 
 \section{Analiza Głównych Składowych}
 
-Przed wykonaniem analizy każda z dziewięciu kolumn została wystandaryzowana, tak aby miała zerową średnią i jednostkowe odchylenie standardowe. Dzięki temu wynik nie jest zdominowany przez samą różnicę skali poszczególnych składowych pędu. 
+Przed wykonaniem analizy każda z dziewięciu kolumn została wystandaryzowana, tak aby miała zerową średnią i jednostkowe odchylenie standardowe. Dzięki temu wynik nie jest zdominowany przez samą różnicę skali poszczególnych składowych pędu.
 
 Analiza PCA wyznacza nowe, wzajemnie ortogonalne kierunki w przestrzeni dziewięciu składowych pędu elektronów. Pierwszy z tych kierunków, oznaczany jako PC1, odpowiada największej części zmienności danych. Dla zbioru danych odpowiadającego natężeniu pola
 \(I=1{,}7\,\mathrm{PW/cm^2}\) i klasie zdarzeń \direct{}
@@ -175,41 +175,30 @@ kierunek ten wyjaśnia około \(29{,}7\%\) całkowitej wariancji danych. Współ
 0{,}580\,p_{2z}+0{,}580\,p_{3z}+0{,}568\,p_{4z}.
 \label{eq:pc1}
 \end{equation}
-Pozostałe lecz współczynniki PC1 są zaniedbywalnie małe. Oznacza to, że ten kierunek jest zbliżony do wektora $(1,1,1)$ w przestrzeni $(p_2,p_3,p_4)$, a więc opisuje wspólne przesunięcie wszystkich trzech pędów.
+Pozostałe współczynniki PC1 są zaniedbywalnie małe. Oznacza to, że ten kierunek jest zbliżony do wektora $(1,1,1)$ w przestrzeni $(p_2,p_3,p_4)$, a więc opisuje wspólne przesunięcie wszystkich trzech pędów.
 
-Dwa inne kierunki, PC8 i PC9, również są zdominowane przez składowe $z$, ale ich współczynniki mają przeciwne znaki. Dla klasy zdarzeń \direct{} otrzymano wartości przedstawione w tabeli~\ref{tab:pca-z}. Dla \delayed{} również pojawia się jeden kierunek bliski $(1,1,1)$. Z kolei dwa pozostałe kierunki o niezerowych współczynnikach jedynie przy osi polaryzacji różnią się od tych otrzymanych podczas \direct{}, chociaż dalej one opisują różnice pomiędzy
-pędami elektronów.
+Spośród pozostałych składowych PCA również PC8 i PC9 są zdominowane przez składowe wzdłuż osi $z$. W przeciwieństwie do PC1 ich współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ mają różne znaki, dlatego kierunki te opisują przede wszystkim zmiany względne pomiędzy pędami elektronów. Analogiczną strukturę otrzymuje się dla klasy zdarzeń \delayed{}.
 
-\begin{table}[htbp]
-\centering
-\caption{Współczynniki przy $p_{2z}$, $p_{3z}$ i $p_{4z}$ dla trzech składowych PCA zdominowanych przez ruch wzdłuż osi polaryzacji. Znak wektora własnego PCA jest umowny.}
-\label{tab:pca-z}
-\begin{tabular}{llrrr}
-\toprule
-klasa zdarzeń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
-\midrule
-\direct  & PC1 &  0,580 &  0,577 &  0,572\\
-\direct  & PC8 & -0,283 & -0,517 &  0,808\\
-\direct  & PC9 &  0,763 & -0,631 & -0,136\\
-\delayed & PC1 &  0,563 &  0,535 &  0,619\\
-\delayed & PC8 & -0,610 &  0,764 & -0,105\\
-\delayed & PC9 & -0,532 & -0,330 &  0,767\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-PCA wyznacza więc dla obu klas zdarzeń tę samą dwuwymiarową przestrzeń ruchu względnego, jednak jej osie zależą od analizowanego zbioru danych. Dla innej klasy zdarzeń (\direct{} lub \delayed{}) lub innego natężenia pola współczynniki przy \(p_2\), \(p_3\) i \(p_4\) mogą się zmienić, przez co PC8 i PC9 nie muszą mieć tego samego znaczenia w kolejnych analizach. Z tego powodu zamiast używać bezpośrednio osi PCA, wygodniej jest wprowadzić jedną, stałą bazę, wspólną dla wszystkich porównywanych zbiorów.
+Orientacja osi PC8 i PC9 zależy od analizowanego zbioru danych. Przy zmianie klasy zdarzeń lub natężenia pola mogą one zmienić orientację w obrębie podprzestrzeni ruchu względnego. Z tego powodu w dalszej analizie nie wykorzystujemy bezpośrednio PC8 i PC9 jako współrzędnych, lecz definiujemy stałą bazę tej podprzestrzeni.
 
 \section{Współrzędne kolektywne i względne}
 
-Wybierzmy trzy ortonormalne wektory
+W przestrzeni podłużnych pędów $(p_2,p_3,p_4)$ kierunek kolektywny wskazany przez PC1 odpowiada w przybliżeniu wektorowi $(1,1,1)$. Zgodnie z interpretacją PC8 i PC9 jako dwóch niezależnych kierunków względnych pozostałe dwie osie wybieramy w płaszczyźnie prostopadłej do tego kierunku. Dla wektora $\mathbf v=(v_2,v_3,v_4)$ płaszczyzna ta jest określona warunkiem
+\begin{equation}
+v_2+v_3+v_4=0.
+\label{eq:relative-plane}
+\end{equation}
+
+Jako pierwszy kierunek w tej płaszczyźnie przyjmujemy różnicę pomiędzy pędami elektronów 2 i 3, której odpowiada wektor $(1,-1,0)$. Drugi kierunek wyznaczamy z warunku ortogonalności zarówno względem $(1,1,1)$, jak i $(1,-1,0)$. Otrzymujemy wówczas wektor proporcjonalny do $(1,1,-2)$. Po normalizacji trzy kierunki mają postać
 \begin{equation}
 \mathbf e_0=\frac{1}{\sqrt3}(1,1,1),\qquad
 \mathbf e_1=\frac{1}{\sqrt2}(1,-1,0),\qquad
 \mathbf e_2=\frac{1}{\sqrt6}(1,1,-2).
 \label{eq:helmert-basis}
 \end{equation}
-Pierwszy z nich jest dokładnie kierunkiem ruchu wspólnego wskazanego przez PC1. Dwa pozostałe są do niego prostopadłe i rozpinają płaszczyznę wszystkich możliwych różnic pomiędzy trzema pędami. Rzutując wektor $(p_2,p_3,p_4)$ na tę bazę, otrzymujemy
+Wektor $\mathbf e_0$ stanowi stałą, znormalizowaną reprezentację kierunku kolektywnego wskazanego przez PC1. Wektory $\mathbf e_1$ i $\mathbf e_2$ tworzą ortonormalną bazę płaszczyzny ruchu względnego wskazanej przez PC8 i PC9. Wektor $\mathbf e_1$ opisuje różnicę pędów elektronów 2 i 3, natomiast $\mathbf e_2$ porównuje ich wspólny ruch z ruchem elektronu 4.
+
+Rzutując wektor $(p_2,p_3,p_4)$ na tę bazę, otrzymujemy
 \begin{equation}
 Q=\frac{p_2+p_3+p_4}{\sqrt3},
 \label{eq:Q}
@@ -224,7 +213,7 @@ Współrzędna $Q$ opisuje kolektywny ruch trzech elektronów. Jest ona proporcj
 P_e=p_2+p_3+p_4=\sqrt3\,Q.
 \label{eq:Pe}
 \end{equation}
-Natomiast $\xi_1$ porównuje pędy elektronów 2 i 3, a $\xi_2$ porównuje średni ruch tej pary z elektronem 4. W ten sposób para $(\xi_1,\xi_2)$ zawiera całą informację o ruchu względnym wzdłuż osi $z$.
+Natomiast $\xi_1$ opisuje różnicę pędów elektronów 2 i 3, a $\xi_2$ porównuje średni ruch tej pary z elektronem 4. W ten sposób para $(\xi_1,\xi_2)$ zawiera całą informację o ruchu względnym wzdłuż osi $z$.
 
 Transformacja z równań~\eqref{eq:Q}--\eqref{eq:xi} nie redukuje wymiaru danych. Jest to jedynie obrót układu współrzędnych. Dlatego zachodzi
 \begin{equation}
