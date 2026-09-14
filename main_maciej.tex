@@ -177,7 +177,7 @@ kierunek ten wyjaśnia około \(29{,}7\%\) całkowitej wariancji danych. Współ
 \end{equation}
 Pozostałe lecz współczynniki PC1 są zaniedbywalnie małe. Oznacza to, że ten kierunek jest zbliżony do wektora $(1,1,1)$ w przestrzeni $(p_2,p_3,p_4)$, a więc opisuje wspólne przesunięcie wszystkich trzech pędów.
 
-Dwa inne kierunki, PC8 i PC9, również są zdominowane przez składowe $z$, ale ich współczynniki mają przeciwne znaki. Dla zderzeń klasy \direct{} otrzymano wartości przedstawione w tabeli~\ref{tab:pca-z}. Dla \delayed{} również pojawia się jeden kierunek bliski $(1,1,1)$. Z kolei dwa pozostałe kierunki o niezerowych współczynnikach jedynie przy osi polaryzacji różnią się od tych otrzymanych podczas \direct{}, chociaż dalej one opisują różnice pomiędzy
+Dwa inne kierunki, PC8 i PC9, również są zdominowane przez składowe $z$, ale ich współczynniki mają przeciwne znaki. Dla klasy zdarzeń \direct{} otrzymano wartości przedstawione w tabeli~\ref{tab:pca-z}. Dla \delayed{} również pojawia się jeden kierunek bliski $(1,1,1)$. Z kolei dwa pozostałe kierunki o niezerowych współczynnikach jedynie przy osi polaryzacji różnią się od tych otrzymanych podczas \direct{}, chociaż dalej one opisują różnice pomiędzy
 pędami elektronów.
 
 \begin{table}[htbp]
@@ -186,7 +186,7 @@ pędami elektronów.
 \label{tab:pca-z}
 \begin{tabular}{llrrr}
 \toprule
-klasa zderzenń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
+klasa zdarzeń & składowa & $p_{2z}$ & $p_{3z}$ & $p_{4z}$\\
 \midrule
 \direct  & PC1 &  0,580 &  0,577 &  0,572\\
 \direct  & PC8 & -0,283 & -0,517 &  0,808\\
@@ -286,7 +286,7 @@ Strategia analizy po wprowadzeniu tych wielkości jest zatem następująca:
     \item za pomocą $P_e$ opisujemy ruch kolektywny, a za pomocą $K$ wielkość ruchu względnego;
     \item z udziałów $x_i$ obliczamy $N_{\mathrm{eff}}$, $x_{\max}$ i $H$;
     \item znaki pędów przechowujemy oddzielnie w sektorach znakowych;
-    \item na końcu porównujemy te same wielkości dla kanałów \direct{} i \delayed{} przy tym samym natężeniu pola.
+    \item na końcu porównujemy te same wielkości dla klas zdarzeń \direct{} i \delayed{} przy tym samym natężeniu pola.
 \end{itemize}
 
 \chapter{Analiza danych}
@@ -295,7 +295,7 @@ Dalsze wyniki dotyczą danych dla natężenia pola $I=1{,}7\,\mathrm{PW/cm^2}$. 
 
 \section{Ruch kolektywny i względny}
 
-Zacznijmy od porównania $P_e$ i $K$. Średnia wartość $P_e$ jest niewielka w obu kanałach, co jest zgodne z występowaniem zdarzeń o obu zwrotach pędu wzdłuż osi polaryzacji. Bardziej użyteczna jest szerokość rozkładu. Odchylenie standardowe $P_e$ wynosi około $7{,}54$ dla kanału \direct{} oraz $5{,}38$ dla \delayed{}. Jednocześnie średnie $K$ wynosi odpowiednio $1{,}40$ i $2{,}38$.
+Zacznijmy od porównania $P_e$ i $K$. Średnia wartość $P_e$ jest niewielka w obu klasach zdarzeń, co jest zgodne z występowaniem zdarzeń o obu zwrotach pędu wzdłuż osi polaryzacji. Bardziej użyteczna jest szerokość rozkładu. Odchylenie standardowe $P_e$ wynosi około $7{,}54$ dla klasy zdarzeń \direct{} oraz $5{,}38$ dla \delayed{}. Jednocześnie średnie $K$ wynosi odpowiednio $1{,}40$ i $2{,}38$.
 
 \begin{table}[htbp]
 \centering
@@ -303,7 +303,7 @@ Zacznijmy od porównania $P_e$ i $K$. Średnia wartość $P_e$ jest niewielka w 
 \label{tab:summary}
 \begin{tabular}{lrrrrrr}
 \toprule
-kanał & $n$ & $\sigma(P_e)$ & $\langle K\rangle$ & $\langle N_{\mathrm{eff}}\rangle$ & $\langle x_{\max}\rangle$ & $\langle H\rangle$\\
+klasa zdarzeń & $n$ & $\sigma(P_e)$ & $\langle K\rangle$ & $\langle N_{\mathrm{eff}}\rangle$ & $\langle x_{\max}\rangle$ & $\langle H\rangle$\\
 \midrule
 \direct  & 1695 & 7,543 & 1,398 & 2,628 & 0,473 & 0,919\\
 \delayed & 1601 & 5,384 & 2,383 & 2,374 & 0,533 & 0,846\\
@@ -311,19 +311,19 @@ kanał & $n$ & $\sigma(P_e)$ & $\langle K\rangle$ & $\langle N_{\mathrm{eff}}\ra
 \end{tabular}
 \end{table}
 
-Mniejsze $K$ dla \direct{} oznacza, że trzy pędy częściej leżą blisko kierunku kolektywnego $(1,1,1)$. Jednocześnie większa szerokość rozkładu $P_e$ pokazuje, że zgodny ruch wszystkich elektronów może osiągać większe wartości bez konieczności dużego rozrzutu pomiędzy nimi. W kanale \delayed{} sytuacja jest odwrotna: całkowity pęd ma węższy rozkład, ale różnice wewnątrz trójki są większe.
+Mniejsze $K$ dla \direct{} oznacza, że trzy pędy częściej leżą blisko kierunku kolektywnego $(1,1,1)$. Jednocześnie większa szerokość rozkładu $P_e$ pokazuje, że zgodny ruch wszystkich elektronów może osiągać większe wartości bez konieczności dużego rozrzutu pomiędzy nimi. W klasie zdarzeń \delayed{} sytuacja jest odwrotna: całkowity pęd ma węższy rozkład, ale różnice wewnątrz trójki są większe.
 
 \section{Równomierność podziału pędu}
 
-Ten sam wniosek można sprawdzić niezależnie za pomocą udziałów $x_i$. Dla \direct{} otrzymujemy $\langle N_{\mathrm{eff}}\rangle=2{,}628$, podczas gdy dla \delayed{} średnia spada do $2{,}374$. Jednocześnie średni największy udział rośnie z $0{,}473$ do $0{,}533$, a średnia entropia maleje z $0{,}919$ do $0{,}846$. Wszystkie trzy miary zmieniają się więc w tym samym kierunku. W kanale \direct{} wartość bezwzględna pędu jest przeciętnie dzielona bardziej równomiernie pomiędzy trzy elektrony, natomiast w \delayed{} częściej pojawia się elektron o wyraźnie większym udziale.
+Ten sam wniosek można sprawdzić niezależnie za pomocą udziałów $x_i$. Dla \direct{} otrzymujemy $\langle N_{\mathrm{eff}}\rangle=2{,}628$, podczas gdy dla \delayed{} średnia spada do $2{,}374$. Jednocześnie średni największy udział rośnie z $0{,}473$ do $0{,}533$, a średnia entropia maleje z $0{,}919$ do $0{,}846$. Wszystkie trzy miary zmieniają się więc w tym samym kierunku. W klasie zdarzeń \direct{} wartość bezwzględna pędu jest przeciętnie dzielona bardziej równomiernie pomiędzy trzy elektrony, natomiast w \delayed{} częściej pojawia się elektron o wyraźnie większym udziale.
 
 Warto zwrócić uwagę, że $K$ i $N_{\mathrm{eff}}$ nie są tym samym. Wielkość $K$ ma wymiar pędu i mówi o bezwzględnej skali różnic. $N_{\mathrm{eff}}$ zależy od udziałów znormalizowanych przez $A$, a więc opisuje kształt podziału niezależnie od jego ogólnej skali. Zgodna zmiana obu wielkości jest dlatego mocniejszą informacją niż obserwacja tylko jednego histogramu.
 
 \section{Znaki pędów i korelacje parami}
 
-Dopełnieniem analizy wartości bezwzględnych są sektory znakowe. W obu kanałach najczęstszy jest sektor $+++$, jednak jego udział wyraźnie się różni. Dla \direct{} wynosi około $47{,}4\%$, a dla \delayed{} około $23{,}0\%$. Oznacza to, że w kanale bezpośrednim znacznie częściej wszystkie trzy elektrony mają końcowy pęd skierowany w tę samą stronę osi $z$. Sama reprezentacja oparta na $|p_i|$ tej informacji nie zawiera.
+Dopełnieniem analizy wartości bezwzględnych są sektory znakowe. W obu klasach zdarzeń najczęstszy jest sektor $+++$, jednak jego udział wyraźnie się różni. Dla \direct{} wynosi około $47{,}4\%$, a dla \delayed{} około $23{,}0\%$. Oznacza to, że w klasie zdarzeń \direct{} znacznie częściej wszystkie trzy elektrony mają końcowy pęd skierowany w tę samą stronę osi $z$. Sama reprezentacja oparta na $|p_i|$ tej informacji nie zawiera.
 
-Podobną różnicę widać we współczynnikach korelacji Pearsona. Zebrano je w tabeli~\ref{tab:corr}. W kanale \direct{} wszystkie trzy korelacje są silnie dodatnie. W \delayed{} korelacja pomiędzy elektronami 2 i 3 jest znacznie słabsza, a pozostałe dwie mają wartości umiarkowane.
+Podobną różnicę widać we współczynnikach korelacji Pearsona. Zebrano je w tabeli~\ref{tab:corr}. W klasie zdarzeń \direct{} wszystkie trzy korelacje są silnie dodatnie. W \delayed{} korelacja pomiędzy elektronami 2 i 3 jest znacznie słabsza, a pozostałe dwie mają wartości umiarkowane.
 
 \begin{table}[htbp]
 \centering
@@ -331,7 +331,7 @@ Podobną różnicę widać we współczynnikach korelacji Pearsona. Zebrano je w
 \label{tab:corr}
 \begin{tabular}{lrrr}
 \toprule
-kanał & $r(p_2,p_3)$ & $r(p_2,p_4)$ & $r(p_3,p_4)$\\
+klasa zdarzeń & $r(p_2,p_3)$ & $r(p_2,p_4)$ & $r(p_3,p_4)$\\
 \midrule
 \direct  & 0,868 & 0,813 & 0,814\\
 \delayed & 0,214 & 0,456 & 0,437\\
@@ -347,19 +347,19 @@ Współczynnik Pearsona jest tutaj tylko wielkością pomocniczą. Nie opisuje p
 
 PCA była potrzebna przede wszystkim po to, aby nie wybierać nowych współrzędnych całkowicie arbitralnie. Wynik analizy dziewięciowymiarowej pokazał, że jeden z dominujących kierunków jest prawie czystą sumą trzech składowych $z$, natomiast dwa słabsze kierunki domykają płaszczyznę różnic podłużnych. Z tego punktu widzenia baza Jacobiego--Helmerta nie jest przypadkowym przekształceniem. Jest prostą, ustaloną wersją struktury, którą PCA wskazała numerycznie.
 
-Jednocześnie samo PCA nie nadaje się najlepiej do bezpośredniego porównywania kilku zbiorów. Jeżeli dwie względne wartości własne są bliskie, odpowiadające im osie mogą zmienić orientację w swojej płaszczyźnie. Dlatego dla dwóch osobno wykonanych PCA liczby opisujące PC8 i PC9 nie muszą odnosić się do dokładnie tych samych kierunków. Po przejściu do równań~\eqref{eq:Q}--\eqref{eq:xi} ten problem znika, ponieważ definicje współrzędnych są takie same dla każdego kanału i natężenia.
+Jednocześnie samo PCA nie nadaje się najlepiej do bezpośredniego porównywania kilku zbiorów. Jeżeli dwie względne wartości własne są bliskie, odpowiadające im osie mogą zmienić orientację w swojej płaszczyźnie. Dlatego dla dwóch osobno wykonanych PCA liczby opisujące PC8 i PC9 nie muszą odnosić się do dokładnie tych samych kierunków. Po przejściu do równań~\eqref{eq:Q}--\eqref{eq:xi} ten problem znika, ponieważ definicje współrzędnych są takie same dla każdej klasy zdarzeń i każdego natężenia.
 
-\section{Kanał direct}
+\section{Klasa zdarzeń direct}
 
-Dla kanału \direct{} obserwujemy jednocześnie małe $K$, duże $N_{\mathrm{eff}}$, małe $x_{\max}$ oraz silne dodatnie korelacje wszystkich par pędów. Dodatkowo prawie połowa zdarzeń znajduje się w sektorze $+++$. Taki zestaw cech jest zgodny z obrazem bardziej kolektywnej emisji: trzy elektrony częściej otrzymują podobne pędy i częściej kończą ruch z tym samym znakiem składowej podłużnej.
+Dla klasy zdarzeń \direct{} obserwujemy jednocześnie małe $K$, duże $N_{\mathrm{eff}}$, małe $x_{\max}$ oraz silne dodatnie korelacje wszystkich par pędów. Dodatkowo prawie połowa zdarzeń znajduje się w sektorze $+++$. Taki zestaw cech jest zgodny z obrazem bardziej kolektywnej emisji: trzy elektrony częściej otrzymują podobne pędy i częściej kończą ruch z tym samym znakiem składowej podłużnej.
 
-Nie oznacza to, że każdy przypadek \direct{} musi leżeć blisko punktu idealnego podziału. W danych pozostaje wyraźny rozrzut, a sektory mieszane nie znikają. Wynik jest statystyczną cechą całego kanału, a nie regułą dla pojedynczej trajektorii.
+Nie oznacza to, że każdy przypadek \direct{} musi leżeć blisko punktu idealnego podziału. W danych pozostaje wyraźny rozrzut, a sektory mieszane nie znikają. Wynik jest statystyczną cechą całej klasy zdarzeń, a nie regułą dla pojedynczej trajektorii.
 
-\section{Kanał delayed}
+\section{Klasa zdarzeń delayed}
 
-W kanale \delayed{} średnia wartość $K$ jest większa prawie o jednostkę niż w \direct{}, $N_{\mathrm{eff}}$ jest mniejsze, a $x_{\max}$ większe. Udział sektora $+++$ spada ponad dwukrotnie. Wskazuje to na większe zróżnicowanie pędów wewnątrz jednego zdarzenia. Jest to zgodne z sytuacją, w której emisja elektronów jest bardziej rozdzielona w czasie i poszczególne elektrony mogą zostać przyspieszone przez pole w różnych fazach.
+W klasie zdarzeń \delayed{} średnia wartość $K$ jest większa prawie o jednostkę niż w \direct{}, $N_{\mathrm{eff}}$ jest mniejsze, a $x_{\max}$ większe. Udział sektora $+++$ spada ponad dwukrotnie. Wskazuje to na większe zróżnicowanie pędów wewnątrz jednego zdarzenia. Jest to zgodne z sytuacją, w której emisja elektronów jest bardziej rozdzielona w czasie i poszczególne elektrony mogą zostać przyspieszone przez pole w różnych fazach.
 
-Trzeba jednak zachować ostrożność w ostatnim kroku interpretacji. Z końcowych pędów nie da się samodzielnie odtworzyć całej historii czasowej trajektorii. Dlatego rozkłady pędów nie są osobnym dowodem na mechanizm \direct{} lub \delayed{}. Pokazują natomiast, że klasyfikacja trajektorii według czasów jonizacji ma wyraźne i spójne odzwierciedlenie w końcowych korelacjach pędowych.
+Trzeba jednak zachować ostrożność w ostatnim kroku interpretacji. Z końcowych pędów nie da się samodzielnie odtworzyć całej historii czasowej trajektorii. Dlatego same rozkłady pędów nie stanowią niezależnej podstawy do przypisania zdarzenia do klasy \direct{} lub \delayed{}. Pokazują natomiast, że klasyfikacja trajektorii według czasów jonizacji ma wyraźne i spójne odzwierciedlenie w końcowych korelacjach pędowych.
 
 \chapter{Wnioski i podsumowanie}
 
@@ -367,7 +367,7 @@ Punktem wyjścia pracy była próba znalezienia opisu korelacji pędów, który 
 
 Nowe współrzędne rozdzielają całkowity ruch podłużny od wewnętrznego rozrzutu pędów. Wielkość $P_e$ opisuje ruch kolektywny, a $K$ wielkość nierównowagi. Informację o względnym podziale wartości bezwzględnych uzupełniają $N_{\mathrm{eff}}$, $x_{\max}$ i entropia, natomiast sektory znaków zachowują informację o zwrocie ruchu. W ten sposób nie próbujemy umieścić całej informacji na jednym wykresie, tylko rozdzielamy ją na kilka wielkości odpowiadających na różne pytania.
 
-Dla $I=1{,}7\,\mathrm{PW/cm^2}$ kanały \direct{} i \delayed{} różnią się konsekwentnie we wszystkich głównych obserwablach. Kanał \direct{} ma mniejsze $K$, większe $N_{\mathrm{eff}}$, mniejsze $x_{\max}$ i silniejsze dodatnie korelacje pomiędzy pędami elektronów. Kanał \delayed{} charakteryzuje się większą nierównowagą i częstszymi konfiguracjami o różnych znakach pędów. Wyniki są więc zgodne z bardziej kolektywnym charakterem kanału \direct{} i bardziej rozdzieloną dynamiką kanału \delayed{}.
+Dla $I=1{,}7\,\mathrm{PW/cm^2}$ klasy zdarzeń \direct{} i \delayed{} różnią się konsekwentnie we wszystkich głównych obserwablach. Klasa zdarzeń \direct{} ma mniejsze $K$, większe $N_{\mathrm{eff}}$, mniejsze $x_{\max}$ i silniejsze dodatnie korelacje pomiędzy pędami elektronów. Klasa zdarzeń \delayed{} charakteryzuje się większą nierównowagą i częstszymi konfiguracjami o różnych znakach pędów. Wyniki są więc zgodne z bardziej kolektywnym charakterem zdarzeń \direct{} i bardziej rozdzieloną dynamiką zdarzeń \delayed{}.
 
 Zaletą przyjętego podejścia jest to, że podstawowe idee można przenieść na większą liczbę elektronów. Dla $N$ cząstek nadal można wydzielić jeden znormalizowany kierunek kolektywny oraz $N-1$ ortogonalnych kierunków względnych, a równomierność podziału opisywać wielkościami symetrycznymi na permutacje. Wraz ze wzrostem liczby elektronów nie znika problem wielowymiarowości, ale nie ma już potrzeby przedstawiania całej informacji przez jedną kolorowaną bryłę. To jest główna praktyczna korzyść z zastosowanego opisu.
 
