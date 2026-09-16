@@ -47,7 +47,7 @@ N_{\mathrm{eff}}=\frac{1}{x_2^2+x_3^2+x_4^2},\qquad
 x_{\max}=\max(x_2,x_3,x_4).
 \]
 
-Znaki pędów przechowuj i interpretuj osobno jako sektory znakowe. \`N_eff\` opisuje równomierność udziałów bezwzględnego pędu, a nie liczbę „naprawdę emitowanych” elektronów. Współczynnik Pearsona jest miarą pomocniczą i nie opisuje pełnej zależności wieloelektronowej.
+Znaki pędów przechowuj i interpretuj osobno jako sektory znakowe. `N_eff` opisuje równomierność udziałów bezwzględnego pędu, a nie liczbę „naprawdę emitowanych” elektronów. Współczynnik Pearsona jest miarą pomocniczą i nie opisuje pełnej zależności wieloelektronowej.
 
 ## Język wniosków
 
