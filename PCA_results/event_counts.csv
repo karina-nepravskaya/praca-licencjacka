@@ -1,0 +1,13 @@
+intensity_PW_cm2,event_class,n_events
+1.0,all,4872
+1.0,delayed,2097
+1.0,direct,2042
+1.3,all,13769
+1.3,delayed,5837
+1.3,direct,6198
+1.6,all,18578
+1.6,delayed,7560
+1.6,direct,8799
+1.7,all,3873
+1.7,delayed,1601
+1.7,direct,1695

@@ -3,7 +3,7 @@
 > **Ten plik jest kontraktem roboczym dla każdego agenta AI pracującego w tym repozytorium.**
 > Przed zmianą tekstu, kodu, wykresów, bibliografii albo struktury pracy należy przeczytać ten README w całości.
 >
-> Celem nie jest „wygenerowanie długiego tekstu”, tylko doprowadzenie repozytorium do stanu **spójnej, poprawnej fizycznie, reprodukowalnej i dobrze napisanej pracy licencjackiej**.
+> Celem jest wygenerowanie pracy licencjackiej spójnej z analizą w tym repo, poprawnej fizycznie, reprodukowalnej**.
 
 ---
 
@@ -14,42 +14,26 @@ Praca powstaje na:
 - **Uniwersytecie Jagiellońskim**
 - **Wydziale Fizyki, Astronomii i Informatyki Stosowanej (WFAIS UJ)**
 - kierunku **Fizyka dla firm**, studia I stopnia
-- w obszarze fizyki atomowej / oddziaływania atomów z silnymi polami laserowymi.
 
-Temat roboczy pracy:
+Temat roboczy pracy nie jest jeszcze ustalony ostatecznie, póki co może być:
 
 > **Analiza korelacji pędów wielu elektronów w potrójnej jonizacji neonu w silnym polu laserowym**
 
-Głównym przedmiotem analizy są dane z klasycznych obliczeń trajektorii dla potrójnej jonizacji neonu. Dla każdego zdarzenia dostępne są końcowe składowe pędu:
+możesz bardziej dopasować ją na koniec pracy nad tekstem samej pracy, możesz ją skrócić lub, ALE rób to NA KONIEC.
 
-\[
-(p_{2x},p_{2y},p_{2z},
- p_{3x},p_{3y},p_{3z},
- p_{4x},p_{4y},p_{4z}).
-\]
+Głównym przedmiotem analizy są dane z foldera ECBB_model niniejszego repozytorium. 
+Tam znajdują się użyteczne pliki: 
+- README.md który opisuje dane na których wykonuje się analizę. Musi być przeanalizowany w tym momeńcie i przed każdym podejściem do pracy z tym repozytorium.
+- PhysRevA.107.L041101.pdf użyteczna praca żeby 
 
-W pełnym pliku danych występuje również pęd jonu/rdzenia oznaczanego jako `p1`.
-
-Oś polaryzacji liniowo spolaryzowanego pola laserowego to **oś \(z\)**. Dlatego podstawowa analiza korelacji dotyczy składowych podłużnych
-
-\[
-p_2 \equiv p_{2z},\qquad
-p_3 \equiv p_{3z},\qquad
-p_4 \equiv p_{4z}.
-\]
-
-W modelu klasycznym:
-
-- elektron 4 jest początkowo elektronem tunelującym,
-- elektrony 2 i 3 są początkowo związane.
-
-**Nie wolno jednak przedstawiać tych etykiet jako fundamentalnie fizycznych.** Są one użytecznym oznaczeniem trajektorii w modelu klasycznym. Elektrony są kwantowo nierozróżnialne, dlatego interpretacja wyników musi wyraźnie odróżniać etykietowanie numeryczne od własności fizycznej układu.
+Do informacji z tamtego ECBB_model/README.md dodatkowa uwaga od promotora: **Nie wolno przedstawiać tych etykiet elektronów 'tunelujący', 'związany' jako fundamentalnie fizycznych.** Są one użytecznym oznaczeniem ich roli w dynamice procesu jonizacji. Elektrony są kwantowo nierozróżnialne, dlatego interpretacja wyników musi wyraźnie odróżniać etykietowanie numeryczne od własności fizycznej układu.
 
 ---
 
 ## 2. Główny problem badawczy
 
-Dla podwójnej i potrójnej jonizacji użyteczna jest reprezentacja simpleksowa / oktaedryczna, ponieważ pozwala przedstawić względny podział pędu pomiędzy trzema elektronami.
+Dla podwójnej i potrójnej jonizacji użyteczna jest reprezentacja simpleksowa opisywana w pliku 'Praca_licencjacka_296213 (watermarked)'.pdf. Zapoznać sięz tym również 
+Pozwala przedstawić względny podział pędu pomiędzy trzema elektronami.
 
 Problem pojawia się przy próbie uogólnienia takiej reprezentacji na większą liczbę elektronów:
 
@@ -58,15 +42,29 @@ Problem pojawia się przy próbie uogólnienia takiej reprezentacji na większą
 - dla jeszcze większej liczby elektronów wymiar simpleksu rośnie dalej;
 - kolorowanie lub rozcinanie bryły 3D przestaje być przejrzystym narzędziem analizy.
 
-Celem obecnej metody jest zbudowanie **bardziej skalowalnego opisu korelacji pędów**, zachowującego możliwie jasną interpretację fizyczną.
+Celem obecnej metody jest zbudowanie alternatywnego **bardziej skalowalnego opisu korelacji pędów**, zachowującego możliwie jasną interpretację fizyczną.
 
 ---
 
-## 3. Skąd bierze się użyta baza współrzędnych
+## 3. Metoda analizy
 
-### 3.1. PCA jako punkt wyjścia
+Kluczowe pliki .ipynb są źródłem prawdy dla analizy. Przed zmianą rozdziału analitycznego agent powinien:
 
-Notebook `05_PCA.ipynb` analizuje dziewięć składowych pędów trzech elektronów:
+1. otworzyć oba notebooki;
+2. sprawdzić aktywne zbiory danych;
+3. sprawdzić definicje wszystkich używanych wielkości;
+4. sprawdzić, czy notebook wykonuje się od czystego kernela;
+5. dopiero potem aktualizować tekst i liczby w pracy.
+
+**Nie ufać zmiennym pozostałym w pamięci Jupytera.** Wynik jest wiarygodny dopiero wtedy, gdy notebook przechodzi `Restart Kernel -> Run All` bez błędu.
+
+Jeżeli notebook ma błąd, brakującą zmienną albo komórkę zależną od starego stanu kernela, agent ma to zaznaczyć i naprawić przed wykorzystaniem wyniku w pracy.
+
+--- 
+
+Dalej w tej części zamieszczony jest przybliżony opis metody, jakby można było coś logicznie dodać czy wyrafinować ją JEDYNIE w oparciu o literaturę naukową i dodać bardziej szczegółowe opisy i dodać referencję, to zrob to agent MUSI to zrobić!
+
+PCA jako punkt wyjścia: Notebook `05_PCA_full.ipynb` analizuje dziewięć składowych pędów trzech elektronów:
 
 \[
 (p_{2x},p_{2y},p_{2z},
@@ -74,30 +72,9 @@ Notebook `05_PCA.ipynb` analizuje dziewięć składowych pędów trzech elektron
  p_{4x},p_{4y},p_{4z}).
 \]
 
-W analizowanym zbiorze szczególnie interesujące są komponenty PCA, których loadings są praktycznie ograniczone do osi \(z\). W notatkach notebooka są to PC1, PC8 i PC9.
+W analizowanym metodą PCA zbiorze szczególnie interesujące są wynikowe kierunki głównych składowych, których współczynniki są praktycznie ograniczone do osi \(z\). W notatkach notebooka są to PC1, PC8 i PC9.
 
-Dla przykładowej analizy w `05_PCA.ipynb`:
-
-- PC1 jest zbliżony do kierunku
-  \[
-  p_2+p_3+p_4,
-  \]
-- PC8 do kierunku typu
-  \[
-  p_3-\frac{p_2+p_4}{2},
-  \]
-- PC9 do kierunku typu
-  \[
-  p_2-p_4.
-  \]
-
-### 3.2. Bardzo ważne: PCA nie jest końcową definicją osi
-
-Agent **nie może pisać**, że końcowe współrzędne są po prostu „PC1, PC8 i PC9”.
-
-PCA było **motywacją**: pokazało, że w danych wyróżniają się jeden tryb kolektywny wzdłuż \(z\) i dwa niezależne kierunki opisujące względne różnice pędów.
-
-Do dalszej analizy wybierana jest jednak **stała, ortonormalna baza Jacobiego–Helmerta**, niezależna od konkretnego zbioru danych:
+Przeanalizuj ten cały notebook. Z kolei PCA nie definiuje wprost osi do których dalej przejdziemy z naszymi danymi. Agent **nie może pisać**, że końcowe współrzędne są po prostu „PC1, PC8 i PC9”. PCA było motywacją, bo metoda ta pokazała, że w danych wyróżniają się jeden tryb kolektywny wzdłuż \(z\) i dwa niezależne kierunki opisujące względne różnice pędów. Do dalszej analizy wybierana jest jednak **stała, ortonormalna baza**, niezależna od konkretnego zbioru danych:
 
 \[
 \mathbf e_0=
@@ -119,7 +96,7 @@ Do dalszej analizy wybierana jest jednak **stała, ortonormalna baza Jacobiego�
 \end{pmatrix}.
 \]
 
-Nowe współrzędne:
+Współrzędne tej nowej bazy:
 
 \[
 Q=\frac{p_2+p_3+p_4}{\sqrt 3},
@@ -148,15 +125,13 @@ K=\sqrt{\xi_1^2+\xi_2^2}
 
 jest miarą wielkości względnej nierównowagi pędów.
 
-### 3.3. To nie jest redukcja wymiaru
-
-Transformacja
+Nie zachodzi redukcja wymiaru przestrzeni w którym operujemy, ponieważ transformacja
 
 \[
 (p_2,p_3,p_4)\longrightarrow(Q,\xi_1,\xi_2)
 \]
 
-jest **ortogonalną zmianą bazy**, a nie redukcją informacji.
+jest **ortogonalną zmianą bazy**. Poszukaj jeszcze na ten temat w literatyrze matematycznej (naukowej, na poziomie wyższym) różne rzeczy oraz dodaj, jeżeli mogą wnieść coś wartościowego w ten postęp rozumowania.  
 
 Musi zachodzić:
 
@@ -194,7 +169,7 @@ Jeżeli tekst nazywa tę operację „redukcją wymiaru”, agent ma to poprawi�
 
 ## 4. Główne obserwable używane w analizie
 
-Podstawowym źródłem implementacji jest `07_analiza_3D.ipynb`.
+Podstawowym źródłem implementacji jest `07_analiza_3D_clean.ipynb`. Przeanalizyj przebieg analizy w nim. Tam jest druga część analizy gdzie bazując się na kierunkach z PCA obliczamy różne rzeczy. Tu musisz zrozumieć sens każdej w nich, mieć dostęp do wyniku uruchomienia tego pliku, czyli wszystkich wykresów i powinienneś móc powiedzieć co na nich widać i jakie są wnioski dotycząc przeprowadzonej analizy.
 
 ### 4.1. Całkowity podłużny pęd elektronów
 
@@ -301,38 +276,9 @@ d_{34}=p_3-p_4.
 
 Współczynnik Pearsona nie może być przedstawiany jako pełny opis zależności wieloelektronowej. Jest tylko jednym z obserwabli pomocniczych.
 
-### 4.8. Współrzędne ILR
+Ignoruj ILR obserwable, NIE POWINNY pojawiać się w analizie tekstowej.
 
-Notebook zawiera także współrzędne log-ratio dla dodatnich udziałów \(x_i\):
-
-\[
-y_1=\frac{1}{\sqrt 2}\ln\frac{x_2}{x_3},
-\]
-
-\[
-y_2=\frac{1}{\sqrt 6}\ln\frac{x_2x_3}{x_4^2}.
-\]
-
-Jeżeli ILR trafia do pracy, trzeba wyjaśnić:
-
-1. po co jest używany,
-2. że działa na udziałach dodatnich,
-3. jak traktowane są zera,
-4. że clipping ma charakter **regularyzacji numerycznej**, a nie nowej definicji fizycznej.
-
----
-
-## 5. Direct i delayed
-
-W danych występują kanały:
-
-- `direct`,
-- `delayed`,
-- czasem `all`.
-
-Agent ma porównywać `direct` i `delayed` **tylko dla tej samej intensywności pola**.
-
-Nie wolno porównywać dwóch różnych intensywności i interpretować różnicy jako efektu mechanizmu direct/delayed.
+Agent ma porównywać `direct` i `delayed` rodzaje zdarzeń **tylko dla tej samej intensywności pola**. Nie wolno porównywać dwóch różnych intensywności i interpretować różnicy jako efektu mechanizmu direct/delayed.
 
 Dla każdej prezentowanej różnicy należy podać przynajmniej:
 
@@ -341,11 +287,9 @@ Dla każdej prezentowanej różnicy należy podać przynajmniej:
 - liczbę zdarzeń,
 - definicję obserwabli.
 
-W `07_analiza_3D.ipynb` aktywnie skonfigurowane są obecnie pliki dla **1.7 PW/cm²**, natomiast wcześniejsze wartości intensywności mogą być zakomentowane. Agent ma sprawdzać aktualną wersję notebooka zamiast zakładać, że wszystkie zbiory zostały rzeczywiście uruchomione.
-
 ---
 
-## 6. Zasady interpretacji fizycznej
+## 5. Zasady interpretacji fizycznej
 
 ### Agent MA:
 
@@ -369,375 +313,74 @@ W `07_analiza_3D.ipynb` aktywnie skonfigurowane są obecnie pliki dla **1.7 PW/c
 
 ---
 
-## 7. Notebooki są źródłem prawdy dla analizy
+## 6. Format pracy licencjackiej
 
-Kluczowe pliki:
+Jako wynik pracy (jeżeli nie powiedziano zrobić coś innego) musisz wygenerować lub edytować 'main.tex' plik z tekstem pracy licencjackiej, do kompilowania w LaTeX (overleaf). Również trzymaj spis referencyjny literatury 'bibliography.bib' spójnie z 'main.tex'.
 
-- `05_PCA.ipynb` — motywacja PCA i kierunki wyróżnione w danych;
-- `07_analiza_3D.ipynb` — właściwa analiza w nowych współrzędnych i definicje obserwabli.
+## 7. Zasady pisania pracy
+### 7.1 Ogólne zasady
+Napisz pracę licencjacką w języku polskim, opartą na logicznym ciągu:
 
-Przed zmianą rozdziału analitycznego agent powinien:
+kontekst fizyczny → problem badawczy → opis danych → metoda analizy → sprawdzenie metody → wyniki → interpretacja fizyczna → ograniczenia i wnioski.
 
-1. otworzyć oba notebooki;
-2. sprawdzić aktywne zbiory danych;
-3. sprawdzić definicje wszystkich używanych wielkości;
-4. sprawdzić, czy notebook wykonuje się od czystego kernela;
-5. dopiero potem aktualizować tekst i liczby w pracy.
+Każdy rozdział ma przygotowywać czytelnika do następnego. Wprowadzaj pojęcia dopiero wtedy, gdy są potrzebne. Nie wymieniaj wcześniej obserwabli, transformacji ani parametrów, które zostaną zdefiniowane dopiero kilka rozdziałów później. Czytelnik ma zawsze rozumieć, skąd wynika kolejny krok i po co jest wykonywany.
 
-**Nie ufać zmiennym pozostałym w pamięci Jupytera.** Wynik jest wiarygodny dopiero wtedy, gdy notebook przechodzi `Restart Kernel -> Run All` bez błędu.
+Teorię ogranicz do informacji rzeczywiście potrzebnych w analizie. Najpierw przedstaw prostszy przypadek lub intuicję geometryczną, a następnie właściwą metodę. Dla każdej metody wyjaśnij:
 
-Jeżeli notebook ma błąd, brakującą zmienną albo komórkę zależną od starego stanu kernela, agent ma to zaznaczyć i naprawić przed wykorzystaniem wyniku w pracy.
+jaki problem rozwiązuje;
+jakie dane wykorzystuje;
+na czym polega matematycznie;
+jak interpretować jej wynik;
+jakie informacje zachowuje, a jakie traci;
+jak sprawdzono poprawność implementacji.
 
----
+Wyniki organizuj według pytań fizycznych, a nie kolejności notebooków lub wykonanych wykresów. Każdy fragment analizy powinien mieć schemat:
 
-## 8. Reprodukowalność
+pytanie → zastosowana metoda → rysunek lub wynik liczbowy → obserwacja → interpretacja → krótki wniosek.
 
-Każda liczba lub wykres wykorzystany w pracy powinien dać się odtworzyć.
+Wyraźnie oddzielaj to, co bezpośrednio wynika z danych, od interpretacji fizycznej. Nie przedstawiaj przypuszczeń jako udowodnionych wniosków. Nie powtarzaj tej samej informacji w teorii, metodologii, podpisie rysunku i analizie.
 
-Minimalny standard:
+### 7.2 Styl językowy
 
-- ścieżka od surowych danych do wykresu jest znana;
-- transformacje są zapisane jawnie;
-- jednostki są podane;
-- intensywność i kanał są zapisane w podpisie lub bezpośrednio w tekście;
-- kod nie zależy od ręcznie ustawionych niewidocznych zmiennych;
-- wyniki nie są edytowane „na oko” po wygenerowaniu;
-- eksportowane tabele i rysunki mają deterministyczne nazwy;
-- przy zmianie definicji obserwabli wszystkie zależne wykresy i fragmenty tekstu są aktualizowane.
+Naśladuj sposób pisania zastosowany w sprawozdaniu Dlugosc_fali_Nepravskaya_Karina.pdf: używaj prostych, konkretnych i stosunkowo krótkich zdań. Pisz rzeczowo, naturalnie i technicznie, bez ozdobników, patosu oraz sztucznego komplikowania wypowiedzi. Preferuj konstrukcje takie jak:
 
----
+„Celem analizy jest…”
+„Dla każdego zestawu danych wyznaczono…”
+„Z otrzymanych punktów sporządzono wykres…”
+„Na rysunku przedstawiono…”
+„Z porównania wynika, że…”
+„Można to wyjaśnić przez…”
+„Wartość ta jest zgodna z…”
 
-## 9. Styl pracy
+Nie używaj typowego tekstu generowanego przez AI, w szczególności pustych sformułowań typu „warto podkreślić niezwykle istotną rolę”, „w kontekście niniejszych rozważań”, „stanowi fundamentalny aspekt” albo „otwiera nowe perspektywy”, jeśli nie przekazują konkretnej informacji.
 
-### 9.1. Wzorzec stylistyczny i wzorzec składu dokumentu
+Każdy zastosowany termin naukowy musi być rzeczywiście istniejącym i powszechnie używanym terminem w polskiej literaturze naukowej. Nie twórz polskich nazw przez dosłowne tłumaczenie angielskich terminów ani przez dopisywanie polskich końcówek do anglicyzmów. Jeśli poprawny polski odpowiednik nie jest pewny, sprawdź go w wiarygodnych polskojęzycznych publikacjach naukowych. Gdy nie istnieje utrwalony odpowiednik, podaj termin angielski i krótko wyjaśnij jego znaczenie zamiast wymyślać nową nazwę.
 
-W repozytorium znajdują się dwie przykładowe prace licencjackie, które pełnią różne role i należy je traktować jako dwa odrębne źródła odniesienia.
+Zachowaj poprawność naukową, ale nie kopiuj błędów językowych lub redakcyjnych z tekstów referencyjnych. Nie dopisuj informacji, których nie potwierdzają dane, kod albo literatura. Każdy wzór, rysunek i tabela muszą zostać wprowadzone w tekście oraz wykorzystane w dalszym rozumowaniu.
 
-#### Praca Michała Ojczenasza (nazwa: Praca_licencjacka_296213 (watermarked).pdf)
+### 7.3 Ogólny model spisu treści
 
-Plik z pracą Michała Ojczenasza należy traktować przede wszystkim jako **wzorzec wyglądu i organizacji dokumentu**.
+1. Wstęp
+   1.1. Główna metoda lub podejście
+   1.2. Metoda porównawcza albo sposób weryfikacji
 
-Agent powinien zwracać uwagę w szczególności na:
+2. Przeprowadzenie analizy
+   2.1. Pierwszy pełny przypadek lub etap
+   2.2. Drugi pełny przypadek lub etap
+   2.3. Kolejne przypadki tylko wtedy, gdy mają własne wyniki
 
-- ogólny układ pracy licencjackiej;
-- strukturę rozdziałów i podrozdziałów;
-- sposób rozmieszczania tekstu, równań, tabel i rysunków;
-- sposób numerowania równań, rysunków i rozdziałów;
-- wygląd podpisów pod rysunkami;
-- sposób odwoływania się do równań i rysunków w tekście;
-- proporcje pomiędzy tekstem, matematyką i ilustracjami;
-- ogólny charakter typograficzny pracy.
+3. Analiza i dyskusja wyników
+   3.1. Najważniejsze zależności
+   3.2. Porównanie przypadków lub metod
+   3.3. Ograniczenia analizy
 
-Praca ta jest szczególnie istotna również dlatego, że dotyczy zbliżonego obszaru fizycznego: analizy wielokrotnej jonizacji i reprezentacji wielowymiarowych rozkładów pędów elektronów. Może więc służyć jako punkt odniesienia przy organizowaniu materiału, jednak **nie wolno automatycznie przejmować z niej interpretacji fizycznych, definicji ani wyników**.
+4. Wnioski i podsumowanie
 
-#### Praca Matsveya (nazwa: praca_licencjacka_maciej.pdf)
+A. Dodatek techniczny
+B. Dodatkowe wyprowadzenia lub kod
+Bibliografia
 
-Plik z pracą Matsveya należy traktować przede wszystkim jako **wzorzec sposobu pisania tekstu naukowego**.
-
-Agent powinien możliwie dokładnie odtworzyć charakter prowadzonej tam narracji, w szczególności:
-
-- sposób płynnego przechodzenia od problemu fizycznego do metody;
-- stopniowe wprowadzanie nowych pojęć i oznaczeń;
-- objaśnianie wzorów bezpośrednio po ich podaniu;
-- sposób uzasadniania kolejnych kroków analizy;
-- naturalne łączenie części matematycznej z interpretacją fizyczną;
-- sposób prowadzenia czytelnika przez tok analizy bez nadmiernego dzielenia tekstu na sztuczne podsekcje;
-- długość i budowę akapitów;
-- formalny, ale naturalny język;
-- unikanie stylu przypominającego podręcznik, dokumentację techniczną albo odpowiedź wygenerowaną przez model językowy.
-
-Tekst nie powinien być zbiorem krótkich zdań typu:
-
-> „Następnie obliczono PCA. Wyniki przedstawiono na rysunku. Następnie zdefiniowano nowe współrzędne.”
-
-Zamiast tego kolejne etapy powinny wynikać z siebie logicznie. Czytelnik powinien rozumieć nie tylko **co** zostało wykonane, ale również **dlaczego właśnie taki krok został wykonany i jak prowadzi on do kolejnego etapu analizy**.
-
-W szczególności po wprowadzeniu nowej wielkości matematycznej należy, jeśli jest to istotne:
-
-1. podać jej definicję;
-2. wyjaśnić, dlaczego została wprowadzona;
-3. opisać jej interpretację fizyczną lub geometryczną;
-4. wskazać, jakie informacje pozwala wydobyć z danych;
-5. dopiero następnie przejść do omówienia odpowiadających jej wyników.
-
-#### Zasada nadrzędna
-
-Obie prace są materiałami referencyjnymi, ale pełnią różne funkcje:
-
-- **praca Ojczenasza → wzorzec składu, organizacji i wyglądu dokumentu;**
-- **praca Matsveya → wzorzec języka, narracji i sposobu prowadzenia wywodu naukowego.**
-
-Nie należy kopiować z nich zdań ani fragmentów tekstu. Agent powinien odtworzyć **cechy stylu i logikę prezentacji**, a nie konkretne sformułowania.
-
-W przypadku sprzeczności pomiędzy stylem przykładowej pracy a aktualnymi wymaganiami UJ, WFAIS, promotora lub niniejszego repozytorium, pierwszeństwo mają aktualne wymagania formalne i instrukcje zapisane w projekcie.
-
-### 9.2. Język
-
-Zgodnie z wcześniejszym ustaleniem:
-
-- **docelowy tekst pracy: po polski**;
-- komunikacja z autorem, komentarze robocze i notatki mogą być po polsku;
-- polskie wersje robocze nie oznaczają automatycznie zmiany języka finalnej pracy.
-
-Nowsze, jednoznaczne polecenie autora ma zawsze pierwszeństwo.
-
-### 9.3. Jak pisać
-
-Tekst pracy powinien być:
-
-- formalny,
-- naukowy,
-- precyzyjny,
-- logiczny,
-- zwarty,
-- naturalny językowo.
-
-Preferowana struktura akapitu:
-
-1. **problem / motywacja**,
-2. **definicja lub metoda**,
-3. **sens fizyczny**,
-4. **co sprawdzamy na danych**,
-5. **co faktycznie obserwujemy**.
-
-Agent ma dbać o płynne przejścia między sekcjami. Rozdział nie może wyglądać jak posklejane odpowiedzi z czatu.
-
-### 9.4. Czego unikać
-
-W tekście pracy nie używać:
-
-- potocznych sformułowań;
-- sztucznego „lania wody”;
-- wielkich deklaracji typu „rewolucyjna metoda” bez podstaw;
-- metakomentarzy typu „na poniższym wykresie możemy zobaczyć, że...” powtarzanych co akapit;
-- zdań bez jasnego podmiotu i odniesienia;
-- przesadnie długich zdań wielokrotnie złożonych;
-- list punktowanych tam, gdzie normalny wywód naukowy jest czytelniejszy.
-
----
-
-## 10. LaTeX i Overleaf
-
-### 10.1. Kompilator
-
-**Wyłącznie pdfLaTeX**, chyba że autor wprost zmieni to wymaganie.
-
-Nie wprowadzać bez zgody:
-
-- LuaLaTeX,
-- XeLaTeX,
-- `fontspec`,
-- `unicode-math`,
-- rozwiązań wymagających zewnętrznych fontów.
-
-### 10.2. Template
-
-Repozytorium korzysta z układu opartego na szablonie Overleaf:
-
-**„Wzór ISI UJ”**  
-https://www.overleaf.com/latex/templates/wzor-isi-uj/ddszfvqhkwmt
-
-To jest **wybrany przez autora wzorzec składu**, a nie dowód, że jest to oficjalny szablon WFAIS.
-
-Agent ma zachować istniejące formatowanie szablonu, o ile nie ma konkretnego powodu technicznego, by coś zmienić.
-
-### 10.3. Zasady edycji LaTeX
-
-- nie przebudowywać preambuły dla samej „estetyki”;
-- nie zmieniać marginesów, fontów, nagłówków i numeracji bez polecenia;
-- korzystać z `\label{}` i `\ref{}` / `\eqref{}`;
-- nie wpisywać ręcznie numerów rysunków, tabel ani równań;
-- każdy rysunek ma mieć podpis i label;
-- każda tabela ma mieć podpis i label;
-- symbole definiować przy pierwszym użyciu;
-- jednostki zapisywać konsekwentnie;
-- utrzymywać jeden standard cytowań;
-- bibliografię prowadzić w pliku `.bib`, a nie ręcznie w tekście.
-
-Po zmianach dokument ma kompilować się bez:
-
-- `Undefined reference`,
-- `Citation ... undefined`,
-- brakujących plików graficznych,
-- błędów matematycznych LaTeX.
-
-Ostrzeżenia typu `Overfull \hbox` powinny być sprawdzane, a nie bezmyślnie ignorowane.
-
----
-
-## 11. Bibliografia i źródła
-
-### Twarde zasady
-
-Agent **nigdy nie wymyśla bibliografii**.
-
-Każda pozycja musi być zweryfikowana przynajmniej przez jedno z:
-
-- DOI,
-- stronę wydawcy,
-- arXiv,
-- Crossref,
-- Google Scholar / oficjalny rekord bibliograficzny,
-- oficjalny dokument UJ.
-
-Nie wolno generować „wiarygodnie wyglądających” autorów, tytułów, tomów ani numerów stron.
-
-Dla twierdzeń dotyczących:
-
-- NSDI / NSTI,
-- recollision,
-- modeli klasycznych,
-- strong-field ionization,
-- PCA,
-- współrzędnych Jacobiego,
-- kompozycyjnej analizy danych / ILR,
-
-należy cytować literaturę adekwatną do konkretnego twierdzenia.
-
-Notebook nie zastępuje źródła naukowego dla definicji standardowej metody, ale jest źródłem informacji o tym, **jak metoda została zastosowana w tej pracy**.
-
----
-
-## 12. Wymagania formalne UJ / WFAIS, które agent ma respektować
-
-### 12.1. Fizyka dla firm — informacje programu
-
-W oficjalnym Sylabusie UJ kierunek **Fizyka dla firm** jest prowadzony na WFAIS jako studia I stopnia, a program jest skonstruowany tak, aby ostatni, szósty semestr był poświęcony przygotowaniu pracy licencjackiej.
-
-Warunkiem ukończenia studiów jest pozytywna ocena pracy dyplomowej oraz zdanie egzaminu dyplomowego.
-
-Źródło:
-https://sylabus.uj.edu.pl/pl/8/1/2/7/191
-
-Dla aktualnego programu:
-https://sylabus.uj.edu.pl/pl/9/1/2/7/191
-
-### 12.2. Pracownia licencjacka
-
-Opis programu kierunku wskazuje, że student wybiera temat badań stanowiących podstawę pracy licencjackiej i przygotowuje ją pod kierunkiem nauczyciela akademickiego WFAIS. Badania mogą być realizowane w laboratorium naukowym lub u partnera przemysłowo-biznesowego w ramach Pracowni licencjackiej.
-
-To oznacza, że praca ma być **oparta na realnym materiale badawczym i własnej analizie**, a nie tylko na kompilacji literatury.
-
-### 12.3. Seminarium licencjackie
-
-Oficjalny sylabus Seminarium licencjackiego podkreśla m.in.:
-
-- prezentację własnych wyników;
-- konfrontowanie własnych wyników z dostępną literaturą specjalistyczną;
-- umiejętność przygotowania dłuższego wystąpienia;
-- aktywny udział w dyskusji naukowej.
-
-Źródło:
-https://sylabus.uj.edu.pl/pl/document/15ee83e9-073c-4bf3-9c44-4133ac237624.pdf
-
-W praktyce dla agenta oznacza to:
-
-> każdy ważny wynik numeryczny powinien być nie tylko pokazany, ale również zestawiony z wiedzą fizyczną i literaturą.
-
-### 12.4. Ogólny Regulamin Studiów UJ
-
-Nadrzędne zasady dyplomowania wynikają z aktualnego Regulaminu Studiów UJ.
-
-Aktualne dokumenty należy sprawdzać przed finalnym złożeniem pracy:
-https://bip.uj.edu.pl/studia/regulamin
-
-Na rok 2026 opublikowano również Uchwałę nr 30/IV/2026 Senatu UJ zmieniającą Regulamin Studiów. Aktualne akty są dostępne w serwisach UJ, m.in.:
-https://sdka.cm.uj.edu.pl/pl/tok-studiow/
-
-**Agent ma sprawdzić aktualny regulamin ponownie przed etapem final submission.**
-
-### 12.5. Zasady używania AI
-
-Na UJ obowiązuje Zarządzenie nr 115 Rektora UJ z 27 listopada 2025 r. dotyczące wykorzystywania narzędzi opartych na sztucznej inteligencji w dydaktyce.
-
-Nie znaleziono w publicznie dostępnych materiałach jednoznacznego, szczegółowego dokumentu WFAIS określającego w tym kontekście zasady użycia AI konkretnie przy tej pracy licencjackiej.
-
-Dlatego agent:
-
-1. **nie może twierdzić**, że użycie AI w pracy jest automatycznie dozwolone albo zakazane w określonym zakresie;
-2. ma respektować aktualny sylabus przedmiotu, regulacje UJ i instrukcje promotora;
-3. ma traktować autora pracy jako osobę odpowiedzialną za merytoryczną weryfikację i ostateczne brzmienie tekstu;
-4. nie może fałszować źródeł, wyników ani autorstwa analiz;
-5. jeśli przepisy wymagają ujawnienia zakresu wykorzystania AI, należy przygotować takie oświadczenie zgodnie z aktualnymi zasadami.
-
-### 12.6. Czego NIE udało się potwierdzić jako obowiązku WFAIS
-
-W publicznie dostępnych materiałach nie znaleziono wiarygodnego, ogólnowydziałowego wymogu WFAIS narzucającego dla kierunku Fizyka dla firm np.:
-
-- minimalną lub maksymalną liczbę stron;
-- konkretny font;
-- konkretny rozmiar fontu;
-- konkretną interlinię;
-- konkretne marginesy;
-- obowiązek użycia konkretnego szablonu LaTeX.
-
-Dlatego **nie wolno wymyślać takich wymagań**.
-
-Dopóki promotor lub WFAIS nie wskaże inaczej, formatowanie repozytorium wynika z wybranego przez autora template'u oraz dobrych praktyk składu pracy naukowej.
-
----
-
-## 13. Definicja „dobrej” sekcji analitycznej
-
-Każda większa sekcja analizy powinna odpowiedzieć kolejno na pytania:
-
-1. **Jaki problem próbujemy rozwiązać?**
-2. **Dlaczego dotychczasowa reprezentacja jest niewystarczająca?**
-3. **Jaką wielkość definiujemy?**
-4. **Dlaczego ta definicja ma sens matematyczny?**
-5. **Jaki jest jej sens fizyczny?**
-6. **Jak obliczamy ją z danych?**
-7. **Jak wygląda rozkład?**
-8. **Co rzeczywiście można z niego wywnioskować?**
-9. **Czego nie można z niego wywnioskować?**
-10. **Jak wynik ma się do pozostałych obserwabli / kanałów / intensywności / literatury?**
-
-Jeżeli sekcja jest tylko opisem wykresu bez odpowiedzi na te pytania, wymaga poprawy.
-
----
-
-## 14. Kolejność logiczna rozdziału o metodzie
-
-Preferowany ciąg narracyjny:
-
-1. problem wizualizacji korelacji wieloelektronowych;
-2. wcześniejsza reprezentacja simpleksowa i jej zalety;
-3. ograniczenie skalowalności dla większej liczby elektronów;
-4. pełne dane pędowe;
-5. znaczenie osi polaryzacji \(z\);
-6. PCA jako analiza eksploracyjna;
-7. identyfikacja kolektywnego i względnych kierunków podłużnych;
-8. przejście do stałej ortonormalnej bazy Jacobiego–Helmerta;
-9. definicja \(Q,\xi_1,\xi_2\);
-10. dowód zachowania informacji / rekonstrukcja;
-11. definicja \(K\);
-12. obserwable podziału pędu: \(x_i,N_{\mathrm{eff}},x_{\max}\);
-13. sektory znakowe;
-14. korelacje par i ewentualnie ILR;
-15. porównanie direct/delayed;
-16. porównanie intensywności;
-17. interpretacja fizyczna;
-18. ograniczenia metody i możliwe rozszerzenie na większą liczbę elektronów.
-
-Nie przestawiać tej kolejności bez konkretnego powodu.
-
----
-
-## 15. Rozszerzenie na większą liczbę elektronów
-
-Jednym z argumentów za obecną metodą ma być skalowalność.
-
-Dla \(N\) elektronów naturalnie można rozdzielić:
-
-- jeden kierunek kolektywny
-  \[
-  Q_N\propto\sum_{i=1}^N p_i,
-  \]
-- oraz \(N-1\) ortogonalnych współrzędnych względnych.
-
-W tekście można wspominać o uogólnieniu przez bazę Helmerta/Jacobiego, ale **nie należy udawać, że analiza dla \(N>3\) została empirycznie wykonana**, jeżeli repozytorium nie zawiera takich wyników.
-
----
+Nie trzeba na siłę zachowywać wszystkich podpunktów. Jeśli „ograniczenia” zajmują jeden akapit, należy je włączyć do dyskusji. Jeśli dwie metody wymagają pełnego wyprowadzenia, dostają osobne podrozdziały. 
 
 ## 16. Git / sposób pracy agenta
 
@@ -767,79 +410,4 @@ Po zmianie:
 5. sprawdź, czy liczby w tekście zgadzają się z aktualnym outputem;
 6. opisz krótko, **co zmieniono i dlaczego**.
 
----
-
-## 17. Checklist przed uznaniem fragmentu za gotowy
-
-### Merytoryka
-
-- [ ] Wszystkie symbole są zdefiniowane.
-- [ ] Nie pomylono \(Q\) z \(P_e\).
-- [ ] Nie nazwano zmiany bazy redukcją wymiaru.
-- [ ] Rozdzielono ruch kolektywny i względny.
-- [ ] Uwzględniono nierozróżnialność elektronów.
-- [ ] Nie wyciągnięto mechanizmu przyczynowego tylko z korelacji.
-- [ ] Direct i delayed porównano przy tej samej intensywności.
-- [ ] Wszystkie liczby pochodzą z aktualnego uruchomienia analizy.
-
-### Matematyka / kod
-
-- [ ] Transformacja jest ortonormalna.
-- [ ] Sprawdzono rekonstrukcję \(p_2,p_3,p_4\).
-- [ ] Sprawdzono zachowanie normy.
-- [ ] Notebook przechodzi `Restart Kernel -> Run All`.
-- [ ] Nie ma zależności od starego stanu pamięci Jupytera.
-- [ ] Zera / NaN / clipping są traktowane jawnie.
-
-### Tekst
-
-- [ ] Sekcja ma jasny cel.
-- [ ] Każde równanie jest objaśnione.
-- [ ] Każdy rysunek jest omówiony w tekście.
-- [ ] Podpis rysunku mówi, jaki dataset pokazano.
-- [ ] Wnioski są proporcjonalne do danych.
-- [ ] Nie ma „lania wody”.
-- [ ] Nie ma sztucznego stylu generowanego przez LLM.
-- [ ] Terminologia jest konsekwentna.
-
-### Źródła
-
-- [ ] Każde ważne twierdzenie teoretyczne ma źródło.
-- [ ] Każda pozycja bibliograficzna istnieje.
-- [ ] DOI / dane bibliograficzne zostały zweryfikowane.
-- [ ] Nie skopiowano twierdzenia ze starej pracy jako faktu bez sprawdzenia.
-
-### LaTeX
-
-- [ ] Kompilator: pdfLaTeX.
-- [ ] Brak undefined references.
-- [ ] Brak undefined citations.
-- [ ] Brak brakujących grafik.
-- [ ] Numeracja jest automatyczna.
-- [ ] Template nie został niepotrzebnie przebudowany.
-
----
-
-## 18. Priorytety agenta
-
-Jeżeli wymagania wchodzą ze sobą w konflikt, stosuj następującą kolejność:
-
-1. **poprawność fizyczna i brak fałszywych wyników;**
-2. **aktualne polecenie autora;**
-3. **aktualne wymagania UJ/WFAIS i promotora;**
-4. **reprodukowalność analizy;**
-5. **spójność całej pracy;**
-6. **styl naukowy;**
-7. **estetyka LaTeX.**
-
-Ładny PDF z błędną fizyką nadal jest błędną pracą. Niestety typografia nie ma jeszcze zdolności naprawiania mechaniki wielociałowej.
-
----
-
-## 19. Najważniejsza zasada
-
-> **Nie zgaduj. Sprawdzaj repozytorium, notebooki, dane i źródła.**
->
-> Jeżeli czegoś nie da się uzasadnić na podstawie aktualnych wyników albo literatury, agent ma to powiedzieć zamiast produkować pewnie brzmiącą bzdurę.
-
-Praca ma być napisana tak, aby czytelnik mógł przejść od problemu fizycznego przez definicję metody aż do wyników i wniosków bez zgadywania, skąd wziął się którykolwiek krok.
+Nie zgadywać. Sprawdzać repozytorium, notebooki, dane i źródła. Jeżeli czegoś nie da się uzasadnić na podstawie aktualnych wyników albo literatury, agent ma to powiedzieć zamiast produkować pewnie brzmiącą bzdurę.
