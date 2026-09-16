@@ -20,7 +20,7 @@ Dla każdej tezy rozdziel:
 3. ograniczenie: czego ten wynik sam nie dowodzi;
 4. oparcie w literaturze: źródło mechanizmu lub oczekiwania teoretycznego.
 
-Nie wyprowadzaj mechanizmu z samej korelacji i nie używaj PCA jako dowodu rekolidowania.
+Nie wyprowadzaj mechanizmu z samej korelacji i nie używaj PCA jako dowodu ponownego zderzenia (ang. recollision).
 
 ## Używane wielkości
 
