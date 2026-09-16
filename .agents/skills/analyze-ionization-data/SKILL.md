@@ -9,7 +9,7 @@ Stosuj ten skill do notebooków, kodu, danych, tabel, wykresów i wyników liczb
 
 ## Źródła prawdy
 
-Najpierw przeczytaj `ECBB_model/README.md`, następnie notebooki istotne dla zadania. Dla głównego toku analizy są to przede wszystkim:
+Najpierw sprawdź dokumentację zbioru danych. Jeśli wskazany wcześniej plik `ECBB_model/README.md` nie istnieje, zgłoś ten brak zamiast domyślać się schematu danych. Następnie przeczytaj notebooki istotne dla zadania. Dla głównego toku analizy są to przede wszystkim:
 
 - `05_PCA_full.ipynb` — PCA dziewięciu składowych pędu;
 - `07_analiza_3D_clean.ipynb` — analiza w stałej bazie i obserwable.
