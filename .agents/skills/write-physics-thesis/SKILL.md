@@ -5,7 +5,7 @@ description: Write and revise the Polish LaTeX bachelor thesis from verified ana
 
 # Redakcja pracy licencjackiej
 
-Stosuj do pisania i redakcji \`main.tex\`, rozdziałów, podpisów, tabel oraz \`bibliography.bib\`. Nie ustalaj samodzielnie wyników analizy; pobieraj je z aktualnie zweryfikowanych notebooków.
+Stosuj do pisania i redakcji `main.tex`, rozdziałów, podpisów, tabel oraz `bibliography.bib`. Nie ustalaj samodzielnie wyników analizy; pobieraj je z aktualnie zweryfikowanych notebooków.
 
 ## Logika tekstu
 
@@ -38,13 +38,13 @@ Pisz po polsku, prosto, rzeczowo i technicznie. Preferuj krótkie zdania. Usuń 
 
 Każdy termin naukowy musi być rzeczywiście używany w polskiej literaturze. Nie twórz kalk językowych. Jeśli brak utrwalonego polskiego odpowiednika, użyj terminu angielskiego i objaśnij go przy pierwszym wystąpieniu.
 
-Nie kopiuj błędów językowych z tekstów referencyjnych. Styl porównuj ze sprawozdaniem \`Dlugosc_fali_Nepravskaya_Karina.pdf\`, ale nie kopiuj jego zdań.
+Nie kopiuj błędów językowych z tekstów referencyjnych. Styl porównuj ze sprawozdaniem `Dlugosc_fali_Nepravskaya_Karina.pdf`, ale nie kopiuj jego zdań.
 
 ## Literatura i LaTeX
 
 - Źródła naukowe wykorzystuj do teorii, metod i interpretacji, nie do zastępowania wyników z repozytorium.
 - Cytuj tezę przy zdaniu, którego dotyczy.
-- Nie dodawaj pozycji do \`.bib\`, której metadanych nie zweryfikowano.
+- Nie dodawaj pozycji do `.bib`, której metadanych nie zweryfikowano.
 - Każdy wzór, rysunek i tabela muszą zostać wprowadzone w tekście i wykorzystane w rozumowaniu.
 - Zachowaj konsekwentne symbole; w szczególności nie utożsamiaj \(P_e\) z \(Q\).
 - Tytuł pracy dopracuj po ustabilizowaniu treści, nie na początku.
