@@ -1,0 +1,6 @@
+samples                 = 2000000
+<x_max>  uniform simplex = 0.6113   (exact 11/18 = 0.6111)
+<N_eff>  uniform simplex = 2.1177
+
+Sign sectors, independent symmetric signs:
+P(all three same direction) = 2/8 = 0.2500

@@ -1,0 +1,218 @@
+##############################################################################
+# 1. VALIDATION of the orthogonal transformation (p2,p3,p4)->(Q,xi1,xi2)
+##############################################################################
+max |norm error|                  3.242e-14
+max |reconstruction error|        1.887e-15
+max |x2+x3+x4-1|                  3.331e-16
+
+##############################################################################
+# 2. LONGITUDINAL MOMENTUM CONSERVATION  (p1z + p2z + p3z + p4z)
+##############################################################################
+I=1.0  all      n=  4872  mean=+0.0106  sd=1.6167  max|.|=9.562  corr(p1z,P_e)=-0.9582
+I=1.0  delayed  n=  2097  mean=+0.0279  sd=1.6243  max|.|=8.728  corr(p1z,P_e)=-0.9439
+I=1.0  direct   n=  2042  mean=-0.0221  sd=1.6003  max|.|=9.562  corr(p1z,P_e)=-0.9722
+I=1.3  all      n= 13769  mean=-0.0002  sd=1.6754  max|.|=21.086  corr(p1z,P_e)=-0.9643
+I=1.3  delayed  n=  5837  mean=-0.0038  sd=1.6932  max|.|=21.086  corr(p1z,P_e)=-0.9512
+I=1.3  direct   n=  6198  mean=-0.0134  sd=1.6784  max|.|=11.847  corr(p1z,P_e)=-0.9748
+I=1.6  all      n= 18578  mean=+0.0049  sd=1.6346  max|.|=12.324  corr(p1z,P_e)=-0.9698
+I=1.6  delayed  n=  7560  mean=+0.0079  sd=1.6343  max|.|=12.324  corr(p1z,P_e)=-0.9591
+I=1.6  direct   n=  8799  mean=+0.0036  sd=1.6361  max|.|=11.129  corr(p1z,P_e)=-0.9783
+I=1.7  all      n=  3873  mean=-0.0146  sd=1.6894  max|.|=11.882  corr(p1z,P_e)=-0.9651
+I=1.7  delayed  n=  1601  mean=-0.0137  sd=1.6768  max|.|=11.882  corr(p1z,P_e)=-0.9544
+I=1.7  direct   n=  1695  mean=+0.0030  sd=1.7350  max|.|=9.990  corr(p1z,P_e)=-0.9744
+
+##############################################################################
+# 3. LABEL-EXCHANGE SYMMETRY  (electrons 2 and 3 are both 'initially bound')
+##############################################################################
+I=1.0  all      <p2>=-0.014 <p3>=-0.006 <p4>=-0.059 | sd2=2.067 sd3=2.055 sd4=2.266 | p(2 vs 3)=0.849
+I=1.0  delayed  <p2>=-0.047 <p3>=+0.001 <p4>=-0.117 | sd2=1.981 sd3=1.948 sd4=2.204 | p(2 vs 3)=0.426
+I=1.0  direct   <p2>=-0.009 <p3>=-0.019 <p4>=-0.045 | sd2=2.310 sd3=2.321 sd4=2.393 | p(2 vs 3)=0.893
+I=1.3  all      <p2>=-0.019 <p3>=-0.001 <p4>=+0.008 | sd2=2.310 sd3=2.309 sd4=2.459 | p(2 vs 3)=0.528
+I=1.3  delayed  <p2>=+0.007 <p3>=+0.025 <p4>=+0.048 | sd2=2.165 sd3=2.186 sd4=2.420 | p(2 vs 3)=0.645
+I=1.3  direct   <p2>=-0.050 <p3>=-0.036 <p4>=-0.038 | sd2=2.587 sd3=2.571 sd4=2.584 | p(2 vs 3)=0.761
+I=1.6  all      <p2>=-0.005 <p3>=-0.012 <p4>=-0.011 | sd2=2.466 sd3=2.477 sd4=2.537 | p(2 vs 3)=0.778
+I=1.6  delayed  <p2>=-0.009 <p3>=-0.006 <p4>=-0.006 | sd2=2.306 sd3=2.304 sd4=2.484 | p(2 vs 3)=0.931
+I=1.6  direct   <p2>=-0.015 <p3>=-0.017 <p4>=-0.010 | sd2=2.739 sd3=2.758 sd4=2.676 | p(2 vs 3)=0.965
+I=1.7  all      <p2>=+0.013 <p3>=+0.053 <p4>=+0.117 | sd2=2.396 sd3=2.404 sd4=2.526 | p(2 vs 3)=0.472
+I=1.7  delayed  <p2>=-0.094 <p3>=+0.076 <p4>=+0.164 | sd2=2.275 sd3=2.268 sd4=2.507 | p(2 vs 3)=0.034
+I=1.7  direct   <p2>=+0.132 <p3>=+0.092 <p4>=+0.096 | sd2=2.665 sd3=2.688 sd4=2.652 | p(2 vs 3)=0.665
+
+##############################################################################
+# 4. MAIN OBSERVABLES with 95% confidence intervals
+##############################################################################
+I    class          n  <P_e>                 sd(P_e)  <K>                   <N_eff>               <x_max>               
+1.0  all         4872  -0.080 [-0.231,+0.072]  5.408    1.735 [1.709,1.762]     2.462 [2.451,2.474]     0.512 [0.509,0.515]
+1.0  delayed     2097  -0.163 [-0.362,+0.036]  4.651    2.121 [2.081,2.161]     2.367 [2.351,2.384]     0.530 [0.526,0.535]
+1.0  direct      2042  -0.073 [-0.362,+0.216]  6.658    1.182 [1.159,1.205]     2.662 [2.649,2.674]     0.464 [0.461,0.467]
+1.3  all        13769  -0.012 [-0.114,+0.090]  6.097    1.821 [1.805,1.838]     2.477 [2.470,2.483]     0.508 [0.506,0.510]
+1.3  delayed     5837  +0.080 [-0.054,+0.214]  5.222    2.276 [2.250,2.302]     2.355 [2.345,2.365]     0.535 [0.532,0.537]
+1.3  direct      6198  -0.124 [-0.307,+0.058]  7.332    1.295 [1.280,1.311]     2.654 [2.646,2.661]     0.466 [0.464,0.468]
+1.6  all        18578  -0.028 [-0.121,+0.065]  6.479    1.891 [1.876,1.906]     2.482 [2.477,2.488]     0.508 [0.507,0.510]
+1.6  delayed     7560  -0.021 [-0.145,+0.104]  5.510    2.337 [2.312,2.361]     2.367 [2.358,2.376]     0.536 [0.533,0.538]
+1.6  direct      8799  -0.042 [-0.203,+0.119]  7.705    1.417 [1.403,1.431]     2.633 [2.626,2.640]     0.471 [0.469,0.472]
+1.7  all         3873  +0.183 [-0.014,+0.379]  6.247    1.933 [1.899,1.967]     2.469 [2.456,2.481]     0.512 [0.509,0.516]
+1.7  delayed     1601  +0.147 [-0.117,+0.410]  5.384    2.383 [2.327,2.439]     2.374 [2.355,2.393]     0.533 [0.528,0.538]
+1.7  direct      1695  +0.320 [-0.039,+0.679]  7.543    1.398 [1.366,1.430]     2.628 [2.613,2.644]     0.473 [0.469,0.477]
+
+##############################################################################
+# 5. PAIR CORRELATIONS of longitudinal momenta with Fisher 95% CI
+##############################################################################
+I=1.0  all      n=  4872  r23=+0.571[+0.551,+0.589]  r24=+0.589[+0.570,+0.607]  r34=+0.565[+0.546,+0.584]
+I=1.0  delayed  n=  2097  r23=+0.263[+0.222,+0.302]  r24=+0.428[+0.393,+0.463]  r34=+0.382[+0.345,+0.418]
+I=1.0  direct   n=  2042  r23=+0.867[+0.856,+0.877]  r24=+0.844[+0.831,+0.856]  r34=+0.833[+0.819,+0.846]
+I=1.3  all      n= 13769  r23=+0.599[+0.588,+0.609]  r24=+0.616[+0.606,+0.626]  r34=+0.623[+0.613,+0.633]
+I=1.3  delayed  n=  5837  r23=+0.268[+0.244,+0.291]  r24=+0.435[+0.414,+0.456]  r34=+0.459[+0.438,+0.479]
+I=1.3  direct   n=  6198  r23=+0.871[+0.865,+0.877]  r24=+0.830[+0.822,+0.838]  r34=+0.834[+0.827,+0.842]
+I=1.6  all      n= 18578  r23=+0.613[+0.604,+0.622]  r24=+0.632[+0.623,+0.640]  r34=+0.631[+0.622,+0.640]
+I=1.6  delayed  n=  7560  r23=+0.269[+0.248,+0.290]  r24=+0.470[+0.452,+0.487]  r34=+0.465[+0.447,+0.482]
+I=1.6  direct   n=  8799  r23=+0.872[+0.867,+0.877]  r24=+0.813[+0.806,+0.820]  r34=+0.813[+0.806,+0.820]
+I=1.7  all      n=  3873  r23=+0.567[+0.545,+0.588]  r24=+0.610[+0.589,+0.629]  r34=+0.594[+0.573,+0.614]
+I=1.7  delayed  n=  1601  r23=+0.214[+0.166,+0.260]  r24=+0.456[+0.416,+0.494]  r34=+0.437[+0.397,+0.476]
+I=1.7  direct   n=  1695  r23=+0.868[+0.856,+0.879]  r24=+0.813[+0.796,+0.828]  r34=+0.814[+0.797,+0.829]
+
+##############################################################################
+# 6. SIGN SECTORS: same-direction versus mixed emission
+##############################################################################
+I=1.0  all      n=  4872 +++=0.3173 ---=0.3292 same=0.6466 mixed=0.3534
+I=1.0  delayed  n=  2097 +++=0.2189 ---=0.2465 same=0.4654 mixed=0.5346
+I=1.0  direct   n=  2042 +++=0.4829 ---=0.4907 same=0.9736 mixed=0.0264
+I=1.3  all      n= 13769 +++=0.3338 ---=0.3356 same=0.6694 mixed=0.3306
+I=1.3  delayed  n=  5837 +++=0.2476 ---=0.2347 same=0.4823 mixed=0.5177
+I=1.3  direct   n=  6198 +++=0.4677 ---=0.4852 same=0.9529 mixed=0.0471
+I=1.6  all      n= 18578 +++=0.3271 ---=0.3330 same=0.6601 mixed=0.3399
+I=1.6  delayed  n=  7560 +++=0.2381 ---=0.2444 same=0.4825 mixed=0.5175
+I=1.6  direct   n=  8799 +++=0.4518 ---=0.4565 same=0.9083 mixed=0.0917
+I=1.7  all      n=  3873 +++=0.3256 ---=0.3065 same=0.6321 mixed=0.3679
+I=1.7  delayed  n=  1601 +++=0.2305 ---=0.2267 same=0.4572 mixed=0.5428
+I=1.7  direct   n=  1695 +++=0.4743 ---=0.4307 same=0.9050 mixed=0.0950
+
+##############################################################################
+# 7. DIRECT versus DELAYED at fixed intensity (Welch test)
+##############################################################################
+I=1.0  K         direct=1.182 delayed=2.121 diff=-0.939 t=-40.0 p=<1e-16
+I=1.0  N_eff     direct=2.662 delayed=2.367 diff=+0.294 t=+28.4 p=<1e-16
+I=1.0  x_max     direct=0.464 delayed=0.530 diff=-0.066 t=-24.0 p=<1e-16
+I=1.0  K_over_A  direct=0.196 delayed=0.411 diff=-0.216 t=-53.8 p=<1e-16
+
+I=1.3  K         direct=1.295 delayed=2.276 diff=-0.981 t=-63.0 p=<1e-16
+I=1.3  N_eff     direct=2.654 delayed=2.355 diff=+0.299 t=+46.9 p=<1e-16
+I=1.3  x_max     direct=0.466 delayed=0.535 diff=-0.069 t=-40.5 p=<1e-16
+I=1.3  K_over_A  direct=0.201 delayed=0.409 diff=-0.209 t=-81.3 p=<1e-16
+
+I=1.6  K         direct=1.417 delayed=2.337 diff=-0.920 t=-62.7 p=<1e-16
+I=1.6  N_eff     direct=2.633 delayed=2.367 diff=+0.266 t=+46.7 p=<1e-16
+I=1.6  x_max     direct=0.471 delayed=0.536 diff=-0.065 t=-42.2 p=<1e-16
+I=1.6  K_over_A  direct=0.218 delayed=0.411 diff=-0.193 t=-78.7 p=<1e-16
+
+I=1.7  K         direct=1.398 delayed=2.383 diff=-0.985 t=-30.1 p=<1e-16
+I=1.7  N_eff     direct=2.628 delayed=2.374 diff=+0.254 t=+20.5 p=<1e-16
+I=1.7  x_max     direct=0.473 delayed=0.533 diff=-0.060 t=-18.0 p=<1e-16
+I=1.7  K_over_A  direct=0.220 delayed=0.416 diff=-0.196 t=-36.4 p=<1e-16
+
+##############################################################################
+# 8. RANGE CHECKS of the bounded observables
+##############################################################################
+I=1.0  all      N_eff in [1.0108,2.9998]  x_max in [0.3370,0.9946]
+I=1.0  delayed  N_eff in [1.0708,2.9994]  x_max in [0.3400,0.9661]
+I=1.0  direct   N_eff in [1.3802,2.9998]  x_max in [0.3370,0.8380]
+I=1.3  all      N_eff in [1.0368,3.0000]  x_max in [0.3344,0.9819]
+I=1.3  delayed  N_eff in [1.0644,3.0000]  x_max in [0.3344,0.9690]
+I=1.3  direct   N_eff in [1.0368,2.9999]  x_max in [0.3351,0.9819]
+I=1.6  all      N_eff in [1.0217,3.0000]  x_max in [0.3340,0.9893]
+I=1.6  delayed  N_eff in [1.0217,3.0000]  x_max in [0.3340,0.9893]
+I=1.6  direct   N_eff in [1.1213,3.0000]  x_max in [0.3343,0.9434]
+I=1.7  all      N_eff in [1.0177,2.9984]  x_max in [0.3399,0.9912]
+I=1.7  delayed  N_eff in [1.0930,2.9984]  x_max in [0.3439,0.9558]
+I=1.7  direct   N_eff in [1.1218,2.9978]  x_max in [0.3399,0.9430]
+
+##############################################################################
+# 9. SIMPLEX EQUIVALENCE: shares grouped by sign sector
+#    (x2,x3,x4) are the barycentric coordinates of the Dalitz triangle,
+#    the sign sectors are the 8 faces of the octahedron.
+#    centre of a face -> N_eff = 3, x_max = 1/3 = 0.333
+#    middle of an edge -> N_eff = 2, x_max = 1/2, x_min = 0
+##############################################################################
+I=1.0  direct   same-dir  n=  1988 <N_eff>=2.676 <x_max>=0.461 <x_min>=0.206
+I=1.0  direct   mixed     n=    54 <N_eff>=2.123 <x_max>=0.574 <x_min>=0.067
+I=1.0  delayed  same-dir  n=   976 <N_eff>=2.370 <x_max>=0.528 <x_min>=0.133
+I=1.0  delayed  mixed     n=  1121 <N_eff>=2.366 <x_max>=0.532 <x_min>=0.136
+
+I=1.3  direct   same-dir  n=  5906 <N_eff>=2.678 <x_max>=0.461 <x_min>=0.208
+I=1.3  direct   mixed     n=   292 <N_eff>=2.164 <x_max>=0.569 <x_min>=0.084
+I=1.3  delayed  same-dir  n=  2815 <N_eff>=2.384 <x_max>=0.526 <x_min>=0.138
+I=1.3  delayed  mixed     n=  3022 <N_eff>=2.328 <x_max>=0.543 <x_min>=0.130
+
+I=1.6  direct   same-dir  n=  7992 <N_eff>=2.673 <x_max>=0.461 <x_min>=0.207
+I=1.6  direct   mixed     n=   807 <N_eff>=2.238 <x_max>=0.564 <x_min>=0.110
+I=1.6  delayed  same-dir  n=  3648 <N_eff>=2.418 <x_max>=0.521 <x_min>=0.148
+I=1.6  delayed  mixed     n=  3912 <N_eff>=2.319 <x_max>=0.549 <x_min>=0.133
+
+I=1.7  direct   same-dir  n=  1534 <N_eff>=2.676 <x_max>=0.462 <x_min>=0.207
+I=1.7  direct   mixed     n=   161 <N_eff>=2.177 <x_max>=0.580 <x_min>=0.101
+I=1.7  delayed  same-dir  n=   732 <N_eff>=2.421 <x_max>=0.519 <x_min>=0.149
+I=1.7  delayed  mixed     n=   869 <N_eff>=2.334 <x_max>=0.545 <x_min>=0.134
+
+##############################################################################
+# 10. MINORITY ELECTRON in the mixed sectors
+#     tests the simplex-method claim that the electron moving against
+#     the other two carries only a small share of the momentum
+##############################################################################
+I=1.0  direct   n_mixed=    54 <x_minority>=0.070 median=0.048 <x_majority>=0.465 frac(x_minority<0.15)=0.852
+I=1.0  delayed  n_mixed=  1121 <x_minority>=0.177 median=0.149 <x_majority>=0.411 frac(x_minority<0.15)=0.502
+
+I=1.3  direct   n_mixed=   292 <x_minority>=0.116 median=0.074 <x_majority>=0.442 frac(x_minority<0.15)=0.747
+I=1.3  delayed  n_mixed=  3022 <x_minority>=0.187 median=0.151 <x_majority>=0.407 frac(x_minority<0.15)=0.498
+
+I=1.6  direct   n_mixed=   807 <x_minority>=0.166 median=0.119 <x_majority>=0.417 frac(x_minority<0.15)=0.599
+I=1.6  delayed  n_mixed=  3912 <x_minority>=0.210 median=0.171 <x_majority>=0.395 frac(x_minority<0.15)=0.441
+
+I=1.7  direct   n_mixed=   161 <x_minority>=0.171 median=0.121 <x_majority>=0.414 frac(x_minority<0.15)=0.609
+I=1.7  delayed  n_mixed=   869 <x_minority>=0.209 median=0.174 <x_majority>=0.396 frac(x_minority<0.15)=0.418
+
+##############################################################################
+# 11. INVARIANCE of the scalar observables under label permutations
+#     N_eff and x_max are symmetric functions of (x2,x3,x4), so averaging
+#     over the 3! permutations must leave them unchanged
+##############################################################################
+I=1.3 direct   <N_eff>: original=2.6535329986 symmetrised=2.6535329986 diff=0.00e+00
+              <x_max>: original=0.4657275030 symmetrised=0.4657275030 diff=5.55e-17
+I=1.3 delayed  <N_eff>: original=2.3550274721 symmetrised=2.3550274721 diff=0.00e+00
+              <x_max>: original=0.5347721752 symmetrised=0.5347721752 diff=0.00e+00
+
+##############################################################################
+# 12. SHAPE OF THE RELATIVE PLANE (xi1, xi2)
+#     exchanging electrons 2 and 3 maps xi1 -> -xi1 and leaves xi2 fixed,
+#     so the distribution must be symmetric in xi1 (skewness ~ 0).
+#     sd(xi2) > sd(xi1) measures how strongly the labelling separates
+#     the initially bound pair from the initially tunnelling electron.
+##############################################################################
+I=1.0  all      <xi1>=-0.006 <xi2>=+0.040 | sd(xi1)=1.351 sd(xi2)=1.433 ratio=1.061 | skew(xi1)=-0.018
+I=1.0  delayed  <xi1>=-0.034 <xi2>=+0.076 | sd(xi1)=1.687 sd(xi2)=1.588 ratio=0.941 | skew(xi1)=-0.001
+I=1.0  direct   <xi1>=+0.007 <xi2>=+0.025 | sd(xi1)=0.844 sd(xi2)=0.979 ratio=1.160 | skew(xi1)=-0.052
+I=1.3  all      <xi1>=-0.012 <xi2>=-0.014 | sd(xi1)=1.463 sd(xi2)=1.477 ratio=1.010 | skew(xi1)=-0.034
+I=1.3  delayed  <xi1>=-0.013 <xi2>=-0.026 | sd(xi1)=1.862 sd(xi2)=1.663 ratio=0.893 | skew(xi1)=-0.014
+I=1.3  direct   <xi1>=-0.010 <xi2>=-0.004 | sd(xi1)=0.926 sd(xi2)=1.097 ratio=1.184 | skew(xi1)=-0.054
+I=1.6  all      <xi1>=+0.005 <xi2>=+0.002 | sd(xi1)=1.537 sd(xi2)=1.516 ratio=0.986 | skew(xi1)=-0.011
+I=1.6  delayed  <xi1>=-0.002 <xi2>=-0.001 | sd(xi1)=1.970 sd(xi2)=1.672 ratio=0.849 | skew(xi1)=-0.009
+I=1.6  direct   <xi1>=+0.001 <xi2>=-0.005 | sd(xi1)=0.984 sd(xi2)=1.230 ratio=1.251 | skew(xi1)=+0.053
+I=1.7  all      <xi1>=-0.028 <xi2>=-0.068 | sd(xi1)=1.580 sd(xi2)=1.548 ratio=0.980 | skew(xi1)=-0.037
+I=1.7  delayed  <xi1>=-0.120 <xi2>=-0.142 | sd(xi1)=2.014 sd(xi2)=1.699 ratio=0.843 | skew(xi1)=+0.010
+I=1.7  direct   <xi1>=+0.028 <xi2>=+0.012 | sd(xi1)=0.972 sd(xi2)=1.205 ratio=1.240 | skew(xi1)=+0.056
+
+##############################################################################
+# 13. WHICH ELECTRON IS THE MINORITY ONE IN THE MIXED SECTORS?
+#     If the three labels were statistically equivalent each electron
+#     would play the minority role in 1/3 = 0.333 of the mixed events.
+##############################################################################
+I=1.0  all      n_mixed=  1722  e2=0.344  e3=0.377  e4(tunnelling)=0.279+-0.011  ratio e4/[(e2+e3)/2]=0.775
+I=1.0  delayed  n_mixed=  1121  e2=0.360  e3=0.407  e4(tunnelling)=0.234+-0.013  ratio e4/[(e2+e3)/2]=0.610
+I=1.0  direct   n_mixed=    54  e2=0.241  e3=0.389  e4(tunnelling)=0.370+-0.066  ratio e4/[(e2+e3)/2]=1.176
+I=1.3  all      n_mixed=  4552  e2=0.363  e3=0.358  e4(tunnelling)=0.279+-0.007  ratio e4/[(e2+e3)/2]=0.776
+I=1.3  delayed  n_mixed=  3022  e2=0.401  e3=0.374  e4(tunnelling)=0.225+-0.008  ratio e4/[(e2+e3)/2]=0.582
+I=1.3  direct   n_mixed=   292  e2=0.223  e3=0.243  e4(tunnelling)=0.534+-0.029  ratio e4/[(e2+e3)/2]=2.294
+I=1.6  all      n_mixed=  6315  e2=0.351  e3=0.349  e4(tunnelling)=0.301+-0.006  ratio e4/[(e2+e3)/2]=0.861
+I=1.6  delayed  n_mixed=  3912  e2=0.377  e3=0.388  e4(tunnelling)=0.235+-0.007  ratio e4/[(e2+e3)/2]=0.615
+I=1.6  direct   n_mixed=   807  e2=0.238  e3=0.217  e4(tunnelling)=0.545+-0.018  ratio e4/[(e2+e3)/2]=2.398
+I=1.7  all      n_mixed=  1425  e2=0.358  e3=0.358  e4(tunnelling)=0.284+-0.012  ratio e4/[(e2+e3)/2]=0.794
+I=1.7  delayed  n_mixed=   869  e2=0.396  e3=0.399  e4(tunnelling)=0.205+-0.014  ratio e4/[(e2+e3)/2]=0.515
+I=1.7  direct   n_mixed=   161  e2=0.248  e3=0.217  e4(tunnelling)=0.534+-0.039  ratio e4/[(e2+e3)/2]=2.293

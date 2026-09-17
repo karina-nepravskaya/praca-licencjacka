@@ -1,0 +1,257 @@
+parsed entries: 26
+
+==============================================================================
+Emmanouilidou2023   (article)
+  bib: Emmanouilidou, A. and Peters, M. B. and Katsoulis, G. P.
+       Singularity in the electron-core potential as a gateway to accurate mu
+       Physical Review A vol=107 p=L041101 (2023)
+  DOI: 10.1103/PhysRevA.107.L041101  -> RESOLVES
+  xref: Emmanouilidou | Singularity in the electron-core potential as a gateway to accurat
+        Physical Review A vol=107 p=L041101 (2023)
+  licence: https://creativecommons.org/licenses/by/4.0/
+  arXiv: not found
+==============================================================================
+Peters2022   (article)
+  bib: Peters, M. B. and Katsoulis, G. P. and Emmanouilidou, A.
+       Ionization dynamics of strongly driven atoms in a three-dimensional se
+       Physical Review A vol=105 p=043102 (2022)
+  DOI: 10.1103/PhysRevA.105.043102  -> RESOLVES
+  xref: Peters | General model and toolkit for the ionization of three or more elec
+        Physical Review A vol=105 p=043102 (2022)
+  !! TITLE MISMATCH
+  licence: https://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Katsoulis2018   (article)
+  bib: Katsoulis, G. P. and Hadjipittas, A. and Bergues, B. and Kling, M. F. 
+       Slingshot nonsequential double ionization as a gate to ultrafast one-o
+       Physical Review Letters vol=121 p=263203 (2018)
+  DOI: 10.1103/PhysRevLett.121.263203  -> RESOLVES
+  xref: Katsoulis | Slingshot Nonsequential Double Ionization as a Gate to Anticorrela
+        Physical Review Letters vol=121 p=263203 (2018)
+  !! TITLE MISMATCH
+  licence: https://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Corkum1993   (article)
+  bib: Corkum, P. B.
+       Plasma perspective on strong field multiphoton ionization
+       Physical Review Letters vol=71 p=1994 (1993)
+  DOI: 10.1103/PhysRevLett.71.1994  -> RESOLVES
+  xref: Corkum | Plasma perspective on strong field multiphoton ionization
+        Physical Review Letters vol=71 p=1994-1997 (1993)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+LHuillier1983   (article)
+  bib: L'Huillier, A. and Lompre, L. A. and Mainfray, G. and Manus, C.
+       Multiply charged ions induced by multiphoton absorption in rare gases 
+       Physical Review A vol=27 p=2503 (1983)
+  DOI: 10.1103/PhysRevA.27.2503  -> RESOLVES
+  xref: l'Huillier | Multiply charged ions induced by multiphoton absorption in rare ga
+        Physical Review A vol=27 p=2503-2512 (1983)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+BeckerRottke2008   (article)
+  bib: Becker, W. and Rottke, H.
+       Many-electron strong-field physics
+       Contemporary Physics vol=49 p=199 (2008)
+  DOI: 10.1080/00107510802332908  -> RESOLVES
+  xref: Becker | Many-electron strong-field physics
+        Contemporary Physics vol=49 p=199-223 (2008)
+  arXiv: not found
+==============================================================================
+KrauszIvanov2009   (article)
+  bib: Krausz, F. and Ivanov, M.
+       Attosecond physics
+       Reviews of Modern Physics vol=81 p=163 (2009)
+  DOI: 10.1103/RevModPhys.81.163  -> RESOLVES
+  xref: Krausz | Attosecond physics
+        Reviews of Modern Physics vol=81 p=163-234 (2009)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: http://arxiv.org/abs/1607.01480v1  (title matches)
+==============================================================================
+Ammosov1986   (article)
+  bib: Ammosov, M. V. and Delone, N. B. and Krainov, V. P.
+       Tunnel ionization of complex atoms and of atomic ions in an alternatin
+       Soviet Physics JETP vol=64 p=1191 (1986)
+  DOI: none -> needs manual check
+  arXiv: not found
+==============================================================================
+Moshammer2000   (article)
+  bib: Moshammer, R. and Feuerstein, B. and Schmitt, W. and Dorn, A. and Schr
+       Momentum distributions of Ne$^{n+}$ ions created by an intense ultrash
+       Physical Review Letters vol=84 p=447 (2000)
+  DOI: 10.1103/PhysRevLett.84.447  -> RESOLVES
+  xref: Moshammer | Momentum Distributions of<mml:math xmlns:mml="http://www.w3.org/19
+        Physical Review Letters vol=84 p=447-450 (2000)
+  !! TITLE MISMATCH
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Staudte2007   (article)
+  bib: Staudte, A. and Ruiz, C. and Sch{\"o}ffler, M. and Sch{\"o}ssler, S. a
+       Binary and recoil collisions in strong field double ionization of heli
+       Physical Review Letters vol=99 p=263002 (2007)
+  DOI: 10.1103/PhysRevLett.99.263002  -> RESOLVES
+  xref: Staudte | Binary and Recoil Collisions in Strong Field Double Ionization of 
+        Physical Review Letters vol=99 p=263002 (2007)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Rudenko2007   (article)
+  bib: Rudenko, A. and de Jesus, V. L. B. and Ergler, T. and Zrost, K. and Fe
+       Correlated two-electron momentum spectra for strong-field nonsequentia
+       Physical Review Letters vol=99 p=263003 (2007)
+  DOI: 10.1103/PhysRevLett.99.263003  -> RESOLVES
+  xref: Rudenko | Correlated Two-Electron Momentum Spectra for Strong-Field Nonseque
+        Physical Review Letters vol=99 p=263003 (2007)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Rudenko2004   (article)
+  bib: Rudenko, A. and Zrost, K. and Feuerstein, B. and de Jesus, V. L. B. an
+       Correlated multielectron dynamics in ultrafast laser pulse interaction
+       Physical Review Letters vol=93 p=253001 (2004)
+  DOI: 10.1103/PhysRevLett.93.253001  -> RESOLVES
+  xref: Rudenko | Correlated Multielectron Dynamics in Ultrafast Laser Pulse Interac
+        Physical Review Letters vol=93 p=253001 (2004)
+  licence: http://link.aps.org/licenses/aps-default-license
+  arXiv: not found
+==============================================================================
+Efimov2021   (article)
+  bib: Efimov, D. K. and Maksymov, A. and Ciappina, M. and Prauzner-Bechcicki
+       Three-electron correlations in strong laser field ionization
+       Optics Express vol=29 p=26526 (2021)
+  DOI: 10.1364/OE.427217  -> CROSSREF FAILED: HTTP Error 404: Not Found
+  arXiv: http://arxiv.org/abs/2104.14438v1  (title matches)
+==============================================================================
+Thiede2018   (article)
+  bib: Thiede, J. H. and Eckhardt, B. and Efimov, D. K. and Prauzner-Bechcick
+       Ab initio study of time-dependent dynamics in strong-field triple ioni
+       Physical Review A vol=98 p=031401(R) (2018)
+  DOI: 10.1103/PhysRevA.98.031401  -> RESOLVES
+  xref: Thiede | <i>Ab initio</i> study of time-dependent dynamics in strong-field 
+        Physical Review A vol=98 p=031401 (2018)
+  !! TITLE MISMATCH
+  licence: https://link.aps.org/licenses/aps-default-license
+  arXiv: http://arxiv.org/abs/1804.05773v2  (title matches)
+==============================================================================
+Dalitz1953   (article)
+  bib: Dalitz, R. H.
+       On the analysis of $\tau$-meson data and the nature of the $\tau$-meso
+       The London, Edinburgh, and Dublin Philosophical Magazine and vol=44 p=1068 (1953)
+  DOI: 10.1080/14786441008520365  -> RESOLVES
+  xref: Dalitz | CXII. On the analysis of τ-meson data and the nature of the τ-meso
+        The London, Edinburgh, and Dublin Philosophical Magazine and vol=44 p=1068-1080 (1953)
+  arXiv: not found
+==============================================================================
+Ojczenasz2023   (phdthesis)
+  bib: Ojczenasz, Michał
+       Przedstawianie czterowymiarowych danych na płaszczyźnie
+       Uniwersytet Jagielloński, Wydział Fizyki, Astronomii i Infor vol=- p=- (2023)
+  DOI: none -> needs manual check
+==============================================================================
+Lancaster1965   (article)
+  bib: Lancaster, H. O.
+       The Helmert matrices
+       The American Mathematical Monthly vol=72 p=4 (1965)
+  DOI: 10.1080/00029890.1965.11970483  -> RESOLVES
+  xref: Lancaster | The Helmert Matrices
+        The American Mathematical Monthly vol=72 p=4-12 (1965)
+  arXiv: not found
+==============================================================================
+Jolliffe2002   (book)
+  bib: Jolliffe, I. T.
+       Principal Component Analysis
+       Springer vol=- p=- (2002)
+  DOI: 10.1007/b98835  -> RESOLVES
+  xref: ? | Principal Component Analysis
+        Springer Series in Statistics vol=- p=- (2002)
+  licence: http://www.springer.com/tdm
+==============================================================================
+Aitchison1986   (book)
+  bib: Aitchison, J.
+       The Statistical Analysis of Compositional Data
+       Chapman and Hall vol=- p=- (1986)
+  DOI: none -> needs manual check
+==============================================================================
+Simpson1949   (article)
+  bib: Simpson, E. H.
+       Measurement of diversity
+       Nature vol=163 p=688 (1949)
+  DOI: 10.1038/163688a0  -> RESOLVES
+  xref: SIMPSON | Measurement of Diversity
+        Nature vol=163 p=688-688 (1949)
+  licence: https://www.springernature.com/gp/researchers/text-and-data-
+  arXiv: http://arxiv.org/abs/2105.06929v1  (DIFFERENT TITLE: On Measuring the Diversity of Organizational Netwo)
+==============================================================================
+Hill1973   (article)
+  bib: Hill, M. O.
+       Diversity and evenness: a unifying notation and its consequences
+       Ecology vol=54 p=427 (1973)
+  DOI: 10.2307/1934352  -> RESOLVES
+  xref: Hill | Diversity and Evenness: A Unifying Notation and Its Consequences
+        Ecology vol=54 p=427-432 (1973)
+  licence: http://onlinelibrary.wiley.com/termsAndConditions#vor
+  arXiv: not found
+==============================================================================
+Welch1947   (article)
+  bib: Welch, B. L.
+       The generalization of Student's problem when several different populat
+       Biometrika vol=34 p=28 (1947)
+  DOI: 10.1093/biomet/34.1-2.28  -> RESOLVES
+  xref: WELCH | THE GENERALIZATION OF ‘STUDENT'S’ PROBLEM WHEN SEVERAL DIFFERENT P
+        Biometrika vol=34 p=28-35 (1947)
+  !! TITLE MISMATCH
+  arXiv: not found
+==============================================================================
+Fisher1915   (article)
+  bib: Fisher, R. A.
+       Frequency distribution of the values of the correlation coefficient in
+       Biometrika vol=10 p=507 (1915)
+  DOI: 10.2307/2331838  -> RESOLVES
+  xref: Fisher | Frequency Distribution of the Values of the Correlation Coefficien
+        Biometrika vol=10 p=507 (1915)
+  arXiv: not found
+==============================================================================
+Harris2020   (article)
+  bib: Harris, C. R. and Millman, K. J. and van der Walt, S. J. and others
+       Array programming with NumPy
+       Nature vol=585 p=357 (2020)
+  DOI: 10.1038/s41586-020-2649-2  -> RESOLVES
+  xref: Harris | Array programming with NumPy
+        Nature vol=585 p=357-362 (2020)
+  licence: https://creativecommons.org/licenses/by/4.0
+  arXiv: http://arxiv.org/abs/2006.10256v1  (title matches)
+==============================================================================
+Pedregosa2011   (article)
+  bib: Pedregosa, F. and Varoquaux, G. and Gramfort, A. and others
+       Scikit-learn: Machine learning in Python
+       Journal of Machine Learning Research vol=12 p=2825 (2011)
+  DOI: none -> needs manual check
+  arXiv: http://arxiv.org/abs/1201.0490v4  (title matches)
+==============================================================================
+Hunter2007   (article)
+  bib: Hunter, J. D.
+       Matplotlib: A 2D graphics environment
+       Computing in Science and Engineering vol=9 p=90 (2007)
+  DOI: 10.1109/MCSE.2007.55  -> RESOLVES
+  xref: Hunter | Matplotlib: A 2D Graphics Environment
+        Computing in Science &amp; Engineering vol=9 p=90-95 (2007)
+  licence: https://ieeexplore.ieee.org/Xplorehelp/downloads/license-inf
+  arXiv: not found
+
+==============================================================================
+ENTRIES WITH ISSUES: 10
+  Peters2022: title mismatch
+  Katsoulis2018: title mismatch
+  Ammosov1986: no DOI
+  Moshammer2000: title mismatch
+  Efimov2021: DOI unresolvable: 10.1364/OE.427217
+  Thiede2018: title mismatch
+  Ojczenasz2023: no DOI
+  Aitchison1986: no DOI
+  Welch1947: title mismatch
+  Pedregosa2011: no DOI

@@ -1,0 +1,32 @@
+klucz                OA status        cytowania    link
+--------------------------------------------------------------------------------------------------------------
+Emmanouilidou2023    hybrid           cyt.:8       http://link.aps.org/pdf/10.1103/PhysRevA.107.L041101
+Peters2022           green            cyt.:12      https://arxiv.org/pdf/2201.12160
+Katsoulis2018        green            cyt.:30      https://arxiv.org/pdf/1805.10057
+Corkum1993           green            cyt.:7188    https://nrc-publications.canada.ca/eng/view/accepted/?id=c16
+LHuillier1983        closed           cyt.:450     
+BeckerRottke2008     closed           cyt.:60      
+KrauszIvanov2009     bronze           cyt.:5415    http://link.aps.org/pdf/10.1103/RevModPhys.81.163
+Ammosov1986          NOT IN OPENALEX  -            
+Moshammer2000        closed           cyt.:377     
+Staudte2007          green            cyt.:288     https://nrc-publications.canada.ca/eng/view/accepted/?id=77c
+Rudenko2007          closed           cyt.:247     
+Rudenko2004          green            cyt.:182     https://arxiv.org/pdf/physics/0408065
+Efimov2021           LOOKUP FAILED    HTTP Error 404: Not Found 
+Thiede2018           green            cyt.:25      https://arxiv.org/pdf/1804.05773
+Dalitz1953           closed           cyt.:590     
+Ojczenasz2023        NOT IN OPENALEX  -            
+Lancaster1965        closed           cyt.:101     
+Jolliffe2002         closed           cyt.:911     
+Aitchison1986        closed           cyt.:4217    
+Simpson1949          bronze           cyt.:14313   https://www.nature.com/articles/163688a0.pdf
+Hill1973             closed           cyt.:6485    
+Welch1947            closed           cyt.:4161    
+Fisher1915           closed           cyt.:1337    
+Harris2020           hybrid           cyt.:23766   https://www.nature.com/articles/s41586-020-2649-2.pdf
+Pedregosa2011        green            cyt.:63993   https://orbi.uliege.be/handle/2268/225787
+Hunter2007           closed           cyt.:41001   
+
+darmowo dostepne online : 11
+za paywallem            : 12
+do sprawdzenia recznie  : 3  -> ['Ammosov1986', 'Efimov2021', 'Ojczenasz2023']
