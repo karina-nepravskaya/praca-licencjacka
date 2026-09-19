@@ -46,7 +46,7 @@ uwalniane w niesekwencyjnej potrójnej jonizacji neonu w silnym polu
 laserowym. Analizowane są pędy końcowe pochodzące z
 półklasycznego modelu ECBB. Punktem wyjścia jest reprezentacja
 simpleksowa, która dobrze działa dla trzech składowych, ale przestaje
-być czytelna przy większej ich liczbie. Zaproponowano opis alternatywny:
+być czytelna przy większej ich liczbie. Jako opis alternatywny zaproponowano wprowadzić
 stałą bazę ortonormalną rozdzielającą ruch kolektywny od
 ruchu względnego oraz zestaw skalarnych obserwabli podziału pędu.
 Bazę wybrano na podstawie analizy składowych głównych, ale nie
@@ -71,20 +71,12 @@ Gdy natężenie pola laserowego staje się porównywalne z polem
 wiążącym elektrony w atomie, opis jonizacji jako absorpcji
 pojedynczych fotonów przestaje wystarczać. Pole zewnętrzne obniża
 barierę potencjału na tyle, że elektron może się przez nią
-przetunelować~\cite{Ammosov1986}. Uwolniony elektron jest następnie
-przy\-spieszany przez pole. Ponieważ pole zmienia znak, część
-trajektorii wraca w pobliże jonu macierzystego i może się z nim
-zderzyć. Ten mechanizm, nazywany rekolizją, został opisany przez
-Corkuma~\cite{Corkum1993} i stanowi podstawę interpretacji większości
-zjawisk zachodzących w silnym polu~\cite{KrauszIvanov2009}.
+przetunelować~\cite{Ammosov1986}. Elektron uwolniony w odpowiedniej fazie pola jest początkowo oddalany od jonu, lecz po zmianie zwrotu pola może zostać zawrócony i ponownie zbliżyć się do jonu macierzystego. Mechanizm ten, nazywany rekolizją, może prowadzić do niesekwencyjnej jonizacji wielokrotnej, w której kilka elektronów opuszcza atom w sposób skorelowany~\cite{Corkum1993}.
 
-Rekolizja prowadzi między innymi do jonizacji niesekwencyjnej, w której
-kilka elektronów opuszcza atom w sposób skorelowany. Doświadczalnie
-objawia się to nadmiarem jonów wielokrotnie naładowanych w stosunku do
-przewidywań modelu sekwencyjnego~\cite{LHuillier1983,BeckerRottke2008}.
+Jednym z podstawowych doświadczalnych sygnałów niesekwencyjnej jonizacji wielokrotnej jest nadmiar jonów wielokrotnie naładowanych w stosunku do przewidywań modelu jonizacji sekwencyjnej~\cite{LHuillier1983,BeckerRottke2008}.
 Pomiary koincydencyjne pokazały, że informacja o mechanizmie zapisana jest
 nie w widmie pojedynczego elektronu, lecz w \emph{korelacjach} między
-pędami elektronów~\cite{Moshammer2000,Rudenko2004,Staudte2007,Rudenko2007}.
+pędami elektronów~\cite{Moshammer2000,Rudenko2004,Rudenko2007}.
 Dla dwóch elektronów standardowym narzędziem jest dwuwymiarowy rozkład
 $(p_{1z},p_{2z})$ składowych wzdłuż osi polaryzacji. Dla trzech i więcej
 elektronów taki bezpośredni wykres przestaje być możliwy i konieczna
@@ -116,15 +108,13 @@ niesie on małą część pędu.
 Reprezentacja simpleksowa działa dobrze dla trzech składowych, ponieważ
 zbiór punktów o ustalonej sumie tworzy wówczas dwuwymiarowy trójkąt.
 Dla czterech składowych odpowiednikiem jest czworościan, a dla większej
-liczby elektronów simpleks o coraz wyższym wymiarze. Już dla czterech
-elektronów analiza wymaga oglądania bryły trójwymiarowej, jej
-kolorowania lub rozcinania, co przestaje być przejrzystym narzędziem.
-Rośnie również liczba sektorów znakowych: dla $N$ elektronów jest ich
+liczby elektronów simpleks o coraz wyższym wymiarze. Już dla czterech elektronów konieczna staje się analiza trójwymiarowej reprezentacji danych z wykorzystaniem kodowania barwnego i/lub przekrojów, co znacznie utrudnia interpretację wyników.
+Rośnie również liczba sektorów znakowych, ponieważ dla $N$ elektronów jest ich
 $2^{N}$, czyli osiem dla trzech i szesnaście dla czterech elektronów.
 
 Celem pracy jest zbudowanie i sprawdzenie opisu korelacji pędów, który
 zachowuje interpretację fizyczną reprezentacji simpleksowej, ale nie
-opiera się na oglądaniu obiektu geometrycznego o wymiarze rosnącym
+opiera się na analizie obiektu geometrycznego o wymiarze rosnącym
 z liczbą elektronów. Zamiast tego używane są wielkości skalarne,
 które dla dowolnej liczby elektronów pozostają liczbami i mogą
 być przedstawiane na zwykłych histogramach. Praca odpowiada na trzy
@@ -167,8 +157,7 @@ i wyrzuca pozostałe~\cite{Emmanouilidou2023,Peters2022}.
 Pole laserowe jest spolaryzowane liniowo wzdłuż osi $z$. Czas trwania
 impulsu wynosi \num{25}~fs. Parametry czterech dostępnych zbiorów zebrano
 w~tabeli~\ref{tab:impulsy}. Wraz z nimi podano energię ponderomotoryczną
-$U_p=I/(4\omega^2)$ oraz pęd dryfu $2\sqrt{U_p}$, który jest naturalną
-skalą pędu dla elektronu uwolnionego w silnym polu.
+$U_p=E_0^2/(4\omega^2)$ oraz odpowiadającą jej charakterystyczną skalę pędu elektronu uwolnionego w silnym polu $2\sqrt{U_p}=E_0/\omega$.
 
 \begin{table}[H]
 \centering
@@ -352,9 +341,7 @@ podprzestrzeni są źle uwarunkowane i obracają się przy niewielkiej
 zmianie danych~\cite{Jolliffe2002}. Zgadza się to z obserwacją, że
 role PC8 i PC9 zamieniają się między zbiorami.
 
-Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę
-rozpoznawczą: dane mają strukturę jeden kierunek kolektywny plus
-dwuwymiarowa podprzestrzeń względna, przy czym dobrze określona jest
+Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę rozpoznawczą. Pozwolił on zidentyfikować kierunek kolektywny i dwuwymiarową podprzestrzeń względną, przy czym dobrze określona jest
 \emph{sama podprzestrzeń}, a nie wybór osi w jej wnętrzu.
 Do dalszej analizy nie użyto zatem osi PCA, lecz stałej bazy opisanej
 poniżej. Stała baza ma tę zaletę, że jest identyczna dla
@@ -371,9 +358,7 @@ Przyjęto bazę
 \mathbf{e}_2=\frac{1}{\sqrt6}\begin{pmatrix}1\\1\\-2\end{pmatrix}.
 \label{eq:baza}
 \end{equation}
-Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965}; w
-mechanice odpowiadają one rozdzieleniu ruchu środka masy od
-współrzędnych względnych typu Jacobiego. Współrzędne w tej
+Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965}. Transformacja rozdziela wspólną zmianę pędów trzech elektronów od różnic między ich pędami, analogicznie do współrzędnych Jacobiego stosowanych w układach wielu cząstek. Współrzędne w tej
 bazie to
 \begin{align}
 Q       &= \frac{p_2+p_3+p_4}{\sqrt3}, \label{eq:Q}\\
@@ -392,10 +377,7 @@ K=\sqrt{\xi_1^2+\xi_2^2}.
 \label{eq:K}
 \end{equation}
 
-Przejście
-$(p_2,p_3,p_4)\rightarrow(Q,\xi_1,\xi_2)$ \textbf{nie jest redukcją
-wymiaru}. Jest to obrót w przestrzeni trójwymiarowej, czyli odwracalna
-zmiana bazy. Zachowana jest norma,
+Wprowadzenie współrzędnych \(Q,\xi_1,\xi_2\) nie zmniejsza liczby opisywanych zmiennych, lecz odpowiada ortogonalnej zmianie bazy w trójwymiarowej przestrzeni pędów. Zachowana jest norma,
 \begin{equation}
 p_2^2+p_3^2+p_4^2=Q^2+\xi_1^2+\xi_2^2,
 \label{eq:norma}
@@ -407,9 +389,7 @@ p_3=\frac{Q}{\sqrt3}-\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6},\qquad
 p_4=\frac{Q}{\sqrt3}-\frac{2\xi_2}{\sqrt6}.
 \label{eq:odwrotna}
 \end{equation}
-Żadna informacja nie jest zatem tracona na etapie transformacji. Redukcja
-zachodzi dopiero później i świadomie: przy rzutowaniu na wybrane
-obserwable skalarne oraz przy rysowaniu rozkładów dwuwymiarowych.
+Żadna informacja nie jest zatem tracona w momencie transformacji. Zmniejszenie wymiaru opisu następuje dopiero na etapie analizy, gdy pełny rozkład trójwymiarowy jest rzutowany na wybrane wielkości skalarne lub przedstawiany w postaci rozkładów dwuwymiarowych.
 
 Dla wygody interpretacji używana jest też bezpośrednio suma pędów
 podłużnych
@@ -584,8 +564,7 @@ zdarzeń w zbiorze; nie obejmują niepewności samego modelu.
 \label{sec:wyniki}
 % ===========================================================================
 
-Wyniki uporządkowano według pytań fizycznych, a nie według
-kolejności obliczeń. Kanały \emph{direct} i \emph{delayed}
+Kanały \emph{direct} i \emph{delayed}
 porównywane są wyłącznie przy tej samej intensywności pola.
 
 \subsection{Ruch kolektywny}
@@ -593,11 +572,30 @@ porównywane są wyłącznie przy tej samej intensywności pola.
 
 Najpierw sprawdzono zachowanie sumy pędów podłużnych $P_e$,
 zdefiniowanej wzorem~\eqref{eq:Pe}. We wszystkich dwunastu zbiorach wartość
-średnia $P_e$ jest zgodna z zerem: przedziały ufności zawierają zero,
-a same średnie nie przekraczają co do modułu \num{0.33}~\ja{} przy
-odchyleniach standardowych rzędu \num{5}--\num{8}~\ja Wynika to z symetrii
-pola: impuls o wielu cyklach nie wyróżnia żadnego z dwóch kierunków
-osi $z$.
+średnia $P_e$ jest zbliżona do zera, a jej 95-procentowy przedział ufności zawiera go w sobie. Nie zaobserwowano więc wyraźnego przesunięcia rozkładu w żadnym kierunku osi \(z\). Jest to zgodne z symetrią wielocyklowego impulsu laserowego, który nie wyróżnia żadnego z dwóch zwrotów osi polaryzacji. Średnie wartości \(P_e\) wraz z ich niepewnościami dla wszystkich analizowanych natężeń i kanałów jonizacji przedstawiono w tabeli~\ref{tab:Pe_srednie}.
+
+\begin{table}[H]
+\centering
+\caption{Średnie wartości sumy podłużnych pędów elektronów.
+Wyniki zapisano jako $\langle P_e\rangle(u)$, gdzie $u=s/\sqrt{n}$
+jest standardową niepewnością średniej.}
+\label{tab:Pe_srednie}
+\begin{tabular}{cccc}
+\toprule
+$I$ [\PWcm] &
+wszystkie zdarzenia [\ja] &
+\emph{direct} [\ja] &
+\emph{delayed} [\ja] \\
+\midrule
+\num{1.0} & $-0{,}08(8)$  & $-0{,}07(15)$ & $-0{,}16(10)$ \\
+\num{1.3} & $-0{,}01(5)$  & $-0{,}12(9)$  & $\phantom{-}0{,}08(7)$ \\
+\num{1.6} & $-0{,}03(5)$  & $-0{,}04(8)$  & $-0{,}02(6)$ \\
+\num{1.7} & $\phantom{-}0{,}18(10)$ &
+            $\phantom{-}0{,}32(18)$ &
+            $\phantom{-}0{,}15(13)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 Informacja fizyczna zawarta jest w szerokości rozkładu, która
 wyraźnie zależy od kanału. Przy \num{1.3}~\PWcm{} odchylenie standardowe
