@@ -62,6 +62,7 @@ nie traci czytelności przy większej liczbie elektronów.
 \newpage
 
 % ===========================================================================
+% предварительно ОК
 \section{Wstęp}
 % ===========================================================================
 
@@ -206,11 +207,7 @@ rozdzielono zatem dwa poziomy opisu: wielkości niezależne od numeracji,
 które mogą być interpretowane fizycznie, oraz wielkości zależne od
 numeracji, które traktowane są jako informacja o samym modelu.
 
-Analizowane są wyłącznie składowe podłużne
-$p_{2z},p_{3z},p_{4z}$, czyli równoległe do osi polaryzacji. To w nich
-zapisana jest dynamika napędzana polem; składowe poprzeczne są
-o~rząd wielkości mniejsze i nie niosą informacji o podziale pędu
-wzdłuż kierunku wyróżnionego przez pole. Dla skrócenia zapisu
+Ponieważ pole laserowe jest spolaryzowane wzdłuż osi \(z\), analizę ograniczono do składowych pędu $p_{2z},p_{3z},p_{4z}$ równoległych do tej osi, które bezpośrednio odzwierciedlają dynamikę elektronów napędzaną przez pole. Składowe poprzeczne nie są przedmiotem dalszej analizy. Dla skrócenia zapisu
 przyjęto oznaczenia
 \begin{equation}
 p_2 \equiv p_{2z},\qquad p_3 \equiv p_{3z},\qquad p_4 \equiv p_{4z}.
@@ -223,8 +220,7 @@ zdarzenia oraz dwa główne kanały. W kanale \emph{direct}, oznaczanym
 $(e,3e)$, wszystkie trzy elektrony jonizują się wkrótce po
 rekolizji. W kanale \emph{delayed}, oznaczanym $(e,2e)$, powracający
 elektron przekazuje energię wystarczającą do jonizacji tylko dwóch
-elektronów, a trzeci opuszcza atom z opóźnieniem. Liczności zbiorów
-zebrano w tabeli~\ref{tab:licznosci}.
+elektronów, a trzeci opuszcza atom z opóźnieniem. Liczbę zdarzeń w poszczególnych zbiorach podano w tabeli~\ref{tab:licznosci}.
 
 \begin{table}[H]
 \centering
@@ -245,20 +241,12 @@ udział \emph{direct} & udział \emph{delayed} \\
 \end{tabular}
 \end{table}
 
-Dla trzech zbiorów przy \num{800}~nm wyznaczone udziały zgadzają się
-dokładnie z wartościami podanymi w dokumentacji danych. Dla zbioru
-\num{1.7}~\PWcm{} zgadza się udział kanału \emph{delayed}
-(\num{41.3}\,\%), natomiast dokumentacja podaje dla kanału \emph{direct}
-wartość \num{40.7}\,\% zamiast wyznaczonej z plików \num{43.8}\,\%.
-Ponieważ liczba \num{40.7}\,\% jest jednocześnie udziałem kanału
-\emph{delayed} przy \num{1.6}~\PWcm{}, jest to najprawdopodobniej pomyłka
-redakcyjna w opisie danych. W pracy używane są liczności wyznaczone
-bezpośrednio z plików.
+Wartości udziałów kanałów obliczono na podstawie liczby zdarzeń w poszczególnych plikach. Dla zbioru przy \(\num{1.7}\)~\PWcm{} stwierdzono niezgodność między wyznaczonym udziałem kanału \emph{direct} a wartością podaną w dokumentacji danych. W związku z tym w całej pracy wykorzystano udziały obliczone bezpośrednio z plików.
 
-Suma obu kanałów nie wyczerpuje zbioru wszystkich zdarzeń. Oba kanały
+Dodatkowo, suma obu kanałów nie wyczerpuje zbioru wszystkich zdarzeń. Oba kanały
 opisują ścieżki główne, a pozostałe kilkanaście procent
 zdarzeń przypisane jest ścieżkom rzadszym. Z tego powodu zbiór
-wszystkich zdarzeń nie jest prostą sumą dwóch kanałów i
+wszystkich zdarzeń nie jest dokładnie sumą dwóch kanałów i
 analizowany jest osobno.
 
 % ===========================================================================
@@ -282,17 +270,87 @@ analizie macierzy korelacji. Pęd rdzenia nie był używany.
 
 Gdyby wszystkie dziewięć składowych było nieskorelowanych i
 równoważnych, każda składowa główna wyjaśniałaby
-\num{11.1}\,\% wariancji. Otrzymany rozkład jest wyraźnie inny. Pierwsza
-składowa główna wyjaśnia \num{29.9}\,\% wariancji dla kanału
-\emph{direct} i \num{19.8}\,\% dla kanału \emph{delayed} przy
-\num{1.3}~\PWcm, a dwie ostatnie składowe wyjaśniają odpowiednio
-\num{2.0}\,\% i \num{1.4}\,\% oraz \num{8.1}\,\% i \num{5.4}\,\%. Struktura
-ta powtarza się dla wszystkich intensywności
-(tabela~\ref{tab:pca}). Istotne jest, że dla składowych PC1, PC8 i PC9
-kwadrat normy współczynników przypadający na składowe podłużne
-przekracza \num{0.90}, a w większości zbiorów \num{0.99}. Oznacza to,
-że te trzy kierunki leżą praktycznie w podprzestrzeni
-$(p_2,p_3,p_4)$.
+\num{11.1}\,\% wariancji. Otrzymany rozkład jest wyraźnie inny.
+Przykładowo, przy natężeniu \num{1.3}~\PWcm{} pierwsza składowa
+główna wyjaśnia \num{29.9}\,\% wariancji w kanale \emph{direct}
+i \num{19.8}\,\% w kanale \emph{delayed}. Dwie ostatnie składowe
+wyjaśniają odpowiednio \num{2.0}\,\% i \num{1.4}\,\% oraz
+\num{8.1}\,\% i \num{5.4}\,\%. Analogiczny układ występuje przy
+pozostałych intensywnościach, co pokazano w
+tabeli~\ref{tab:pca_wariancja}.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4.5pt}
+\caption{Wariancja wyjaśniona przez składowe PC1, PC8 i PC9
+dla wszystkich analizowanych intensywności i kanałów.}
+\label{tab:pca_wariancja}
+\begin{tabular}{c ccc ccc ccc}
+\toprule
+& \multicolumn{3}{c}{\emph{direct}}
+& \multicolumn{3}{c}{\emph{delayed}}
+& \multicolumn{3}{c}{wszystkie zdarzenia} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+\cmidrule(lr){8-10}
+$I$ [\PWcm]
+& PC1 & PC8 & PC9
+& PC1 & PC8 & PC9
+& PC1 & PC8 & PC9 \\
+\midrule
+\num{1.0} & \num{30.0}\,\% & \num{1.9}\,\% & \num{1.5}\,\% & \num{19.2}\,\% & \num{8.1}\,\% & \num{5.9}\,\% & \num{23.9}\,\% & \num{4.9}\,\% & \num{4.5}\,\% \\
+\num{1.3} & \num{29.9}\,\% & \num{2.0}\,\% & \num{1.4}\,\% & \num{19.8}\,\% & \num{8.1}\,\% & \num{5.4}\,\% & \num{24.7}\,\% & \num{4.5}\,\% & \num{4.1}\,\% \\
+\num{1.6} & \num{29.7}\,\% & \num{2.3}\,\% & \num{1.4}\,\% & \num{20.1}\,\% & \num{8.1}\,\% & \num{5.1}\,\% & \num{25.0}\,\% & \num{4.3}\,\% & \num{4.0}\,\% \\
+\num{1.7} & \num{29.7}\,\% & \num{2.3}\,\% & \num{1.5}\,\% & \num{19.4}\,\% & \num{8.6}\,\% & \num{5.2}\,\% & \num{24.2}\,\% & \num{4.8}\,\% & \num{4.3}\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Istotne jest, że dla składowych PC1, PC8 i PC9 kwadrat normy współczynników przypadający na składowe podłużne wynosi od \num{0.899} do wartości bliskich jedności, a w większości analizowanych zbiorów przekracza \num{0.99} (tabela~\ref{tab:pca_podluzne}). Oznacza to, że te kierunki leżą niemal w całości w podprzestrzeni $(p_{2z},p_{3z},p_{4z})$.
+
+\begin{table}[H]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Kwadrat normy współczynników składowych PC1, PC8 i PC9
+przypadający na składowe podłużne $p_{2z}$, $p_{3z}$ i $p_{4z}$.}
+\label{tab:pca_podluzne}
+\begin{tabular}{c ccc ccc ccc}
+\toprule
+& \multicolumn{3}{c}{\emph{direct}}
+& \multicolumn{3}{c}{\emph{delayed}}
+& \multicolumn{3}{c}{wszystkie zdarzenia} \\
+\cmidrule(lr){2-4}
+\cmidrule(lr){5-7}
+\cmidrule(lr){8-10}
+$I$ [\PWcm]
+& PC1 & PC8 & PC9
+& PC1 & PC8 & PC9
+& PC1 & PC8 & PC9 \\
+\midrule
+\num{1.0}
+& \num{0.996} & \num{0.999} & \num{1.000}
+& \num{0.987} & \num{0.968} & \num{0.980}
+& \num{0.996} & \num{0.999} & \num{0.996} \\
+
+\num{1.3}
+& \num{1.000} & \num{1.000} & \num{1.000}
+& \num{0.998} & \num{0.983} & \num{0.999}
+& \num{1.000} & \num{1.000} & \num{1.000} \\
+
+\num{1.6}
+& \num{0.998} & \num{1.000} & \num{1.000}
+& \num{0.997} & \num{0.990} & \num{0.999}
+& \num{0.998} & \num{1.000} & \num{1.000} \\
+
+\num{1.7}
+& \num{0.996} & \num{0.999} & \num{0.999}
+& \num{0.996} & \num{0.899} & \num{0.994}
+& \num{0.999} & \num{0.998} & \num{0.999} \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{table}[H]
 \centering
@@ -509,6 +567,7 @@ kolektywny i względny analizowane są łącznie.
 Przed wykorzystaniem wyników wykonano cztery testy. Wszystkie
 przeprowadzono na wszystkich dwunastu zbiorach danych.
 
+%OK
 \paragraph{Ortogonalność i odwracalność.} Sprawdzono bezpośrednio
 tożsamość~\eqref{eq:norma} oraz przekształcenie
 odwrotne~\eqref{eq:odwrotna}. Największe odchylenie normy wyniosło
@@ -518,17 +577,20 @@ odwrotne~\eqref{eq:odwrotna}. Największe odchylenie normy wyniosło
 zmiennoprzecinkowej, co potwierdza, że transformacja jest zaimplementowana
 poprawnie i nie gubi informacji.
 
+%OK
 \paragraph{Zakresy obserwabli ograniczonych.} We wszystkich zbiorach
-otrzymano $\Neff\in[\num{1.01},\num{3.00}]$ oraz $\xmax\in[\num{0.334},\num{0.995}]$,
-czyli wartości mieszczą się w granicach teoretycznych
+otrzymano wartości $\Neff\in[\num{1.01},\num{3.00}]$ oraz $\xmax\in[\num{0.334},\num{0.995}]$,
+czyli mieszczą się one w granicach teoretycznych
 $1\le\Neff\le3$ i $1/3\le\xmax\le1$ i w pełni je wykorzystują.
 
-\paragraph{Niezmienniczość względem numeracji.} Obliczono $\Neff$ i
+%OK
+\paragraph{Niezmienniczość względem numeracji elektronów.} Obliczono $\Neff$ i
 $\xmax$ dla danych oryginalnych oraz dla zbioru powiększonego o wszystkie
 $3!=6$ permutacji etykiet. Średnie różnią się o nie więcej
 niż \num{5.6e-17}, czyli są identyczne. Potwierdza to, że obie
 obserwable nie zależą od numeracji elektronów.
 
+%Sprawdzić
 \paragraph{Zachowanie pędu.} Jako niezależny test sprójności danych
 wykorzystano pęd rdzenia. Sprawdzono sumę
 $P_{\mathrm{tot},z}=p_{1z}+P_e$. We wszystkich zbiorach jej wartość
@@ -544,6 +606,7 @@ zdarzenie po zdarzeniu. Jest to własność danych źródłowych, a nie
 przeprowadzonej tu analizy; wrócono do niej wśród ograniczeń w
 rozdziale~\ref{sec:ograniczenia}.
 
+%Dobre
 \paragraph{Narzędzia.} Obliczenia wykonano w języku Python z
 użyciem bibliotek NumPy~\cite{Harris2020}, scikit-learn~\cite{Pedregosa2011}
 i Matplotlib~\cite{Hunter2007}. Wszystkie wartości liczbowe podane w pracy
@@ -551,13 +614,12 @@ zostały dodatkowo odtworzone niezależną implementacją korzystającą
 wyłącznie z biblioteki standardowej, co służyło jako kontrola
 błędów implementacji.
 
+%Fishera praca gdzie on oficjalnie opisuje z transformacje oraz praca Cox'a który zwraca się do właśnie 1921 pracy Fishera. Dodałam bo nie znalazłam linku kilkabelnego do Fishera 1921.
 \paragraph{Niepewności.} Dla wartości średnich podawane są
 \num{95}-procentowe przedziały ufności wyznaczone z centralnego twierdzenia
-granicznego. Dla współczynników korelacji użyto transformacji
-Fishera~\cite{Fisher1915}, a porównania średnich między kanałami
-wykonano testem Welcha~\cite{Welch1947}. Podane niepewności mają
+granicznego. Dla współczynników korelacji Pearsona wyznaczono przybliżone 95-procentowe przedziały ufności z wykorzystaniem transformacji \(z\) Fishera~\cite{Fisher1921,Cox2008}. Istotność różnic wartości średnich między niezależnymi zbiorami \emph{direct} i \emph{delayed} oceniono testem \(t\) Welcha~\cite{Welch1947}. Podane niepewności mają
 charakter wyłącznie statystyczny i opisują skończoną liczbę
-zdarzeń w zbiorze; nie obejmują niepewności samego modelu.
+zdarzeń w zbiorze. Dodatkowo, nie obejmują niepewności samego modelu.
 
 % ===========================================================================
 \section{Wyniki}
@@ -570,38 +632,11 @@ porównywane są wyłącznie przy tej samej intensywności pola.
 \subsection{Ruch kolektywny}
 \label{sec:wyn:Pe}
 
-Najpierw sprawdzono zachowanie sumy pędów podłużnych $P_e$,
-zdefiniowanej wzorem~\eqref{eq:Pe}. We wszystkich dwunastu zbiorach wartość
-średnia $P_e$ jest zbliżona do zera, a jej 95-procentowy przedział ufności zawiera go w sobie. Nie zaobserwowano więc wyraźnego przesunięcia rozkładu w żadnym kierunku osi \(z\). Jest to zgodne z symetrią wielocyklowego impulsu laserowego, który nie wyróżnia żadnego z dwóch zwrotów osi polaryzacji. Średnie wartości \(P_e\) wraz z ich niepewnościami dla wszystkich analizowanych natężeń i kanałów jonizacji przedstawiono w tabeli~\ref{tab:Pe_srednie}.
+Najpierw przeanalizowano sumę podłużnych pędów elektronów $P_e$,
+zdefiniowanej wzorem~\eqref{eq:Pe}. We wszystkich dwunastu zbiorach średnia wartość $P_e$ jest bliska zeru, obejmując początek układu współrzędnych w granicach odpowiadającego jej 95-procentowego przedziału ufności. Nie stwierdzono zatem statystycznie istotnego przesunięcia średniej w żadnym z dwóch zwrotów osi \(z\). Wynik ten jest zgodny z symetrią wielocyklowego impulsu laserowego, który nie wyróżnia żadnego zwrotu osi polaryzacji. Wartości średnie wraz z przedziałami ufności podano w tabeli~\ref{tab:glowna}.
 
-\begin{table}[H]
-\centering
-\caption{Średnie wartości sumy podłużnych pędów elektronów.
-Wyniki zapisano jako $\langle P_e\rangle(u)$, gdzie $u=s/\sqrt{n}$
-jest standardową niepewnością średniej.}
-\label{tab:Pe_srednie}
-\begin{tabular}{cccc}
-\toprule
-$I$ [\PWcm] &
-wszystkie zdarzenia [\ja] &
-\emph{direct} [\ja] &
-\emph{delayed} [\ja] \\
-\midrule
-\num{1.0} & $-0{,}08(8)$  & $-0{,}07(15)$ & $-0{,}16(10)$ \\
-\num{1.3} & $-0{,}01(5)$  & $-0{,}12(9)$  & $\phantom{-}0{,}08(7)$ \\
-\num{1.6} & $-0{,}03(5)$  & $-0{,}04(8)$  & $-0{,}02(6)$ \\
-\num{1.7} & $\phantom{-}0{,}18(10)$ &
-            $\phantom{-}0{,}32(18)$ &
-            $\phantom{-}0{,}15(13)$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Informacja fizyczna zawarta jest w szerokości rozkładu, która
-wyraźnie zależy od kanału. Przy \num{1.3}~\PWcm{} odchylenie standardowe
-$P_e$ wynosi \num{7.33}~\ja{} dla kanału \emph{direct} i \num{5.22}~\ja{}
-dla \emph{delayed}. Ta sama relacja występuje przy pozostałych
-intensywnościach (tabela~\ref{tab:glowna}).
+Średnia bliska zeru nie oznacza jednak, że wartości \(P_e\) dla poszczególnych zdarzeń są małe. Rozkłady są szerokie, a ich szerokość wyraźnie zależy od kanału. Przy \(\num{1.3}\)~\PWcm{} odchylenie standardowe \(P_e\) wynosi \(\num{7.33}\)~\ja{} dla kanału \emph{direct} i \(\num{5.22}\)~\ja{} dla kanału \emph{delayed}. Ta sama obserwacja zachodzi dla wszystkich pozostałych intensywności
+(tabela~\ref{tab:glowna}).
 
 \begin{figure}[H]
 \centering
@@ -867,37 +902,127 @@ Zbiór \num{1.7}~\PWcm{} przy \num{760}~nm daje wartości bliskie tym dla
 długości fali, zgodność ta traktowana jest jako sprawdzenie
 powtarzalności wniosków, a nie jako punkt serii.
 
-\subsection{Zestawienie}
+\subsection{Główne wyniki ilościowe}
 
 \begin{table}[H]
 \centering
 \small
-\setlength{\tabcolsep}{3.5pt}
-\caption{Zestawienie głównych obserwabli. W nawiasach kwadratowych podano
-\num{95}-procentowe przedziały ufności wartości średniej. Kolumna
-,,zgodne'' podaje udział zdarzeń, w których wszystkie trzy elektrony
-poruszają się w tę samą stronę.}
+\caption{Główne wyniki ilościowe dla analizowanych zbiorów.
+W przypadku wartości średnich w nawiasach kwadratowych podano
+granice 95-procentowych przedziałów ufności. Symbol $s(P_e)$
+oznacza odchylenie standardowe rozkładu, natomiast
+$f_{\mathrm{zg}}$ udział zdarzeń, w których wszystkie trzy
+elektrony poruszają się w tę samą stronę.}
 \label{tab:glowna}
-\begin{tabular}{cclccccc}
+
+\begin{tabular}{clccc}
 \toprule
-$I$ [\PWcm] & kanał & $n$ & $\sigma(P_e)$ & $\langle K\rangle$ &
-$\langle\Neff\rangle$ & $\langle\xmax\rangle$ & zgodne \\
+$I$ [\PWcm] & kanał &
+$\langle P_e\rangle$ [\ja] &
+$s(P_e)$ [\ja] &
+$\langle K\rangle$ [\ja] \\
 \midrule
-\num{1.0} & wszystkie & \num{4872}  & \num{5.41} & \num{1.735}\,[\num{1.709};\num{1.762}] & \num{2.462}\,[\num{2.451};\num{2.474}] & \num{0.512} & \num{0.647} \\
-\num{1.0} & \emph{direct}  & \num{2042}  & \num{6.66} & \num{1.182}\,[\num{1.159};\num{1.205}] & \num{2.662}\,[\num{2.649};\num{2.674}] & \num{0.464} & \num{0.974} \\
-\num{1.0} & \emph{delayed} & \num{2097}  & \num{4.65} & \num{2.121}\,[\num{2.081};\num{2.161}] & \num{2.367}\,[\num{2.351};\num{2.384}] & \num{0.530} & \num{0.465} \\
+\num{1.0} & wszystkie
+& $-0.080\,[-0.231;\,0.072]$
+& \num{5.41}
+& $1.735\,[1.709;\,1.762]$ \\
+
+\num{1.0} & \emph{direct}
+& $-0.073\,[-0.362;\,0.216]$
+& \num{6.66}
+& $1.182\,[1.159;\,1.205]$ \\
+
+\num{1.0} & \emph{delayed}
+& $-0.163\,[-0.362;\,0.036]$
+& \num{4.65}
+& $2.121\,[2.081;\,2.161]$ \\
 \midrule
-\num{1.3} & wszystkie & \num{13769} & \num{6.10} & \num{1.821}\,[\num{1.805};\num{1.838}] & \num{2.477}\,[\num{2.470};\num{2.483}] & \num{0.508} & \num{0.669} \\
-\num{1.3} & \emph{direct}  & \num{6198}  & \num{7.33} & \num{1.295}\,[\num{1.280};\num{1.311}] & \num{2.654}\,[\num{2.646};\num{2.661}] & \num{0.466} & \num{0.953} \\
-\num{1.3} & \emph{delayed} & \num{5837}  & \num{5.22} & \num{2.276}\,[\num{2.250};\num{2.302}] & \num{2.355}\,[\num{2.345};\num{2.365}] & \num{0.535} & \num{0.482} \\
+
+\num{1.3} & wszystkie
+& $-0.012\,[-0.114;\,0.090]$
+& \num{6.10}
+& $1.821\,[1.805;\,1.838]$ \\
+
+\num{1.3} & \emph{direct}
+& $-0.124\,[-0.307;\,0.058]$
+& \num{7.33}
+& $1.295\,[1.280;\,1.311]$ \\
+
+\num{1.3} & \emph{delayed}
+& $0.080\,[-0.054;\,0.214]$
+& \num{5.22}
+& $2.276\,[2.250;\,2.302]$ \\
 \midrule
-\num{1.6} & wszystkie & \num{18578} & \num{6.48} & \num{1.891}\,[\num{1.876};\num{1.906}] & \num{2.482}\,[\num{2.477};\num{2.488}] & \num{0.508} & \num{0.660} \\
-\num{1.6} & \emph{direct}  & \num{8799}  & \num{7.71} & \num{1.417}\,[\num{1.403};\num{1.431}] & \num{2.633}\,[\num{2.626};\num{2.640}] & \num{0.471} & \num{0.908} \\
-\num{1.6} & \emph{delayed} & \num{7560}  & \num{5.51} & \num{2.337}\,[\num{2.312};\num{2.361}] & \num{2.367}\,[\num{2.358};\num{2.376}] & \num{0.536} & \num{0.482} \\
+
+\num{1.6} & wszystkie
+& $-0.028\,[-0.121;\,0.065]$
+& \num{6.48}
+& $1.891\,[1.876;\,1.906]$ \\
+
+\num{1.6} & \emph{direct}
+& $-0.042\,[-0.203;\,0.119]$
+& \num{7.71}
+& $1.417\,[1.403;\,1.431]$ \\
+
+\num{1.6} & \emph{delayed}
+& $-0.021\,[-0.145;\,0.104]$
+& \num{5.51}
+& $2.337\,[2.312;\,2.361]$ \\
 \midrule
-\num{1.7} & wszystkie & \num{3873}  & \num{6.25} & \num{1.933}\,[\num{1.899};\num{1.967}] & \num{2.469}\,[\num{2.456};\num{2.481}] & \num{0.512} & \num{0.632} \\
-\num{1.7} & \emph{direct}  & \num{1695}  & \num{7.54} & \num{1.398}\,[\num{1.366};\num{1.430}] & \num{2.628}\,[\num{2.613};\num{2.644}] & \num{0.473} & \num{0.905} \\
-\num{1.7} & \emph{delayed} & \num{1601}  & \num{5.38} & \num{2.383}\,[\num{2.327};\num{2.439}] & \num{2.374}\,[\num{2.355};\num{2.393}] & \num{0.533} & \num{0.457} \\
+
+\num{1.7} & wszystkie
+& $0.183\,[-0.014;\,0.379]$
+& \num{6.25}
+& $1.933\,[1.899;\,1.967]$ \\
+
+\num{1.7} & \emph{direct}
+& $0.320\,[-0.039;\,0.679]$
+& \num{7.54}
+& $1.398\,[1.366;\,1.430]$ \\
+
+\num{1.7} & \emph{delayed}
+& $0.147\,[-0.117;\,0.410]$
+& \num{5.38}
+& $2.383\,[2.327;\,2.439]$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{1em}
+
+\begin{tabular}{clccc}
+\toprule
+$I$ [\PWcm] & kanał &
+$\langle\Neff\rangle$ &
+$\langle\xmax\rangle$ &
+$f_{\mathrm{zg}}$ \\
+\midrule
+\num{1.0} & wszystkie
+& $2.462\,[2.451;\,2.474]$ & \num{0.512} & \num{0.647} \\
+\num{1.0} & \emph{direct}
+& $2.662\,[2.649;\,2.674]$ & \num{0.464} & \num{0.974} \\
+\num{1.0} & \emph{delayed}
+& $2.367\,[2.351;\,2.384]$ & \num{0.530} & \num{0.465} \\
+\midrule
+\num{1.3} & wszystkie
+& $2.477\,[2.470;\,2.483]$ & \num{0.508} & \num{0.669} \\
+\num{1.3} & \emph{direct}
+& $2.654\,[2.646;\,2.661]$ & \num{0.466} & \num{0.953} \\
+\num{1.3} & \emph{delayed}
+& $2.355\,[2.345;\,2.365]$ & \num{0.535} & \num{0.482} \\
+\midrule
+\num{1.6} & wszystkie
+& $2.482\,[2.477;\,2.488]$ & \num{0.508} & \num{0.660} \\
+\num{1.6} & \emph{direct}
+& $2.633\,[2.626;\,2.640]$ & \num{0.471} & \num{0.908} \\
+\num{1.6} & \emph{delayed}
+& $2.367\,[2.358;\,2.376]$ & \num{0.536} & \num{0.482} \\
+\midrule
+\num{1.7} & wszystkie
+& $2.469\,[2.456;\,2.481]$ & \num{0.512} & \num{0.632} \\
+\num{1.7} & \emph{direct}
+& $2.628\,[2.613;\,2.644]$ & \num{0.473} & \num{0.905} \\
+\num{1.7} & \emph{delayed}
+& $2.374\,[2.355;\,2.393]$ & \num{0.533} & \num{0.457} \\
 \bottomrule
 \end{tabular}
 \end{table}
