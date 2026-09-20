@@ -352,70 +352,106 @@ $I$ [\PWcm]
 \end{tabular}
 \end{table}
 
+Do ilościowego opisu tych kierunków potrzebne są ustalone kierunki
+odniesienia w podprzestrzeni podłużnej. Wybrano trzy wzajemnie
+ortogonalne wektory jednostkowe, wynikające z symetrii układu trzech
+elektronów, a nie z samej analizy składowych głównych:
+\begin{equation}
+\mathbf{e}_0=\frac{(1,1,1)}{\sqrt3},\qquad
+\mathbf{e}_1=\frac{(1,-1,0)}{\sqrt2},\qquad
+\mathbf{e}_2=\frac{(1,1,-2)}{\sqrt6}.
+\label{eq:baza}
+\end{equation}
+Kierunek $\mathbf{e}_0$ odpowiada zgodnej zmianie wszystkich trzech
+pędów podłużnych. Kierunek $\mathbf{e}_1$ opisuje różnicę pędów
+dwóch elektronów początkowo związanych, a $\mathbf{e}_2$ zestawia tę
+parę z elektronem tunelującym.
+
+Tabela~\ref{tab:pca} zestawia unormowane współczynniki podłużne
+składowych PC1, PC8 i PC9 z tymi trzema kierunkami.
+
 \begin{table}[H]
 \centering
-\caption{Wariancja wyjaśniona przez składowe PC1, PC8 i PC9 oraz stopień
-ich zgodności z kierunkami stałej bazy zdefiniowanej w
-podrozdziale~\ref{sec:baza}. Podano wartość bezwzględną iloczynu
-skalarnego znormalizowanego wektora współczynników podłużnych z
-wektorami $\mathbf{e}_0$, $\mathbf{e}_1$ i $\mathbf{e}_2$.}
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Unormowane współczynniki składowych PC1, PC8 i PC9 w
+podprzestrzeni podłużnej $(p_{2z},p_{3z},p_{4z})$ oraz wartość
+bezwzględna ich iloczynu skalarnego z kierunkami
+odniesienia~\eqref{eq:baza}. Znak wektora własnego jest w analizie
+składowych głównych dowolny; ustalono go tak, aby pierwszy niezerowy
+współczynnik był dodatni. Wariancje wyjaśnione przez te składowe
+zestawiono w tabeli~\ref{tab:pca_wariancja}.}
 \label{tab:pca}
-\begin{tabular}{cclccc}
+\begin{tabular}{c l c ccc ccc}
 \toprule
-$I$ [\PWcm] & kanał & PC & wariancja & $|\mathrm{PC}\cdot\mathbf{e}_0|$ &
-$\max(|\mathrm{PC}\cdot\mathbf{e}_1|,|\mathrm{PC}\cdot\mathbf{e}_2|)$ \\
+& & & \multicolumn{3}{c}{współczynniki unormowane}
+    & \multicolumn{3}{c}{$|$iloczyn skalarny$|$} \\
+\cmidrule(lr){4-6}
+\cmidrule(lr){7-9}
+$I$ [\PWcm] & kanał & PC & $c_2$ & $c_3$ & $c_4$
+& $\mathbf{e}_0$ & $\mathbf{e}_1$ & $\mathbf{e}_2$ \\
 \midrule
-\num{1.3} & \emph{direct}  & PC1 & \num{29.9}\,\% & \num{0.99997} & \num{0.007} \\
-\num{1.3} & \emph{direct}  & PC8 & \num{2.0}\,\%  & \num{0.007}   & \num{0.999} \\
-\num{1.3} & \emph{direct}  & PC9 & \num{1.4}\,\%  & \num{0.001}   & \num{0.999} \\
-\num{1.3} & \emph{delayed} & PC1 & \num{19.8}\,\% & \num{0.998}   & \num{0.065} \\
-\num{1.3} & \emph{delayed} & PC8 & \num{8.1}\,\%  & \num{0.015}   & \num{0.998} \\
-\num{1.3} & \emph{delayed} & PC9 & \num{5.4}\,\%  & \num{0.065}   & \num{0.996} \\
+\num{1.3} & \emph{direct} & PC1 & \num{0.580} & \num{0.581} & \num{0.571} & \num{1.000} & \num{0.001} & \num{0.007} \\
+ &  & PC8 & \num{0.434} & \num{0.374} & \num{-0.820} & \num{0.007} & \num{0.042} & \num{0.999} \\
+ &  & PC9 & \num{0.690} & \num{-0.723} & \num{0.035} & \num{0.001} & \num{0.999} & \num{0.042} \\
 \midrule
-\num{1.0} & wszystkie & PC1 & \num{23.9}\,\% & \num{0.99998} & \num{0.005} \\
-\num{1.0} & wszystkie & PC8 & \num{4.9}\,\%  & \num{0.006}   & \num{0.817} \\
-\num{1.0} & wszystkie & PC9 & \num{4.5}\,\%  & \num{0.001}   & \num{0.817} \\
+\num{1.3} & \emph{delayed} & PC1 & \num{0.542} & \num{0.557} & \num{0.630} & \num{0.998} & \num{0.010} & \num{0.065} \\
+ &  & PC8 & \num{0.737} & \num{-0.674} & \num{-0.037} & \num{0.015} & \num{0.998} & \num{0.056} \\
+ &  & PC9 & \num{0.406} & \num{0.483} & \num{-0.776} & \num{0.065} & \num{0.055} & \num{0.996} \\
+\midrule
+\num{1.6} & \emph{direct} & PC1 & \num{0.582} & \num{0.582} & \num{0.568} & \num{1.000} & \num{0.000} & \num{0.011} \\
+ &  & PC8 & \num{0.400} & \num{0.404} & \num{-0.823} & \num{0.011} & \num{0.003} & \num{1.000} \\
+ &  & PC9 & \num{0.708} & \num{-0.706} & \num{-0.002} & \num{0.000} & \num{1.000} & \num{0.003} \\
+\midrule
+\num{1.6} & \emph{delayed} & PC1 & \num{0.549} & \num{0.546} & \num{0.633} & \num{0.998} & \num{0.002} & \num{0.070} \\
+ &  & PC8 & \num{0.699} & \num{-0.715} & \num{0.009} & \num{0.004} & \num{1.000} & \num{0.013} \\
+ &  & PC9 & \num{0.455} & \num{0.439} & \num{-0.775} & \num{0.069} & \num{0.011} & \num{0.998} \\
+\midrule
+\num{1.0} & wszystkie & PC1 & \num{0.581} & \num{0.573} & \num{0.579} & \num{1.000} & \num{0.005} & \num{0.002} \\
+ &  & PC8 & \num{0.339} & \num{-0.817} & \num{0.467} & \num{0.006} & \num{0.817} & \num{0.576} \\
+ &  & PC9 & \num{0.741} & \num{-0.075} & \num{-0.668} & \num{0.001} & \num{0.577} & \num{0.817} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 Wynik ten prowadzi do dwóch wniosków. Po pierwsze, dane wyróżniają
 jeden kierunek kolektywny, wzdłuż którego wszystkie trzy pędy
-podłużne zmieniają się zgodnie. Współczynniki PC1 dla
-$(p_2,p_3,p_4)$ są niemal równe, na przykład
-$(\num{0.580},\num{0.581},\num{0.571})$ dla kanału \emph{direct} przy
-\num{1.3}~\PWcm, a ich unormowany wektor pokrywa się z wektorem
-$(1,1,1)/\sqrt{3}$ z dokładnością do \num{0.00003}. Po drugie, dwie
-składowe o najmniejszej wariancji opisują różnice między
-pędami.
+podłużne zmieniają się zgodnie. Współczynniki PC1 są we wszystkich
+zbiorach niemal równe, a iloczyn skalarny tej składowej z
+$\mathbf{e}_0$ nie spada poniżej \num{0.996}; w kanale \emph{direct}
+odbiega on od jedności o mniej niż \num{0.0001}. Po drugie, dwie
+składowe o najmniejszej wariancji leżą w płaszczyźnie prostopadłej do
+$\mathbf{e}_0$ i opisują różnice między pędami.
 
-PCA nie wyznacza jednak jednoznacznie \emph{poszczególnych} osi względnych.
-Widać to w ostatnich wierszach tabeli~\ref{tab:pca}: dla zbioru wszystkich
-zdarzeń przy \num{1.0}~\PWcm{} wariancje PC8 i PC9 wynoszą \num{4.9}\,\%
-i \num{4.5}\,\%, czyli są niemal równe, a każda z tych składowych jest
-mieszaniną obu kierunków względnych z podobnymi współczynnikami.
-Przy bliskich wartościach własnych kierunki własne w obrębie
-podprzestrzeni są źle uwarunkowane i obracają się przy niewielkiej
-zmianie danych~\cite{Jolliffe2002}. Zgadza się to z obserwacją, że
-role PC8 i PC9 zamieniają się między zbiorami.
+PCA nie wyznacza jednak jednoznacznie \emph{poszczególnych} osi
+względnych. Tabela~\ref{tab:pca} pokazuje to na dwa sposoby. Po
+pierwsze, przyporządkowanie składowych do kierunków względnych zależy
+od kanału: przy \num{1.3} i \num{1.6}~\PWcm{} w kanale \emph{direct}
+składowa PC8 pokrywa się z $\mathbf{e}_2$, a PC9 z $\mathbf{e}_1$,
+natomiast w kanale \emph{delayed} jest odwrotnie. Po drugie, dla
+zbioru wszystkich zdarzeń przy \num{1.0}~\PWcm{} wariancje PC8 i PC9
+wynoszą \num{4.9}\,\% i \num{4.5}\,\%, czyli są niemal równe, i żadna
+z tych składowych nie pokrywa się z pojedynczym kierunkiem
+względnym: obie są ich mieszaninami o iloczynach skalarnych bliskich
+\num{0.82} i \num{0.58}. Przy bliskich wartościach własnych kierunki
+własne w obrębie podprzestrzeni są źle uwarunkowane i obracają się
+przy niewielkiej zmianie danych~\cite{Jolliffe2002}.
 
-Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę rozpoznawczą. Pozwolił on zidentyfikować kierunek kolektywny i dwuwymiarową podprzestrzeń względną, przy czym dobrze określona jest
-\emph{sama podprzestrzeń}, a nie wybór osi w jej wnętrzu.
-Do dalszej analizy nie użyto zatem osi PCA, lecz stałej bazy opisanej
-poniżej. Stała baza ma tę zaletę, że jest identyczna dla
-wszystkich zbiorów, co pozwala porównywać wartości liczbowe między
-kanałami i intensywnościami.
+Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę
+rozpoznawczą. Pozwolił on stwierdzić, że kierunek kolektywny jest
+rzeczywiście wyróżniony przez dane, a pozostała zmienność mieści się
+w płaszczyźnie względnej. Dobrze określona jest \emph{sama
+podprzestrzeń}, a nie wybór osi w jej wnętrzu. Do dalszej analizy nie
+użyto zatem osi PCA, lecz stałej bazy opisanej w
+podrozdziale~\ref{sec:baza}. Stała baza
+jest identyczna dla wszystkich zbiorów, co pozwala porównywać
+wartości liczbowe między kanałami i intensywnościami.
 
 \subsection{Stała baza ortonormalna}
 \label{sec:baza}
 
-Przyjęto bazę
-\begin{equation}
-\mathbf{e}_0=\frac{1}{\sqrt3}\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad
-\mathbf{e}_1=\frac{1}{\sqrt2}\begin{pmatrix}1\\-1\\0\end{pmatrix},\qquad
-\mathbf{e}_2=\frac{1}{\sqrt6}\begin{pmatrix}1\\1\\-2\end{pmatrix}.
-\label{eq:baza}
-\end{equation}
+Jako stałą bazę przyjęto kierunki odniesienia
+wprowadzone wzorem~\eqref{eq:baza}.
 Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965}. Transformacja rozdziela wspólną zmianę pędów trzech elektronów od różnic między ich pędami, analogicznie do współrzędnych Jacobiego stosowanych w układach wielu cząstek. Współrzędne w tej
 bazie to
 \begin{align}
