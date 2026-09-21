@@ -254,7 +254,8 @@ analizowany jest osobno.
 \label{sec:metoda}
 % ===========================================================================
 
-\subsection{Analiza składowych głównych jako etap rozpoznawczy}
+%is OK
+\subsection{Analiza składowych głównych}
 \label{sec:pca}
 
 Przed wyborem współrzędnych sprawdzono, jakie kierunki w przestrzeni
@@ -352,35 +353,46 @@ $I$ [\PWcm]
 \end{tabular}
 \end{table}
 
-Do ilościowego opisu tych kierunków potrzebne są ustalone kierunki
-odniesienia w podprzestrzeni podłużnej. Wybrano trzy wzajemnie
-ortogonalne wektory jednostkowe, wynikające z symetrii układu trzech
-elektronów, a nie z samej analizy składowych głównych:
+
+Współczynniki tych trzech składowych układają się we wszystkich
+dwunastu zbiorach w ten sam sposób. Dla PC1 wszystkie trzy
+współczynniki są dodatnie i niemal równe. Ich suma zawiera się
+między \num{1.717} a \num{1.732}, wobec $\sqrt3\approx\num{1.732}$
+dla współczynników dokładnie równych. Dla PC8 i PC9 współczynniki
+mają różne znaki, a moduł ich sumy nie przekracza \num{0.148}.
+Wskazuje to na jeden kierunek kolektywny oraz prostopadłą do niego
+dwuwymiarową podprzestrzeń opisującą różnice między pędami.
+Kierunki te zapisano w postaci dokładnej, symetrycznej względem
+numeracji elektronów:
+
 \begin{equation}
-\mathbf{e}_0=\frac{(1,1,1)}{\sqrt3},\qquad
-\mathbf{e}_1=\frac{(1,-1,0)}{\sqrt2},\qquad
-\mathbf{e}_2=\frac{(1,1,-2)}{\sqrt6}.
+\mathbf{e}_0=\frac{1}{\sqrt3}(1,1,1),\qquad
+\mathbf{e}_1=\frac{1}{\sqrt2}(1,-1,0),\qquad
+\mathbf{e}_2=\frac{1}{\sqrt6}(1,1,-2).
 \label{eq:baza}
 \end{equation}
-Kierunek $\mathbf{e}_0$ odpowiada zgodnej zmianie wszystkich trzech
-pędów podłużnych. Kierunek $\mathbf{e}_1$ opisuje różnicę pędów
-dwóch elektronów początkowo związanych, a $\mathbf{e}_2$ zestawia tę
-parę z elektronem tunelującym.
+Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965},
+standardowej konstrukcji rozdzielającej wartość średnią od odchyleń
+od niej. Kierunek $\mathbf{e}_0$ odpowiada zgodnej zmianie wszystkich
+trzech pędów podłużnych, $\mathbf{e}_1$ opisuje różnicę pędów dwóch
+elektronów początkowo związanych, a $\mathbf{e}_2$ zestawia tę parę
+z elektronem tunelującym.
 
 Tabela~\ref{tab:pca} zestawia unormowane współczynniki podłużne
-składowych PC1, PC8 i PC9 z tymi trzema kierunkami.
+składowych PC1, PC8 i PC9 oraz ich zgodność z kierunkami
+$\mathbf{e}_0$, $\mathbf{e}_1$ i $\mathbf{e}_2$, mierzoną wartością
+bezwzględną iloczynu skalarnego, dla wszystkich dwunastu zbiorów.
 
-\begin{table}[H]
+\begin{table}[!h]
 \centering
-\small
+\footnotesize
 \setlength{\tabcolsep}{4pt}
 \caption{Unormowane współczynniki składowych PC1, PC8 i PC9 w
 podprzestrzeni podłużnej $(p_{2z},p_{3z},p_{4z})$ oraz wartość
 bezwzględna ich iloczynu skalarnego z kierunkami
 odniesienia~\eqref{eq:baza}. Znak wektora własnego jest w analizie
-składowych głównych dowolny; ustalono go tak, aby pierwszy niezerowy
-współczynnik był dodatni. Wariancje wyjaśnione przez te składowe
-zestawiono w tabeli~\ref{tab:pca_wariancja}.}
+składowych głównych dowolny. Ustalono go tak, aby pierwszy niezerowy
+współczynnik był dodatni.}
 \label{tab:pca}
 \begin{tabular}{c l c ccc ccc}
 \toprule
@@ -391,6 +403,18 @@ zestawiono w tabeli~\ref{tab:pca_wariancja}.}
 $I$ [\PWcm] & kanał & PC & $c_2$ & $c_3$ & $c_4$
 & $\mathbf{e}_0$ & $\mathbf{e}_1$ & $\mathbf{e}_2$ \\
 \midrule
+\num{1.0} & \emph{direct} & PC1 & \num{0.581} & \num{0.578} & \num{0.573} & \num{1.000} & \num{0.002} & \num{0.005} \\
+ &  & PC8 & \num{0.283} & \num{0.517} & \num{-0.808} & \num{0.005} & \num{0.165} & \num{0.986} \\
+ &  & PC9 & \num{0.763} & \num{-0.631} & \num{-0.136} & \num{0.003} & \num{0.986} & \num{0.165} \\
+\midrule
+\num{1.0} & \emph{delayed} & PC1 & \num{0.566} & \num{0.539} & \num{0.624} & \num{0.998} & \num{0.020} & \num{0.058} \\
+ &  & PC8 & \num{0.620} & \num{-0.777} & \num{0.107} & \num{0.029} & \num{0.988} & \num{0.151} \\
+ &  & PC9 & \num{0.537} & \num{0.333} & \num{-0.775} & \num{0.055} & \num{0.144} & \num{0.988} \\
+\midrule
+\num{1.0} & wszystkie & PC1 & \num{0.581} & \num{0.573} & \num{0.579} & \num{1.000} & \num{0.005} & \num{0.002} \\
+ &  & PC8 & \num{0.339} & \num{-0.817} & \num{0.467} & \num{0.006} & \num{0.817} & \num{0.576} \\
+ &  & PC9 & \num{0.741} & \num{-0.075} & \num{-0.668} & \num{0.001} & \num{0.577} & \num{0.817} \\
+\midrule
 \num{1.3} & \emph{direct} & PC1 & \num{0.580} & \num{0.581} & \num{0.571} & \num{1.000} & \num{0.001} & \num{0.007} \\
  &  & PC8 & \num{0.434} & \num{0.374} & \num{-0.820} & \num{0.007} & \num{0.042} & \num{0.999} \\
  &  & PC9 & \num{0.690} & \num{-0.723} & \num{0.035} & \num{0.001} & \num{0.999} & \num{0.042} \\
@@ -398,6 +422,10 @@ $I$ [\PWcm] & kanał & PC & $c_2$ & $c_3$ & $c_4$
 \num{1.3} & \emph{delayed} & PC1 & \num{0.542} & \num{0.557} & \num{0.630} & \num{0.998} & \num{0.010} & \num{0.065} \\
  &  & PC8 & \num{0.737} & \num{-0.674} & \num{-0.037} & \num{0.015} & \num{0.998} & \num{0.056} \\
  &  & PC9 & \num{0.406} & \num{0.483} & \num{-0.776} & \num{0.065} & \num{0.055} & \num{0.996} \\
+\midrule
+\num{1.3} & wszystkie & PC1 & \num{0.574} & \num{0.576} & \num{0.582} & \num{1.000} & \num{0.002} & \num{0.005} \\
+ &  & PC8 & \num{0.761} & \num{-0.637} & \num{-0.120} & \num{0.002} & \num{0.989} & \num{0.148} \\
+ &  & PC9 & \num{0.302} & \num{0.511} & \num{-0.805} & \num{0.005} & \num{0.148} & \num{0.989} \\
 \midrule
 \num{1.6} & \emph{direct} & PC1 & \num{0.582} & \num{0.582} & \num{0.568} & \num{1.000} & \num{0.000} & \num{0.011} \\
  &  & PC8 & \num{0.400} & \num{0.404} & \num{-0.823} & \num{0.011} & \num{0.003} & \num{1.000} \\
@@ -407,9 +435,21 @@ $I$ [\PWcm] & kanał & PC & $c_2$ & $c_3$ & $c_4$
  &  & PC8 & \num{0.699} & \num{-0.715} & \num{0.009} & \num{0.004} & \num{1.000} & \num{0.013} \\
  &  & PC9 & \num{0.455} & \num{0.439} & \num{-0.775} & \num{0.069} & \num{0.011} & \num{0.998} \\
 \midrule
-\num{1.0} & wszystkie & PC1 & \num{0.581} & \num{0.573} & \num{0.579} & \num{1.000} & \num{0.005} & \num{0.002} \\
- &  & PC8 & \num{0.339} & \num{-0.817} & \num{0.467} & \num{0.006} & \num{0.817} & \num{0.576} \\
- &  & PC9 & \num{0.741} & \num{-0.075} & \num{-0.668} & \num{0.001} & \num{0.577} & \num{0.817} \\
+\num{1.6} & wszystkie & PC1 & \num{0.576} & \num{0.575} & \num{0.581} & \num{1.000} & \num{0.000} & \num{0.004} \\
+ &  & PC8 & \num{0.701} & \num{-0.713} & \num{0.011} & \num{0.000} & \num{1.000} & \num{0.014} \\
+ &  & PC9 & \num{0.421} & \num{0.401} & \num{-0.814} & \num{0.005} & \num{0.014} & \num{1.000} \\
+\midrule
+\num{1.7} & \emph{direct} & PC1 & \num{0.582} & \num{0.582} & \num{0.569} & \num{1.000} & \num{0.000} & \num{0.010} \\
+ &  & PC8 & \num{0.403} & \num{0.402} & \num{-0.822} & \num{0.010} & \num{0.000} & \num{1.000} \\
+ &  & PC9 & \num{0.707} & \num{-0.707} & \num{0.001} & \num{0.001} & \num{1.000} & \num{0.001} \\
+\midrule
+\num{1.7} & \emph{delayed} & PC1 & \num{0.546} & \num{0.534} & \num{0.646} & \num{0.996} & \num{0.008} & \num{0.086} \\
+ &  & PC8 & \num{0.680} & \num{-0.733} & \num{0.032} & \num{0.012} & \num{0.999} & \num{0.048} \\
+ &  & PC9 & \num{0.481} & \num{0.431} & \num{-0.764} & \num{0.086} & \num{0.036} & \num{0.996} \\
+\midrule
+\num{1.7} & wszystkie & PC1 & \num{0.576} & \num{0.571} & \num{0.585} & \num{1.000} & \num{0.004} & \num{0.009} \\
+ &  & PC8 & \num{0.619} & \num{-0.772} & \num{0.143} & \num{0.005} & \num{0.984} & \num{0.179} \\
+ &  & PC9 & \num{0.533} & \num{0.280} & \num{-0.798} & \num{0.008} & \num{0.179} & \num{0.984} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -426,46 +466,55 @@ $\mathbf{e}_0$ i opisują różnice między pędami.
 PCA nie wyznacza jednak jednoznacznie \emph{poszczególnych} osi
 względnych. Tabela~\ref{tab:pca} pokazuje to na dwa sposoby. Po
 pierwsze, przyporządkowanie składowych do kierunków względnych zależy
-od kanału: przy \num{1.3} i \num{1.6}~\PWcm{} w kanale \emph{direct}
-składowa PC8 pokrywa się z $\mathbf{e}_2$, a PC9 z $\mathbf{e}_1$,
-natomiast w kanale \emph{delayed} jest odwrotnie. Po drugie, dla
-zbioru wszystkich zdarzeń przy \num{1.0}~\PWcm{} wariancje PC8 i PC9
-wynoszą \num{4.9}\,\% i \num{4.5}\,\%, czyli są niemal równe, i żadna
-z tych składowych nie pokrywa się z pojedynczym kierunkiem
-względnym: obie są ich mieszaninami o iloczynach skalarnych bliskich
-\num{0.82} i \num{0.58}. Przy bliskich wartościach własnych kierunki
-własne w obrębie podprzestrzeni są źle uwarunkowane i obracają się
-przy niewielkiej zmianie danych~\cite{Jolliffe2002}.
+od kanału i jest przy tym systematyczne: przy każdej z czterech
+intensywności w kanale \emph{direct} składowa PC8 pokrywa się z
+$\mathbf{e}_2$, a PC9 z $\mathbf{e}_1$, natomiast w kanale
+\emph{delayed} jest odwrotnie. 
+
+Po drugie, w jednym z dwunastu
+zbiorów, dla wszystkich zdarzeń przy \num{1.0}~\PWcm, żadna z tych
+składowych nie pokrywa się z pojedynczym kierunkiem względnym: obie
+są ich mieszaninami o iloczynach skalarnych bliskich \num{0.82} i
+\num{0.58}. Wariancje PC8 i PC9 wynoszą tam \num{4.9}\,\% i
+\num{4.5}\,\%, czyli różnią się nieznacznie. Sama bliskość wartości
+własnych nie przesądza jednak o wymieszaniu: dla wszystkich zdarzeń
+przy \num{1.6}~\PWcm{} różnica jest jeszcze mniejsza, \num{4.3}\,\%
+wobec \num{4.0}\,\%, a mimo to obie składowe pokrywają się z
+pojedynczymi kierunkami względnymi. Przy bliskich wartościach
+własnych kierunki własne w obrębie podprzestrzeni są źle uwarunkowane
+i obracają się przy niewielkiej zmianie danych~\cite{Jolliffe2002};
+to, czy w danym zbiorze wyjdą wymieszane, jest zatem przypadkowe.
+
 
 Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę
 rozpoznawczą. Pozwolił on stwierdzić, że kierunek kolektywny jest
 rzeczywiście wyróżniony przez dane, a pozostała zmienność mieści się
-w płaszczyźnie względnej. Dobrze określona jest \emph{sama
-podprzestrzeń}, a nie wybór osi w jej wnętrzu. Do dalszej analizy nie
-użyto zatem osi PCA, lecz stałej bazy opisanej w
-podrozdziale~\ref{sec:baza}. Stała baza
-jest identyczna dla wszystkich zbiorów, co pozwala porównywać
-wartości liczbowe między kanałami i intensywnościami.
+w płaszczyźnie względnej. Dobrze określona jest \emph{sama podprzestrzeń}, a nie wybór osi w
+jej wnętrzu. Do dalszej analizy nie użyto zatem osi PCA, lecz stałej
+bazy zadanej wzorem~\eqref{eq:baza}. Jest ona identyczna dla
+wszystkich zbiorów, co pozwala porównywać wartości liczbowe między
+kanałami i intensywnościami.
 
-\subsection{Stała baza ortonormalna}
+%is OK
+\subsection{Współrzędne kolektywne i względne}
 \label{sec:baza}
 
-Jako stałą bazę przyjęto kierunki odniesienia
-wprowadzone wzorem~\eqref{eq:baza}.
-Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965}. Transformacja rozdziela wspólną zmianę pędów trzech elektronów od różnic między ich pędami, analogicznie do współrzędnych Jacobiego stosowanych w układach wielu cząstek. Współrzędne w tej
-bazie to
-\begin{align}
-Q       &= \frac{p_2+p_3+p_4}{\sqrt3}, \label{eq:Q}\\
-\xi_1   &= \frac{p_2-p_3}{\sqrt2},     \label{eq:xi1}\\
-\xi_2   &= \frac{p_2+p_3-2p_4}{\sqrt6}.\label{eq:xi2}
-\end{align}
 
-Wielkość $Q$ opisuje ruch kolektywny: jest proporcjonalna do sumy
-pędów podłużnych. Wielkość $\xi_1$ mierzy różnicę
-pędów między elektronami 2 i 3, a $\xi_2$ różnicę między
-parą 2--3 a elektronem 4. Para $(\xi_1,\xi_2)$ rozpina dwuwymiarową
-płaszczyznę względnego podziału pędu. Skalarną miarą
-odstępstwa od równego podziału jest
+Rzuty wektora $(p_2,p_3,p_4)$ na kierunki~\eqref{eq:baza} dają
+współrzędne
+\begin{align}
+Q     &= \frac{p_2+p_3+p_4}{\sqrt3}, \label{eq:Q}\\
+\xi_1 &= \frac{p_2-p_3}{\sqrt2},     \label{eq:xi1}\\
+\xi_2 &= \frac{p_2+p_3-2p_4}{\sqrt6}.\label{eq:xi2}
+\end{align}
+Rozdzielenie wspólnej zmiany pędów od różnic między nimi jest
+analogiczne do współrzędnych Jacobiego stosowanych w układach wielu
+cząstek.
+Współrzędna $Q$ opisuje ruch kolektywny, jest ona proporcjonalna do sumy
+pędów podłużnych. Para $(\xi_1,\xi_2)$ rozpina dwuwymiarową
+płaszczyznę względnego podziału pędu. Skalarną miarą odstępstwa od
+równego podziału jest
+
 \begin{equation}
 K=\sqrt{\xi_1^2+\xi_2^2}.
 \label{eq:K}
@@ -495,6 +544,7 @@ która jest wielkością mierzoną w doświadczeniach koincydencyjnych
 i przedstawianą w pracy źródłowej~\cite{Emmanouilidou2023}. Symbole
 $P_e$ i $Q$ są proporcjonalne, ale nie są równe liczbowo.
 
+%do sprawdzenia
 \subsection{Obserwable podziału pędu}
 \label{sec:obserwable}
 
@@ -506,10 +556,13 @@ A=|p_2|+|p_3|+|p_4|,\qquad x_i=\frac{|p_i|}{A},\qquad i=2,3,4 .
 \label{eq:udzialy}
 \end{equation}
 Z definicji $x_2+x_3+x_4=1$ oraz $x_i\ge 0$, więc trójka
-$(x_2,x_3,x_4)$ jest punktem dwuwymiarowego simpleksu. Takie dane, określone
-z dokładnością do wspólnej skali, nazywa się danymi
-kompozycyjnymi~\cite{Aitchison1986}. Informacja o znakach pędów nie
-ginie: przechowywana jest osobno w postaci sektorów znakowych opisanych
+$(x_2,x_3,x_4)$ jest punktem dwuwymiarowego simpleksu. Dane spełniające
+warunek stałej sumy nazywa się danymi kompozycyjnymi~\cite{Aitchison1986}.
+Warunek ten sprawia, że udziały nie są niezależne, a korelacje między
+nimi są z góry ujemne, więc pojedyncze $x_i$ oraz ich wzajemne
+korelacje nie nadają się do bezpośredniej interpretacji. Z tego powodu
+podział pędu opisano dalej symetrycznymi funkcjami skalarnymi całej
+trójki. Informacja o znakach pędów lecz przechowywana jest osobno w postaci sektorów znakowych opisanych
 dalej.
 
 Jako główną skalarną miarę równomierności podziału
@@ -518,10 +571,11 @@ przyjęto
 \Neff=\frac{1}{x_2^2+x_3^2+x_4^2}.
 \label{eq:Neff}
 \end{equation}
-Wielkość ta jest odwrotnością indeksu Simpsona~\cite{Simpson1949} i
-odpowiada liczbie Hilla rzędu drugiego~\cite{Hill1973}; w ekonomii ta sama
-konstrukcja znana jest jako odwrotność wskaźnika koncentracji. Jej
-zaletą jest bezpośrednia interpretacja liczbowa: $\Neff$ podaje
+
+Suma $x_2^2+x_3^2+x_4^2$ występująca w mianowniku jest indeksem
+Simpsona~\cite{Simpson1949}, a jej odwrotność jest liczbą Hilla rzędu
+drugiego~\cite{Hill1973}. Liczby Hilla mają tę własność, że dla $S$
+jednakowych udziałów przyjmują wartość $S$. Dzięki temu $\Neff$  podaje
 efektywną liczbę elektronów uczestniczących w podziale pędu.
 Dla trzech elektronów $1\le\Neff\le3$, przy czym $\Neff=3$ oznacza podział
 równomierny, a $\Neff\to1$ dominację jednego elektronu. Uzupełniająco
@@ -536,30 +590,32 @@ zatem nie zależą od numeracji elektronów. Pozwala to interpretować je
 fizycznie mimo tego, że same etykiety elektronów fizycznego znaczenia nie
 mają.
 
-Aby wiedzieć, czy otrzymana wartość $\Neff$ jest duża, potrzebny jest
-punkt odniesienia. Jeżeli trójka udziałów byłaby rozlosowana
-równomiernie po całym simpleksie, czyli gdyby podział pędu nie
-miał żadnej preferencji, otrzymałoby się
-$\langle\Neff\rangle=\num{2.118}$ oraz $\langle\xmax\rangle=11/18=\num{0.611}$.
-Wartości te wyznaczono metodą Monte Carlo dla \num{2e6} punktów i
-będą dalej używane jako odniesienie.
+Aby dysponować punktem odniesienia dla $\Neff$ i $\xmax$, rozpatrzono
+przypadek braku jakiejkolwiek preferencji w podziale pędu, w~którym
+trójka udziałów jest rozłożona równomiernie po całym simpleksie.
+Metodą Monte Carlo na próbie \num{2e6} punktów otrzymano dla tego
+rozkładu $\langle\Neff\rangle=\num{2.118}$ oraz
+$\langle\xmax\rangle=11/18=\num{0.611}$. Wartości te służą dalej jako
+odniesienie dla wyników wyznaczonych z danych.
 
+%OK
 \subsection{Sektory znakowe}
 \label{sec:sektory}
 
 Znaki trójki $(p_2,p_3,p_4)$ zapisywane są jako trzyznakowa etykieta,
 na przykład \texttt{+++} albo \texttt{++-}. Daje to osiem sektorów, które
 opisują topologię emisji względem osi polaryzacji. Sektory
-\texttt{+++} i \texttt{---} odpowiadają emisji wszystkich trzech
-elektronów w tę samą stronę, pozostałe sześć -- sytuacji,
+\texttt{+++} i \texttt{-----} odpowiadają emisji wszystkich trzech
+elektronów w tę samą stronę, a pozostałe sześć sytuacji,
 w~której jeden elektron porusza się przeciwnie do dwóch pozostałych.
 Dla zdarzeń z sektorów mieszanych ten wyróżniony elektron nazywany jest
 dalej elektronem mniejszościowym.
 
 Jeżeli znaki byłyby niezależne i równie prawdopodobne, udział
 zdarzeń o emisji w tę samą stronę wynosiłby $2/8=\num{0.25}$.
-Liczba ta stanowi odniesienie dla wyników z podrozdziału~\ref{sec:wyn:sektory}.
+Liczba ta stanowi punkt odniesienia dla analizy wyników z podrozdziału~\ref{sec:wyn:sektory}.
 
+%OK
 \subsection{Związek z reprezentacją simpleksową}
 \label{sec:zwiazek}
 
@@ -574,34 +630,37 @@ d_i=\frac{|p_i|}{|p_2|+|p_3|+|p_4|},
 co jest dokładnie definicją~\eqref{eq:udzialy}. Osiem ścian
 ośmiościanu, na które rozkłada się tam dane, to dokładnie osiem
 sektorów znakowych z podrozdziału~\ref{sec:sektory}. Obie metody
-operują zatem na tym samym obiekcie matematycznym. Różnica polega na
-sposobie jego odczytu: metoda simpleksowa ogląda gęstość punktów
-w trójkącie, natomiast tu ta sama gęstość opisywana jest przez
-funkcje skalarne $\Neff$ i $\xmax$.
+operują zatem na tym samym obiekcie matematycznym, a różnią się
+sposobem jego odczytu. Metoda simpleksowa przedstawia gęstość punktów
+w trójkącie, natomiast w niniejszej pracy ta sama gęstość opisywana
+jest przez funkcje skalarne $\Neff$ i $\xmax$.
 
-Pozwala to przetłumaczyć położenia w trójkącie na wartości
-liczbowe:
+Pozwala to przetłumaczyć wyróżnione położenia w trójkącie na wartości
+liczbowe.
 \begin{itemize}
-  \item środek trójkąta ($x_2=x_3=x_4=1/3$): $\Neff=3$, $\xmax=1/3$;
-  \item środek krawędzi (jeden udział zerowy, dwa równe):
-        $\Neff=2$, $\xmax=1/2$;
-  \item wierzchołek (jeden udział równy jedności): $\Neff=1$, $\xmax=1$.
+  \item Środek trójkąta, czyli $x_2=x_3=x_4=1/3$, daje $\Neff=3$
+        oraz $\xmax=1/3$.
+  \item Środek krawędzi, gdzie jeden udział jest zerowy, a dwa
+        pozostałe równe, daje $\Neff=2$ oraz $\xmax=1/2$.
+  \item Wierzchołek, gdzie jeden udział równa się jedności, daje
+        $\Neff=1$ oraz $\xmax=1$.
 \end{itemize}
-Dzięki temu słowne wnioski sformułowane na podstawie
-wykresów trójkątnych można sprawdzić ilościowo. Wykorzystano to
-w rozdziale~\ref{sec:porownanie}.
 
-Istotna jest też różnica w traktowaniu $P_e$. Udziały $x_i$ z definicji
+Pozwala to jakościowo sprawdzić wnioski wyciągnięte z wykresów
+trójkątnych, co wykonano dalej w rozdziale~\ref{sec:porownanie}.
+
+
+Istotna jest też różnica w traktowaniu sumy pędów podłużnych $P_e$. Udziały $x_i$ z definicji
 nie zależą od skali pędów, więc reprezentacja simpleksowa nie
 zawiera informacji o całkowitym pędzie układu. W opisie użytym w tej
 pracy $P_e$ i $K$ występują obok udziałów, dzięki czemu ruch
 kolektywny i względny analizowane są łącznie.
 
+%do sprawdzenia
 \subsection{Sprawdzenie poprawności implementacji}
 \label{sec:walidacja}
 
-Przed wykorzystaniem wyników wykonano cztery testy. Wszystkie
-przeprowadzono na wszystkich dwunastu zbiorach danych.
+Przed analizą wyników wykonano cztery testy na wszystkich dwunastu zbiorach danych.
 
 %OK
 \paragraph{Ortogonalność i odwracalność.} Sprawdzono bezpośrednio
