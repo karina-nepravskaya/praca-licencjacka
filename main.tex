@@ -1079,32 +1079,44 @@ odpowiadają emisji wszystkich elektronów w tę samą stronę. Zbiór
 Rysunek~\ref{fig:sektory} pokazuje wyraźną różnicę między
 kanałami, taką samą przy każdej z czterech intensywności. W kanale
 \emph{direct} niemal wszystkie zdarzenia leżą w dwóch sektorach
-zgodnych, a sześć sektorów mieszanych jest prawie puste. W kanale
-\emph{delayed} dwa sektory zgodne pozostają najliczniejsze, ale
+zgodnych, a sześć sektorów mieszanych jest prawie pustych. W kanale
+\emph{delayed} dwa sektory o kierunku zgodnym pozostają najliczniejsze, ale
 sektory mieszane są wyraźnie obsadzone i mają zbliżone udziały.
 
-Udział emisji elektronów w tę samą stronę $f_{\mathrm{zg}}$ zestawiono
+Udział zdarzeń, w których wszystkie elektrony poruszają się w tę samą stronę, $f_{\mathrm{zg}}$ zestawiono
 w tabeli~\ref{tab:fzg}. We wszystkich dwunastu zbiorach znacznie
 przewyższa on odniesienie \num{0.25} dla znaków niezależnych, co
-potwierdza, że emisja jest skorelowana. W kanale \emph{direct}  przekracza $f_{\mathrm{zg}}=\num{0.9}$, a w kanale \emph{delayed}
-wynosi około $f_{\mathrm{zg}}=\num{0.47}$. Jedyną zauważalną zależnością dla serii o tej samej długości fali \num{800}~nm jest stopniowy spadek udziału w kanale \emph{direct} wraz ze wzrostem natężenia pola,
-omówiony bardziej szczegółowo w podrozdziale~\ref{sec:wyn:intensywnosc}.
+potwierdza, że emisja jest skorelowana. W kanale \emph{direct}
+$f_{\mathrm{zg}}$ wynosi od \num{0.905} do \num{0.974}, a w kanale
+\emph{delayed} od \num{0.457} do \num{0.483}. Wielkość $f_{\mathrm{zg}}$
+jest średnią zmiennej przyjmującej wartość 1 dla zdarzenia z sektora
+zgodnego i 0 dla zdarzenia z sektora mieszanego. Różnicę między
+kanałami sprawdzono więc tym samym testem Welcha~\eqref{eq:welch},
+przyjmując za $s^2$ wariancję tej zmiennej
+$f_{\mathrm{zg}}(1-f_{\mathrm{zg}})$. Wartość $t$ wynosi od \num{31.2}
+do \num{66.5}, a $p<\num{1e-16}$ przy każdej intensywności. Jedyną
+zauważalną zależnością w serii \num{800}~nm jest stopniowy spadek
+$f_{\mathrm{zg}}$ w kanale \emph{direct} wraz ze wzrostem natężenia
+pola, omówiony bardziej szczegółowo w podrozdziale~\ref{sec:wyn:intensywnosc}.
 
 \begin{table}[htbp]
   \centering
   \caption{Udział emisji w tę samą stronę $f_{\mathrm{zg}}$, czyli
-  zdarzeń o znakach $(+{+}+)$ lub $(-{-}-)$, w kanałach \emph{direct},
-  \emph{delayed} oraz dla wszystkich zdarzeń. Dla znaków niezależnych
+  zdarzeń o znakach $(+{+}+)$ lub $(-{-}-)$, oraz porównanie kanałów
+  testem Welcha.
+  $\Delta_{f}=f_{\mathrm{zg}}^{\mathrm{direct}}-f_{\mathrm{zg}}^{\mathrm{delayed}}$
+  oznacza różnicę udziałów. Dla znaków niezależnych
   $f_{\mathrm{zg}}=\num{0.25}$.}
   \label{tab:fzg}
-  \begin{tabular}{cccc}
+  \begin{tabular}{ccccccc}
     \toprule
-    $I$ [\PWcm] & \emph{direct} & \emph{delayed} & wszystkie \\
+    $I$ [\PWcm] & \emph{direct} & \emph{delayed} & wszystkie
+      & $\Delta_{f}$ & $t$ & $p$ \\
     \midrule
-    \num{1.0} & \num{0.974} & \num{0.465} & \num{0.647} \\
-    \num{1.3} & \num{0.953} & \num{0.482} & \num{0.669} \\
-    \num{1.6} & \num{0.908} & \num{0.483} & \num{0.660} \\
-    \num{1.7} & \num{0.905} & \num{0.457} & \num{0.632} \\
+    \num{1.0} & \num{0.974} & \num{0.465} & \num{0.647} & \num{0.508} & \num{44.4} & $<\num{1e-16}$ \\
+    \num{1.3} & \num{0.953} & \num{0.482} & \num{0.669} & \num{0.471} & \num{66.5} & $<\num{1e-16}$ \\
+    \num{1.6} & \num{0.908} & \num{0.483} & \num{0.660} & \num{0.426} & \num{65.3} & $<\num{1e-16}$ \\
+    \num{1.7} & \num{0.905} & \num{0.457} & \num{0.632} & \num{0.448} & \num{31.2} & $<\num{1e-16}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -1113,34 +1125,116 @@ Sektory mieszane pozwalają sprawdzić, między którymi elektronami
 przebiega podział pędu. W zdarzeniu mieszanym jeden elektron porusza
 się przeciwnie do dwóch pozostałych i nazwano go elektronem
 mniejszościowym. Gdyby rola elektronu w modelu nie miała znaczenia,
-każdy z trzech elektronów byłby mniejszościowy w $1/3$ zdarzeń
-mieszanych. W kanale \emph{delayed} przy \num{1.3}~\PWcm{} elektron
-początkowo tunelujący jest mniejszościowy jedynie w
-$\num{0.225}\pm\num{0.008}$ zdarzeń mieszanych, a więc porusza się
-zwykle razem z jednym z elektronów początkowo związanych. W kanale
-\emph{direct} udział ten wynosi $\num{0.534}\pm\num{0.029}$, więc
-elektron tunelujący porusza się zwykle przeciwnie do pary elektronów
-związanych. Ten sam kierunek efektu występuje przy \num{1.6}
-i \num{1.7}~\PWcm{} (tabela~\ref{tab:mniejszosc}). Wynik jest zgodny
-z kształtem rozkładu w płaszczyźnie $(\xi_1,\xi_2)$. W kanale
-\emph{direct} pęd dzielony jest głównie między parę elektronów
-związanych a elektron tunelujący, a w kanale \emph{delayed} wewnątrz
-tej pary. Dla kanału \emph{direct} przy \num{1.0}~\PWcm{} zdarzeń
-mieszanych jest tylko \num{54}, a otrzymana wartość
-$\num{0.370}\pm\num{0.066}$ nie różni się istotnie od $1/3$.
+elektron początkowo tunelujący byłby mniejszościowy w $1/3$ zdarzeń
+mieszanych. Udział $f_4$ takich zdarzeń wraz z odchyleniem
+standardowym $\sigma_{f_4}=\sqrt{f_4(1-f_4)/n}$ zestawiono
+w tabeli~\ref{tab:f4}. Zgodność z wartością $1/3$ sprawdzono,
+wyznaczając $z=(f_4-1/3)/\sigma_{f_4}$ i odpowiadającą mu wartość $p$
+w taki sam sposób jak w teście Welcha. Ponieważ wykonano osiem
+porównań, zastosowano poprawkę Bonferroniego~\cite{Dunn1961} z progiem
+$\num{0.05}/8\approx\num{0.0063}$.
 
-Efekt ten jest wielkością zależną od numeracji, więc nie może
-być interpretowany jako własność obserwowalna układu. Mówi on
-natomiast o strukturze samego modelu: rola przypisana trajektorii
-tunelującej jest inna w każdym z dwóch kanałów. W kanale
-\emph{delayed} trajektoria ta rzadziej niż pozostałe kończy się
-ruchem przeciwnym do dwóch innych elektronów, a w kanale \emph{direct}
-częściej.
+W kanale \emph{delayed} $f_4$ wynosi od \num{0.205} do \num{0.235}
+i przy każdej intensywności jest istotnie mniejszy od $1/3$. Elektron
+początkowo tunelujący porusza się więc zwykle razem z jednym
+z elektronów początkowo związanych. W kanale \emph{direct} przy
+\num{1.3}, \num{1.6} i \num{1.7}~\PWcm{} $f_4$ wynosi od \num{0.534}
+do \num{0.545} i jest istotnie większy od $1/3$, więc elektron
+tunelujący porusza się zwykle przeciwnie do pary elektronów
+związanych. Przy \num{1.0}~\PWcm{} zdarzeń mieszanych w kanale
+\emph{direct} jest tylko \num{54}, a otrzymana wartość nie różni się
+istotnie od $1/3$ ($p=\num{0.57}$).
+
+\begin{table}[htbp]
+  \centering
+  \caption{Udział $f_4$ zdarzeń mieszanych, w których elektronem
+  mniejszościowym jest elektron początkowo tunelujący, wraz
+  z odchyleniem standardowym $\sigma_{f_4}$ oraz porównanie
+  z wartością $1/3$ oczekiwaną przy równoważnych etykietach.}
+  \label{tab:f4}
+  \begin{tabular}{llcccc}
+    \toprule
+    $I$ [\PWcm] & kanał & $n_{\mathrm{miesz}}$ & $f_4$ & $z$ & $p$ \\
+    \midrule
+    \num{1.0} & \emph{direct}  & \num{54}   & $\num{0.370}\pm\num{0.066}$ & \num{0.56}   & \num{0.57} \\
+              & \emph{delayed} & \num{1121} & $\num{0.234}\pm\num{0.013}$ & \num{-7.88}  & \num{3e-15} \\
+    \midrule
+    \num{1.3} & \emph{direct}  & \num{292}  & $\num{0.534}\pm\num{0.029}$ & \num{6.88}   & \num{6e-12} \\
+              & \emph{delayed} & \num{3022} & $\num{0.225}\pm\num{0.008}$ & \num{-14.21} & $<\num{1e-16}$ \\
+    \midrule
+    \num{1.6} & \emph{direct}  & \num{807}  & $\num{0.545}\pm\num{0.018}$ & \num{12.09}  & $<\num{1e-16}$ \\
+              & \emph{delayed} & \num{3912} & $\num{0.235}\pm\num{0.007}$ & \num{-14.48} & $<\num{1e-16}$ \\
+    \midrule
+    \num{1.7} & \emph{direct}  & \num{161}  & $\num{0.534}\pm\num{0.039}$ & \num{5.11}   & \num{3e-7} \\
+              & \emph{delayed} & \num{869}  & $\num{0.205}\pm\num{0.014}$ & \num{-9.39}  & $<\num{1e-16}$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Wynik jest zgodny z kształtem rozkładu na płaszczyźnie $(\xi_1,\xi_2)$
+z podrozdziału~\ref{sec:wyn:K}. W kanale \emph{direct} pęd dzielony
+jest głównie między parę elektronów początkowo związanych a elektron
+początkowo tunelujący, a w kanale \emph{delayed} wewnątrz tej pary.
+Ponieważ $f_4$ zależy od numeracji elektronów, podobnie jak we wspomnianym podrozdziale, dotyczy to stwierdzenie jedynie struktury modelu, a nie własności obserwowalnej.
 
 \subsection{Korelacje par elektronów}
 \label{sec:wyn:korelacje}
 
-\begin{figure}[p]
+Następnie wyznaczono współczynniki korelacji Pearsona między pędami
+podłużnymi par elektronów zgodnie ze wzorem:
+\begin{equation}
+  r_{ij}=\frac{\displaystyle\sum_{k=1}^{n}\left(p_{i,k}-\bar{p}_i\right)\left(p_{j,k}-\bar{p}_j\right)}
+              {\sqrt{\displaystyle\sum_{k=1}^{n}\left(p_{i,k}-\bar{p}_i\right)^{2}
+                     \displaystyle\sum_{k=1}^{n}\left(p_{j,k}-\bar{p}_j\right)^{2}}},
+  \label{eq:pearson}
+\end{equation}
+gdzie $p_{i,k}$ oznacza pęd podłużny elektronu $i$ w $k$-tym zdarzeniu,
+a $\bar{p}_i$ jego średnią. Współczynnik ten opisuje wyłącznie liniową
+zależność między dwiema zmiennymi i nie stanowi pełnego opisu
+zależności trzech elektronów. Traktowany jest tu jako obserwabla
+pomocnicza, uzupełniająca obraz uzyskany z $\Neff$ i sektorów
+znakowych. Przedziały ufności wyznaczono transformacją
+Fishera~\cite{Fisher1921}, zgodnie z którą wielkość
+$\operatorname{artanh} r_{ij}$ ma w przybliżeniu rozkład normalny
+o odchyleniu standardowym $1/\sqrt{n-3}$.
+
+Rysunek~\ref{fig:korelacje} przedstawia macierze korelacji pędów elektronów dla
+wszystkich czterech intensywności. Obraz jest jakościowo taki sam dla
+każdej z nich. W kanale \emph{direct} wszystkie trzy
+korelacje są duże i wynoszą od \num{0.813} do \num{0.872}, natomiast
+w kanale \emph{delayed} są wyraźnie mniejsze i wynoszą od \num{0.214}
+do \num{0.470}. Wartości wraz z przedziałami ufności zestawiono
+w tabeli~\ref{tab:korelacje}.
+
+Uporządkowanie współczynników jest systematyczne i przeciwne w obu
+kanałach. W kanale \emph{direct} największa jest wartość korelacji $r_{23}$
+pary elektronów początkowo związanych, a $r_{24}$ i $r_{34}$ są mniejsze
+i wzajemnie zbliżone. W kanale \emph{delayed} jest odwrotnie.
+Najmniejsza jest tam wartość przy $r_{23}$, a korelacje każdego z tych elektronów
+z elektronem początkowo tunelującym są wyraźnie większe.
+
+Istotność tych różnic oceniono na podstawie rozłączności
+95-procentowych przedziałów ufności. Kryterium to jest ostrożne,
+ponieważ dla dwóch niezależnych oszacowań o podobnej niepewności
+rozłączność przedziałów odpowiada wartości $p$ mniejszej od około
+\num{0.006}. W kanale \emph{delayed} przedział $r_{23}$ nie zachodzi na
+przedziały $r_{24}$ ani $r_{34}$ przy żadnej z czterech intensywności.
+W kanale \emph{direct} przedział $r_{23}$ jest rozłączny z przedziałem
+$r_{34}$ przy każdej intensywności, a z przedziałem $r_{24}$ przy
+\num{1.3}, \num{1.6} i \num{1.7}~\PWcm. Przy \num{1.0}~\PWcm{}
+przedziały $r_{23}$ i $r_{24}$ stykają się, więc tej jednej różnicy nie
+można uznać za istotną.
+
+Wnioskując z otrzymanych wartości, w kanale \emph{delayed} dwa
+elektrony początkowo związane są słabiej skorelowane ze sobą niż każdy
+z nich z elektronem początkowo tunelującym. Jest to zgodne z opisem
+tego kanału, w którym tylko dwa elektrony jonizują się wkrótce po
+rekolizji, a trzeci z opóźnieniem. Ponieważ numeracja elektronów ma
+jednak charakter czysto modelowy, obserwacja ta odnosi się jedynie do
+samego modelu, а nie do wielkości bezpośrednio mierzalnych lub opisu
+mechanizmu fizycznego.
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.95\textwidth]{correlations_1p0.png}\\[-2pt]
 \includegraphics[width=0.95\textwidth]{correlations_1p3.png}\\[-2pt]
@@ -1155,99 +1249,210 @@ innej długości fali.}
 \label{fig:korelacje}
 \end{figure}
 
-Współczynnik korelacji Pearsona opisuje wyłącznie liniową
-zależność między dwiema zmiennymi i nie stanowi pełnego opisu
-zależności trzech elektronów. Traktowany jest tu jako obserwabla
-pomocnicza, uzupełniająca obraz uzyskany z $\Neff$ i sektorów
-znakowych.
-
-Rysunek~\ref{fig:korelacje} przedstawia macierze korelacji pędów elektronów dla
-wszystkich czterech intensywności. Obraz jest jakościowo taki sam w
-każdym z nich. W kanale \emph{direct} wszystkie trzy korelacje są duże
-i leżą w przedziale od \num{0.813} do \num{0.872}, natomiast w kanale
-\emph{delayed} są wyraźnie mniejsze i rozrzucone od \num{0.214} do
-\num{0.470}. Pełne zestawienie wraz z przedziałami ufności podano w
-tabeli~\ref{tab:korelacje}.
-
-Istotna jest nie tyle wielkość samych współczynników, co ich
-uporządkowanie, które okazuje się systematyczne i przeciwne w obu
-kanałach. We wszystkich czterech zbiorach kanału \emph{direct}
-największa jest korelacja $r_{23}$ pary elektronów początkowo
-związanych, a dwie pozostałe są mniejsze i wzajemnie zbliżone.
-We wszystkich czterech zbiorach kanału \emph{delayed} jest odwrotnie.
-Najmniejsza jest tam $r_{23}$, a korelacje każdego z tych elektronów z
-elektronem początkowo tunelującym są wyraźnie większe. Przy
-\num{1.3}~\PWcm{} otrzymano w kanale \emph{delayed} $r_{23}=\num{0.268}$
-wobec $r_{24}=\num{0.435}$ i $r_{34}=\num{0.459}$.
-
-Różnica ta jest istotna statystycznie. W kanale \emph{delayed}
-przedział ufności $r_{23}$ nie zachodzi na przedziały $r_{24}$ ani
-$r_{34}$ przy żadnej z czterech intensywności. W kanale \emph{direct}
-przedział $r_{23}$ jest rozłączny z przedziałem $r_{24}$ przy
-\num{1.3}, \num{1.6} i \num{1.7}~\PWcm, natomiast przy \num{1.0}~\PWcm{}
-oba przedziały stykają się i różnica nie jest tam rozstrzygająca.
-
-W kanale \emph{delayed} zatem dwa elektrony
-początkowo związane są \emph{słabiej} skorelowane ze sobą
-niż każdy z nich z elektronem początkowo tunelującym. Jest to
-zgodne z opisem tego kanału, w którym tylko dwa elektrony jonizują
-się wkrótce po rekolizji, a trzeci z opóźnieniem. Ponieważ numeracja elektronów ma jednak charakter czysto modelowy, obserwacja ta odnosi się jedynie do samego modelu, a nie do wielkości bezpośrednio mierzalnych lub opisu mechanizmu fizycznego.
-
 \subsection{Zależność od intensywności pola}
 \label{sec:wyn:intensywnosc}
 
+Na koniec sprawdzono, jak wyniki zmieniają się w zależności od intensywności pola.
+Seria o tej samej długości fali \num{800}~nm obejmuje zbiory \num{1.0},
+\num{1.3} i \num{1.6}~\PWcm. Zbiór \num{1.7}~\PWcm{} policzono dla
+długości fali \num{760}~nm, dlatego nie włączono go do serii
+i omówiono osobno.
+
+Dla każdej wielkości wyznaczono jej średnią w każdym zbiorze wraz
+z niepewnością. Dla $\langle K\rangle$, $\langle K/A\rangle$
+i $\langle\Neff\rangle$ jest to odchylenie standardowe średniej, a dla
+średniej korelacji par $\langle r\rangle$ niepewność wyznaczona metodą
+bootstrap~\cite{Efron1979} z \num{200} powtórzeń. Zależność od
+intensywności w serii \num{800}~nm opisano ważoną regresją liniową
+\begin{equation}
+  y=a+b\,(I-I_0)
+  \label{eq:trend}
+\end{equation}
+z wagami $1/\sigma^2$, gdzie $I_0=\num{1.3}$~\PWcm. Przesunięcie zmiennej
+o $I_0$ sprawia, że $a$ jest wartością w środku serii, a nie
+przedłużeniem prostej do $I=0$. Zbioru \num{1.7}~\PWcm{} nie włączono do
+dopasowania. Współczynniki zestawiono w tabeli~\ref{tab:trend_fit}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.49\textwidth]{trend_mean_K.png}
-\hfill
-\includegraphics[width=0.49\textwidth]{trend_mean_N_eff.png}\\[4pt]
-\includegraphics[width=0.49\textwidth]{trend_mean_pair_correlation.png}
-\caption{Zależność średnich wartości od intensywności pola. U góry po
-lewej skala nierównowagi $\langle K\rangle$, u góry po prawej efektywna
-liczba elektronów $\langle\Neff\rangle$, u dołu średnia korelacja par
-pędów podłużnych. Punkt przy \num{1.7}~\PWcm{} odpowiada innej
-długości fali i nie należy do serii.}
-\label{fig:trendy}
+\includegraphics[width=0.8\textwidth]{trend_mean_K.png}
+\caption{Zależność średniej skali nierównowagi $\langle K\rangle$ od
+intensywności pola. Punkty przedstawiają wartości średnie
+z niepewnościami, a linie ważone dopasowanie liniowe~\eqref{eq:trend}
+do punktów serii \num{800}~nm, poza zakresem od \num{1.0} do
+\num{1.6}~\PWcm{} są jego przedłużeniem. Pusty punkt przy
+\num{1.7}~\PWcm{} odpowiada innej długości fali i nie wchodzi do
+dopasowania.}
+\label{fig:trend_K}
+\end{figure}
+Na rysunku~\ref{fig:trend_K} średnia skala nierównowagi
+$\langle K\rangle$ rośnie w serii \num{800}~nm w obu kanałach, w kanale
+\emph{direct} od \num{1.18} do \num{1.42}~\ja, a w kanale \emph{delayed}
+od \num{2.12} do \num{2.34}~\ja{} (tabela~\ref{tab:glowna}). Wielkość $K$
+ma jednak wymiar pędu, więc rośnie także wtedy, gdy wszystkie pędy
+zwiększają się w tym samym stosunku, a sposób ich podziału pozostaje
+bez zmian. Sam wzrost $\langle K\rangle$ nie pozwala więc stwierdzić,
+czy zmienił się podział pędu. Aby oddzielić zmianę skali od zmiany
+samego podziału, rozpatrzono stosunek $K/A$, gdzie $A$ jest sumą
+wartości bezwzględnych pędów~\eqref{eq:udzialy}. Wielkość ta jest
+bezwymiarowa i nie zmienia się, gdy wszystkie pędy rosną w tym samym
+stosunku.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{trend_mean_K_over_A.png}
+\caption{Zależność średniego stosunku $\langle K/A\rangle$ od
+intensywności pola. Oznaczenia jak na rysunku~\ref{fig:trend_K}.}
+\label{fig:trend_KA}
 \end{figure}
 
-Na rysunku~\ref{fig:trendy} zestawiono średnie wartości tych trzech
-wielkości dla kolejnych intensywności. W serii \num{800}~nm, obejmującej
-\num{1.0}, \num{1.3} i \num{1.6}~\PWcm, widoczne są dwie regularności.
+Na rysunku~\ref{fig:trend_KA} w kanale \emph{delayed} stosunek
+$\langle K/A\rangle$ pozostaje stały i wynosi od \num{0.409} do
+\num{0.411}, a nachylenie prostej $\num{0.001}\pm\num{0.006}$ na \PWcm{}
+jest zgodne z zerem. Wzrost $\langle K\rangle$ wynika więc w tym kanale
+wyłącznie ze wzrostu skali pędów. W kanale \emph{direct}
+$\langle K/A\rangle$ rośnie od \num{0.196} do \num{0.218}, przy czym
+większa część tej zmiany przypada na przedział od \num{1.3} do
+\num{1.6}~\PWcm. W tym kanale zmienia się zatem również sam podział
+pędu, który staje się mniej równomierny.
 
-Średnia wartość $K$ rośnie w
-każdym kanale: dla \emph{direct} od \num{1.182} przez \num{1.295} do
-\num{1.417}~\ja, dla \emph{delayed} od \num{2.121} przez \num{2.276} do
-\num{2.337}~\ja Wzrost ten jest oczekiwany, ponieważ $K$ ma wymiar
-pędu, a wraz z intensywnością rośnie pęd dryfu
-(tabela~\ref{tab:impulsy}).
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{trend_mean_N_eff.png}
+\caption{Zależność średniej efektywnej liczby elektronów
+$\langle\Neff\rangle$ od intensywności pola. Oznaczenia jak na
+rysunku~\ref{fig:trend_K}.}
+\label{fig:trend_neff}
+\end{figure}
 
-Druga regularność dotyczy wielkości bezwymiarowych i jest ciekawsza.
-Średnie $\langle\Neff\rangle$ oraz $\langle\xmax\rangle$ zmieniają się
-bardzo nieznacznie: dla kanału \emph{direct} $\langle\Neff\rangle$ maleje od
-\num{2.662} do \num{2.633}, a dla \emph{delayed} pozostaje w przedziale
-\num{2.355}--\num{2.367}. Zmiany te są co najwyżej porównywalne z
-różnicą między kanałami, która wynosi około \num{0.27}.
-Oznacza to, że sposób podziału pędu jest w rozpatrywanym zakresie
-własnością kanału, a nie intensywności pola. Intensywność
-zmienia przede wszystkim skalę pędów i proporcje między
+Ten sam obraz daje efektywna liczba elektronów
+(rysunek~\ref{fig:trend_neff}). W kanale \emph{direct}
+$\langle\Neff\rangle$ maleje od \num{2.662} do \num{2.633}, a nachylenie
+wynosi $\num{-0.053}\pm\num{0.011}$ na \PWcm. W kanale \emph{delayed}
+$\langle\Neff\rangle$ wynosi od \num{2.355} do \num{2.367} bez wyraźnego
+kierunku zmian, a nachylenie $\num{0.009}\pm\num{0.015}$ na \PWcm{} jest
+zgodne z zerem.
+
+Zmiany wszystkich wielkości bezwymiarowych w serii \num{800}~nm
+zestawiono w tabeli~\ref{tab:trend}. Oprócz $\langle\Neff\rangle$
+i $\langle K/A\rangle$ podano w niej $\langle\xmax\rangle$, udział
+zdarzeń o zgodnych znakach pędów $f_{\mathrm{zg}}$ oraz średni udział
+pędu elektronu mniejszościowego $\langle x_{\mathrm{mn}}\rangle$
+(tabela~\ref{tab:mniejszosc}). Istotność różnicy między zbiorami
+\num{1.0} i \num{1.6}~\PWcm{} sprawdzono testem Welcha~\eqref{eq:welch}.
+Wielkość $f_{\mathrm{zg}}$ jest średnią zmiennej przyjmującej wartość 1
+dla zdarzenia z sektora zgodnego i 0 dla zdarzenia z sektora
+mieszanego, dlatego przyjęto dla niej $s^2=f_{\mathrm{zg}}(1-f_{\mathrm{zg}})$.
+Ponieważ wykonano dziesięć porównań, zastosowano poprawkę
+Bonferroniego~\cite{Dunn1961} z progiem $\num{0.05}/10=\num{0.005}$.
+\begin{table}[htbp]
+  \centering
+  \caption{Wielkości bezwymiarowe w serii \num{800}~nm oraz porównanie
+  zbiorów \num{1.0} i \num{1.6}~\PWcm{} testem Welcha.
+  $\Delta$ oznacza różnicę wartości przy \num{1.6} i \num{1.0}~\PWcm.}
+  \label{tab:trend}
+  \begin{tabular}{llcccccc}
+    \toprule
+    kanał & wielkość & \num{1.0} & \num{1.3} & \num{1.6} & $\Delta$ & $t$ & $p$ \\
+    \midrule
+    \emph{direct} & $\langle\Neff\rangle$           & \num{2.662} & \num{2.654} & \num{2.633} & \num{-0.029} & \num{-4.0}  & \num{7e-5} \\
+                  & $\langle\xmax\rangle$           & \num{0.464} & \num{0.466} & \num{0.471} & \num{0.006}  & \num{3.3}   & \num{9e-4} \\
+                  & $\langle K/A\rangle$            & \num{0.196} & \num{0.201} & \num{0.218} & \num{0.022}  & \num{8.0}   & \num{1e-15} \\
+                  & $f_{\mathrm{zg}}$               & \num{0.974} & \num{0.953} & \num{0.908} & \num{-0.065} & \num{-13.9} & $<\num{1e-16}$ \\
+                  & $\langle x_{\mathrm{mn}}\rangle$ & \num{0.070} & \num{0.116} & \num{0.166} & \num{0.096}  & \num{8.0}   & \num{1e-15} \\
+    \midrule
+    \emph{delayed} & $\langle\Neff\rangle$           & \num{2.367} & \num{2.355} & \num{2.367} & \num{-0.001} & \num{-0.1} & \num{0.95} \\
+                   & $\langle\xmax\rangle$           & \num{0.530} & \num{0.535} & \num{0.536} & \num{0.005}  & \num{2.0}  & \num{0.046} \\
+                   & $\langle K/A\rangle$            & \num{0.411} & \num{0.409} & \num{0.411} & \num{0.000}  & \num{-0.1} & \num{0.93} \\
+                   & $f_{\mathrm{zg}}$               & \num{0.465} & \num{0.482} & \num{0.483} & \num{0.017}  & \num{1.4}  & \num{0.16} \\
+                   & $\langle x_{\mathrm{mn}}\rangle$ & \num{0.177} & \num{0.187} & \num{0.210} & \num{0.033}  & \num{6.6}  & \num{4e-11} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+W kanale \emph{direct} zmiany wszystkich pięciu wielkości są istotne
+i mają zgodny kierunek. Wartość $\langle\Neff\rangle$ maleje,
+a $\langle\xmax\rangle$ i $\langle K/A\rangle$ rosną, więc podział pędu
+staje się mniej równomierny. Jednocześnie $f_{\mathrm{zg}}$ maleje od
+\num{0.974} do \num{0.908}, a $\langle x_{\mathrm{mn}}\rangle$ rośnie od
+\num{0.070} do \num{0.166}. Coraz więcej zdarzeń opuszcza zatem sektory
+zgodne, a elektron mniejszościowy niesie coraz większą część pędu.
+W kanale \emph{delayed} istotnie zmienia się jedynie
+$\langle x_{\mathrm{mn}}\rangle$, który rośnie od \num{0.177} do
+\num{0.210}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{trend_mean_pair_correlation.png}
+\caption{Zależność średniej korelacji par pędów podłużnych
+$\langle r\rangle$ od intensywności pola. Oznaczenia jak na
+rysunku~\ref{fig:trend_K}.}
+\label{fig:trend_r}
+\end{figure}
+Podobny obraz daje średnia korelacja par pędów podłużnych
+$\langle r\rangle$, czyli średnia z trzech współczynników $r_{23}$,
+$r_{24}$ i $r_{34}$ (rysunek~\ref{fig:trend_r}). W kanale \emph{direct}
+maleje ona od \num{0.848} do \num{0.833}, a nachylenie prostej wynosi
+$\num{-0.029}\pm\num{0.006}$ na \PWcm. W kanale \emph{delayed} rośnie od
+\num{0.358} do \num{0.401}, z nachyleniem $\num{0.065}\pm\num{0.017}$ na
+\PWcm. Różnicę między zbiorami \num{1.0} i \num{1.6}~\PWcm{} podzielono
+przez jej niepewność wyznaczoną metodą bootstrap i otrzymano
+$z=\num{-4.5}$ ($p=\num{8e-6}$) w kanale \emph{direct} oraz $z=\num{4.0}$
+($p=\num{8e-5}$) w kanale \emph{delayed}. Spadek w kanale \emph{direct}
+jest zgodny z malejącym udziałem zdarzeń, w których wszystkie elektrony
+poruszają się w tę samą stronę.
+Wartości dla wszystkich zdarzeń, widoczne na
+rysunkach~\ref{fig:trend_K}--\ref{fig:trend_r}, nie są interpretowane
+osobno. Zależą one od proporcji między kanałami, które zmieniają się
+z intensywnością, a ponadto obejmują zdarzenia ścieżek rzadszych
+(tabela~\ref{tab:licznosci}).
+\begin{table}[htbp]
+  \centering
+  \caption{Współczynniki ważonej regresji liniowej~\eqref{eq:trend}
+  dopasowanej do serii \num{800}~nm (\num{1.0}, \num{1.3}
+  i \num{1.6}~\PWcm). Niepewności odpowiadają jednemu odchyleniu
+  standardowemu. Współczynnik $b$ podano w jednostkach wielkości $y$ na
+  \PWcm. Dopasowanie ma jeden stopień swobody.}
+  \label{tab:trend_fit}
+  \begin{tabular}{llccc}
+    \toprule
+    kanał & wielkość $y$ & $a$ & $b$ & $\chi^2$ \\
+    \midrule
+    wszystkie      & $\langle K\rangle$ [\ja] & $\num{1.817}\pm\num{0.006}$ & $\num{0.253}\pm\num{0.024}$  & \num{0.53} \\
+                   & $\langle K/A\rangle$     & $\num{0.333}\pm\num{0.001}$ & $\num{-0.008}\pm\num{0.005}$ & \num{11.94} \\
+                   & $\langle\Neff\rangle$    & $\num{2.475}\pm\num{0.002}$ & $\num{0.029}\pm\num{0.010}$  & \num{0.93} \\
+                   & $\langle r\rangle$       & $\num{0.606}\pm\num{0.003}$ & $\num{0.071}\pm\num{0.011}$  & \num{6.30} \\
+    \midrule
+    \emph{direct}  & $\langle K\rangle$ [\ja] & $\num{1.298}\pm\num{0.005}$ & $\num{0.395}\pm\num{0.022}$  & \num{0.15} \\
+                   & $\langle K/A\rangle$     & $\num{0.204}\pm\num{0.001}$ & $\num{0.041}\pm\num{0.004}$  & \num{9.08} \\
+                   & $\langle\Neff\rangle$    & $\num{2.650}\pm\num{0.003}$ & $\num{-0.053}\pm\num{0.011}$ & \num{1.36} \\
+                   & $\langle r\rangle$       & $\num{0.843}\pm\num{0.001}$ & $\num{-0.029}\pm\num{0.006}$ & \num{3.59} \\
+    \midrule
+    \emph{delayed} & $\langle K\rangle$ [\ja] & $\num{2.250}\pm\num{0.009}$ & $\num{0.329}\pm\num{0.038}$  & \num{6.88} \\
+                   & $\langle K/A\rangle$     & $\num{0.410}\pm\num{0.001}$ & $\num{0.001}\pm\num{0.006}$  & \num{0.42} \\
+                   & $\langle\Neff\rangle$    & $\num{2.362}\pm\num{0.003}$ & $\num{0.009}\pm\num{0.015}$  & \num{3.09} \\
+                   & $\langle r\rangle$       & $\num{0.383}\pm\num{0.004}$ & $\num{0.065}\pm\num{0.017}$  & \num{0.89} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+Przy trzech punktach dopasowanie ma jeden stopień swobody, dlatego
+zgodność z zależnością liniową oceniono statystyką $\chi^2$. Dla
+$\langle K\rangle$ w kanale \emph{delayed}, $\langle K/A\rangle$
+w kanale \emph{direct} oraz dla $\langle K/A\rangle$ i $\langle r\rangle$
+wszystkich zdarzeń $\chi^2$ przekracza \num{3.84}, co odpowiada
+$p<\num{0.05}$ i wskazuje na odstępstwo od zależności liniowej. W tych
+przypadkach niepewności współczynników są zaniżone. Z tego powodu
+o istotności zmian wnioskowano z bezpośredniego porównania zbiorów
+\num{1.0} i \num{1.6}~\PWcm, a regresję traktowano jako opis kierunku
+i wielkości zmian.
+Wnioskując z otrzymanych wartości, zmiany wywołane intensywnością są
+wielokrotnie mniejsze od różnicy między kanałami. Wartość
+$\langle\Neff\rangle$ w kanale \emph{direct} zmienia się w całej serii
+o \num{0.029}, podczas gdy różnica między kanałami wynosi od
+\num{0.254} do \num{0.299} (tabela~\ref{tab:welch_neff}). Sposób podziału
+pędu jest więc w rozpatrywanym zakresie przede wszystkim własnością
+kanału, a intensywność zmienia głównie skalę pędów i proporcje między
 kanałami (tabela~\ref{tab:licznosci}).
-
-Wyraźniejszą zależność od intensywności wykazuje topologia
-emisji w kanale \emph{direct}: udział zdarzeń o emisji w tę samą
-stronę maleje od \num{0.974} przez \num{0.953} do \num{0.908}, a średni
-udział elektronu mniejszościowego rośnie od \num{0.070} przez \num{0.116}
-do \num{0.166}. Kanał \emph{direct} staje się zatem wraz ze wzrostem
-intensywności nieco mniej ,,czysty''. W kanale \emph{delayed} odpowiednie
-wartości pozostają praktycznie stałe (\num{0.465}, \num{0.482},
-\num{0.482}).
-
-Zbiór \num{1.7}~\PWcm{} przy \num{760}~nm daje wartości bliskie tym dla
-\num{1.6}~\PWcm{} we wszystkich obserwablach bezwymiarowych
-($\langle\Neff\rangle=\num{2.628}$ i \num{2.374}, udział emisji zgodnej
-\num{0.905} i \num{0.457}). Ponieważ zbiór ten policzono dla innej
-długości fali, zgodność ta traktowana jest jako sprawdzenie
-powtarzalności wniosków, a nie jako punkt serii.
 
 \subsection{Główne wyniki ilościowe}
 
@@ -1311,211 +1516,253 @@ $I$ [\PWcm] & kanał & $\langle P_e\rangle$ & $\langle|P_e|\rangle$
 \label{sec:porownanie}
 % ===========================================================================
 
-Ponieważ obie metody zastosowano do tych samych danych, możliwe jest
-bezpośrednie porównanie. Wykorzystano przy tym tożsamość
-wykazaną w podrozdziale~\ref{sec:zwiazek}: współrzędne
+Ponieważ obie metody, simpleksową oraz tą zaproponowaną w niniejszej pracy, zastosowano do tych samych danych, możliwe jest je
+bezpośrednie porównanie. Wykorzystano przy tym tożsamość wykazaną
+w podrozdziale~\ref{sec:zwiazek}, zgodnie z którą współrzędne
 barycentryczne wykresu trójkątnego są udziałami $x_i$, a ściany
-ośmiościanu są sektorami znakowymi.
+ośmiościanu sektorami znakowymi.
 
 \subsection{Ilościowe sprawdzenie wniosków metody simpleksowej}
 
-Analiza simpleksowa tych danych~\cite{Ojczenasz2023} prowadziła do dwóch
-wniosków jakościowych. Po pierwsze, przy emisji wszystkich trzech
-elektronów w tę samą stronę punkty skupiają się w pobliżu
-środka trójkąta, czyli pęd dzieli się w przybliżeniu
-równomiernie. Po drugie, w sektorach mieszanych punkty skupiają się
-w pobliżu środka krawędzi, czyli elektron poruszający się
-przeciwnie niesie niewielką część pędu.
-
+Reprezentację simpleksową dla wszystkich czterech intensywności
+przedstawiono na rysunkach~\ref{fig:siatka_direct}
+i~\ref{fig:siatka_delayed}, osobno dla każdego kanału.
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{dalitz_1p3_direct.png}\\[0.6em]
-\includegraphics[width=\textwidth]{dalitz_1p3_delayed.png}
-\caption{Reprezentacja simpleksowa tych samych danych przy
-$I=\num{1.3}$~\PWcm, po symetryzacji względem permutacji etykiet:
-kanał \emph{direct} (u góry) i \emph{delayed} (u dołu). W obu
-wierszach po lewej ściana odpowiadająca emisji w tę samą stronę
-(\texttt{+++}), po prawej ściana sektora mieszanego.
-Rysunki wykonano kodem towarzyszącym pracy~\cite{Ojczenasz2023}.}
-\label{fig:dalitz}
+\includegraphics[width=0.8\textwidth]{siatka_1p0_direct.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p3_direct.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p6_direct.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p7_direct.png}
+\caption{Siatka ośmiościanu dla kanału \emph{direct} bez symetryzacji.
+Od góry kolejno \num{1.0}, \num{1.3}, \num{1.6} i \num{1.7}~\PWcm{}
+(ostatni zbiór policzono dla \num{760}~nm). W każdej siatce lewa górna
+ściana odpowiada sektorowi \texttt{+++}, a trzecia ściana w dolnym
+rzędzie sektorowi \texttt{---}. Oznaczenia $p_{1z}$, $p_{2z}$, $p_{3z}$
+na rysunkach odpowiadają pędom $p_2$, $p_3$, $p_4$ w tej pracy. Słupek
+po prawej stronie każdego trójkąta podaje liczbę zliczeń. Rysunki
+wykonano kodem towarzyszącym pracy~\cite{Ojczenasz2023}.}
+\label{fig:siatka_direct}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{siatka_1p0_delayed.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p3_delayed.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p6_delayed.png}\\[0.2em]
+\includegraphics[width=0.8\textwidth]{siatka_1p7_delayed.png}
+\caption{Siatka ośmiościanu dla kanału \emph{delayed} bez symetryzacji.
+Oznaczenia jak na rysunku~\ref{fig:siatka_direct}.}
+\label{fig:siatka_delayed}
 \end{figure}
 
-Oba wnioski potwierdzono liczbowo, ale otrzymano też istotne uzupełnienia.
-Wyniki zebrano w tabeli~\ref{tab:simpleks}.
+Analiza simpleksowa danych~\cite{Ojczenasz2023} prowadziła do dwóch
+wniosków jakościowych. Po pierwsze, przy emisji wszystkich trzech
+elektronów w tę samą stronę punkty skupiają się w pobliżu środka
+trójkąta, czyli pęd dzieli się w przybliżeniu równomiernie. Po drugie,
+w sektorach mieszanych punkty skupiają się w pobliżu środka krawędzi,
+czyli elektron poruszający się przeciwnie niesie niewielką część pędu.
+Oba wnioski sprawdzono ilościowo, wyznaczając $\Neff$, $\xmax$
+i najmniejszy udział $x_{\min}$ osobno dla sektorów zgodnych
+i mieszanych. Wyniki dla wszystkich czterech intensywności zestawiono
+w tabeli~\ref{tab:simpleks}.
 
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{Obserwable podziału pędu policzone osobno dla sektorów emisji
-zgodnej i sektorów mieszanych. Wartości odniesienia: środek
-trójkąta $\Neff=3$, $\xmax=\num{0.333}$, $x_{\min}=\num{0.333}$;
-środek krawędzi $\Neff=2$, $\xmax=\num{0.5}$, $x_{\min}=0$.}
+zgodnej i sektorów mieszanych. Środkowi trójkąta w metodzie simpleksowej  odpowiadają wartości
+$\Neff=3$ i $\xmax=x_{\min}=1/3$, a środkowi krawędzi $\Neff=2$,
+$\xmax=\num{0.5}$ i $x_{\min}=0$.}
 \label{tab:simpleks}
 \begin{tabular}{cclcccc}
 \toprule
 $I$ [\PWcm] & kanał & sektory & $n$ & $\langle\Neff\rangle$ &
 $\langle\xmax\rangle$ & $\langle x_{\min}\rangle$ \\
 \midrule
+\num{1.0} & \emph{direct}  & zgodne   & \num{1988} & \num{2.676} & \num{0.461} & \num{0.206} \\
+          & \emph{direct}  & mieszane & \num{54}   & \num{2.123} & \num{0.574} & \num{0.067} \\
+          & \emph{delayed} & zgodne   & \num{976}  & \num{2.370} & \num{0.528} & \num{0.133} \\
+          & \emph{delayed} & mieszane & \num{1121} & \num{2.366} & \num{0.532} & \num{0.136} \\
+\midrule
 \num{1.3} & \emph{direct}  & zgodne   & \num{5906} & \num{2.678} & \num{0.461} & \num{0.208} \\
-\num{1.3} & \emph{direct}  & mieszane & \num{292}  & \num{2.164} & \num{0.569} & \num{0.084} \\
-\num{1.3} & \emph{delayed} & zgodne   & \num{2815} & \num{2.384} & \num{0.526} & \num{0.138} \\
-\num{1.3} & \emph{delayed} & mieszane & \num{3022} & \num{2.328} & \num{0.543} & \num{0.130} \\
+          & \emph{direct}  & mieszane & \num{292}  & \num{2.164} & \num{0.569} & \num{0.084} \\
+          & \emph{delayed} & zgodne   & \num{2815} & \num{2.384} & \num{0.526} & \num{0.138} \\
+          & \emph{delayed} & mieszane & \num{3022} & \num{2.328} & \num{0.543} & \num{0.130} \\
 \midrule
 \num{1.6} & \emph{direct}  & zgodne   & \num{7992} & \num{2.673} & \num{0.461} & \num{0.207} \\
-\num{1.6} & \emph{direct}  & mieszane & \num{807}  & \num{2.238} & \num{0.564} & \num{0.110} \\
-\num{1.6} & \emph{delayed} & zgodne   & \num{3648} & \num{2.418} & \num{0.521} & \num{0.148} \\
-\num{1.6} & \emph{delayed} & mieszane & \num{3912} & \num{2.319} & \num{0.549} & \num{0.133} \\
+          & \emph{direct}  & mieszane & \num{807}  & \num{2.238} & \num{0.564} & \num{0.110} \\
+          & \emph{delayed} & zgodne   & \num{3648} & \num{2.418} & \num{0.521} & \num{0.148} \\
+          & \emph{delayed} & mieszane & \num{3912} & \num{2.319} & \num{0.549} & \num{0.133} \\
+\midrule
+\num{1.7} & \emph{direct}  & zgodne   & \num{1534} & \num{2.676} & \num{0.462} & \num{0.207} \\
+          & \emph{direct}  & mieszane & \num{161}  & \num{2.177} & \num{0.580} & \num{0.101} \\
+          & \emph{delayed} & zgodne   & \num{732}  & \num{2.421} & \num{0.519} & \num{0.149} \\
+          & \emph{delayed} & mieszane & \num{869}  & \num{2.334} & \num{0.545} & \num{0.134} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Dla sektorów mieszanych zgodność z opisem jakościowym jest bardzo
-dobra. Przy \num{1.3}~\PWcm{} w kanale \emph{direct} otrzymano
-$\langle\Neff\rangle=\num{2.164}$ i $\langle\xmax\rangle=\num{0.569}$, czyli
-wartości bliskie odniesieniu dla środka krawędzi. Średni udział
-elektronu mniejszościowego wynosi \num{0.116}, a jego mediana \num{0.074};
-w \num{74.7}\,\% takich zdarzeń udział ten jest mniejszy niż \num{0.15}.
-Stwierdzenie, że elektron poruszający się przeciwnie niesie
-niewielką część pędu, jest zatem uzasadnione i można mu
-przypisać konkretną liczbę.
+Drugi wniosek potwierdzono w obu kanałach. W sektorach mieszanych
+kanału \emph{direct} $\langle\Neff\rangle$ wynosi od \num{2.123} do
+\num{2.238}, a $\langle\xmax\rangle$ od \num{0.564} do \num{0.580}, czyli
+wartości leżą blisko odniesienia dla środka krawędzi. Średni udział
+pędu elektronu mniejszościowego wynosi w tym kanale od \num{0.070} do
+\num{0.171}, a udział zdarzeń, w których jest on mniejszy od
+\num{0.15}, od \num{0.599} do \num{0.852} (tabela~\ref{tab:mniejszosc}).
+W kanale \emph{delayed} średni udział elektronu mniejszościowego jest
+większy i wynosi od \num{0.177} do \num{0.210}, a mniejszy od \num{0.15}
+jest on w \num{0.418}--\num{0.502} zdarzeń. Dla porównania, przy
+udziałach rozłożonych jednorodnie na simpleksie udział wybranego
+elektronu wynosi średnio $1/3$, a mniejszy od \num{0.15} jest
+w $1-(1-\num{0.15})^2\approx\num{0.28}$ zdarzeń. W obu kanałach
+elektron mniejszościowy niesie więc wyraźnie mniejszą część pędu niż
+przy braku preferencji, a do wniosków otrzymanych z metody simpleksowej można teraz
+dodać również konkretną liczbę.
 
-Dla sektorów emisji zgodnej obraz jest bardziej złożony. Wartość
-$\langle\Neff\rangle=\num{2.678}$ w kanale \emph{direct} jest wyraźnie
-większa od odniesienia losowego \num{2.118}, ale zarazem zauważalnie
-mniejsza od wartości \num{3} odpowiadającej dokładnie równemu
-podziałowi. Rozkład jest więc skupiony \emph{wokół} środka
-trójkąta, ale ma skończoną szerokość, którą $\Neff$
-mierzy bezpośrednio. Określenie ,,mniej więcej równy podział''
-jest zatem poprawne co do kierunku, lecz samo w sobie nie rozróżnia
-przypadków istotnie różnych.
+Dla sektorów zgodnych obraz jest bardziej złożony. W kanale
+\emph{direct} $\langle\Neff\rangle$ wynosi tam od \num{2.673} do
+\num{2.678}, czyli wyraźnie więcej niż odniesienie \num{2.118}, ale
+zauważalnie mniej niż wartość \num{3} odpowiadająca dokładnie równemu
+podziałowi. Rozkład jest więc skupiony \emph{wokół} środka trójkąta,
+ale ma skończoną szerokość, którą $\Neff$ mierzy bezpośrednio.
+Określenie ,,w przybliżeniu równy podział'' jest zatem poprawne co do
+kierunku, lecz nie rozróżnia przypadków istotnie różnych.
+Widać to przy porównaniu kanałów w obrębie tych samych sektorów
+zgodnych. W kanale \emph{delayed} $\langle\Neff\rangle$ wynosi tam od
+\num{2.370} do \num{2.421}, mimo że oba zbiory leżą na tej samej ścianie
+i na wykresie trójkątnym wyglądają jak skupienie wokół środka
+(rysunek~\ref{fig:dalitz}). Różnicę między kanałami sprawdzono testem
+Welcha~\eqref{eq:welch}, a wyniki zestawiono
+w tabeli~\ref{tab:simpleks_welch}. W sektorach zgodnych różnica wynosi
+od \num{0.254} do \num{0.307} przy $p<\num{1e-16}$, czyli jest tego
+samego rzędu co różnica dla wszystkich zdarzeń
+(tabela~\ref{tab:welch_neff}). W sektorach mieszanych kierunek różnicy
+jest odwrotny, a zdarzenia kanału \emph{direct} leżą bliżej środka
+krawędzi niż zdarzenia kanału \emph{delayed}. Obserwabla skalarna
+rozdziela zatem przypadki, które w reprezentacji graficznej wymagałyby
+wzrokowego porównania dwóch map gęstości.
+\begin{table}[htbp]
+  \centering
+  \caption{Porównanie $\langle\Neff\rangle$ w kanałach \emph{direct}
+  i \emph{delayed} osobno dla sektorów zgodnych i mieszanych testem
+  Welcha.
+  $\Delta=\langle\Neff\rangle_{\mathrm{direct}}-\langle\Neff\rangle_{\mathrm{delayed}}$
+  oznacza różnicę średnich.}
+  \label{tab:simpleks_welch}
+  \begin{tabular}{ccccccc}
+    \toprule
+    & \multicolumn{3}{c}{sektory zgodne} & \multicolumn{3}{c}{sektory mieszane} \\
+    \cmidrule(lr){2-4}\cmidrule(lr){5-7}
+    $I$ [\PWcm] & $\Delta$ & $t$ & $p$ & $\Delta$ & $t$ & $p$ \\
+    \midrule
+    \num{1.0} & \num{0.307} & \num{22.8} & $<\num{1e-16}$ & \num{-0.242} & \num{-5.8} & \num{8e-9} \\
+    \num{1.3} & \num{0.293} & \num{36.5} & $<\num{1e-16}$ & \num{-0.164} & \num{-8.2} & \num{2e-16} \\
+    \num{1.6} & \num{0.255} & \num{35.9} & $<\num{1e-16}$ & \num{-0.081} & \num{-5.5} & \num{4e-8} \\
+    \num{1.7} & \num{0.254} & \num{16.0} & $<\num{1e-16}$ & \num{-0.158} & \num{-4.8} & \num{2e-6} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
-Widać to najlepiej przy porównaniu kanałów w obrębie tych samych
-sektorów zgodnych. Przy \num{1.3}~\PWcm{} otrzymano
-$\langle\Neff\rangle=\num{2.678}$ dla kanału \emph{direct} i \num{2.384} dla
-kanału \emph{delayed}, mimo że oba zbiory leżą na tej samej ścianie
-i na wykresie trójkątnym oba wyglądają jak skupienie wokół
-środka (rysunek~\ref{fig:dalitz}). Różnica ta jest tego samego rzędu co
-całkowita różnica
-między kanałami. Obserwabla skalarna rozdziela zatem sytuacje, które w
-reprezentacji graficznej wymagałyby porównania dwóch map gęstości
-,,na oko''.
 
 \subsection{Symetryzacja permutacyjna}
 
-W metodzie simpleksowej stosuje się symetryzację: zbiór danych
-powiększa się o wszystkie permutacje etykiet elektronów, co jest
-uzasadnione ich nierozróżnialnością i wyraźnie poprawia
-czytelność wykresu. Widoczna na rysunku~\ref{fig:dalitz} sześciokrotna
-symetria obrazu jest bezpośrednim skutkiem tej operacji.
-
-Dla obserwabli użytych w tej pracy zabieg ten jest zbędny. Obie
-wielkości $\Neff$ i $\xmax$ są z definicji symetrycznymi funkcjami
-trójki udziałów, więc symetryzacja nie może zmienić ich
-wartości. Sprawdzono to bezpośrednio: po roz\-szerzeniu zbioru o wszystkie
-sześć permutacji średnie $\langle\Neff\rangle$ i $\langle\xmax\rangle$
-pozostają niezmienione co do ostatniej cyfry zapisu maszynowego
-(podrozdział~\ref{sec:walidacja}). Różnica jest metodologiczna:
-w podejściu graficznym symetryzacja jest potrzebna, aby obraz był
-czytelny, natomiast tutaj niezmienniczość względem permutacji jest
-wbudowana w definicję obserwabli.
-
-Ma to jedną istotną konsekwencję. Symetryzacja usuwa z danych
-informację o etykietach, a wraz z nią efekty opisane w
+W metodzie simpleksowej stosuje się symetryzację, czyli powiększenie
+zbioru danych o wszystkie permutacje etykiet elektronów. Jest to
+uzasadnione ich nierozróżnialnością i wyraźnie poprawia czytelność
+wykresu. Widoczna na rysunku~\ref{fig:dalitz} sześciokrotna symetria
+obrazu jest bezpośrednim skutkiem tej operacji.
+Dla obserwabli użytych w tej pracy zabieg ten jest zbędny. Wielkości
+$\Neff$ i $\xmax$ są z definicji symetrycznymi funkcjami trójki
+udziałów, więc symetryzacja nie może zmienić ich wartości. Sprawdzono
+to bezpośrednio. Po rozszerzeniu zbioru o wszystkie sześć permutacji
+średnie $\langle\Neff\rangle$ i $\langle\xmax\rangle$ różnią się od
+pierwotnych o nie więcej niż \num{5.6e-17}
+(podrozdział~\ref{sec:walidacja}). W podejściu graficznym symetryzacja
+jest więc potrzebna, aby obraz był czytelny, natomiast tutaj
+niezmienniczość względem permutacji wynika z samej definicji
+obserwabli.
+Symetryzacja ma jednak dodatkowy skutek. Usuwa ona z danych informację
+o etykietach, a wraz z nią efekty opisane w
 podrozdziałach~\ref{sec:wyn:sektory} i~\ref{sec:wyn:korelacje}. Po
 symetryzacji nie można już stwierdzić, że elektron początkowo
-tunelujący pełni rolę elektronu mniejszościowego w
-$\num{0.225}\pm\num{0.008}$ zdarzeń mieszanych kanału \emph{delayed}
-zamiast oczekiwanych $1/3$. Rozdzielenie obserwabli na symetryczne
-i zależne od etykiet pozwala korzystać z obu rodzajów informacji
-jednocześnie, pamiętając, że tylko pierwsze z nich podlegają
-interpretacji fizycznej.
+tunelujący jest elektronem mniejszościowym w \num{0.205}--\num{0.235}
+zdarzeń mieszanych kanału \emph{delayed} zamiast oczekiwanej $1/3$.
+Rozdzielenie obserwabli na symetryczne i zależne od etykiet pozwala
+korzystać z obu rodzajów informacji jednocześnie, przy czym
+interpretacji fizycznej podlegają tylko obserwable symetryczne.
 
 \subsection{Informacja dostępna w każdej z metod}
+Obie metody opisują ten sam podział pędu bezwzględnego i tę samą
+topologię znaków, ponieważ osiem ścian ośmiościanu odpowiada ośmiu
+sektorom znakowym. Różnią się natomiast zakresem informacji, którą
+można z nich odczytać.
 
-Zestawienie obu podejść przedstawiono w tabeli~\ref{tab:metody}.
+Pierwsza różnica dotyczy skali pędów. Przy przejściu do udziałów $x_i$
+pędy dzieli się przez ich sumę $A$, więc w reprezentacji simpleksowej
+informacja o skali zostaje usunięta. Nie można z niej odczytać ani
+całkowitego pędu $P_e$, ani skali nierównowagi $K$. W opisie skalarnym
+obie te wielkości są dostępne obok udziałów, co pozwoliło
+w podrozdziale~\ref{sec:wyn:intensywnosc} oddzielić zmianę skali od
+zmiany samego podziału.
 
-\begin{table}[H]
-\centering
-\small
-\caption{Porównanie zakresu informacji dostępnej w obu opisach.}
-\label{tab:metody}
-\begin{tabular}{p{5.2cm}p{4.4cm}p{4.4cm}}
-\toprule
-& reprezentacja simpleksowa & obserwable skalarne \\
-\midrule
-podział pędu bezwzględnego &
-pełny rozkład na trójkącie &
-$\Neff$, $\xmax$ (rzut rozkładu) \\
-topologia znaków &
-osiem ścian &
-osiem sektorów \\
-całkowity pęd $P_e$ &
-niedostępny (skala usuwana przez normalizację) &
-dostępny obok udziałów \\
-skala nierównowagi $K$ &
-niedostępna &
-dostępna \\
-porównanie dwóch zbiorów &
-porównanie map gęstości &
-różnica średnich z testem istotności \\
-efekty zależne od etykiet &
-usuwane przez symetryzację &
-mierzone osobno \\
-liczba elektronów &
-praktycznie do trzech &
-dowolna \\
-\bottomrule
-\end{tabular}
-\end{table}
+Druga różnica dotyczy porównywania zbiorów. W reprezentacji
+simpleksowej polega ono na wzrokowym zestawieniu dwóch map gęstości,
+a w opisie skalarnym na wyznaczeniu różnicy średnich i sprawdzeniu jej
+istotności testem Welcha~\eqref{eq:welch}. Efekty zależne od numeracji
+elektronów są w metodzie simpleksowej usuwane przez symetryzację,
+natomiast w tej pracy mierzy się je osobno i traktuje jako informację
+o modelu. Reprezentacja simpleksowa jest ponadto praktycznie
+ograniczona do trzech elektronów, a obserwable skalarne można
+zdefiniować dla dowolnej ich liczby, co omówiono w następnym
+podrozdziale.
 
 Reprezentacja simpleksowa ma nad opisem skalarnym jedną istotną
-przewagę: pokazuje pełny kształt rozkładu udziałów. Wielkości
+przewagę, ponieważ pokazuje pełny kształt rozkładu udziałów. Wielkości
 $\Neff$ i $\xmax$ są jego rzutami, więc dwa różne rozkłady mogą
-w zasadzie dać tę samą średnią. Z tego powodu w niniejszej
-pracy podawano nie tylko wartości średnie, ale też pełne histogramy
-(rysunek~\ref{fig:neff}) oraz wartości rozdzielone według sektorów
-(tabela~\ref{tab:simpleks}). Obie metody najlepiej traktować jako
-uzupełniające się: wykres trójkątny służy do
-rozpoznania struktury, a obserwable skalarne do jej zmierzenia i
-porównania.
+w zasadzie dać tę samą średnią. Z tego powodu w pracy podano nie tylko
+wartości średnie, ale też pełne histogramy (rysunek~\ref{fig:neff})
+oraz wartości rozdzielone według sektorów (tabela~\ref{tab:simpleks}).
+Obie metody najlepiej traktować jako uzupełniające się. Wykres
+trójkątny służy do rozpoznania struktury, a obserwable skalarne do jej
+zmierzenia i porównania.
+
 
 \subsection{Skalowalność}
 
-Zasadnicza różnica ujawnia się przy zwiększaniu liczby
-elektronów. Dla $N$ elektronów udziały $x_i$ tworzą simpleks o
-wymiarze $N-1$: dla $N=3$ jest to trójkąt, dla $N=4$ czworościan, dla
-$N=5$ obiekt czterowymiarowy. Równocześnie liczba sektorów znakowych
-rośnie jak $2^N$. Metoda graficzna przestaje więc działać w praktyce
-już dla czterech elektronów, gdzie zamiast ośmiu trójkątów
-trzeba byłoby analizować szesnaście brył trójwymiarowych.
 
-Opis użyty w tej pracy zachowuje przy tym swój kształt. Definicja
+Zasadnicza różnica ujawnia się przy zwiększaniu liczby elektronów. Dla
+$N$ elektronów udziały $x_i$ tworzą simpleks o wymiarze $N-1$, czyli
+trójkąt dla $N=3$, czworościan dla $N=4$ i obiekt czterowymiarowy dla
+$N=5$. Równocześnie liczba sektorów znakowych rośnie jak $2^N$. Metoda
+graficzna przestaje więc być praktyczna już dla czterech elektronów,
+gdzie zamiast ośmiu trójkątów trzeba by analizować szesnaście brył
+trójwymiarowych.
+
+Opis użyty w tej pracy zachowuje przy tym swoją postać. Definicja
 \begin{equation}
 \Neff=\Big(\sum_{i=1}^{N}x_i^2\Big)^{-1},\qquad
 x_i=\frac{|p_i|}{\sum_{j=1}^{N}|p_j|},
 \label{eq:NeffN}
 \end{equation}
-obowiązuje dla dowolnego $N$, przy czym $1\le\Neff\le N$, a
-interpretacja pozostaje ta sama: $\Neff$ podaje efektywną liczbę
-elektronów uczestniczących w podziale pędu. Podobnie uogólnia
-się baza~\eqref{eq:baza}: pełna macierz Helmerta ma dla $N$ zmiennych
-jeden wiersz kolektywny $(1,\dots,1)/\sqrt{N}$ i $N-1$ wierszy
-względnych~\cite{Lancaster1965}, przy czym $k$-ty wiersz względny
-zestawia $k$-tą zmienną ze średnią poprzednich. Wielkości
-$P_e$ i $K$ zachowują wtedy definicje
+obowiązuje dla dowolnego $N$, przy czym $1\le\Neff\le N$, a $\Neff$
+nadal podaje efektywną liczbę elektronów uczestniczących w podziale
+pędu. W ten sam sposób uogólnia się baza~\eqref{eq:baza}. Pełna
+macierz Helmerta ma dla $N$ zmiennych jeden wiersz kolektywny
+$(1,\dots,1)/\sqrt{N}$ i $N-1$ wierszy względnych~\cite{Lancaster1965},
+przy czym $k$-ty wiersz względny zestawia $k$-tą zmienną ze średnią
+poprzednich. Wielkości $P_e$ i $K$ zachowują wtedy definicje
 \begin{equation}
 P_e=\sum_{i=1}^{N}p_i,\qquad
 K=\Big(\sum_{i=1}^{N}p_i^2-\frac{P_e^2}{N}\Big)^{1/2},
 \label{eq:KN}
 \end{equation}
 gdzie druga równość wynika bezpośrednio z zachowania normy przy
-przekształceniu ortogonalnym. Niezależnie od $N$ wszystkie te wielkości
-pozostają liczbami, które można przedstawić na histogramie i
-porównywać między zbiorami.
+przekształceniu ortogonalnym. Niezależnie od $N$ wszystkie te
+wielkości pozostają liczbami, które można przedstawić na histogramie
+i porównywać między zbiorami testem Welcha, tak jak w
+rozdziale~\ref{sec:wyniki}.
+Skalowalność ta została jednak w niniejszej pracy wykazana wyłącznie
+formalnie. Dostępne dane dotyczą trzech elektronów, więc przydatność
+tych obserwabli dla $N\ge4$ nie została sprawdzona empirycznie.
 
-Należy jednak zaznaczyć, że skalowalność ta została w niniejszej
-pracy wykazana wyłącznie formalnie. Dostępne dane dotyczą trzech
-elektronów, więc przydatność tych obserwabli dla $N\ge4$ nie została
-sprawdzona empirycznie.
 
 % ===========================================================================
 \section{Ograniczenia analizy}
@@ -1654,27 +1901,34 @@ $P(x_{\mathrm{mn}}<\num{0.15})$ \\
 
 \section{Korelacje par pędów podłużnych}
 
-\begin{table}[H]
-\centering
-\small
-\caption{Współczynniki korelacji Pearsona między pędami
-podłużnymi wraz z \num{95}-procentowymi przedziałami ufności
-wyznaczonymi transformacją Fishera.}
-\label{tab:korelacje}
-\begin{tabular}{clccc}
-\toprule
-$I$ [\PWcm] & kanał & $r_{23}$ & $r_{24}$ & $r_{34}$ \\
-\midrule
-\num{1.0} & \emph{direct}  & \num{0.867}\,[\num{0.856};\num{0.877}] & \num{0.844}\,[\num{0.831};\num{0.856}] & \num{0.833}\,[\num{0.819};\num{0.846}] \\
-\num{1.0} & \emph{delayed} & \num{0.263}\,[\num{0.222};\num{0.302}] & \num{0.428}\,[\num{0.393};\num{0.463}] & \num{0.382}\,[\num{0.345};\num{0.418}] \\
-\num{1.3} & \emph{direct}  & \num{0.871}\,[\num{0.865};\num{0.877}] & \num{0.830}\,[\num{0.822};\num{0.838}] & \num{0.834}\,[\num{0.827};\num{0.842}] \\
-\num{1.3} & \emph{delayed} & \num{0.268}\,[\num{0.244};\num{0.291}] & \num{0.435}\,[\num{0.414};\num{0.456}] & \num{0.459}\,[\num{0.438};\num{0.479}] \\
-\num{1.6} & \emph{direct}  & \num{0.872}\,[\num{0.867};\num{0.877}] & \num{0.813}\,[\num{0.806};\num{0.820}] & \num{0.813}\,[\num{0.806};\num{0.820}] \\
-\num{1.6} & \emph{delayed} & \num{0.269}\,[\num{0.248};\num{0.290}] & \num{0.470}\,[\num{0.452};\num{0.487}] & \num{0.465}\,[\num{0.447};\num{0.482}] \\
-\num{1.7} & \emph{direct}  & \num{0.868}\,[\num{0.856};\num{0.879}] & \num{0.813}\,[\num{0.796};\num{0.828}] & \num{0.814}\,[\num{0.797};\num{0.829}] \\
-\num{1.7} & \emph{delayed} & \num{0.214}\,[\num{0.166};\num{0.260}] & \num{0.456}\,[\num{0.416};\num{0.494}] & \num{0.437}\,[\num{0.397};\num{0.476}] \\
-\bottomrule
-\end{tabular}
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption{Współczynniki korelacji Pearsona $r_{ij}$~\eqref{eq:pearson}
+  między pędami podłużnymi par elektronów wraz z 95-procentowymi
+  przedziałami ufności $[r_{ij}^{(\num{0.025})};\,r_{ij}^{(\num{0.975})}]$
+  wyznaczonymi transformacją Fishera.}
+  \label{tab:korelacje}
+  \begin{tabular}{llcccccc}
+    \toprule
+    $I$ [\PWcm] & kanał
+      & $r_{23}$ & $[r_{23}^{(\num{0.025})};\,r_{23}^{(\num{0.975})}]$
+      & $r_{24}$ & $[r_{24}^{(\num{0.025})};\,r_{24}^{(\num{0.975})}]$
+      & $r_{34}$ & $[r_{34}^{(\num{0.025})};\,r_{34}^{(\num{0.975})}]$ \\
+    \midrule
+    \num{1.0} & \emph{direct}  & \num{0.867} & $[\num{0.856};\,\num{0.877}]$ & \num{0.844} & $[\num{0.831};\,\num{0.856}]$ & \num{0.833} & $[\num{0.819};\,\num{0.846}]$ \\
+              & \emph{delayed} & \num{0.263} & $[\num{0.222};\,\num{0.302}]$ & \num{0.428} & $[\num{0.393};\,\num{0.463}]$ & \num{0.382} & $[\num{0.345};\,\num{0.418}]$ \\
+    \midrule
+    \num{1.3} & \emph{direct}  & \num{0.871} & $[\num{0.865};\,\num{0.877}]$ & \num{0.830} & $[\num{0.822};\,\num{0.838}]$ & \num{0.834} & $[\num{0.827};\,\num{0.842}]$ \\
+              & \emph{delayed} & \num{0.268} & $[\num{0.244};\,\num{0.291}]$ & \num{0.435} & $[\num{0.414};\,\num{0.456}]$ & \num{0.459} & $[\num{0.438};\,\num{0.479}]$ \\
+    \midrule
+    \num{1.6} & \emph{direct}  & \num{0.872} & $[\num{0.867};\,\num{0.877}]$ & \num{0.813} & $[\num{0.806};\,\num{0.820}]$ & \num{0.813} & $[\num{0.806};\,\num{0.820}]$ \\
+              & \emph{delayed} & \num{0.269} & $[\num{0.248};\,\num{0.290}]$ & \num{0.470} & $[\num{0.452};\,\num{0.487}]$ & \num{0.465} & $[\num{0.447};\,\num{0.482}]$ \\
+    \midrule
+    \num{1.7} & \emph{direct}  & \num{0.868} & $[\num{0.856};\,\num{0.879}]$ & \num{0.813} & $[\num{0.796};\,\num{0.828}]$ & \num{0.814} & $[\num{0.797};\,\num{0.829}]$ \\
+              & \emph{delayed} & \num{0.214} & $[\num{0.166};\,\num{0.260}]$ & \num{0.456} & $[\num{0.416};\,\num{0.494}]$ & \num{0.437} & $[\num{0.397};\,\num{0.476}]$ \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 \section{Przebieg obliczeń}
