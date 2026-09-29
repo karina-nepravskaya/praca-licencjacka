@@ -68,58 +68,93 @@ nie traci czytelności przy większej liczbie elektronów.
 
 \subsection{Jonizacja atomów w silnym polu laserowym}
 
-Gdy natężenie pola laserowego staje się porównywalne z polem
-wiążącym elektrony w atomie, opis jonizacji jako absorpcji
-pojedynczych fotonów przestaje wystarczać. Pole zewnętrzne obniża
-barierę potencjału na tyle, że elektron może się przez nią
-przetunelować~\cite{Ammosov1986}. Elektron uwolniony w odpowiedniej fazie pola jest początkowo oddalany od jonu, lecz po zmianie zwrotu pola może zostać zawrócony i ponownie zbliżyć się do jonu macierzystego. Mechanizm ten, nazywany rekolizją, może prowadzić do niesekwencyjnej jonizacji wielokrotnej, w której kilka elektronów opuszcza atom w sposób skorelowany~\cite{Corkum1993}.
+Gdy natężenie pola laserowego staje się porównywalne z polem, które
+wiąże elektrony w atomie, jonizacji nie można już opisywać jako
+absorpcji pojedynczych fotonów. Pole zewnętrzne obniża barierę
+potencjału na tyle, że elektron może się przez nią
+przetunelować~\cite{Ammosov1986}. Elektron uwolniony w odpowiedniej
+fazie pola jest początkowo od jonu oddalany, ale po zmianie zwrotu pola
+może zostać zawrócony i ponownie zbliżyć się do jonu macierzystego.
+Mechanizm ten nazywany jest rekolizją~\cite{Corkum1993,KrauszIvanov2009}.
+Energia kinetyczna elektronu w chwili powrotu nie przekracza około
+\(\num{3.17}\,U_p\), gdzie \(U_p\) oznacza energię ponderomotoryczną,
+czyli średnią energię drgań swobodnego elektronu w polu
+lasera~\cite{Corkum1993}. Energia ta może wystarczyć do uwolnienia
+kolejnych elektronów, co prowadzi do niesekwencyjnej jonizacji
+wielokrotnej, w której kilka elektronów opuszcza atom w sposób
+skorelowany.
 
-Jednym z podstawowych doświadczalnych sygnałów niesekwencyjnej jonizacji wielokrotnej jest nadmiar jonów wielokrotnie naładowanych w stosunku do przewidywań modelu jonizacji sekwencyjnej~\cite{LHuillier1983,BeckerRottke2008}.
-Pomiary koincydencyjne pokazały, że informacja o mechanizmie zapisana jest
-nie w widmie pojedynczego elektronu, lecz w \emph{korelacjach} między
-pędami elektronów~\cite{Moshammer2000,Rudenko2004,Rudenko2007}.
-Dla dwóch elektronów standardowym narzędziem jest dwuwymiarowy rozkład
-$(p_{1z},p_{2z})$ składowych wzdłuż osi polaryzacji. Dla trzech i więcej
-elektronów taki bezpośredni wykres przestaje być możliwy i konieczna
-jest świadomie wybrana reprezentacja danych.
+W przypadku potrójnej jonizacji powracający elektron może od razu
+uwolnić oba pozostałe elektrony albo tylko jeden z nich, a wtedy trzeci
+opuszcza atom z opóźnieniem. Obie ścieżki, nazywane kanałami
+\emph{direct} i \emph{delayed}, są rozróżniane w modelu, z którego
+pochodzą dane analizowane w tej pracy~\cite{Emmanouilidou2023}, i
+opisano je dokładniej w rozdziale~\ref{sec:dane}.
+
+Jednym z podstawowych doświadczalnych śladów niesekwencyjnej jonizacji
+wielokrotnej jest nadmiar jonów wielokrotnie naładowanych w stosunku do
+przewidywań modelu jonizacji sekwencyjnej~\cite{LHuillier1983,BeckerRottke2008}.
+Więcej informacji o przebiegu jonizacji dały pomiary koincydencyjne,
+w których rejestruje się jednocześnie pędy jonu i elektronów. Pokazały
+one, że mechanizm jonizacji odzwierciedla się nie w widmie pojedynczego
+elektronu, lecz w \emph{korelacjach} między pędami
+elektronów~\cite{Moshammer2000,Rudenko2004,Rudenko2007}.
+
+
+Dla dwóch elektronów podstawowym narzędziem jest dwuwymiarowy rozkład
+składowych pędu wzdłuż osi polaryzacji
+\((p_{1z},p_{2z})\)~\cite{Staudte2007,Rudenko2007}. Rozkład ten można
+przedstawić bezpośrednio na płaszczyźnie, a położenie punktów
+w poszczególnych ćwiartkach wskazuje, czy elektrony opuszczają atom
+w tę samą, czy w przeciwne strony. Dla trzech elektronów, których
+korelacje są przedmiotem prac teoretycznych~\cite{Thiede2018,Efimov2021},
+odpowiedni rozkład jest już trójwymiarowy, a dla większej liczby
+elektronów jego bezpośrednie przedstawienie przestaje być możliwe.
+Z tego względu konieczny jest świadomy wybór reprezentacji danych.
 
 \subsection{Reprezentacja simpleksowa podziału pędu}
 
 Naturalnym rozwiązaniem dla trzech elektronów jest reprezentacja
 simpleksowa, znana w fizyce cząstek jako wykres
-Dalitza~\cite{Dalitz1953}. Zamiast trzech pędów rozpatruje się ich
-udziały w całkowitym pędzie bezwzględnym. Trzy liczby nieujemne
-sumujące się do jedności można przedstawić jako współrzędne
+Dalitza~\cite{Dalitz1953}. Zamiast samych pędów rozpatruje się w niej
+ich udziały w całkowitym pędzie bezwzględnym. Trzy liczby nieujemne
+o sumie równej jedności można przedstawić jako współrzędne
 barycentryczne punktu w trójkącie równobocznym. Środek trójkąta
-odpowiada równemu podziałowi pędu, wierzchołki -- sytuacji, w której
-cały pęd niesie jeden elektron.
+odpowiada wtedy równemu podziałowi pędu, środki krawędzi podziałowi
+między dwa elektrony, a wierzchołki sytuacji, w której cały pęd niesie
+jeden elektron.
 
-Takie podejście zastosował Ojczenasz~\cite{Ojczenasz2023} do tych samych
-danych, które analizowane są w niniejszej pracy. Znaki pędów
-zapisano tam osobno: osiem kombinacji znaków trzech składowych
-podłużnych odpowiada ośmiu ścianom ośmiościanu, rozwiniętym na
-płaszczyźnie jako osiem trójkątów. Metoda ta pozwoliła
-zaobserwować, że przy emisji wszystkich trzech elektronów w tę
-samą stronę pęd dzieli się w przybliżeniu równomiernie,
-natomiast gdy jeden elektron porusza się przeciwnie do pozostałych,
-niesie on małą część pędu.
+Takie podejście zastosowano do tych
+samych danych~\cite{Ojczenasz2023}, które analizowane są również w niniejszej pracy. Udziały nie
+zawierają informacji o znakach pędów, dlatego zapisano je osobno. Osiem
+kombinacji znaków trzech składowych podłużnych odpowiada ośmiu ścianom
+ośmiościanu, które rozwinięto na płaszczyźnie jako osiem trójkątów. Na
+tej podstawie stwierdzono, że przy emisji wszystkich trzech elektronów
+w tę samą stronę pęd dzieli się w przybliżeniu równomiernie, natomiast
+elektron poruszający się przeciwnie do dwóch pozostałych niesie
+niewielką część pędu. Wnioski te miały jednak charakter jakościowy,
+ponieważ opierały się na wzrokowej ocenie map gęstości.
+
 
 \subsection{Problem skalowalności i cel pracy}
 
-Reprezentacja simpleksowa działa dobrze dla trzech składowych, ponieważ
-zbiór punktów o ustalonej sumie tworzy wówczas dwuwymiarowy trójkąt.
-Dla czterech składowych odpowiednikiem jest czworościan, a dla większej
-liczby elektronów simpleks o coraz wyższym wymiarze. Już dla czterech elektronów konieczna staje się analiza trójwymiarowej reprezentacji danych z wykorzystaniem kodowania barwnego i/lub przekrojów, co znacznie utrudnia interpretację wyników.
-Rośnie również liczba sektorów znakowych, ponieważ dla $N$ elektronów jest ich
-$2^{N}$, czyli osiem dla trzech i szesnaście dla czterech elektronów.
+Reprezentacja simpleksowa sprawdza się dla trzech elektronów, ponieważ
+punkty o ustalonej sumie udziałów tworzą wówczas dwuwymiarowy trójkąt.
+Dla czterech elektronów odpowiednikiem trójkąta jest czworościan, a dla
+większej liczby elektronów simpleks o coraz wyższym wymiarze. Już dla
+czterech elektronów konieczna staje się analiza trójwymiarowej
+reprezentacji danych z wykorzystaniem kodowania barwnego lub przekrojów,
+co znacznie utrudnia interpretację wyników. Dodatkowo rośnie liczba
+sektorów znakowych, których dla \(N\) elektronów jest \(2^{N}\), czyli
+osiem dla trzech i szesnaście dla czterech elektronów.
 
-Celem pracy jest zbudowanie i sprawdzenie opisu korelacji pędów, który
-zachowuje interpretację fizyczną reprezentacji simpleksowej, ale nie
-opiera się na analizie obiektu geometrycznego o wymiarze rosnącym
-z liczbą elektronów. Zamiast tego używane są wielkości skalarne,
-które dla dowolnej liczby elektronów pozostają liczbami i mogą
-być przedstawiane na zwykłych histogramach. Praca odpowiada na trzy
-pytania:
+Celem pracy jest zbudowanie i sprawdzenie takiego opisu korelacji
+pędów, który zachowuje interpretację fizyczną reprezentacji
+simpleksowej, ale nie wymaga analizy obiektu geometrycznego o wymiarze
+rosnącym z liczbą elektronów. Zamiast tego użyto wielkości skalarnych,
+które dla dowolnej liczby elektronów pozostają pojedynczymi liczbami,
+więc można je przedstawić na zwykłych histogramach i porównywać testami
+statystycznymi. W pracy postawiono trzy pytania.
 
 \begin{enumerate}
   \item Czy zaproponowane obserwable odtwarzają wnioski uzyskane
@@ -130,10 +165,13 @@ pytania:
         simpleksową?
 \end{enumerate}
 
-Struktura pracy odpowiada tym pytaniom. W rozdziale~\ref{sec:dane} opisano
-dane, w rozdziale~\ref{sec:metoda} metodę wraz z jej sprawdzeniem,
-w rozdziale~\ref{sec:wyniki} wyniki, a w rozdziale~\ref{sec:porownanie}
-porównanie z metodą simpleksową.
+W rozdziale~\ref{sec:dane} opisano dane, w rozdziale~\ref{sec:metoda}
+metodę wraz z jej sprawdzeniem, a w rozdziale~\ref{sec:wyniki} wyniki,
+które odpowiadają na drugie pytanie. Na pierwsze i trzecie pytanie
+odpowiada rozdział~\ref{sec:porownanie}, zawierający porównanie
+z metodą simpleksową. Rozdział~\ref{sec:ograniczenia} zbiera
+ograniczenia analizy, a ostatni rozdział podsumowuje wyniki.
+
 
 % ===========================================================================
 \section{Dane}
@@ -142,23 +180,34 @@ porównanie z metodą simpleksową.
 
 \subsection{Model ECBB i parametry impulsów}
 
-Analizowane dane pochodzą z półklasycznych obliczeń opisanych w
-pracy Emmanouilidou, Petersa i Katsoulisa~\cite{Emmanouilidou2023} i
-udostępnionych wraz z nią. Model, oznaczany skrótem ECBB, opisuje
-układ czterech ciał: rdzenia jonowego i trzech elektronów. W trakcie
-propagacji każdy elektron jest na bieżąco klasyfikowany jako
-związany albo kwazi-swobodny. Oddziaływania rdzeń--elektron oraz
-oddziaływanie elektronu powracającego z elektronem związanym
-zachowują pełną osobliwość kulombowską. Zmiękczony
-potencjał efektywny stosowany jest wyłącznie między parą
-elektronów związanych; zapobiega to niefizycznej autojonizacji, czyli
-sytuacji, w której jeden elektron spada do głęboko ujemnych energii
-i wyrzuca pozostałe~\cite{Emmanouilidou2023,Peters2022}.
+Analizowane dane pochodzą z półklasycznych obliczeń opisanych w pracy
+Emmanouilidou, Petersa i Katsoulisa~\cite{Emmanouilidou2023}
+i udostępnionych wraz z nią. Model, oznaczany skrótem ECBB, opisuje
+układ czterech ciał, czyli rdzenia jonowego i trzech elektronów. Jego
+nazwa pochodzi od efektywnego potencjału kulombowskiego stosowanego
+między elektronami związanymi (ang.~\emph{effective Coulomb potential
+for bound--bound electrons})~\cite{Peters2022}.
 
-Pole laserowe jest spolaryzowane liniowo wzdłuż osi $z$. Czas trwania
-impulsu wynosi \num{25}~fs. Parametry czterech dostępnych zbiorów zebrano
-w~tabeli~\ref{tab:impulsy}. Wraz z nimi podano energię ponderomotoryczną
-$U_p=E_0^2/(4\omega^2)$ oraz odpowiadającą jej charakterystyczną skalę pędu elektronu uwolnionego w silnym polu $2\sqrt{U_p}=E_0/\omega$.
+W trakcie propagacji każdy elektron jest na bieżąco klasyfikowany jako
+związany albo kwazi-swobodny, a od tej klasyfikacji zależy sposób opisu
+oddziaływań. Oddziaływania rdzeń--elektron oraz oddziaływanie elektronu
+powracającego z elektronem związanym opisane są pełnym potencjałem
+kulombowskim, z zachowaniem jego osobliwości. Potencjał efektywny
+stosowany jest wyłącznie między parą elektronów związanych. Zapobiega
+to niefizycznej autojonizacji, czyli sytuacji, w której jeden elektron
+spada do głęboko ujemnych energii i wyrzuca
+pozostałe~\cite{Emmanouilidou2023,Peters2022}. Dzięki temu model opisuje
+jonizację trzech elektronów bez osłabiania oddziaływań odpowiedzialnych
+za rekolizję.
+
+Pole laserowe jest spolaryzowane liniowo wzdłuż osi \(z\), a czas
+trwania impulsu wynosi \num{25}~fs. Parametry czterech dostępnych
+zbiorów zebrano w tabeli~\ref{tab:impulsy}. Podano w niej również
+energię ponderomotoryczną \(U_p=E_0^2/(4\omega^2)\), gdzie \(E_0\) jest
+amplitudą natężenia pola elektrycznego, a \(\omega\) jego częstością,
+oraz pęd dryfu \(2\sqrt{U_p}=E_0/\omega\). Jest to największy pęd, jaki
+pole może nadać elektronowi uwolnionemu z zerową prędkością początkową,
+dlatego służy on dalej jako naturalna skala pędów elektronów.
 
 \begin{table}[H]
 \centering
@@ -179,15 +228,18 @@ $I$ [\PWcm] & $\lambda$ [nm] & $\omega$ [\ja] & $U_p$ [\ja] & $2\sqrt{U_p}$ [\ja
 \end{tabular}
 \end{table}
 
-Różnica długości fali dla zbioru \num{1.7}~\PWcm{} jest istotna
-metodologicznie. Zmiana $\lambda$ zmienia $U_p$ przy ustalonej
-intensywności, więc tego zbioru nie można traktować jako czwartego
-punktu jednej serii pomiarowej. W dalszej części pracy serię intensywności tworzą zbiory \num{1.0},
-\num{1.3} i \num{1.6}~\PWcm{} przy \num{800}~nm. Zbiór \num{1.7}~\PWcm{}
-przy \num{760}~nm analizowano w ten sam sposób, ale osobno. Kanały
-\emph{direct} i \emph{delayed} porównano w nim tak jak przy każdej
-intensywności, natomiast jego wartości nie są porównywane z wartościami
-dla pozostałych zbiorów.
+Zbiór \num{1.7}~\PWcm{} policzono dla długości fali \num{760}~nm,
+a pozostałe trzy dla \num{800}~nm. Krótsza fala zmniejsza \(U_p\) przy
+ustalonej intensywności, dlatego mimo większej intensywności zbiór ten
+ma mniejszą energię ponderomotoryczną i mniejszy pęd dryfu niż zbiór
+\num{1.6}~\PWcm{}. Nie można go więc traktować jako czwartego punktu
+jednej serii. W dalszej części pracy serię intensywności tworzą zbiory
+\num{1.0}, \num{1.3} i \num{1.6}~\PWcm{}. Zbiór \num{1.7}~\PWcm{}
+analizowano w ten sam sposób, ale osobno. Kanały \emph{direct}
+i \emph{delayed} porównano w nim tak jak przy każdej intensywności,
+natomiast jego wartości nie są porównywane z wartościami dla
+pozostałych zbiorów.
+
 
 \subsection{Format danych i etykietowanie cząstek}
 
@@ -205,7 +257,7 @@ fizyczną cząstki. Elektrony są nierozróżnialne, więc numer
 elektronu nie jest wielkością obserwowalną. W modelu ECBB podział
 na elektrony związane i kwazi-swobodne zmienia się zresztą w czasie
 propagacji~\cite{Emmanouilidou2023}. W całej pracy konsekwentnie
-rozdzielono zatem dwa poziomy opisu: wielkości niezależne od numeracji,
+rozdzielono zatem dwa poziomy opisu, czyli wielkości niezależne od numeracji,
 które mogą być interpretowane fizycznie, oraz wielkości zależne od
 numeracji, które traktowane są jako informacja o samym modelu.
 
@@ -217,8 +269,7 @@ p_2 \equiv p_{2z},\qquad p_3 \equiv p_{3z},\qquad p_4 \equiv p_{4z}.
 
 \subsection{Kanały \emph{direct} i \emph{delayed}}
 
-Dla każdej intensywności dostępne są trzy pliki: wszystkie
-zdarzenia oraz dwa główne kanały. W kanale \emph{direct}, oznaczanym
+Dla każdej intensywności dostępne są trzy pliki, jeden ze wszystkimi zdarzeniami i dwa z głównymi kanałami. W kanale \emph{direct}, oznaczanym
 $(e,3e)$, wszystkie trzy elektrony jonizują się wkrótce po
 rekolizji. W kanale \emph{delayed}, oznaczanym $(e,2e)$, powracający
 elektron przekazuje energię wystarczającą do jonizacji tylko dwóch
@@ -458,7 +509,7 @@ Wynik ten prowadzi do dwóch wniosków. Po pierwsze, dane wyróżniają
 jeden kierunek kolektywny, wzdłuż którego wszystkie trzy pędy
 podłużne zmieniają się zgodnie. Współczynniki PC1 są we wszystkich
 zbiorach niemal równe, a iloczyn skalarny tej składowej z
-$\mathbf{e}_0$ nie spada poniżej \num{0.996}; w kanale \emph{direct}
+$\mathbf{e}_0$ nie spada poniżej \num{0.996}. W kanale \emph{direct}
 odbiega on od jedności o mniej niż \num{0.0001}. Po drugie, dwie
 składowe o najmniejszej wariancji leżą w płaszczyźnie prostopadłej do
 $\mathbf{e}_0$ i opisują różnice między pędami.
@@ -466,24 +517,24 @@ $\mathbf{e}_0$ i opisują różnice między pędami.
 PCA nie wyznacza jednak jednoznacznie \emph{poszczególnych} osi
 względnych. Tabela~\ref{tab:pca} pokazuje to na dwa sposoby. Po
 pierwsze, przyporządkowanie składowych do kierunków względnych zależy
-od kanału i jest przy tym systematyczne: przy każdej z czterech
+od kanału i jest przy tym systematyczne. Przy każdej z czterech
 intensywności w kanale \emph{direct} składowa PC8 pokrywa się z
 $\mathbf{e}_2$, a PC9 z $\mathbf{e}_1$, natomiast w kanale
 \emph{delayed} jest odwrotnie. 
 
 Po drugie, w jednym z dwunastu
 zbiorów, dla wszystkich zdarzeń przy \num{1.0}~\PWcm, żadna z tych
-składowych nie pokrywa się z pojedynczym kierunkiem względnym: obie
+składowych nie pokrywa się z pojedynczym kierunkiem względnym. Obie
 są ich mieszaninami o iloczynach skalarnych bliskich \num{0.82} i
 \num{0.58}. Wariancje PC8 i PC9 wynoszą tam \num{4.9}\,\% i
 \num{4.5}\,\%, czyli różnią się nieznacznie. Sama bliskość wartości
-własnych nie przesądza jednak o wymieszaniu: dla wszystkich zdarzeń
+własnych nie przesądza jednak o wymieszaniu. Dla wszystkich zdarzeń
 przy \num{1.6}~\PWcm{} różnica jest jeszcze mniejsza, \num{4.3}\,\%
 wobec \num{4.0}\,\%, a mimo to obie składowe pokrywają się z
 pojedynczymi kierunkami względnymi. Przy bliskich wartościach
 własnych kierunki własne w obrębie podprzestrzeni są źle uwarunkowane
-i obracają się przy niewielkiej zmianie danych~\cite{Jolliffe2002};
-to, czy w danym zbiorze wyjdą wymieszane, jest zatem przypadkowe.
+i obracają się przy niewielkiej zmianie danych~\cite{Jolliffe2002}.
+To, czy w danym zbiorze wyjdą wymieszane, jest zatem przypadkowe.
 
 
 Z tego powodu wynik PCA potraktowano wyłącznie jako wskazówkę
@@ -562,8 +613,7 @@ Warunek ten sprawia, że udziały nie są niezależne, a korelacje między
 nimi są z góry ujemne, więc pojedyncze $x_i$ oraz ich wzajemne
 korelacje nie nadają się do bezpośredniej interpretacji. Z tego powodu
 podział pędu opisano dalej symetrycznymi funkcjami skalarnymi całej
-trójki. Informacja o znakach pędów lecz przechowywana jest osobno w postaci sektorów znakowych opisanych
-dalej.
+trójki. Informacja o znakach pędów jest natomiast przechowywana osobno w postaci sektorów znakowych opisanych dalej.
 
 Jako główną skalarną miarę równomierności podziału
 przyjęto
@@ -619,8 +669,7 @@ Liczba ta stanowi punkt odniesienia dla analizy wyników z podrozdziału~\ref{se
 \subsection{Związek z reprezentacją simpleksową}
 \label{sec:zwiazek}
 
-Opisane obserwable nie są alternatywą wobec
-reprezentacji simpleksowej, lecz jej podsumowaniem liczbowym. W metodzie
+Dla trzech elektronów opisane obserwable nie są opisem niezależnym od reprezentacji simpleksowej, lecz jej podsumowaniem liczbowym. W metodzie
 simpleksowej współrzędne barycentryczne punktu w trójkącie
 definiuje się jako
 \begin{equation}
@@ -646,7 +695,7 @@ liczbowe.
         $\Neff=1$ oraz $\xmax=1$.
 \end{itemize}
 
-Pozwala to jakościowo sprawdzić wnioski wyciągnięte z wykresów
+Umożliwia to ilościowe sprawdzenie wniosków wyciągniętych z wykresów
 trójkątnych, co wykonano dalej w rozdziale~\ref{sec:porownanie}.
 
 
@@ -686,19 +735,19 @@ niż \num{5.6e-17}, czyli są identyczne. Potwierdza to, że obie
 obserwable nie zależą od numeracji elektronów.
 
 %Sprawdzić
-\paragraph{Zachowanie pędu.} Jako niezależny test sprójności danych
+\paragraph{Zachowanie pędu.} Jako niezależny test spójności danych
 wykorzystano pęd rdzenia. Sprawdzono sumę
 $P_{\mathrm{tot},z}=p_{1z}+P_e$. We wszystkich zbiorach jej wartość
 średnia jest zgodna z zerem (od \num{-0.015} do \num{+0.028}~\ja), a
 współczynnik korelacji między $p_{1z}$ a $P_e$ zawiera się w
 przedziale od \num{-0.978} do \num{-0.944}. Rdzeń przejmuje zatem odrzut
 elektronów, zgodnie z oczekiwaniem. Suma nie znika jednak dokładnie w
-każdym zdarzeniu: jej odchylenie standardowe wynosi około
+każdym zdarzeniu. Jej odchylenie standardowe wynosi około
 \num{1.6}--\num{1.7}~\ja, czyli okolo \num{25}--\num{30}\,\% odchylenia
 standardowego samego $P_e$. Oznacza to, że zachowanie pędu
 podłużnego jest w danych spełnione statystycznie, ale nie
 zdarzenie po zdarzeniu. Jest to własność danych źródłowych, a nie
-przeprowadzonej tu analizy; wrócono do niej wśród ograniczeń w
+przeprowadzonej tu analizy. Wrócono do niej wśród ograniczeń w
 rozdziale~\ref{sec:ograniczenia}.
 
 %Dobre
@@ -711,10 +760,18 @@ błędów implementacji.
 
 %Fishera praca gdzie on oficjalnie opisuje z transformacje oraz praca Cox'a który zwraca się do właśnie 1921 pracy Fishera. Dodałam bo nie znalazłam linku kilkabelnego do Fishera 1921.
 \paragraph{Niepewności.} Dla wartości średnich podawane są
-\num{95}-procentowe przedziały ufności wyznaczone z centralnego twierdzenia
-granicznego. Dla współczynników korelacji Pearsona wyznaczono przybliżone 95-procentowe przedziały ufności z wykorzystaniem transformacji \(z\) Fishera~\cite{Fisher1921,Cox2008}. Istotność statystyczną różnic wartości średnich między zbiorami \emph{direct} i \emph{delayed} oceniono testem \(t\) Welcha~\cite{Welch1947}. Podane niepewności mają
-charakter wyłącznie statystyczny i opisują skończoną liczbę
-zdarzeń w zbiorze. Dodatkowo, nie obejmują niepewności samego modelu.
+\num{95}-procentowe przedziały ufności wyznaczone z centralnego
+twierdzenia granicznego, a wyjątki zaznaczono w podpisach tabel. Dla
+współczynników korelacji Pearsona wyznaczono przybliżone
+95-procentowe przedziały ufności z wykorzystaniem transformacji \(z\)
+Fishera~\cite{Fisher1921,Cox2008}. Istotność różnic wartości średnich
+oceniano testem \(t\) Welcha~\cite{Welch1947}, a przy wielu
+porównaniach wykonywanych jednocześnie stosowano poprawkę
+Bonferroniego~\cite{Dunn1961}. Niepewność średniej korelacji par
+wyznaczono metodą bootstrap~\cite{Efron1979}, opisaną w
+podrozdziale~\ref{sec:wyn:intensywnosc}. Podane niepewności mają
+charakter wyłącznie statystyczny i opisują skończoną liczbę zdarzeń
+w zbiorze. Nie obejmują one niepewności samego modelu.
 
 % ===========================================================================
 \section{Wyniki}
@@ -921,7 +978,7 @@ Niezależnie od tego sprawdzono symetrię względem zamiany etykiet
 elektronów 2 i 3. Elektrony te mają w modelu identyczny status elektronów początkowo związanych, więc
 ich zamiana, odwracająca znak $\xi_1\rightarrow-\xi_1$, nie powinna
 zmieniać rozkładu. Rozkład $\xi_1$ powinien być zatem symetryczny
-względem zera, a średnie wartości pędów elektronów 2 i 3 $p_2$ i $p_3$ muszą być równe. 
+względem zera, a średnie wartości pędów elektronów 2 i 3 $p_2$ i $p_3$ powinny być równe. 
 
 Dla wszystkich
 dwunastu zbiorów obliczono współczynniki skośności rozkładu $\xi_1$ zgodnie ze wzorem:
@@ -1071,7 +1128,7 @@ zderzeniu i opuszczają atom w podobny sposób, natomiast w kanale
 \includegraphics[width=0.49\textwidth]{sign_sectors_1p7.png}
 \caption{Udział poszczególnych sektorów znakowych trójki
 $(p_2,p_3,p_4)$. W górnym wierszu \num{1.0} i \num{1.3}~\PWcm,
-w dolnym \num{1.6} i \num{1.7}~\PWcm. Sektory \texttt{+++} i \texttt{---}
+w dolnym \num{1.6} i \num{1.7}~\PWcm. Sektory \texttt{+++} i \texttt{-----}
 odpowiadają emisji wszystkich elektronów w tę samą stronę. Zbiór
 \num{1.7}~\PWcm{} policzono dla innej długości fali.}
 \label{fig:sektory}
@@ -1232,7 +1289,7 @@ z nich z elektronem początkowo tunelującym. Jest to zgodne z opisem
 tego kanału, w którym tylko dwa elektrony jonizują się wkrótce po
 rekolizji, a trzeci z opóźnieniem. Ponieważ numeracja elektronów ma
 jednak charakter czysto modelowy, obserwacja ta odnosi się jedynie do
-samego modelu, а nie do wielkości bezpośrednio mierzalnych lub opisu
+samego modelu, a nie do wielkości bezpośrednio mierzalnych lub opisu
 mechanizmu fizycznego.
 
 \begin{figure}[H]
@@ -1391,7 +1448,7 @@ w tabeli~\ref{tab:trend} istotnie zmienia się jedynie
 $\langle x_{\mathrm{mn}}\rangle$, który rośnie od \num{0.177} do
 \num{0.210}.
 
-\begin{figure}[H]
+\begin{figure}[!h]
 \centering
 \includegraphics[width=0.8\textwidth]{trend_mean_pair_correlation.png}
 \caption{Zależność średniej korelacji par pędów podłużnych
@@ -1414,7 +1471,7 @@ $z=\Delta/\sigma_\Delta$ pełni tu tę samą rolę co $t$ w teście
 Welcha~\eqref{eq:welch}, którego nie można zastosować bezpośrednio,
 ponieważ $\langle r\rangle$ nie jest średnią po zdarzeniach. Otrzymano
 $z=\num{-4.5}$ ($p=\num{8e-6}$) w kanale \emph{direct} oraz $z=\num{4.0}$
-($p=\num{8e-5}$) w kanале \emph{delayed}.
+($p=\num{8e-5}$) w kanalе \emph{delayed}.
 
 Między \num{1.0} a \num{1.6}~\PWcm{} w kanale \emph{direct}
 $\langle K\rangle$ rośnie o około \num{20}\,\%, a $\langle|P_e|\rangle$
