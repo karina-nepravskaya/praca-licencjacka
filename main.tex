@@ -209,6 +209,16 @@ oraz pęd dryfu \(2\sqrt{U_p}=E_0/\omega\). Jest to największy pęd, jaki
 pole może nadać elektronowi uwolnionemu z zerową prędkością początkową,
 dlatego służy on dalej jako naturalna skala pędów elektronów.
 
+Amplitudę pola obliczono z intensywności jako $E_0=\sqrt{I/I_{\mathrm{at}}}$,
+gdzie $I_{\mathrm{at}}=\num{3.51e16}$~W/cm\textsuperscript{2} jest atomową
+jednostką intensywności, a częstość jako $\omega=2\pi c/\lambda$, co
+w jednostkach atomowych daje $\omega=\num{45.56}/\lambda$ przy $\lambda$
+wyrażonej w nanometrach. Intensywność i długość fali są parametrami
+wejściowymi obliczeń modelowych, a nie wielkościami mierzonymi, dlatego
+$U_p$ i $2\sqrt{U_p}$ nie mają niepewności statystycznej. Wartości
+w tabeli zaokrąglono do trzech miejsc po przecinku, a wynikający stąd
+błąd nie przekracza \num{0.0005}~\ja
+
 \begin{table}[H]
 \centering
 \caption{Parametry analizowanych impulsów laserowych. Wartości $U_p$ i
@@ -422,7 +432,7 @@ numeracji elektronów:
 \label{eq:baza}
 \end{equation}
 Są to pierwsze trzy wiersze macierzy Helmerta~\cite{Lancaster1965},
-czyli macierz
+czyli macierzy
 przekształcenia ortogonalnego oddzielającego wartość średnią od
 odchyleń od niej. Kierunek $\mathbf{e}_0$ odpowiada zgodnej zmianie wszystkich
 trzech pędów podłużnych, $\mathbf{e}_1$ opisuje różnicę pędów dwóch
@@ -523,7 +533,7 @@ $\mathbf{e}_2$, a PC9 z $\mathbf{e}_1$, natomiast w kanale
 \emph{delayed} jest odwrotnie. 
 
 Po drugie, w jednym z dwunastu
-zbiorów, dla wszystkich zdarzeń przy \num{1.0}~\PWcm, żadna z tych
+zbiorów, dla wszystkich zdarzeń (\emph{direct} oraz \emph{delayed} razem) przy \num{1.0}~\PWcm, żadna z tych
 składowych nie pokrywa się z pojedynczym kierunkiem względnym. Obie
 są ich mieszaninami o iloczynach skalarnych bliskich \num{0.82} i
 \num{0.58}. Wariancje PC8 i PC9 wynoszą tam \num{4.9}\,\% i
@@ -558,9 +568,6 @@ Q     &= \frac{p_2+p_3+p_4}{\sqrt3}, \label{eq:Q}\\
 \xi_1 &= \frac{p_2-p_3}{\sqrt2},     \label{eq:xi1}\\
 \xi_2 &= \frac{p_2+p_3-2p_4}{\sqrt6}.\label{eq:xi2}
 \end{align}
-Rozdzielenie wspólnej zmiany pędów od różnic między nimi jest
-analogiczne do współrzędnych Jacobiego stosowanych w układach wielu
-cząstek.
 Współrzędna $Q$ opisuje ruch kolektywny, jest ona proporcjonalna do sumy
 pędów podłużnych. Para $(\xi_1,\xi_2)$ rozpina dwuwymiarową
 płaszczyznę względnego podziału pędu. Skalarną miarą odstępstwa od
@@ -583,6 +590,12 @@ p_3=\frac{Q}{\sqrt3}-\frac{\xi_1}{\sqrt2}+\frac{\xi_2}{\sqrt6},\qquad
 p_4=\frac{Q}{\sqrt3}-\frac{2\xi_2}{\sqrt6}.
 \label{eq:odwrotna}
 \end{equation}
+Obie zależności sprawdzono numerycznie na wszystkich dwunastu zbiorach.
+Największe odchylenie normy wyniosło \num{3.2e-14}, a największy błąd
+odtworzenia składowej $p_2$ \num{1.9e-15}. Wartości te są rzędu precyzji
+arytmetyki zmiennoprzecinkowej, co potwierdza, że transformacja jest
+zaimplementowana poprawnie.
+
 Żadna informacja nie jest zatem tracona w momencie transformacji. Zmniejszenie wymiaru opisu następuje dopiero na etapie analizy, gdy pełny rozkład trójwymiarowy jest rzutowany na wybrane wielkości skalarne lub przedstawiany w postaci rozkładów dwuwymiarowych.
 
 Dla wygody interpretacji używana jest też bezpośrednio suma pędów
@@ -594,6 +607,20 @@ P_e=p_2+p_3+p_4=\sqrt3\,Q,
 która jest wielkością mierzoną w doświadczeniach koincydencyjnych
 i przedstawianą w pracy źródłowej~\cite{Emmanouilidou2023}. Symbole
 $P_e$ i $Q$ są proporcjonalne, ale nie są równe liczbowo.
+
+Suma $P_e$ pozwala też sprawdzić spójność danych z pędem rdzenia
+jonowego. Dla wszystkich dwunastu zbiorów obliczono sumę
+$P_{\mathrm{tot},z}=p_{1z}+P_e$. Jej wartość średnia jest zgodna z zerem
+(od \num{-0.015} do \num{+0.028}~\ja), a współczynnik korelacji między
+$p_{1z}$ a $P_e$ zawiera się w przedziale od \num{-0.978} do
+\num{-0.944}. Rdzeń przejmuje zatem odrzut elektronów, zgodnie
+z oczekiwaniem. Suma nie znika jednak dokładnie w każdym zdarzeniu. Jej
+odchylenie standardowe wynosi około \num{1.6}--\num{1.7}~\ja, czyli około
+\num{25}--\num{30}\,\% odchylenia standardowego samego $P_e$. Oznacza to,
+że zachowanie pędu podłużnego jest w danych spełnione statystycznie, ale
+nie zdarzenie po zdarzeniu. Jest to własność danych źródłowych, a nie
+przeprowadzonej tu analizy. Wrócono do niej wśród ograniczeń
+w rozdziale~\ref{sec:ograniczenia}.
 
 %do sprawdzenia
 \subsection{Obserwable podziału pędu}
@@ -647,6 +674,15 @@ Metodą Monte Carlo na próbie \num{2e6} punktów otrzymano dla tego
 rozkładu $\langle\Neff\rangle=\num{2.118}$ oraz
 $\langle\xmax\rangle=11/18=\num{0.611}$. Wartości te służą dalej jako
 odniesienie dla wyników wyznaczonych z danych.
+
+Zakresy te oraz niezależność od numeracji sprawdzono numerycznie na
+wszystkich dwunastu zbiorach. Otrzymano $\Neff\in[\num{1.01},\num{3.00}]$
+oraz $\xmax\in[\num{0.334},\num{0.995}]$, czyli wartości mieszczą się
+w granicach teoretycznych i w pełni je wykorzystują, a suma udziałów
+odbiega od jedności o nie więcej niż \num{3.3e-16}. Obliczono też
+$\Neff$ i $\xmax$ dla zbioru powiększonego o wszystkie $3!=6$ permutacji
+etykiet. Średnie różnią się od wartości dla danych oryginalnych o nie
+więcej niż \num{5.6e-17}, czyli są identyczne.
 
 %OK
 \subsection{Sektory znakowe}
@@ -705,81 +741,43 @@ zawiera informacji o całkowitym pędzie układu. W opisie użytym w tej
 pracy $P_e$ i $K$ występują obok udziałów, dzięki czemu ruch
 kolektywny i względny analizowane są łącznie.
 
-%do sprawdzenia
-\subsection{Sprawdzenie poprawności implementacji}
-\label{sec:walidacja}
-
-Przed analizą wyników wykonano cztery testy na wszystkich dwunastu zbiorach danych.
-
-%OK
-\paragraph{Ortogonalność i odwracalność.} Sprawdzono bezpośrednio
-tożsamość~\eqref{eq:norma} oraz przekształcenie
-odwrotne~\eqref{eq:odwrotna}. Największe odchylenie normy wyniosło
-\num{3.2e-14}, największy błąd odtworzenia składowej $p_2$
-\num{1.9e-15}, a największe odchylenie sumy udziałów od jedności
-\num{3.3e-16}. Wartości te są rzędu precyzji arytmetyki
-zmiennoprzecinkowej, co potwierdza, że transformacja jest zaimplementowana
-poprawnie i nie gubi informacji.
-
-%OK
-\paragraph{Zakresy obserwabli ograniczonych.} We wszystkich zbiorach
-otrzymano wartości $\Neff\in[\num{1.01},\num{3.00}]$ oraz $\xmax\in[\num{0.334},\num{0.995}]$,
-czyli mieszczą się one w granicach teoretycznych
-$1\le\Neff\le3$ i $1/3\le\xmax\le1$ i w pełni je wykorzystują.
-
-%OK
-\paragraph{Niezmienniczość względem numeracji elektronów.} Obliczono $\Neff$ i
-$\xmax$ dla danych oryginalnych oraz dla zbioru powiększonego o wszystkie
-$3!=6$ permutacji etykiet. Średnie różnią się o nie więcej
-niż \num{5.6e-17}, czyli są identyczne. Potwierdza to, że obie
-obserwable nie zależą od numeracji elektronów.
-
-%Sprawdzić
-\paragraph{Zachowanie pędu.} Jako niezależny test spójności danych
-wykorzystano pęd rdzenia. Sprawdzono sumę
-$P_{\mathrm{tot},z}=p_{1z}+P_e$. We wszystkich zbiorach jej wartość
-średnia jest zgodna z zerem (od \num{-0.015} do \num{+0.028}~\ja), a
-współczynnik korelacji między $p_{1z}$ a $P_e$ zawiera się w
-przedziale od \num{-0.978} do \num{-0.944}. Rdzeń przejmuje zatem odrzut
-elektronów, zgodnie z oczekiwaniem. Suma nie znika jednak dokładnie w
-każdym zdarzeniu. Jej odchylenie standardowe wynosi około
-\num{1.6}--\num{1.7}~\ja, czyli okolo \num{25}--\num{30}\,\% odchylenia
-standardowego samego $P_e$. Oznacza to, że zachowanie pędu
-podłużnego jest w danych spełnione statystycznie, ale nie
-zdarzenie po zdarzeniu. Jest to własność danych źródłowych, a nie
-przeprowadzonej tu analizy. Wrócono do niej wśród ograniczeń w
-rozdziale~\ref{sec:ograniczenia}.
-
-%Dobre
-\paragraph{Narzędzia.} Obliczenia wykonano w języku Python z
-użyciem bibliotek NumPy~\cite{Harris2020}, scikit-learn~\cite{Pedregosa2011}
-i Matplotlib~\cite{Hunter2007}. Wszystkie wartości liczbowe podane w pracy
-zostały dodatkowo odtworzone niezależną implementacją korzystającą
-wyłącznie z biblioteki standardowej, co służyło jako kontrola
-błędów implementacji.
-
-%Fishera praca gdzie on oficjalnie opisuje z transformacje oraz praca Cox'a który zwraca się do właśnie 1921 pracy Fishera. Dodałam bo nie znalazłam linku kilkabelnego do Fishera 1921.
-\paragraph{Niepewności.} Dla wartości średnich podawane są
-\num{95}-procentowe przedziały ufności wyznaczone z centralnego
-twierdzenia granicznego, a wyjątki zaznaczono w podpisach tabel. Dla
-współczynników korelacji Pearsona wyznaczono przybliżone
-95-procentowe przedziały ufności z wykorzystaniem transformacji \(z\)
-Fishera~\cite{Fisher1921,Cox2008}. Istotność różnic wartości średnich
-oceniano testem \(t\) Welcha~\cite{Welch1947}, a przy wielu
-porównaniach wykonywanych jednocześnie stosowano poprawkę
-Bonferroniego~\cite{Dunn1961}. Niepewność średniej korelacji par
-wyznaczono metodą bootstrap~\cite{Efron1979}, opisaną w
-podrozdziale~\ref{sec:wyn:intensywnosc}. Podane niepewności mają
-charakter wyłącznie statystyczny i opisują skończoną liczbę zdarzeń
-w zbiorze. Nie obejmują one niepewności samego modelu.
-
 % ===========================================================================
 \section{Wyniki}
 \label{sec:wyniki}
 % ===========================================================================
 
 Kanały \emph{direct} i \emph{delayed}
-porównywane są wyłącznie przy tej samej intensywności pola.
+porównywane są wyłącznie przy tej samej intensywności pola. Wszystkie obliczenia wykonano w języku Python z użyciem bibliotek
+NumPy~\cite{Harris2020}, scikit-learn~\cite{Pedregosa2011}
+i Matplotlib~\cite{Hunter2007}. 
+
+%Fishera praca gdzie on oficjalnie opisuje z transformacje oraz praca Cox'a który zwraca się do właśnie 1921 pracy Fishera. Dodałam bo nie znalazłam linku kilkabelnego do Fishera 1921.
+Wartość średnią wielkości $y$ wyznaczano jako
+$\bar y=\frac{1}{n}\sum_{k=1}^{n}y_k$, gdzie $y_k$ jest wartością
+w $k$-tym zdarzeniu, a $n$ liczbą zdarzeń w zbiorze. Rozrzut wartości
+między zdarzeniami opisuje odchylenie standardowe
+\begin{equation}
+s=\sqrt{\frac{1}{n-1}\sum_{k=1}^{n}\left(y_k-\bar y\right)^2},
+\label{eq:s}
+\end{equation}
+a niepewność samej średniej błąd standardowy $s/\sqrt{n}$. Zdarzenia są
+od siebie niezależne, więc zgodnie z centralnym twierdzeniem granicznym
+średnia z dużej ich liczby ma w przybliżeniu rozkład normalny. Z tego
+względu jako niepewność średniej podawano połowę szerokości
+95-procentowego przedziału ufności, równą $\num{1.96}\,s/\sqrt{n}$.
+Wyjątki zaznaczono w podpisach tabel.
+
+Istotność różnic wartości średnich oceniano testem
+\(t\) Welcha~\cite{Welch1947}, opisanym w podrozdziale~\ref{sec:wyn:K},
+a przy wielu porównaniach wykonywanych jednocześnie stosowano poprawkę
+Bonferroniego~\cite{Dunn1961}, wprowadzoną w tym samym podrozdziale.
+Przedziały ufności współczynników korelacji Pearsona wyznaczono
+transformacją \(z\) Fishera~\cite{Fisher1921,Cox2008}, opisaną
+w podrozdziale~\ref{sec:wyn:korelacje}, a niepewność średniej korelacji
+par metodą bootstrap~\cite{Efron1979}, opisaną
+w podrozdziale~\ref{sec:wyn:intensywnosc}. Podane niepewności mają
+charakter wyłącznie statystyczny i opisują skończoną liczbę zdarzeń
+w zbiorze. Nie obejmują one niepewności samego modelu.
 
 \subsection{Ruch kolektywny}
 \label{sec:wyn:Pe}
@@ -818,9 +816,9 @@ odzwierciedla przede wszystkim odstęp między maksimami, a nie ich
 szerokość. Z tego powodu rozkład opisano dwiema osobnymi wielkościami.
 Średnia wartość bezwzględna \(\langle|P_e|\rangle\) wyznacza
 średnie położenie maksimów, a odchylenie standardowe \(|P_e|\) ich szerokość.
-Obie wielkości zestawiono w tabeli~\ref{tab:glowna}.
+Obie wielkości również podano w tabeli~\ref{tab:glowna}.
 
-Położenie maksimów wyraźnie zależy od kanału, ich wartości bezwzględne wynoszą od
+Położenia maksimów wyraźnie zależy od kanału, je wartości bezwzględne wynoszą od
 \num{6.47} do \num{7.32}~\ja{} w kanale \emph{direct} oraz od
 \num{4.32} do \num{4.96}~\ja{} w kanale \emph{delayed}. Szerokość
 pojedynczego maksimum jest natomiast w obu kanałach zbliżona i mieści
@@ -830,14 +828,19 @@ kanałami dotyczy zatem głównie wartości bezwzględnej samych maksimów \(\la
 W serii \num{800}~nm wartość \(\langle|P_e|\rangle\) rośnie wraz
 z intensywnością pola, podobnie jak pęd dryfu \(2\sqrt{U_p}\)
 (tabela~\ref{tab:impulsy}). Z tego względu zasadne jest obliczenie stosunku średniej wartości bezwzględnej sumy pędów
-elektronów \(\langle|P_e|\rangle\) do pędu dryfu \(2\sqrt{U_p}\). Otrzymana wielkość bezwymiarowa określa ile pędów dryfu zawarto w
+elektronów \(\langle|P_e|\rangle\) do pędu dryfu \(2\sqrt{U_p}\). Otrzymana wielkość bezwymiarowa określa, ile pędów dryfu zawarto w
 średnim pędzie sumarycznym elektronów. Wyniki tego zestawienia zebrano
 w tabeli~\ref{tab:dryf}, wartości podano również dla natężenia pola $I=1,7$~\PWcm{}.
 
 \begin{table}[!h]
 \centering
+\small
 \caption{Średnia wartość bezwzględna sumy pędów podłużnych
-$\langle|P_e|\rangle$ odniesiona do pędu dryfu $2\sqrt{U_p}$.}
+$\langle|P_e|\rangle$ odniesiona do pędu dryfu $2\sqrt{U_p}$. Zapis
+$a\pm b$ oznacza wartość $a$ oraz połowę szerokości 95-procentowego
+przedziału ufności $b$. Niepewność stosunku wyznaczono
+wzorem~\eqref{eq:u_iloraz}. Pęd dryfu jest parametrem obliczonym
+z danych wejściowych modelu i nie ma niepewności statystycznej.}
 \label{tab:dryf}
 \begin{tabular}{c c c c c c}
 \toprule
@@ -846,19 +849,28 @@ $\langle|P_e|\rangle$ odniesiona do pędu dryfu $2\sqrt{U_p}$.}
 \cmidrule(lr){3-4}
 \cmidrule(lr){5-6}
 $I$ [\PWcm] & $2\sqrt{U_p}$ [\ja] & $\langle|P_e|\rangle$ [\ja]
-  & $\langle|P_e|\rangle/2\sqrt{U_p}$ & $\langle|P_e|\rangle$
+  & $\langle|P_e|\rangle/2\sqrt{U_p}$ & $\langle|P_e|\rangle$ [\ja]
   & $\langle|P_e|\rangle/2\sqrt{U_p}$ \\
 \midrule
-\num{1.0} & \num{2.964} & \num{6.466} & \num{2.181} & \num{4.320} & \num{1.457} \\
-\num{1.3} & \num{3.379} & \num{7.064} & \num{2.091} & \num{4.799} & \num{1.420} \\
-\num{1.6} & \num{3.749} & \num{7.316} & \num{1.952} & \num{4.961} & \num{1.323} \\
-\num{1.7} & \num{3.671} & \num{7.165} & \num{1.952} & \num{4.856} & \num{1.323} \\
+\num{1.0} & \num{2.964} & $\num{6.466}\pm\num{0.069}$ & $\num{2.181}\pm\num{0.023}$ & $\num{4.320}\pm\num{0.074}$ & $\num{1.457}\pm\num{0.025}$ \\
+\num{1.3} & \num{3.379} & $\num{7.064}\pm\num{0.049}$ & $\num{2.091}\pm\num{0.014}$ & $\num{4.799}\pm\num{0.053}$ & $\num{1.420}\pm\num{0.016}$ \\
+\num{1.6} & \num{3.749} & $\num{7.316}\pm\num{0.050}$ & $\num{1.952}\pm\num{0.013}$ & $\num{4.961}\pm\num{0.054}$ & $\num{1.323}\pm\num{0.014}$ \\
+\num{1.7} & \num{3.671} & $\num{7.165}\pm\num{0.113}$ & $\num{1.952}\pm\num{0.031}$ & $\num{4.856}\pm\num{0.114}$ & $\num{1.323}\pm\num{0.031}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Stosunek ten wyraźnie rozdziela oba kanały. W serii \num{800}~nm maleje
-on w kanale \emph{direct} od \num{2.18} do \num{1.95}, a w kanale
+Niepewność stosunku $R=\langle|P_e|\rangle/2\sqrt{U_p}$ wynika ze wzoru na
+niepewność ilorazu
+\begin{equation}
+u(R)=R\sqrt{\left(\frac{u(\langle|P_e|\rangle)}{\langle|P_e|\rangle}\right)^2
++\left(\frac{u(2\sqrt{U_p})}{2\sqrt{U_p}}\right)^2}.
+\label{eq:u_iloraz}
+\end{equation}
+Pęd dryfu nie ma niepewności statystycznej, więc drugi składnik jest
+równy zeru i $u(R)=u(\langle|P_e|\rangle)/2\sqrt{U_p}$.
+
+Obliczone wartości stosunków wyraźnie rozdzielają oba kanały. W serii \num{800}~nm wartość $\langle|P_e|\rangle/2\sqrt{U_p}$ maleje w kanale \emph{direct} od \num{2.18} do \num{1.95}, a w kanale
 \emph{delayed} od \num{1.46} do \num{1.32}. Przy danej intensywności oba
 kanały mają ten sam pęd dryfu, więc różnica między nimi nie wynika z
 jego wartości.
@@ -917,8 +929,11 @@ w tabeli~\ref{tab:welch}.
   \centering
   \caption{Porównanie średniej skali nierównowagi $\langle K\rangle$
   w kanałach \emph{direct} i \emph{delayed} testem $t$ Welcha
-  \eqref{eq:welch} dla wszystkich intensywności. $\Delta_{\langle K\rangle}=\langle K\rangle_{\mathrm{direct}}-\langle K\rangle_{\mathrm{delayed}}$
-oznacza różnicę średnich.}
+  \eqref{eq:welch} dla wszystkich intensywności.
+  $\Delta_{\langle K\rangle}=\langle K\rangle_{\mathrm{direct}}-\langle K\rangle_{\mathrm{delayed}}$
+  oznacza różnicę średnich. Zapis $a\pm b$ oznacza wartość $a$ oraz
+  połowę szerokości 95-procentowego przedziału ufności $b$. Dla różnicy
+  $b$ było liczone jako \num{1.96} razy mianownik wzoru~\eqref{eq:welch}.}
   \label{tab:welch}
   \begin{tabular}{cccccc}
     \toprule
@@ -926,10 +941,10 @@ oznacza różnicę średnich.}
       & $\langle K\rangle_{\mathrm{delayed}}$ [\ja] & $\Delta_{\langle K\rangle}$ [\ja]
       & $t$ & $p$ \\
     \midrule
-    \num{1.0} & \num{1.182} & \num{2.121} & \num{-0.939} & \num{-40.0} & $<\num{1e-16}$ \\
-    \num{1.3} & \num{1.295} & \num{2.276} & \num{-0.981} & \num{-63.0} & $<\num{1e-16}$ \\
-    \num{1.6} & \num{1.417} & \num{2.337} & \num{-0.920} & \num{-62.7} & $<\num{1e-16}$ \\
-    \num{1.7} & \num{1.398} & \num{2.383} & \num{-0.985} & \num{-30.1} & $<\num{1e-16}$ \\
+    \num{1.0} & $\num{1.182}\pm\num{0.023}$ & $\num{2.121}\pm\num{0.040}$ & $\num{-0.939}\pm\num{0.046}$ & \num{-40.0} & $<\num{1e-16}$ \\
+    \num{1.3} & $\num{1.295}\pm\num{0.015}$ & $\num{2.276}\pm\num{0.026}$ & $\num{-0.981}\pm\num{0.031}$ & \num{-63.0} & $<\num{1e-16}$ \\
+    \num{1.6} & $\num{1.417}\pm\num{0.014}$ & $\num{2.337}\pm\num{0.025}$ & $\num{-0.920}\pm\num{0.029}$ & \num{-62.7} & $<\num{1e-16}$ \\
+    \num{1.7} & $\num{1.398}\pm\num{0.032}$ & $\num{2.383}\pm\num{0.056}$ & $\num{-0.985}\pm\num{0.064}$ & \num{-30.1} & $<\num{1e-16}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -980,6 +995,38 @@ ich zamiana, odwracająca znak $\xi_1\rightarrow-\xi_1$, nie powinna
 zmieniać rozkładu. Rozkład $\xi_1$ powinien być zatem symetryczny
 względem zera, a średnie wartości pędów elektronów 2 i 3 $p_2$ i $p_3$ powinny być równe. 
 
+\begin{table}[htbp]
+  \centering
+  \caption{Sprawdzenie symetrii względem zamiany elektronów 2 i 3.
+  Podano współczynnik skośności $\gamma_1$ rozkładu $\xi_1$
+  \eqref{eq:skosnosc}, średnie wartości $p_2$ i $p_3$ wraz
+  z odchyleniem standardowym średniej $s/\sqrt{n}$ oraz wynik testu
+  Welcha ich równości. Niepewność $\gamma_1$ wyznaczono metodą bootstrap. Wszystkie niepewności w tabeli odpowiadają jednemu odchyleniu standardowemu.}
+  \label{tab:symetria}
+  \begin{tabular}{llccccc}
+    \toprule
+    $I$ [\PWcm] & kanał & $\gamma_1(\xi_1)$ & $\langle p_2\rangle$ [\ja]
+      & $\langle p_3\rangle$ [\ja] & $t$ & $p$ \\
+    \midrule
+    \num{1.0} & \emph{direct}  & $\num{-0.052}\pm\num{0.042}$ & $\num{-0.009}\pm\num{0.051}$ & $\num{-0.019}\pm\num{0.051}$ & \num{0.13}  & \num{0.89} \\
+              & \emph{delayed} & $\num{-0.001}\pm\num{0.035}$ & $\num{-0.047}\pm\num{0.043}$ & $\num{0.001}\pm\num{0.043}$  & \num{-0.80} & \num{0.43} \\
+              & wszystkie      & $\num{-0.018}\pm\num{0.034}$ & $\num{-0.014}\pm\num{0.030}$ & $\num{-0.006}\pm\num{0.029}$ & \num{-0.19} & \num{0.85} \\
+    \midrule
+    \num{1.3} & \emph{direct}  & $\num{-0.054}\pm\num{0.032}$ & $\num{-0.050}\pm\num{0.033}$ & $\num{-0.036}\pm\num{0.033}$ & \num{-0.30} & \num{0.76} \\
+              & \emph{delayed} & $\num{-0.014}\pm\num{0.021}$ & $\num{0.007}\pm\num{0.028}$  & $\num{0.025}\pm\num{0.029}$  & \num{-0.46} & \num{0.65} \\
+              & wszystkie      & $\num{-0.034}\pm\num{0.021}$ & $\num{-0.019}\pm\num{0.020}$ & $\num{-0.001}\pm\num{0.020}$ & \num{-0.63} & \num{0.53} \\
+    \midrule
+    \num{1.6} & \emph{direct}  & $\num{0.053}\pm\num{0.027}$  & $\num{-0.015}\pm\num{0.029}$ & $\num{-0.017}\pm\num{0.029}$ & \num{0.04}  & \num{0.97} \\
+              & \emph{delayed} & $\num{-0.009}\pm\num{0.020}$ & $\num{-0.009}\pm\num{0.027}$ & $\num{-0.006}\pm\num{0.026}$ & \num{-0.09} & \num{0.93} \\
+              & wszystkie      & $\num{-0.011}\pm\num{0.021}$ & $\num{-0.005}\pm\num{0.018}$ & $\num{-0.012}\pm\num{0.018}$ & \num{0.28}  & \num{0.78} \\
+    \midrule
+    \num{1.7} & \emph{direct}  & $\num{0.056}\pm\num{0.058}$  & $\num{0.132}\pm\num{0.065}$  & $\num{0.092}\pm\num{0.065}$  & \num{0.43}  & \num{0.67} \\
+              & \emph{delayed} & $\num{0.010}\pm\num{0.043}$  & $\num{-0.094}\pm\num{0.057}$ & $\num{0.076}\pm\num{0.057}$  & \num{-2.12} & \num{0.034} \\
+              & wszystkie      & $\num{-0.037}\pm\num{0.044}$ & $\num{0.013}\pm\num{0.039}$  & $\num{0.053}\pm\num{0.039}$  & \num{-0.72} & \num{0.47} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 Dla wszystkich
 dwunastu zbiorów obliczono współczynniki skośności rozkładu $\xi_1$ zgodnie ze wzorem:
 
@@ -994,9 +1041,18 @@ $\bar{\xi}_1$ jej średnią, a $n$ liczbę zdarzeń. Dla rozkładu
 symetrycznego $\gamma_1=0$. Średnie $p_2$ i $p_3$ porównano testem
 Welcha~\eqref{eq:welch}. Wyniki zestawiono w tabeli~\ref{tab:symetria}.
 
-Współczynnik
-skośności $\xi_1$ we wszystkich dwunastu zbiorach nie przekracza co do
-modułu \num{0.056}. Dla średnich $p_2$ i $p_3$ w jedenastu z dwunastu zbiorów otrzymano $p$ od \num{0.43} do
+Współczynnik skośności $\xi_1$ we wszystkich dwunastu zbiorach nie
+przekracza co do modułu \num{0.056}. Jego niepewność wyznaczono metodą
+bootstrap~\cite{Efron1979}, opisaną w
+podrozdziale~\ref{sec:wyn:intensywnosc}, na podstawie \num{1000}
+powtórzeń. Metodę tę wybrano zamiast przybliżenia $\sqrt{6/n}$, ponieważ
+przybliżenie to zakłada normalny rozkład $\xi_1$, a w kanale
+\emph{delayed} rozkład ten jest wyraźnie bardziej płaski. Stosunek
+$\gamma_1$ do jego niepewności nie przekracza co do modułu \num{1.95},
+co odpowiada $p\ge\num{0.051}$. Żaden współczynnik skośności nie różni
+się więc istotnie od zera, nawet bez poprawki na liczbę porównań.
+
+Dla średnich $p_2$ i $p_3$ w jedenastu z dwunastu zbiorów otrzymano $p$ od \num{0.43} do
 \num{0.97}. Jedynie dla kanału \emph{delayed} przy \num{1.7}~\PWcm{}
 wartość $p$ wynosi \num{0.034}. Przy dwunastu porównaniach prawdopodobieństwo
 otrzymania co najmniej jednej takiej wartości odstającej przy prawdziwej $H_0$
@@ -1005,38 +1061,6 @@ z którą każdą wartość $p$ porównuje się z progiem
 $\num{0.05}/12\approx\num{0.0042}$. Jeżeli wartość $p$ jest większa niż ten
 próg, nie ma podstaw do odrzucenia hipotezy zerowej $H_0$ o równości
 średnich $p_2$ i $p_3$. Żadna z otrzymanych wartości nie jest mniejsza od progu, więc dane są zgodne z symetrią względem zamiany elektronów 2 i 3.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Sprawdzenie symetrii względem zamiany elektronów 2 i 3.
-  Podano współczynnik skośności $\gamma_1$ rozkładu $\xi_1$
-  \eqref{eq:skosnosc}, średnie wartości $p_2$ i $p_3$ wraz
-  z odchyleniem standardowym średniej $s/\sqrt{n}$ oraz wynik testu
-  Welcha ich równości.}
-  \label{tab:symetria}
-  \begin{tabular}{llccccc}
-    \toprule
-    $I$ [\PWcm] & kanał & $\gamma_1(\xi_1)$ & $\langle p_2\rangle$ [\ja]
-      & $\langle p_3\rangle$ [\ja] & $t$ & $p$ \\
-    \midrule
-    \num{1.0} & \emph{direct}  & \num{-0.052} & $\num{-0.009}\pm\num{0.051}$ & $\num{-0.019}\pm\num{0.051}$ & \num{0.13}  & \num{0.89} \\
-              & \emph{delayed} & \num{-0.001} & $\num{-0.047}\pm\num{0.043}$ & $\num{0.001}\pm\num{0.043}$  & \num{-0.80} & \num{0.43} \\
-              & wszystkie      & \num{-0.018} & $\num{-0.014}\pm\num{0.030}$ & $\num{-0.006}\pm\num{0.029}$ & \num{-0.19} & \num{0.85} \\
-    \midrule
-    \num{1.3} & \emph{direct}  & \num{-0.054} & $\num{-0.050}\pm\num{0.033}$ & $\num{-0.036}\pm\num{0.033}$ & \num{-0.30} & \num{0.76} \\
-              & \emph{delayed} & \num{-0.014} & $\num{0.007}\pm\num{0.028}$  & $\num{0.025}\pm\num{0.029}$  & \num{-0.46} & \num{0.65} \\
-              & wszystkie      & \num{-0.034} & $\num{-0.019}\pm\num{0.020}$ & $\num{-0.001}\pm\num{0.020}$ & \num{-0.63} & \num{0.53} \\
-    \midrule
-    \num{1.6} & \emph{direct}  & \num{0.053}  & $\num{-0.015}\pm\num{0.029}$ & $\num{-0.017}\pm\num{0.029}$ & \num{0.04}  & \num{0.97} \\
-              & \emph{delayed} & \num{-0.009} & $\num{-0.009}\pm\num{0.027}$ & $\num{-0.006}\pm\num{0.026}$ & \num{-0.09} & \num{0.93} \\
-              & wszystkie      & \num{-0.011} & $\num{-0.005}\pm\num{0.018}$ & $\num{-0.012}\pm\num{0.018}$ & \num{0.28}  & \num{0.78} \\
-    \midrule
-    \num{1.7} & \emph{direct}  & \num{0.056}  & $\num{0.132}\pm\num{0.065}$  & $\num{0.092}\pm\num{0.065}$  & \num{0.43}  & \num{0.67} \\
-              & \emph{delayed} & \num{0.010}  & $\num{-0.094}\pm\num{0.057}$ & $\num{0.076}\pm\num{0.057}$  & \num{-2.12} & \num{0.034} \\
-              & wszystkie      & \num{-0.037} & $\num{0.013}\pm\num{0.039}$  & $\num{0.053}\pm\num{0.039}$  & \num{-0.72} & \num{0.47} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
 
 \subsection{Podział pędu bezwzględnego}
 \label{sec:wyn:Neff}
@@ -1373,7 +1397,7 @@ intensywności pola. Oznaczenia jak na rysunku~\ref{fig:trend_K}.}
 \end{figure}
 
 Na rysunku~\ref{fig:trend_KA} w kanale \emph{delayed} stosunek
-$\langle K/A\rangle$ pozostaje stały i wynosi od \num{0.409} do
+$\langle K/A\rangle$ zmienia się nieznacząco od \num{0.409} do
 \num{0.411}, a nachylenie prostej $\num{0.001}\pm\num{0.006}$ na \PWcm{}
 jest zgodne z zerem. Wzrost $\langle K\rangle$ nie wskazuje więc w tym
 kanale na zmianę nierównomierności podziału pędu. W kanale \emph{direct}
@@ -1471,7 +1495,7 @@ $z=\Delta/\sigma_\Delta$ pełni tu tę samą rolę co $t$ w teście
 Welcha~\eqref{eq:welch}, którego nie można zastosować bezpośrednio,
 ponieważ $\langle r\rangle$ nie jest średnią po zdarzeniach. Otrzymano
 $z=\num{-4.5}$ ($p=\num{8e-6}$) w kanale \emph{direct} oraz $z=\num{4.0}$
-($p=\num{8e-5}$) w kanalе \emph{delayed}.
+($p=\num{8e-5}$) w kanale \emph{delayed}.
 
 Między \num{1.0} a \num{1.6}~\PWcm{} w kanale \emph{direct}
 $\langle K\rangle$ rośnie o około \num{20}\,\%, a $\langle|P_e|\rangle$
@@ -1900,10 +1924,10 @@ przypisaniem zdarzeń do kanałów.
 W pracy zaproponowano i sprawdzono sposób opisu podziału pędu
 podłużnego pomiędzy trzy elektrony uwalniane w niesekwencyjnej
 potrójnej jonizacji neonu. Opis opiera się na stałej bazie
-ortonormalnej, która oddziela ruch kolektywny $P_e$ od ruchu
-względnego $(\xi_1,\xi_2)$, oraz na zestawie bezwymiarowych obserwabli
-podziału pędu, spośród których najważniejsza jest efektywna liczba
-elektronów $\Neff$. Metodę zastosowano do dwunastu zbiorów danych
+ortonormalnej, która oddziela ruch kolektywny, opisany sumą pędów podłużnych $P_e$, od ruchu względnego, opisanego współrzędnymi względnymi $(\xi_1,\xi_2)$, oraz na zestawie bezwymiarowych obserwabli
+podziału pędu, takich jak efektywna liczba elektronów $\Neff$ i największy
+udział pojedynczego elektronu $\xmax$, uzupełnionych o sektory znakowe
+opisujące kierunki emisji elektronów. Metodę zastosowano do dwunastu zbiorów danych
 modelowych obejmujących kanały \emph{direct} i \emph{delayed} przy
 czterech intensywnościach od \num{1.0} do \num{1.7}~\PWcm.
 Najważniejsze wyniki są następujące.
